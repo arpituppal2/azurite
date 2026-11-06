@@ -1,0 +1,33 @@
+{
+ "task": "contract_nli_ctx",
+ "split_seed": 123,
+ "n_per_seed": 500,
+ "seeds": {
+  "s0": {
+   "recall": 0.886,
+   "cond": 0.7088,
+   "e2e": 0.628,
+   "shuffled_e2e": 0.39
+  },
+  "s1": {
+   "recall": 0.9,
+   "cond": 0.6889,
+   "e2e": 0.62,
+   "shuffled_e2e": 0.354
+  }
+ },
+ "mean": {
+  "recall": 0.893,
+  "cond": 0.6989,
+  "e2e": 0.624,
+  "shuffled_e2e": 0.372
+ },
+ "e2e_pooled_n": 1000,
+ "e2e_95ci_binomial": [
+  0.594,
+  0.654
+ ],
+ "seed_delta_e2e": 0.008,
+ "s1_sha256": "037bf48813daa7d69f7e628474e6d910724f225d1205a2645ff710ea9c9c03d7",
+ "note": "Two-seed mean on fixed split 123, 2048 ctx. s1 mirrored from live host with sha check."
+}
