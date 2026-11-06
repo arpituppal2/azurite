@@ -1,9 +1,0 @@
-rc=0 wall=9.9 acc=0.578
-  step  315/378  loss 0.5196  test acc 0.5560  ece 0.074
-  step  377/378  loss 0.6794  test acc 0.5780  ece 0.053
-final test acc 0.5780  ece 0.0533  acc@50%cov 0.6880  5s
-wrote results/transfer/superiority_v1/financial_phrasebank_cross_s0/result.json
-/marimo/azurite_ws/scripts/transfer_eval.py:503: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
-Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
-  f"  step {step:>4}/{total_steps}  loss {float(loss):.4f}  "
-

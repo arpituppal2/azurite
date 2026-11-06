@@ -1,5 +1,0 @@
-START pretrained seed=0
-END pretrained seed=0 exit=0
-START random seed=0
-END random seed=0 exit=0
-START pretrained seed=1

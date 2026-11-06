@@ -1,6 +1,0 @@
-task=ag_news path=cross K=4 init=pretrained train=2000 test=500 steps=378 device=cpu
-/marimo/azurite_ws/results/transfer/ag_news_balanced/source/scripts/transfer_eval.py:424: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
-Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
-  f"  step {step:>4}/{total_steps}  loss {float(loss):.4f}  "
-  step    0/378  loss 1.3760  test acc 0.2620  ece 0.153
-  step   63/378  loss 1.3858  test acc 0.2780  ece 0.025

@@ -1,1 +1,0 @@
-/marimo/azurite_ws/results/pretrain/l1_tiny_byte/ckpt.pt exists

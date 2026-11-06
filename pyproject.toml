@@ -13,7 +13,7 @@ authors = [{ name = "Arpit Uppal" }]
 keywords = ["intent-classification", "banking77", "encoder", "research"]
 classifiers = [
   "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: MIT License",
+  "License :: OSI Approved :: Apache Software License",
   "Operating System :: OS Independent",
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
