@@ -1,8 +1,7 @@
-# Azurite — from-scratch decision system, retired with numbers
+# Azurite
 
-One person, free compute, one question: can a model trained from scratch
-challenge the frontier on decision tasks? Answer: not in this weight class.
-The evidence is in `results/transfer/envelope_v17/`.
+Can a model trained from scratch challenge the frontier on decision tasks? Answer: not in this weight class.
+
 
 ## Result
 
@@ -39,5 +38,3 @@ margin loss rejected on dev; external baseline a paired tie.
 - The v1 Banking77 path is documented in `MODEL_CARD.md`; its 437MB
   checkpoints are not in this release. Bulk corpus is not shipped either —
   regenerate from `data/MANIFEST.json`.
-
-Apache-2.0. Use it, fork it, beat Jev with it.
