@@ -1,0 +1,21 @@
+2026-10-28T08:12:05Z STATUS_JSON={"before": {"utc": "2026-10-28T08:06:46Z", "queue_current": "large_iso10", "queue_status": "running", "gpu": "99 %, 20749 MiB"}, "python": "/tmp/uv-venv/bin/python", "cuda_visible_devices": "", "threads": 4, "nice": 15, "runs": [{"seed": 0, "init": "pretrained", "command": ["/tmp/uv-venv/bin/python", "-u", "/marimo/azurite_ws/results/transfer/ag_news_balanced/source/scripts/transfer_eval.py", "--task", "ag_news", "--arm", "byte", "--rung", "tiny", "--path", "cross", "--init", "pretrained", "--seed", "0", "--examples", "2000", "--test-examples", "500", "--epochs", "6", "--batch", "32", "--lr", "0.0005", "--stratify", "--split-seed", "0", "--device", "cpu", "--threads", "4", "--evidence-dir", "/marimo/azurite_ws/results/transfer/ag_news_balanced/pretrained_s0", "--out", "/marimo/azurite_ws/results/transfer/ag_news_balanced/pretrained_s0/result.json", "--ckpt", "/marimo/azurite_ws/results/transfer/ag_news_balanced/source_pretrain.pt"], "started": 1793174806.40064}]}
+DRIVER START pretrained seed=0
+
+pretrained_s0 ad/generated/python_variable_methods.cpp:836.)
+  f"  step {step:>4}/{total_steps}  loss {float(loss):.4f}  "
+  step    0/378  loss 1.3773  test acc 0.2500  ece 0.311
+  step   63/378  loss 1.3853  test acc 0.2680  ece 0.016
+  step  126/378  loss 1.0858  test acc 0.4120  ece 0.081
+
+GPU 100 %, 20749 MiB
+GPU_TRAIN "grad_norm": 0.217, "tokens_per_s": 39765.1, "peak_live_gib": 2.135, "swap_mb": 0.0, "elapsed_s": 558.3}
+{"step": 8740, "tokens_seen": 143196160, "session_tokens": 22528000, "loss": 0.5755, "lr": 0.00058, "grad_norm": 0.276, "tokens_per_s": 39775.7, "peak_live_gib": 2.135, "swap_mb": 0.0, "elapsed_s": 566.4}
+
+
+
+MONITOR ERROR Warning: connecting to non-local server 'sb-b379f12a3548609a.sb.molab.run'. Ensure this is trusted.
+Failed to connect to marimo server at https://sb-b379f12a3548609a.sb.molab.run
+
+MONITOR ERROR Warning: connecting to non-local server 'sb-b379f12a3548609a.sb.molab.run'. Ensure this is trusted.
+Failed to connect to marimo server at https://sb-b379f12a3548609a.sb.molab.run
+

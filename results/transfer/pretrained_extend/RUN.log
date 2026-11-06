@@ -1,0 +1,7 @@
+cross_s3: rc=0 wall=13.7 acc=0.268
+dual_s3: rc=0 wall=20.1 acc=0.438
+cross_s4: rc=0 wall=13.6 acc=0.424
+dual_s4: rc=0 wall=19.8 acc=0.404
+cross_s5: rc=0 wall=13.6 acc=0.378
+dual_s5: rc=0 wall=19.9 acc=0.328
+DONE 6 cells

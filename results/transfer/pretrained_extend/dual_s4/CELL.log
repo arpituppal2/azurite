@@ -1,0 +1,13 @@
+rc=0 wall=19.8 acc=0.404
+3/378  loss 1.7304  test acc 0.2580  ece 0.179
+  step  126/378  loss 1.2865  test acc 0.3180  ece 0.112
+  step  189/378  loss 1.7908  test acc 0.3920  ece 0.020
+  step  252/378  loss 1.2061  test acc 0.4460  ece 0.036
+  step  315/378  loss 1.3258  test acc 0.4280  ece 0.047
+  step  377/378  loss 1.0762  test acc 0.4040  ece 0.078
+final test acc 0.4040  ece 0.0784  acc@50%cov 0.5200  13s
+wrote results/transfer/pretrained_extend/dual_s4/result.json
+/marimo/azurite_ws/scripts/transfer_eval.py:503: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  f"  step {step:>4}/{total_steps}  loss {float(loss):.4f}  "
+

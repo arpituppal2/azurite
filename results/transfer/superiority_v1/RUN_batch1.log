@@ -1,0 +1,5 @@
+emotion_cross: rc=0 wall=9.9 acc=0.17 (jev recorded 0.585)
+emotion_dual: rc=0 wall=12.5 acc=0.138 (jev recorded 0.585)
+financial_phrasebank_cross: rc=0 wall=9.9 acc=0.578 (jev recorded 0.73)
+financial_phrasebank_dual: rc=0 wall=12.4 acc=0.592 (jev recorded 0.73)
+DONE batch 1: 4 cells

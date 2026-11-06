@@ -1,0 +1,126 @@
+\chapter{Threats to validity}
+\label{ch:threats}
+
+A result is only as strong as the ways it could be wrong, so they are listed here
+rather than distributed through the text where they would be easier to skim past.
+
+\section{Statistical}
+
+\textbf{One seed per fixed-data cell.} The fixed-data sweep has only two surviving
+cells, both sampled, and no training-seed replication. This is why the chapter
+does not order tiny against small and does not claim a U-curve. The Banking77
+transfer result has three seeds and a consistent direction; the AG News result has
+three seeds but a paired interval that crosses zero.
+
+\textbf{The exponent has no seed interval.} The matched-$D/N$ ladder is now
+measured at four rungs, but at one training seed each. The per-point standard
+errors ($\approx \IsoStderrMax$ bits/byte) describe held-out sampling, not
+training variance, so $\alpha = \AlphaFit$ is a fitted line rather than a line
+with an interval. That is enough to establish that the proxy improves
+predictably with capacity; it is not enough to distinguish two rungs a few
+percent apart.
+
+\textbf{One seed per suite cell.} The nine-task, three-rung suite is
+\SuiteTotalCells{} single-seed runs. Its binomial intervals describe
+test-sampling error, not run-to-run variance, and the at-or-not-clearly-below
+counts are descriptive. \SuiteReplicationCells{} cells were executed twice on the same
+checkpoint and test draw to bound that variance directly: the repeats differ by at most
+\SuiteReplicationMax{} points and flip up to \SuiteReplicationFlips{} of
+2{,}000 predictions. Rung differences below that floor are not interpreted as
+capability differences, and no equivalence claim rests on the counts.
+
+
+\textbf{Fixed learning rate across a $47\times$ size range.} Comparability was
+bought at the price of distance from each rung's own optimum. Part of every
+size-related difference is optimisation, not capacity. The earlier 500-step,
+\(5\times10^{-4}\) suite made that failure concrete: the mid-rung cells collapsed
+for optimisation reasons, and the pre-registered sweep selected \(10^{-4}\) at
+3{,}000 steps. The final suite uses that one setting for every task.
+
+
+
+\section{Construct}
+
+\textbf{Bits per byte is not accuracy.} It is a cheap, low-variance proxy. The
+transfer matrix is the bridge to the quantity the thesis actually claims, and it
+exists at one rung only. The pre-loss fixed-data curve is not available, so the
+proxy is not used to establish a regime boundary in this build.
+
+\textbf{AG News is a weak test and the result is inconclusive.} Banking77 has 77
+fine-grained intents and shows a \TransferBankGain{} percentage-point gain over
+random initialisation. AG News has four topics and a $25\%$ majority baseline; its
+pooled gain is \TransferAgGain{} percentage points with a 95\% interval of
+\TransferAgLo{} to \TransferAgHi{}, which is \TransferAgVerdict. A point estimate
+inside a zero-crossing interval is not evidence of a gain, and it is not presented
+as one.
+
+\textbf{The suite is cross-harness.} The cited points come from different
+tokenizers, pretraining corpora, model sizes, and evaluation harnesses. MASSIVE
+intent's cited \SuiteCitedMassiveIntent\% is Laya's card, not a Jev number. A
+point above a cited number is not a win, and interval overlap is not parity.
+
+\textbf{A clean loss law and flat accuracy are one result, not a paradox.} The
+matched-$D/N$ ladder lowers held-out bits/byte from \IsoTinyExh{} at 2.41M
+parameters to \IsoLargeBpb{} at 113.47M, while the suite moves by
+\SuiteLargeWinMin{} to \SuiteLargeWinMax{} points on \SuiteLargeWins{} cells,
+loses \SuiteLargeLossAbs{} points on XNLI and leaves \SuiteLargeUnmoved{} cells
+unmoved over
+the same parameter range. The two measurements together rule out the reading
+that decision accuracy at this data budget is waiting on more parameters. They
+do not identify the true bottleneck --- a different packer, more task-relevant
+pretraining data, or a different fine-tuning schedule could each move a cell ---
+but they exclude capacity alone as sufficient for the four cells the commercial
+claim needs.
+
+
+\textbf{DAIR Emotion was a scoring artifact.} Its proportional test draw gives a
+\SuiteEmotionMajority\% majority-class baseline, not a 1/6 chance rate. The
+retired candidate-only values, \SuiteSmallPriorEmotion\% and
+\SuiteMidPriorEmotion\%, were below that baseline; the dual-path values,
+\SuiteSmallEmotion\% and \SuiteMidEmotion\%, are above it. The jump is a harness
+correction, not a capability gain, and the earlier adverse reading is withdrawn.
+The 33.7M cell is still \SuiteEmotionRungDrop{} points below the 14.4M cell, so
+the correction does not create a scale result.
+
+\textbf{Contamination.} The held-out region is the tail of a stream built from
+public web text, and the transfer tasks are public datasets. The exact 40-byte
+overlap audit found 3/500 AG News examples and 0/1,000 Banking77 examples; the
+three AG matches scored 2/3, against 51.1\% on the unmatched 497. That is too
+small and too easy to explain either transfer result, but it is a screen on exact
+overlap, not a semantic deduplication.
+
+\section{External}
+
+\textbf{One corpus, one domain mix.} Byte-level bits per byte is corpus-dependent:
+the bigram baseline is $3.767$ on the mixed stream and $4.117$ on a math-only
+stream, so a baseline carried across a data change makes the gate meaningless. No
+cross-corpus claim is made without refitting.
+
+\textbf{No code in the corpus.} The planned source-code share is absent because its
+dataset resolution hangs. For a thesis whose architecture argument rests partly on
+code and audio sharing a byte space, this is a real omission, recorded in the
+manifest rather than absorbed into the web-text share.
+
+\textbf{Hardware-specific throughput.} The tok/s and VRAM figures are for one RTX
+PRO 6000 Blackwell. They are measurements, not specifications, and they should not
+be extrapolated to other accelerators without re-measuring.
+
+\section{Methodological}
+
+\textbf{A reclaimed artifact is not a result.} The first sandbox was reclaimed on
+2026-10-28. The original AG News checkpoint \texttt{3cf421\ldots bed8}, the
+exhaustive protocol replicates, the mid/large fixed-data cells and the context
+runs were lost. A result that existed only in that VM is not
+in this thesis. The tables mark those cells \emph{pending} and the prose gives the
+reason; no old number is carried forward to make the table look complete.
+
+\textbf{The checkpoint identity is amended.} The AG News cells use
+\texttt{817e7f04\ldots0410}, retrained under the same protocol after the loss. It is
+not bitwise-identical to the lost checkpoint. The Banking77 84.3\% row uses the
+surviving pre-loss comparator \texttt{499fd68c\ldots ebdc}. The two rows are not a
+single-checkpoint continuation, and the transfer table states that exception
+rather than averaging across it.
+
+\textbf{The queue is not a result.} A job that is running is not evidence. Sections
+whose tables are pending are marked pending in prose, and the confidence summary in
+\S\ref{sec:fixed-d} distinguishes what is established from what is scheduled.

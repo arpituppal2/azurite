@@ -1,0 +1,23 @@
+{
+  "checkpoints": {
+    "results/pretrain/l1_xlarge_byte_dn1/checkpoints/seg_-01_step_49195/ckpt.pt": {
+      "bytes": 4835948321,
+      "path": "ckpt.pt",
+      "segment_index": -1,
+      "sha256": "207a8afc3732114096fa5fc5a4671d3f686231196796dc35d3da4afe89f03299",
+      "status": "complete",
+      "step": 49195,
+      "tokens_seen": 403005440
+    },
+    "results/pretrain/l1_xlarge_byte_dn1/ckpt.pt": {
+      "bytes": 4835948321,
+      "path": "ckpt.pt",
+      "segment_index": -1,
+      "sha256": "207a8afc3732114096fa5fc5a4671d3f686231196796dc35d3da4afe89f03299",
+      "status": "complete",
+      "step": 49195,
+      "tokens_seen": 403005440
+    }
+  },
+  "verified_at": "2026-10-31T15:56:53Z"
+}

@@ -1,0 +1,4097 @@
+{
+  "corpus_records_recomputed": "2026-10-27T04:19:23-0700",
+  "created": "2026-10-27T04:35:40-0700",
+  "datasets": {
+    "ag_news": {
+      "attempts": [
+        {
+          "config": null,
+          "errors": {},
+          "repo": "fancyzhx/ag_news",
+          "splits": {
+            "test": {
+              "cached": true,
+              "columns": [
+                "text",
+                "label"
+              ],
+              "expected_rows": 7600,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 1881632,
+                  "sha256": "33cbb4fa4de197827f77ea4ce4e06d6fbeac710480c8156b34543bebd461ea94"
+                },
+                "dataset_info.json": {
+                  "bytes": 867,
+                  "sha256": "4e9ab6adcd48739c51ed7b3cbed6d1c80e61135806bceb84b8b87cd588561d72"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "63aeeab86d9374ad064c2c103b706dfddbf8916d0d8b00957c5bdc621c290520"
+                }
+              },
+              "matches_expected": true,
+              "rows": 7600,
+              "seconds": null
+            },
+            "train": {
+              "cached": true,
+              "columns": [
+                "text",
+                "label"
+              ],
+              "expected_rows": 120000,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 29844064,
+                  "sha256": "b3eec28c0aed7d6616f047cf5148d94aba4f475f3b905b3dc9d331fa3435d16d"
+                },
+                "dataset_info.json": {
+                  "bytes": 867,
+                  "sha256": "4e9ab6adcd48739c51ed7b3cbed6d1c80e61135806bceb84b8b87cd588561d72"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "3e4f2db2ba90ea9744a7a7890d65b0e59af4756c2892e2fae52268ef09b5abc3"
+                }
+              },
+              "matches_expected": true,
+              "rows": 120000,
+              "seconds": null
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2024-03-07 12:02:37+00:00",
+        "license": [
+          "unknown"
+        ],
+        "license_name": null,
+        "repo": "fancyzhx/ag_news",
+        "sha": "eb185aade064a813bc0b7f42de02595523103ca4"
+      },
+      "competitor_basis": "Laya (AG News), Jev (AG News 88.51)",
+      "family": "primary",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/ag_news",
+      "splits": {
+        "test": {
+          "cached": true,
+          "columns": [
+            "text",
+            "label"
+          ],
+          "expected_rows": 7600,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 1881632,
+              "sha256": "33cbb4fa4de197827f77ea4ce4e06d6fbeac710480c8156b34543bebd461ea94"
+            },
+            "dataset_info.json": {
+              "bytes": 867,
+              "sha256": "4e9ab6adcd48739c51ed7b3cbed6d1c80e61135806bceb84b8b87cd588561d72"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "63aeeab86d9374ad064c2c103b706dfddbf8916d0d8b00957c5bdc621c290520"
+            }
+          },
+          "matches_expected": true,
+          "rows": 7600,
+          "seconds": null
+        },
+        "train": {
+          "cached": true,
+          "columns": [
+            "text",
+            "label"
+          ],
+          "expected_rows": 120000,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 29844064,
+              "sha256": "b3eec28c0aed7d6616f047cf5148d94aba4f475f3b905b3dc9d331fa3435d16d"
+            },
+            "dataset_info.json": {
+              "bytes": 867,
+              "sha256": "4e9ab6adcd48739c51ed7b3cbed6d1c80e61135806bceb84b8b87cd588561d72"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "3e4f2db2ba90ea9744a7a7890d65b0e59af4756c2892e2fae52268ef09b5abc3"
+            }
+          },
+          "matches_expected": true,
+          "rows": 120000,
+          "seconds": null
+        }
+      },
+      "task": "4-way news topic",
+      "used": [
+        {
+          "config": null,
+          "repo": "fancyzhx/ag_news",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2024-03-07 12:02:37+00:00",
+            "license": [
+              "unknown"
+            ],
+            "license_name": null,
+            "repo": "fancyzhx/ag_news",
+            "sha": "eb185aade064a813bc0b7f42de02595523103ca4"
+          }
+        }
+      ]
+    },
+    "arc_challenge": {
+      "attempts": [
+        {
+          "config": "ARC-Challenge",
+          "errors": {},
+          "repo": "allenai/ai2_arc",
+          "splits": {
+            "test": {
+              "cached": false,
+              "columns": [
+                "id",
+                "question",
+                "choices",
+                "answerKey"
+              ],
+              "expected_rows": null,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 377568,
+                  "sha256": "e56914301ff03032cabc30b284e0e8d612cc56bac7b6a5ab4e7f35b31d6c3e32"
+                },
+                "dataset_info.json": {
+                  "bytes": 1296,
+                  "sha256": "1231a66274ef3362d5ecaac511ed43ed592046ae48d51ca5551ba2e89b181caf"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "61559c677a07a5d7a32e089e0a2f62d386aafc9e539d8211ef43c520a98195c5"
+                }
+              },
+              "matches_expected": null,
+              "rows": 1172,
+              "seconds": 0.53
+            },
+            "train": {
+              "cached": false,
+              "columns": [
+                "id",
+                "question",
+                "choices",
+                "answerKey"
+              ],
+              "expected_rows": null,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 351808,
+                  "sha256": "2bb1e5e8875ff5944d3a6bf469ef6ea811217be8bc083abd01722ac62cdaa873"
+                },
+                "dataset_info.json": {
+                  "bytes": 1296,
+                  "sha256": "1231a66274ef3362d5ecaac511ed43ed592046ae48d51ca5551ba2e89b181caf"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "12aa4fbc37f782f82d29afe8885d4426bd305b80f744f0161596ddeb72aeae06"
+                }
+              },
+              "matches_expected": null,
+              "rows": 1119,
+              "seconds": 0.61
+            },
+            "validation": {
+              "cached": false,
+              "columns": [
+                "id",
+                "question",
+                "choices",
+                "answerKey"
+              ],
+              "expected_rows": null,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 98104,
+                  "sha256": "866e13e71ac78fbb940387242c7142dc0e1b6c353c792e566494aca96779a904"
+                },
+                "dataset_info.json": {
+                  "bytes": 1296,
+                  "sha256": "1231a66274ef3362d5ecaac511ed43ed592046ae48d51ca5551ba2e89b181caf"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "809eea033f9d965356b61abc756bb9dd8f483fe9b4cea90b15dc8f936412d97f"
+                }
+              },
+              "matches_expected": null,
+              "rows": 299,
+              "seconds": 0.54
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2023-12-21 15:09:48+00:00",
+        "license": [
+          "cc-by-sa-4.0"
+        ],
+        "license_name": null,
+        "repo": "allenai/ai2_arc",
+        "sha": "210d026faf9955653af8916fad021475a3f00453"
+      },
+      "competitor_basis": "none \u2014 standard LM sanity check",
+      "family": "secondary",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/arc_challenge",
+      "splits": {
+        "test": {
+          "cached": false,
+          "columns": [
+            "id",
+            "question",
+            "choices",
+            "answerKey"
+          ],
+          "expected_rows": null,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 377568,
+              "sha256": "e56914301ff03032cabc30b284e0e8d612cc56bac7b6a5ab4e7f35b31d6c3e32"
+            },
+            "dataset_info.json": {
+              "bytes": 1296,
+              "sha256": "1231a66274ef3362d5ecaac511ed43ed592046ae48d51ca5551ba2e89b181caf"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "61559c677a07a5d7a32e089e0a2f62d386aafc9e539d8211ef43c520a98195c5"
+            }
+          },
+          "matches_expected": null,
+          "rows": 1172,
+          "seconds": 0.53
+        },
+        "train": {
+          "cached": false,
+          "columns": [
+            "id",
+            "question",
+            "choices",
+            "answerKey"
+          ],
+          "expected_rows": null,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 351808,
+              "sha256": "2bb1e5e8875ff5944d3a6bf469ef6ea811217be8bc083abd01722ac62cdaa873"
+            },
+            "dataset_info.json": {
+              "bytes": 1296,
+              "sha256": "1231a66274ef3362d5ecaac511ed43ed592046ae48d51ca5551ba2e89b181caf"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "12aa4fbc37f782f82d29afe8885d4426bd305b80f744f0161596ddeb72aeae06"
+            }
+          },
+          "matches_expected": null,
+          "rows": 1119,
+          "seconds": 0.61
+        },
+        "validation": {
+          "cached": false,
+          "columns": [
+            "id",
+            "question",
+            "choices",
+            "answerKey"
+          ],
+          "expected_rows": null,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 98104,
+              "sha256": "866e13e71ac78fbb940387242c7142dc0e1b6c353c792e566494aca96779a904"
+            },
+            "dataset_info.json": {
+              "bytes": 1296,
+              "sha256": "1231a66274ef3362d5ecaac511ed43ed592046ae48d51ca5551ba2e89b181caf"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "809eea033f9d965356b61abc756bb9dd8f483fe9b4cea90b15dc8f936412d97f"
+            }
+          },
+          "matches_expected": null,
+          "rows": 299,
+          "seconds": 0.54
+        }
+      },
+      "task": "multiple-choice science questions (challenge)",
+      "used": [
+        {
+          "config": "ARC-Challenge",
+          "repo": "allenai/ai2_arc",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2023-12-21 15:09:48+00:00",
+            "license": [
+              "cc-by-sa-4.0"
+            ],
+            "license_name": null,
+            "repo": "allenai/ai2_arc",
+            "sha": "210d026faf9955653af8916fad021475a3f00453"
+          }
+        }
+      ]
+    },
+    "arc_easy": {
+      "attempts": [
+        {
+          "config": "ARC-Easy",
+          "errors": {},
+          "repo": "allenai/ai2_arc",
+          "splits": {
+            "test": {
+              "cached": false,
+              "columns": [
+                "id",
+                "question",
+                "choices",
+                "answerKey"
+              ],
+              "expected_rows": null,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 660168,
+                  "sha256": "8d1f615aaf6fd5256003a72e33b24394a8460806b59e11fe7e6586a9b6642f71"
+                },
+                "dataset_info.json": {
+                  "bytes": 1293,
+                  "sha256": "a152abc78d7589974c155b2e5cbd8465bfa3cf6c70f6e77421a06dc04fd209e2"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "cc9383950e0e6a587a7e5b3bbb221af9712246275e78ec0008185f061e2d0ee6"
+                }
+              },
+              "matches_expected": null,
+              "rows": 2376,
+              "seconds": 0.55
+            },
+            "train": {
+              "cached": false,
+              "columns": [
+                "id",
+                "question",
+                "choices",
+                "answerKey"
+              ],
+              "expected_rows": null,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 621640,
+                  "sha256": "795028faeca17f3fab03d07f92e5993858e31e5a1295d4a45a7c707eb56b1484"
+                },
+                "dataset_info.json": {
+                  "bytes": 1293,
+                  "sha256": "a152abc78d7589974c155b2e5cbd8465bfa3cf6c70f6e77421a06dc04fd209e2"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "181cad068ffe558c47482aa369cf72db71c97caef070ac8623e3924f552728de"
+                }
+              },
+              "matches_expected": null,
+              "rows": 2251,
+              "seconds": 0.62
+            },
+            "validation": {
+              "cached": false,
+              "columns": [
+                "id",
+                "question",
+                "choices",
+                "answerKey"
+              ],
+              "expected_rows": null,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 158848,
+                  "sha256": "caa0a247e56619a9cf109290abd532ce41dd911fe86210772c256c95b52e8d69"
+                },
+                "dataset_info.json": {
+                  "bytes": 1293,
+                  "sha256": "a152abc78d7589974c155b2e5cbd8465bfa3cf6c70f6e77421a06dc04fd209e2"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "813b90ef2e2ce86241ede84745e75cd938ab7b88dc1154acfe11c9d2383db7f6"
+                }
+              },
+              "matches_expected": null,
+              "rows": 570,
+              "seconds": 0.53
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2023-12-21 15:09:48+00:00",
+        "license": [
+          "cc-by-sa-4.0"
+        ],
+        "license_name": null,
+        "repo": "allenai/ai2_arc",
+        "sha": "210d026faf9955653af8916fad021475a3f00453"
+      },
+      "competitor_basis": "none \u2014 standard LM sanity check",
+      "family": "secondary",
+      "kind": "task",
+      "mirror_note": "one key per config: two configs under one key overwrite each other's split records, which is how a silent data swap happens",
+      "path": "data/raw/arc_easy",
+      "splits": {
+        "test": {
+          "cached": false,
+          "columns": [
+            "id",
+            "question",
+            "choices",
+            "answerKey"
+          ],
+          "expected_rows": null,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 660168,
+              "sha256": "8d1f615aaf6fd5256003a72e33b24394a8460806b59e11fe7e6586a9b6642f71"
+            },
+            "dataset_info.json": {
+              "bytes": 1293,
+              "sha256": "a152abc78d7589974c155b2e5cbd8465bfa3cf6c70f6e77421a06dc04fd209e2"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "cc9383950e0e6a587a7e5b3bbb221af9712246275e78ec0008185f061e2d0ee6"
+            }
+          },
+          "matches_expected": null,
+          "rows": 2376,
+          "seconds": 0.55
+        },
+        "train": {
+          "cached": false,
+          "columns": [
+            "id",
+            "question",
+            "choices",
+            "answerKey"
+          ],
+          "expected_rows": null,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 621640,
+              "sha256": "795028faeca17f3fab03d07f92e5993858e31e5a1295d4a45a7c707eb56b1484"
+            },
+            "dataset_info.json": {
+              "bytes": 1293,
+              "sha256": "a152abc78d7589974c155b2e5cbd8465bfa3cf6c70f6e77421a06dc04fd209e2"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "181cad068ffe558c47482aa369cf72db71c97caef070ac8623e3924f552728de"
+            }
+          },
+          "matches_expected": null,
+          "rows": 2251,
+          "seconds": 0.62
+        },
+        "validation": {
+          "cached": false,
+          "columns": [
+            "id",
+            "question",
+            "choices",
+            "answerKey"
+          ],
+          "expected_rows": null,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 158848,
+              "sha256": "caa0a247e56619a9cf109290abd532ce41dd911fe86210772c256c95b52e8d69"
+            },
+            "dataset_info.json": {
+              "bytes": 1293,
+              "sha256": "a152abc78d7589974c155b2e5cbd8465bfa3cf6c70f6e77421a06dc04fd209e2"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "813b90ef2e2ce86241ede84745e75cd938ab7b88dc1154acfe11c9d2383db7f6"
+            }
+          },
+          "matches_expected": null,
+          "rows": 570,
+          "seconds": 0.53
+        }
+      },
+      "task": "multiple-choice science questions (easy)",
+      "used": [
+        {
+          "config": "ARC-Easy",
+          "repo": "allenai/ai2_arc",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2023-12-21 15:09:48+00:00",
+            "license": [
+              "cc-by-sa-4.0"
+            ],
+            "license_name": null,
+            "repo": "allenai/ai2_arc",
+            "sha": "210d026faf9955653af8916fad021475a3f00453"
+          }
+        }
+      ]
+    },
+    "banking77": {
+      "attempts": [
+        {
+          "config": null,
+          "errors": {},
+          "repo": "mteb/banking77",
+          "splits": {
+            "test": {
+              "cached": true,
+              "columns": [
+                "text",
+                "label",
+                "label_text"
+              ],
+              "expected_rows": 3080,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 280624,
+                  "sha256": "28c8b378f5ce125d5fbdc9fa6dfdae25a384cd4efa011048c46aad292fe600f5"
+                },
+                "dataset_info.json": {
+                  "bytes": 858,
+                  "sha256": "63c5cbf33b8ba168073840ba717b7f867339d009e7362d46e9b3f4f19b06fc9f"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "a8f5c10180a744b9e5255c62311b5e1fffc2e0361a4e6c471565ea200456eb89"
+                }
+              },
+              "matches_expected": false,
+              "rows": 3076,
+              "seconds": null
+            },
+            "train": {
+              "cached": true,
+              "columns": [
+                "text",
+                "label",
+                "label_text"
+              ],
+              "expected_rows": 10003,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 969104,
+                  "sha256": "63537d764e315b828d8203748fe746135593bbaeab22c0f398f3fcc8cf82d131"
+                },
+                "dataset_info.json": {
+                  "bytes": 858,
+                  "sha256": "63c5cbf33b8ba168073840ba717b7f867339d009e7362d46e9b3f4f19b06fc9f"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "7153a4aa96b4541b417a7709e7b919cb461109f68688e75ff118eeb52c386d1a"
+                }
+              },
+              "matches_expected": false,
+              "rows": 9993,
+              "seconds": null
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2024-09-10 13:51:36+00:00",
+        "license": [
+          "cc-by-4.0"
+        ],
+        "license_name": null,
+        "repo": "PolyAI/banking77",
+        "sha": "90d4e2ee5521c04fc1488f065b8b083658768c57"
+      },
+      "competitor_basis": "Laya (Banking77), Jev (Banking77 79.71)",
+      "family": "primary",
+      "kind": "task",
+      "mirror_note": "canonical ships only a loading script; datasets>=4 refuses it",
+      "path": "data/raw/banking77",
+      "splits": {
+        "test": {
+          "cached": true,
+          "columns": [
+            "text",
+            "label",
+            "label_text"
+          ],
+          "expected_rows": 3080,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 280624,
+              "sha256": "28c8b378f5ce125d5fbdc9fa6dfdae25a384cd4efa011048c46aad292fe600f5"
+            },
+            "dataset_info.json": {
+              "bytes": 858,
+              "sha256": "63c5cbf33b8ba168073840ba717b7f867339d009e7362d46e9b3f4f19b06fc9f"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "a8f5c10180a744b9e5255c62311b5e1fffc2e0361a4e6c471565ea200456eb89"
+            }
+          },
+          "matches_expected": false,
+          "rows": 3076,
+          "seconds": null
+        },
+        "train": {
+          "cached": true,
+          "columns": [
+            "text",
+            "label",
+            "label_text"
+          ],
+          "expected_rows": 10003,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 969104,
+              "sha256": "63537d764e315b828d8203748fe746135593bbaeab22c0f398f3fcc8cf82d131"
+            },
+            "dataset_info.json": {
+              "bytes": 858,
+              "sha256": "63c5cbf33b8ba168073840ba717b7f867339d009e7362d46e9b3f4f19b06fc9f"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "7153a4aa96b4541b417a7709e7b919cb461109f68688e75ff118eeb52c386d1a"
+            }
+          },
+          "matches_expected": false,
+          "rows": 9993,
+          "seconds": null
+        }
+      },
+      "task": "77-way single-domain intent",
+      "used": [
+        {
+          "config": null,
+          "repo": "mteb/banking77",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2025-07-06 13:58:18+00:00",
+            "license": "mit",
+            "license_name": null,
+            "repo": "mteb/banking77",
+            "sha": "18072d2685ea682290f7b8924d94c62acc19c0b2"
+          }
+        }
+      ]
+    },
+    "clinc_oos": {
+      "attempts": [
+        {
+          "config": "plus",
+          "errors": {},
+          "repo": "clinc/clinc_oos",
+          "splits": {
+            "test": {
+              "cached": true,
+              "columns": [
+                "text",
+                "intent"
+              ],
+              "expected_rows": 5500,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 291016,
+                  "sha256": "8fec5e75ff333835cf79f3944bddc109e5b7a76207cf41667ada73805904be82"
+                },
+                "dataset_info.json": {
+                  "bytes": 4515,
+                  "sha256": "d25bcc021d3591d4a08b8633004052e3cd61ba293ee73e2f8456d8f1c4706f32"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "a09c92ef246cf79c36671f42ce038a776283e0da9874616861a76c694f7e7be2"
+                }
+              },
+              "matches_expected": true,
+              "rows": 5500,
+              "seconds": null
+            },
+            "train": {
+              "cached": true,
+              "columns": [
+                "text",
+                "intent"
+              ],
+              "expected_rows": 15250,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 797488,
+                  "sha256": "4a8ccb6033e7008a8931dd950cd2144b9cfb1bec215252f0b52ee28d1a6c261d"
+                },
+                "dataset_info.json": {
+                  "bytes": 4515,
+                  "sha256": "d25bcc021d3591d4a08b8633004052e3cd61ba293ee73e2f8456d8f1c4706f32"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "3420ad757e7b8eb90b7f80be43cb35745777191ed1398505ba8164a05edf5510"
+                }
+              },
+              "matches_expected": true,
+              "rows": 15250,
+              "seconds": null
+            },
+            "validation": {
+              "cached": true,
+              "columns": [
+                "text",
+                "intent"
+              ],
+              "expected_rows": 3100,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 163928,
+                  "sha256": "4cf7f85baee645cf9b1128abc29ad4f9b45be324e5714ec16b7d732b59f854b9"
+                },
+                "dataset_info.json": {
+                  "bytes": 4515,
+                  "sha256": "d25bcc021d3591d4a08b8633004052e3cd61ba293ee73e2f8456d8f1c4706f32"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "00fd717ec044894d81b65b042d92e5cf25eb3a879c1ad71e073f86d70629d128"
+                }
+              },
+              "matches_expected": true,
+              "rows": 3100,
+              "seconds": null
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2024-01-18 14:33:10+00:00",
+        "license": [
+          "cc-by-3.0"
+        ],
+        "license_name": null,
+        "repo": "clinc/clinc_oos",
+        "sha": "155b9c710419136e17307b80d0a13e68cd46b4ec"
+      },
+      "competitor_basis": "Jev (Clinc150 89.45)",
+      "family": "primary",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/clinc_oos",
+      "splits": {
+        "test": {
+          "cached": true,
+          "columns": [
+            "text",
+            "intent"
+          ],
+          "expected_rows": 5500,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 291016,
+              "sha256": "8fec5e75ff333835cf79f3944bddc109e5b7a76207cf41667ada73805904be82"
+            },
+            "dataset_info.json": {
+              "bytes": 4515,
+              "sha256": "d25bcc021d3591d4a08b8633004052e3cd61ba293ee73e2f8456d8f1c4706f32"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "a09c92ef246cf79c36671f42ce038a776283e0da9874616861a76c694f7e7be2"
+            }
+          },
+          "matches_expected": true,
+          "rows": 5500,
+          "seconds": null
+        },
+        "train": {
+          "cached": true,
+          "columns": [
+            "text",
+            "intent"
+          ],
+          "expected_rows": 15250,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 797488,
+              "sha256": "4a8ccb6033e7008a8931dd950cd2144b9cfb1bec215252f0b52ee28d1a6c261d"
+            },
+            "dataset_info.json": {
+              "bytes": 4515,
+              "sha256": "d25bcc021d3591d4a08b8633004052e3cd61ba293ee73e2f8456d8f1c4706f32"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "3420ad757e7b8eb90b7f80be43cb35745777191ed1398505ba8164a05edf5510"
+            }
+          },
+          "matches_expected": true,
+          "rows": 15250,
+          "seconds": null
+        },
+        "validation": {
+          "cached": true,
+          "columns": [
+            "text",
+            "intent"
+          ],
+          "expected_rows": 3100,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 163928,
+              "sha256": "4cf7f85baee645cf9b1128abc29ad4f9b45be324e5714ec16b7d732b59f854b9"
+            },
+            "dataset_info.json": {
+              "bytes": 4515,
+              "sha256": "d25bcc021d3591d4a08b8633004052e3cd61ba293ee73e2f8456d8f1c4706f32"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "00fd717ec044894d81b65b042d92e5cf25eb3a879c1ad71e073f86d70629d128"
+            }
+          },
+          "matches_expected": true,
+          "rows": 3100,
+          "seconds": null
+        }
+      },
+      "task": "150-way intent + out-of-scope",
+      "used": [
+        {
+          "config": "plus",
+          "repo": "clinc/clinc_oos",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2024-01-18 14:33:10+00:00",
+            "license": [
+              "cc-by-3.0"
+            ],
+            "license_name": null,
+            "repo": "clinc/clinc_oos",
+            "sha": "155b9c710419136e17307b80d0a13e68cd46b4ec"
+          }
+        }
+      ]
+    },
+    "emotion": {
+      "attempts": [
+        {
+          "config": "split",
+          "errors": {},
+          "repo": "dair-ai/emotion",
+          "splits": {
+            "test": {
+              "cached": true,
+              "columns": [
+                "text",
+                "label"
+              ],
+              "expected_rows": 2000,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 218032,
+                  "sha256": "3b039c3c9f5b0dd907e302b9e2e0c71278d66865883a3de4509841154aeaa115"
+                },
+                "dataset_info.json": {
+                  "bytes": 1029,
+                  "sha256": "12519ad0de85ac97c4dad4f9520c814a71ee62569d9b4ee780b72d80726fede6"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "e30ee591755ec439549b0451809b4f1d0248008e0c35b8612419593a9fae534a"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2000,
+              "seconds": null
+            },
+            "train": {
+              "cached": true,
+              "columns": [
+                "text",
+                "label"
+              ],
+              "expected_rows": 16000,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 1745464,
+                  "sha256": "d362b3fb7dabba0613533182e3e0dce2340972e5f90d9ee02783de28bdf8e095"
+                },
+                "dataset_info.json": {
+                  "bytes": 1029,
+                  "sha256": "12519ad0de85ac97c4dad4f9520c814a71ee62569d9b4ee780b72d80726fede6"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "d67d09ac3987c4c8bc6982b504e99abacee2910fb9d8fb69da57d8f077ea001c"
+                }
+              },
+              "matches_expected": true,
+              "rows": 16000,
+              "seconds": null
+            },
+            "validation": {
+              "cached": true,
+              "columns": [
+                "text",
+                "label"
+              ],
+              "expected_rows": 2000,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 215552,
+                  "sha256": "b9340600fe4f1fd1805f3a03257d3fc02db28fac909b78d36958cd4f866b4c42"
+                },
+                "dataset_info.json": {
+                  "bytes": 1029,
+                  "sha256": "12519ad0de85ac97c4dad4f9520c814a71ee62569d9b4ee780b72d80726fede6"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "80c36015d32af1c9be27e303fc11094f8719e93b5f691bcbbc58fd1d503fb203"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2000,
+              "seconds": null
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2024-08-08 06:10:47+00:00",
+        "license": [
+          "other"
+        ],
+        "license_name": null,
+        "repo": "dair-ai/emotion",
+        "sha": "cab853a1dbdf4c42c2b3ef2173804746df8825fe"
+      },
+      "competitor_basis": "Laya (DAIR Emotion), Jev (Emotion 58.50)",
+      "family": "primary",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/emotion",
+      "splits": {
+        "test": {
+          "cached": true,
+          "columns": [
+            "text",
+            "label"
+          ],
+          "expected_rows": 2000,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 218032,
+              "sha256": "3b039c3c9f5b0dd907e302b9e2e0c71278d66865883a3de4509841154aeaa115"
+            },
+            "dataset_info.json": {
+              "bytes": 1029,
+              "sha256": "12519ad0de85ac97c4dad4f9520c814a71ee62569d9b4ee780b72d80726fede6"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "e30ee591755ec439549b0451809b4f1d0248008e0c35b8612419593a9fae534a"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2000,
+          "seconds": null
+        },
+        "train": {
+          "cached": true,
+          "columns": [
+            "text",
+            "label"
+          ],
+          "expected_rows": 16000,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 1745464,
+              "sha256": "d362b3fb7dabba0613533182e3e0dce2340972e5f90d9ee02783de28bdf8e095"
+            },
+            "dataset_info.json": {
+              "bytes": 1029,
+              "sha256": "12519ad0de85ac97c4dad4f9520c814a71ee62569d9b4ee780b72d80726fede6"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "d67d09ac3987c4c8bc6982b504e99abacee2910fb9d8fb69da57d8f077ea001c"
+            }
+          },
+          "matches_expected": true,
+          "rows": 16000,
+          "seconds": null
+        },
+        "validation": {
+          "cached": true,
+          "columns": [
+            "text",
+            "label"
+          ],
+          "expected_rows": 2000,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 215552,
+              "sha256": "b9340600fe4f1fd1805f3a03257d3fc02db28fac909b78d36958cd4f866b4c42"
+            },
+            "dataset_info.json": {
+              "bytes": 1029,
+              "sha256": "12519ad0de85ac97c4dad4f9520c814a71ee62569d9b4ee780b72d80726fede6"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "80c36015d32af1c9be27e303fc11094f8719e93b5f691bcbbc58fd1d503fb203"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2000,
+          "seconds": null
+        }
+      },
+      "task": "6-way emotion",
+      "used": [
+        {
+          "config": "split",
+          "repo": "dair-ai/emotion",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2024-08-08 06:10:47+00:00",
+            "license": [
+              "other"
+            ],
+            "license_name": null,
+            "repo": "dair-ai/emotion",
+            "sha": "cab853a1dbdf4c42c2b3ef2173804746df8825fe"
+          }
+        }
+      ]
+    },
+    "financial_phrasebank": {
+      "attempts": [
+        {
+          "config": null,
+          "errors": {},
+          "repo": "FinanceMTEB/financial_phrasebank",
+          "splits": {
+            "test": {
+              "cached": true,
+              "columns": [
+                "text",
+                "label_text",
+                "label"
+              ],
+              "expected_rows": 1000,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 146616,
+                  "sha256": "843321c4e5d32805de8f9fe64b670c12ab3dcf6d36d989aad255ce6d0ad97bd3"
+                },
+                "dataset_info.json": {
+                  "bytes": 889,
+                  "sha256": "e9c9e3fe463116cfd94f4ed5205930d7b0c1f1e519f6f856825c41c05dc0a69f"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "9d81fe5205efaae582785c33df04759e12716a2ce9f63643c25e1f178fb81fe1"
+                }
+              },
+              "matches_expected": true,
+              "rows": 1000,
+              "seconds": null
+            },
+            "train": {
+              "cached": true,
+              "columns": [
+                "text",
+                "label_text",
+                "label"
+              ],
+              "expected_rows": 1264,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 184344,
+                  "sha256": "fb64a9fda3b9f952c01b5a5d83dc86806c327b42e370ac370da4088177875bf5"
+                },
+                "dataset_info.json": {
+                  "bytes": 889,
+                  "sha256": "e9c9e3fe463116cfd94f4ed5205930d7b0c1f1e519f6f856825c41c05dc0a69f"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "2fb2b3a94b00a35b923f906536f9c7bfeaa9df3e980732f3cc303309144adebb"
+                }
+              },
+              "matches_expected": true,
+              "rows": 1264,
+              "seconds": null
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2025-12-15 05:51:57+00:00",
+        "license": [
+          "cc-by-nc-sa-3.0"
+        ],
+        "license_name": null,
+        "repo": "takala/financial_phrasebank",
+        "sha": "8d3fe0c36d5feec6b3cc5e455b0fcb4820fb9964"
+      },
+      "competitor_basis": "Jev (Financial Phrasebank 72.99); non-commercial licence",
+      "family": "primary",
+      "kind": "task",
+      "mirror_note": "canonical has four agreement-level configs behind a loading script; this mirror's level is established by arithmetic: 1,264 + 1,000 = 2,264 = canonical sentences_allagree",
+      "path": "data/raw/financial_phrasebank",
+      "splits": {
+        "test": {
+          "cached": true,
+          "columns": [
+            "text",
+            "label_text",
+            "label"
+          ],
+          "expected_rows": 1000,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 146616,
+              "sha256": "843321c4e5d32805de8f9fe64b670c12ab3dcf6d36d989aad255ce6d0ad97bd3"
+            },
+            "dataset_info.json": {
+              "bytes": 889,
+              "sha256": "e9c9e3fe463116cfd94f4ed5205930d7b0c1f1e519f6f856825c41c05dc0a69f"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "9d81fe5205efaae582785c33df04759e12716a2ce9f63643c25e1f178fb81fe1"
+            }
+          },
+          "matches_expected": true,
+          "rows": 1000,
+          "seconds": null
+        },
+        "train": {
+          "cached": true,
+          "columns": [
+            "text",
+            "label_text",
+            "label"
+          ],
+          "expected_rows": 1264,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 184344,
+              "sha256": "fb64a9fda3b9f952c01b5a5d83dc86806c327b42e370ac370da4088177875bf5"
+            },
+            "dataset_info.json": {
+              "bytes": 889,
+              "sha256": "e9c9e3fe463116cfd94f4ed5205930d7b0c1f1e519f6f856825c41c05dc0a69f"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "2fb2b3a94b00a35b923f906536f9c7bfeaa9df3e980732f3cc303309144adebb"
+            }
+          },
+          "matches_expected": true,
+          "rows": 1264,
+          "seconds": null
+        }
+      },
+      "task": "3-way financial sentiment (all-agree subset)",
+      "used": [
+        {
+          "config": null,
+          "repo": "FinanceMTEB/financial_phrasebank",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2024-07-20 07:28:22+00:00",
+            "license": null,
+            "license_name": null,
+            "repo": "FinanceMTEB/financial_phrasebank",
+            "sha": "14efe6ac2635395e768682e0b91ce794b50c7ff3"
+          }
+        }
+      ]
+    },
+    "finemath": {
+      "bytes_compressed": 232182442,
+      "bytes_text": 600027162,
+      "bytes_uncompressed": 614868836,
+      "cached": false,
+      "cap_bytes": 600000000,
+      "configs": [
+        "finemath-3plus"
+      ],
+      "docs": 106594,
+      "group": "english",
+      "kind": "corpus",
+      "records_recomputed": "2026-10-27T04:17:26-0700",
+      "role": "math reasoning text (ablation lever: does it help intent tasks?)",
+      "seconds": 94.8,
+      "shards": [
+        {
+          "bytes_compressed": 232182442,
+          "bytes_text": 600027162,
+          "bytes_uncompressed": 614868836,
+          "docs": 106594,
+          "path": "data/corpus/finemath.000.jsonl.gz",
+          "seconds": 7.4,
+          "sha256": "7d4eafab03c3102eee26eacbb7adbff7860bc2285687386ef3e52ef2890bdd20"
+        }
+      ],
+      "source": {
+        "gated": false,
+        "last_modified": "2025-02-06 10:31:11+00:00",
+        "license": "odc-by",
+        "license_name": null,
+        "repo": "HuggingFaceTB/finemath",
+        "sha": "e92b25a616738fe95dc186b64dfb19f9c8525594"
+      },
+      "text_field": "text"
+    },
+    "fineweb": {
+      "bytes_compressed": 1375625327,
+      "bytes_text": 3000000205,
+      "bytes_uncompressed": 3029126544,
+      "cached": false,
+      "cap_bytes": 3000000000,
+      "configs": [
+        "sample-10BT"
+      ],
+      "docs": 975310,
+      "group": "english",
+      "kind": "corpus",
+      "records_recomputed": "2026-10-27T04:17:44-0700",
+      "role": "general unfiltered web text to dilute the edu filter",
+      "seconds": 545.6,
+      "shards": [
+        {
+          "bytes_compressed": 492241839,
+          "bytes_text": 1073747213,
+          "bytes_uncompressed": 1084194483,
+          "docs": 347914,
+          "path": "data/corpus/fineweb.000.jsonl.gz",
+          "seconds": 15.2,
+          "sha256": "b59080e133a6ae721e123cb7b32a5b49d241d82bce59bc96d9ea2819870b8ff9"
+        },
+        {
+          "bytes_compressed": 492405452,
+          "bytes_text": 1073744258,
+          "bytes_uncompressed": 1084169519,
+          "docs": 349987,
+          "path": "data/corpus/fineweb.001.jsonl.gz",
+          "seconds": 14.5,
+          "sha256": "d33bfb25ad7d35f0e837fa49f55e60f0945fb003e169b74207fc0081631fc7be"
+        },
+        {
+          "bytes_compressed": 390978036,
+          "bytes_text": 852508734,
+          "bytes_uncompressed": 860762542,
+          "docs": 277409,
+          "path": "data/corpus/fineweb.002.jsonl.gz",
+          "seconds": 11.8,
+          "sha256": "38ade2bea5d64d9fdda2cc1d830dd4f48bc26b11bf3b152a98adc7a9f94467c9"
+        }
+      ],
+      "source": {
+        "gated": false,
+        "last_modified": "2025-07-11 20:16:53+00:00",
+        "license": "odc-by",
+        "license_name": null,
+        "repo": "HuggingFaceFW/fineweb",
+        "sha": "9bb295ddab0e05d785b879661af7260fed5140fc"
+      },
+      "text_field": "text"
+    },
+    "fineweb_edu": {
+      "bytes_compressed": 5270460488,
+      "bytes_text": 12000010126,
+      "bytes_uncompressed": 12090656932,
+      "cached": false,
+      "cap_bytes": 12000000000,
+      "configs": [
+        "sample-10BT"
+      ],
+      "docs": 2516071,
+      "group": "english",
+      "kind": "corpus",
+      "records_recomputed": "2026-10-27T04:18:53-0700",
+      "role": "primary pretraining text (ODC-BY, filtered educational web)",
+      "seconds": 739.1,
+      "shards": [
+        {
+          "bytes_compressed": 472564743,
+          "bytes_text": 1073748707,
+          "bytes_uncompressed": 1081929476,
+          "docs": 225407,
+          "path": "data/corpus/fineweb_edu.000.jsonl.gz",
+          "seconds": 13.7,
+          "sha256": "39df83b813c9ed66ed6cf7f3f08074aaffc5c7f59c1a7fa0ecc0481083e6c151"
+        },
+        {
+          "bytes_compressed": 472347380,
+          "bytes_text": 1073746469,
+          "bytes_uncompressed": 1081923074,
+          "docs": 224397,
+          "path": "data/corpus/fineweb_edu.001.jsonl.gz",
+          "seconds": 13.3,
+          "sha256": "40fbb0bd56016d2f2389f0fcbd2224f823454df5518c8f9d5b63d3c8e41d334e"
+        },
+        {
+          "bytes_compressed": 472661164,
+          "bytes_text": 1073743702,
+          "bytes_uncompressed": 1081951735,
+          "docs": 224320,
+          "path": "data/corpus/fineweb_edu.002.jsonl.gz",
+          "seconds": 13.3,
+          "sha256": "f4f56eed8214cfd3be593a25a68092c4968f9919bcbdd80e6bd7cfc2f786db63"
+        },
+        {
+          "bytes_compressed": 472038671,
+          "bytes_text": 1073742553,
+          "bytes_uncompressed": 1081838198,
+          "docs": 226090,
+          "path": "data/corpus/fineweb_edu.003.jsonl.gz",
+          "seconds": 14.1,
+          "sha256": "3ebee3da36d6208b47dd2d2b7b011fccac7f48b1ec65a3f0ae51764db66f0c07"
+        },
+        {
+          "bytes_compressed": 472403265,
+          "bytes_text": 1073743032,
+          "bytes_uncompressed": 1081859110,
+          "docs": 226884,
+          "path": "data/corpus/fineweb_edu.004.jsonl.gz",
+          "seconds": 13.9,
+          "sha256": "574d51db4a125110eb12c539e9223d79b48da1062eabc3d804c66a8dc00f031a"
+        },
+        {
+          "bytes_compressed": 471413231,
+          "bytes_text": 1073745007,
+          "bytes_uncompressed": 1081847471,
+          "docs": 223968,
+          "path": "data/corpus/fineweb_edu.005.jsonl.gz",
+          "seconds": 13.5,
+          "sha256": "b30c29002ae5646bab07293ba5c249f305ff0a1b7cc7948798214f8bf7ad68b6"
+        },
+        {
+          "bytes_compressed": 471188115,
+          "bytes_text": 1073743081,
+          "bytes_uncompressed": 1081796380,
+          "docs": 223562,
+          "path": "data/corpus/fineweb_edu.006.jsonl.gz",
+          "seconds": 13.7,
+          "sha256": "a2bccff49adc539a30e0e248b1df1821caa7d707c50fbb0831af3945a61b07b8"
+        },
+        {
+          "bytes_compressed": 470734349,
+          "bytes_text": 1073742609,
+          "bytes_uncompressed": 1081817640,
+          "docs": 226256,
+          "path": "data/corpus/fineweb_edu.007.jsonl.gz",
+          "seconds": 13.2,
+          "sha256": "4fc447a56a66075674cb394c1c5d3dca2b914c3073ce7b362067877c69f145e9"
+        },
+        {
+          "bytes_compressed": 470694909,
+          "bytes_text": 1073744663,
+          "bytes_uncompressed": 1081813117,
+          "docs": 223991,
+          "path": "data/corpus/fineweb_edu.008.jsonl.gz",
+          "seconds": 13.1,
+          "sha256": "67fc4172791aedba116a7aece0c77234d908dc8394e151f73b2bdcb022b43b6e"
+        },
+        {
+          "bytes_compressed": 470826901,
+          "bytes_text": 1073747947,
+          "bytes_uncompressed": 1081810051,
+          "docs": 223514,
+          "path": "data/corpus/fineweb_edu.009.jsonl.gz",
+          "seconds": 163.5,
+          "sha256": "6b3403e305f191f7a530c2b3dfd3e628e4a9bc202bc0e48339a2be7121bdafdc"
+        },
+        {
+          "bytes_compressed": 470834525,
+          "bytes_text": 1073769773,
+          "bytes_uncompressed": 1081853118,
+          "docs": 226602,
+          "path": "data/corpus/fineweb_edu.010.jsonl.gz",
+          "seconds": 13.9,
+          "sha256": "ee8a72d78636062587dd4844061a81e5ba72a56379477dd48b32d494d54f8323"
+        },
+        {
+          "bytes_compressed": 82753235,
+          "bytes_text": 188792583,
+          "bytes_uncompressed": 190217562,
+          "docs": 41080,
+          "path": "data/corpus/fineweb_edu.011.jsonl.gz",
+          "seconds": 2.3,
+          "sha256": "d4526567661b0e9d45786cbabff3475b49f717a36294cc6bcfd5ca38900db888"
+        }
+      ],
+      "source": {
+        "gated": false,
+        "last_modified": "2025-07-11 20:16:53+00:00",
+        "license": "odc-by",
+        "license_name": null,
+        "repo": "HuggingFaceFW/fineweb-edu",
+        "sha": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9"
+      },
+      "text_field": "text"
+    },
+    "hellaswag": {
+      "attempts": [
+        {
+          "config": null,
+          "errors": {},
+          "repo": "Rowan/hellaswag",
+          "splits": {
+            "train": {
+              "cached": false,
+              "columns": [
+                "ind",
+                "activity_label",
+                "ctx_a",
+                "ctx_b",
+                "ctx",
+                "endings",
+                "source_id",
+                "split",
+                "split_type",
+                "label"
+              ],
+              "expected_rows": 39905,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 43268336,
+                  "sha256": "92a7294a7a191f19a9eb02e5947a20a21d91f4d1aab62bdeff57b1f2d599a17e"
+                },
+                "dataset_info.json": {
+                  "bytes": 1572,
+                  "sha256": "092e6c82a6c89c465b876c9f61d97e18a2c88394c00e42eb45f9fdde2ac99ee7"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "906f548172adadcb821c3bd5932b7556defb4e71f077b8f4144badfdfbc0b3a6"
+                }
+              },
+              "matches_expected": true,
+              "rows": 39905,
+              "seconds": 5.06
+            },
+            "validation": {
+              "cached": false,
+              "columns": [
+                "ind",
+                "activity_label",
+                "ctx_a",
+                "ctx_b",
+                "ctx",
+                "endings",
+                "source_id",
+                "split",
+                "split_type",
+                "label"
+              ],
+              "expected_rows": 10042,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 11186424,
+                  "sha256": "fdd100245fae28e387869527dd0b8af1a0a931f7cf364abaf6f3138de7f0d27b"
+                },
+                "dataset_info.json": {
+                  "bytes": 1572,
+                  "sha256": "092e6c82a6c89c465b876c9f61d97e18a2c88394c00e42eb45f9fdde2ac99ee7"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "a9ef02a2129cbd1f1354410d286b0c56d206e72a10c2e99c5d01676bf08b55c3"
+                }
+              },
+              "matches_expected": true,
+              "rows": 10042,
+              "seconds": 0.71
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2025-07-10 15:23:17+00:00",
+        "license": null,
+        "license_name": null,
+        "repo": "Rowan/hellaswag",
+        "sha": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+      },
+      "competitor_basis": "none \u2014 standard LM sanity check",
+      "family": "secondary",
+      "kind": "task",
+      "mirror_note": "test labels are not public; validation is the usable split",
+      "path": "data/raw/hellaswag",
+      "splits": {
+        "train": {
+          "cached": false,
+          "columns": [
+            "ind",
+            "activity_label",
+            "ctx_a",
+            "ctx_b",
+            "ctx",
+            "endings",
+            "source_id",
+            "split",
+            "split_type",
+            "label"
+          ],
+          "expected_rows": 39905,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 43268336,
+              "sha256": "92a7294a7a191f19a9eb02e5947a20a21d91f4d1aab62bdeff57b1f2d599a17e"
+            },
+            "dataset_info.json": {
+              "bytes": 1572,
+              "sha256": "092e6c82a6c89c465b876c9f61d97e18a2c88394c00e42eb45f9fdde2ac99ee7"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "906f548172adadcb821c3bd5932b7556defb4e71f077b8f4144badfdfbc0b3a6"
+            }
+          },
+          "matches_expected": true,
+          "rows": 39905,
+          "seconds": 5.06
+        },
+        "validation": {
+          "cached": false,
+          "columns": [
+            "ind",
+            "activity_label",
+            "ctx_a",
+            "ctx_b",
+            "ctx",
+            "endings",
+            "source_id",
+            "split",
+            "split_type",
+            "label"
+          ],
+          "expected_rows": 10042,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 11186424,
+              "sha256": "fdd100245fae28e387869527dd0b8af1a0a931f7cf364abaf6f3138de7f0d27b"
+            },
+            "dataset_info.json": {
+              "bytes": 1572,
+              "sha256": "092e6c82a6c89c465b876c9f61d97e18a2c88394c00e42eb45f9fdde2ac99ee7"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "a9ef02a2129cbd1f1354410d286b0c56d206e72a10c2e99c5d01676bf08b55c3"
+            }
+          },
+          "matches_expected": true,
+          "rows": 10042,
+          "seconds": 0.71
+        }
+      },
+      "task": "10-way commonsense completion",
+      "used": [
+        {
+          "config": null,
+          "repo": "Rowan/hellaswag",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2025-07-10 15:23:17+00:00",
+            "license": null,
+            "license_name": null,
+            "repo": "Rowan/hellaswag",
+            "sha": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+          }
+        }
+      ]
+    },
+    "lambada_openai": {
+      "attempts": [
+        {
+          "config": "en",
+          "errors": {},
+          "repo": "EleutherAI/lambada_openai",
+          "splits": {
+            "test": {
+              "cached": true,
+              "columns": [
+                "text"
+              ],
+              "expected_rows": 5153,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 1710736,
+                  "sha256": "048a8a2bfcc3360404fb8f0f351c0c92c64200df9a894fd65cbf99bd25469ab0"
+                },
+                "dataset_info.json": {
+                  "bytes": 587,
+                  "sha256": "6f46c7568ca07b8d0589e64d86571151a4df7c65121a2238c67bb7280dbf5a2f"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "5e7ab46606600ee49617bd89724194706873ae4ffc48d43320ffeef8f1eeb7db"
+                }
+              },
+              "matches_expected": true,
+              "rows": 5153,
+              "seconds": null
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2025-07-10 09:58:07+00:00",
+        "license": "mit",
+        "license_name": null,
+        "repo": "EleutherAI/lambada_openai",
+        "sha": "900124bf3b8235c6daf21033af9948b3f07346c4"
+      },
+      "competitor_basis": "none \u2014 standard LM sanity check",
+      "family": "secondary",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/lambada_openai",
+      "splits": {
+        "test": {
+          "cached": true,
+          "columns": [
+            "text"
+          ],
+          "expected_rows": 5153,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 1710736,
+              "sha256": "048a8a2bfcc3360404fb8f0f351c0c92c64200df9a894fd65cbf99bd25469ab0"
+            },
+            "dataset_info.json": {
+              "bytes": 587,
+              "sha256": "6f46c7568ca07b8d0589e64d86571151a4df7c65121a2238c67bb7280dbf5a2f"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "5e7ab46606600ee49617bd89724194706873ae4ffc48d43320ffeef8f1eeb7db"
+            }
+          },
+          "matches_expected": true,
+          "rows": 5153,
+          "seconds": null
+        }
+      },
+      "task": "last-word prediction (LM)",
+      "used": [
+        {
+          "config": "en",
+          "repo": "EleutherAI/lambada_openai",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2025-07-10 09:58:07+00:00",
+            "license": "mit",
+            "license_name": null,
+            "repo": "EleutherAI/lambada_openai",
+            "sha": "900124bf3b8235c6daf21033af9948b3f07346c4"
+          }
+        }
+      ]
+    },
+    "language_id": {
+      "attempts": [
+        {
+          "config": null,
+          "errors": {},
+          "repo": "papluca/language-identification",
+          "splits": {
+            "test": {
+              "cached": true,
+              "columns": [
+                "labels",
+                "text"
+              ],
+              "expected_rows": 10000,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 1741728,
+                  "sha256": "cfcad3c3141dc64eeffe7d40c3403e0eae83e28fad686ed50077ef24061e58e5"
+                },
+                "dataset_info.json": {
+                  "bytes": 1514,
+                  "sha256": "882580ea7f1e61ae5d03f85c22667e0f77f824f4b6e9d4686949b8f3350ed813"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "efcd3aacfa35e7b8b344a0095ce02d2983b7efaaac100aca75cc17ed53986656"
+                }
+              },
+              "matches_expected": true,
+              "rows": 10000,
+              "seconds": null
+            },
+            "train": {
+              "cached": true,
+              "columns": [
+                "labels",
+                "text"
+              ],
+              "expected_rows": 70000,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 12337520,
+                  "sha256": "62eff6cba93d2032c598206f9d110894855b54054bbd457768bbb324e7d8e2ce"
+                },
+                "dataset_info.json": {
+                  "bytes": 1514,
+                  "sha256": "882580ea7f1e61ae5d03f85c22667e0f77f824f4b6e9d4686949b8f3350ed813"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "49a9b941134c9e64feffff865005edb1d261512e8172160cb53051d764fd0670"
+                }
+              },
+              "matches_expected": true,
+              "rows": 70000,
+              "seconds": null
+            },
+            "validation": {
+              "cached": true,
+              "columns": [
+                "labels",
+                "text"
+              ],
+              "expected_rows": 10000,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 1760904,
+                  "sha256": "19c732e78191410afa7ce52165d53bdf36dd0e7eadc0c502555b6f2911aea9b6"
+                },
+                "dataset_info.json": {
+                  "bytes": 1514,
+                  "sha256": "882580ea7f1e61ae5d03f85c22667e0f77f824f4b6e9d4686949b8f3350ed813"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "759a0cda220e500df5d9af36dcb0c86553f552ff42c26d101495ed3d5cc0484b"
+                }
+              },
+              "matches_expected": true,
+              "rows": 10000,
+              "seconds": null
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2022-07-15 10:11:23+00:00",
+        "license": [],
+        "license_name": null,
+        "repo": "papluca/language-identification",
+        "sha": "aa56583bf2bc52b0565770607d6fc3faebecf9e2"
+      },
+      "competitor_basis": "Jev (Language ID 99.64)",
+      "family": "primary",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/language_id",
+      "splits": {
+        "test": {
+          "cached": true,
+          "columns": [
+            "labels",
+            "text"
+          ],
+          "expected_rows": 10000,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 1741728,
+              "sha256": "cfcad3c3141dc64eeffe7d40c3403e0eae83e28fad686ed50077ef24061e58e5"
+            },
+            "dataset_info.json": {
+              "bytes": 1514,
+              "sha256": "882580ea7f1e61ae5d03f85c22667e0f77f824f4b6e9d4686949b8f3350ed813"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "efcd3aacfa35e7b8b344a0095ce02d2983b7efaaac100aca75cc17ed53986656"
+            }
+          },
+          "matches_expected": true,
+          "rows": 10000,
+          "seconds": null
+        },
+        "train": {
+          "cached": true,
+          "columns": [
+            "labels",
+            "text"
+          ],
+          "expected_rows": 70000,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 12337520,
+              "sha256": "62eff6cba93d2032c598206f9d110894855b54054bbd457768bbb324e7d8e2ce"
+            },
+            "dataset_info.json": {
+              "bytes": 1514,
+              "sha256": "882580ea7f1e61ae5d03f85c22667e0f77f824f4b6e9d4686949b8f3350ed813"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "49a9b941134c9e64feffff865005edb1d261512e8172160cb53051d764fd0670"
+            }
+          },
+          "matches_expected": true,
+          "rows": 70000,
+          "seconds": null
+        },
+        "validation": {
+          "cached": true,
+          "columns": [
+            "labels",
+            "text"
+          ],
+          "expected_rows": 10000,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 1760904,
+              "sha256": "19c732e78191410afa7ce52165d53bdf36dd0e7eadc0c502555b6f2911aea9b6"
+            },
+            "dataset_info.json": {
+              "bytes": 1514,
+              "sha256": "882580ea7f1e61ae5d03f85c22667e0f77f824f4b6e9d4686949b8f3350ed813"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "759a0cda220e500df5d9af36dcb0c86553f552ff42c26d101495ed3d5cc0484b"
+            }
+          },
+          "matches_expected": true,
+          "rows": 10000,
+          "seconds": null
+        }
+      },
+      "task": "20-way language identification",
+      "used": [
+        {
+          "config": null,
+          "repo": "papluca/language-identification",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2022-07-15 10:11:23+00:00",
+            "license": [],
+            "license_name": null,
+            "repo": "papluca/language-identification",
+            "sha": "aa56583bf2bc52b0565770607d6fc3faebecf9e2"
+          }
+        }
+      ]
+    },
+    "massive_intent": {
+      "attempts": [
+        {
+          "config": "en",
+          "errors": {},
+          "repo": "mteb/amazon_massive_intent",
+          "splits": {
+            "test": {
+              "cached": true,
+              "columns": [
+                "id",
+                "label",
+                "label_text",
+                "text",
+                "lang"
+              ],
+              "expected_rows": 2974,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 260568,
+                  "sha256": "2cfd3c6e0a7d7f948b4e57fba839bd6b31841c6564c1ece106a01d8da9251ee6"
+                },
+                "dataset_info.json": {
+                  "bytes": 1181,
+                  "sha256": "7996dccb8f7604e1542e1148e585ecb106923065100339f2e92fc2f274143805"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "0e2c04ccd429098ade63576634867b41c58aab71032af3c4f73add28cd28b38b"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2974,
+              "seconds": null
+            },
+            "train": {
+              "cached": true,
+              "columns": [
+                "id",
+                "label",
+                "label_text",
+                "text",
+                "lang"
+              ],
+              "expected_rows": 11514,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 1015464,
+                  "sha256": "c8f5bef819c8f460eeef2760e8ffcb0f7116ed5e97f67a6b70cce525ce128caf"
+                },
+                "dataset_info.json": {
+                  "bytes": 1181,
+                  "sha256": "7996dccb8f7604e1542e1148e585ecb106923065100339f2e92fc2f274143805"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "31ff5c85c522287313051ad4a7e919d763efcc43123e532848d62e08946086ae"
+                }
+              },
+              "matches_expected": true,
+              "rows": 11514,
+              "seconds": null
+            },
+            "validation": {
+              "cached": true,
+              "columns": [
+                "id",
+                "label",
+                "label_text",
+                "text",
+                "lang"
+              ],
+              "expected_rows": 2033,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 179368,
+                  "sha256": "4701b2073ef6a8355076b15b08d8bf22200e1a04efa77186a960a9447d17c9cd"
+                },
+                "dataset_info.json": {
+                  "bytes": 1181,
+                  "sha256": "7996dccb8f7604e1542e1148e585ecb106923065100339f2e92fc2f274143805"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "13655d4df746255e8e0cafe4496d598c075bef209bf92ca740f05d856b15dab6"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2033,
+              "seconds": null
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2022-11-16 15:44:51+00:00",
+        "license": [
+          "cc-by-4.0"
+        ],
+        "license_name": null,
+        "repo": "AmazonScience/massive",
+        "sha": "ff6bd8e4b27c3543e4f8fe2108f32bb95a6f8740"
+      },
+      "competitor_basis": "Laya (MASSIVE intent)",
+      "family": "primary",
+      "kind": "task",
+      "mirror_note": "canonical ships only a loading script; datasets>=4 refuses it",
+      "path": "data/raw/massive_intent",
+      "splits": {
+        "test": {
+          "cached": true,
+          "columns": [
+            "id",
+            "label",
+            "label_text",
+            "text",
+            "lang"
+          ],
+          "expected_rows": 2974,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 260568,
+              "sha256": "2cfd3c6e0a7d7f948b4e57fba839bd6b31841c6564c1ece106a01d8da9251ee6"
+            },
+            "dataset_info.json": {
+              "bytes": 1181,
+              "sha256": "7996dccb8f7604e1542e1148e585ecb106923065100339f2e92fc2f274143805"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "0e2c04ccd429098ade63576634867b41c58aab71032af3c4f73add28cd28b38b"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2974,
+          "seconds": null
+        },
+        "train": {
+          "cached": true,
+          "columns": [
+            "id",
+            "label",
+            "label_text",
+            "text",
+            "lang"
+          ],
+          "expected_rows": 11514,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 1015464,
+              "sha256": "c8f5bef819c8f460eeef2760e8ffcb0f7116ed5e97f67a6b70cce525ce128caf"
+            },
+            "dataset_info.json": {
+              "bytes": 1181,
+              "sha256": "7996dccb8f7604e1542e1148e585ecb106923065100339f2e92fc2f274143805"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "31ff5c85c522287313051ad4a7e919d763efcc43123e532848d62e08946086ae"
+            }
+          },
+          "matches_expected": true,
+          "rows": 11514,
+          "seconds": null
+        },
+        "validation": {
+          "cached": true,
+          "columns": [
+            "id",
+            "label",
+            "label_text",
+            "text",
+            "lang"
+          ],
+          "expected_rows": 2033,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 179368,
+              "sha256": "4701b2073ef6a8355076b15b08d8bf22200e1a04efa77186a960a9447d17c9cd"
+            },
+            "dataset_info.json": {
+              "bytes": 1181,
+              "sha256": "7996dccb8f7604e1542e1148e585ecb106923065100339f2e92fc2f274143805"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "13655d4df746255e8e0cafe4496d598c075bef209bf92ca740f05d856b15dab6"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2033,
+          "seconds": null
+        }
+      },
+      "task": "60-way assistant intent (en-US)",
+      "used": [
+        {
+          "config": "en",
+          "repo": "mteb/amazon_massive_intent",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2026-02-24 21:18:25+00:00",
+            "license": "apache-2.0",
+            "license_name": null,
+            "repo": "mteb/amazon_massive_intent",
+            "sha": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+          }
+        }
+      ]
+    },
+    "massive_intent_de": {
+      "attempts": [
+        {
+          "config": "de",
+          "errors": {},
+          "repo": "mteb/amazon_massive_intent",
+          "splits": {
+            "test": {
+              "cached": false,
+              "columns": [
+                "id",
+                "label",
+                "label_text",
+                "text",
+                "lang"
+              ],
+              "expected_rows": 2974,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 276872,
+                  "sha256": "7dd1bdc0b1701b33663d0a0981e6f812b96a87f1fdc6ac78845bc2cb18370354"
+                },
+                "dataset_info.json": {
+                  "bytes": 1181,
+                  "sha256": "948503f86cd6d035c9f66a23a03ec78a6a3829c6a959ff494404b6f90e6917b6"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "41f091357b91e1c291abef82f6d9bc825fd7e749e044796bde8ba0ea1e6020b3"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2974,
+              "seconds": 3.15
+            },
+            "validation": {
+              "cached": false,
+              "columns": [
+                "id",
+                "label",
+                "label_text",
+                "text",
+                "lang"
+              ],
+              "expected_rows": 2033,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 189400,
+                  "sha256": "eea327f9ee2c729bda0179a6eb539d4cec42d9e8fa695d76acf9ec56b29840e7"
+                },
+                "dataset_info.json": {
+                  "bytes": 1181,
+                  "sha256": "948503f86cd6d035c9f66a23a03ec78a6a3829c6a959ff494404b6f90e6917b6"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "c5f2aebf98d59074e6a18985ea08635371f2549fed060280a38812e1c5d23de3"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2033,
+              "seconds": 33.34
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2022-11-16 15:44:51+00:00",
+        "license": [
+          "cc-by-4.0"
+        ],
+        "license_name": null,
+        "repo": "AmazonScience/massive",
+        "sha": "ff6bd8e4b27c3543e4f8fe2108f32bb95a6f8740"
+      },
+      "competitor_basis": "Laya (multilingual MASSIVE)",
+      "family": "multilingual",
+      "kind": "task",
+      "mirror_note": "canonical ships only a loading script; datasets>=4 refuses it",
+      "path": "data/raw/massive_intent_de",
+      "splits": {
+        "test": {
+          "cached": false,
+          "columns": [
+            "id",
+            "label",
+            "label_text",
+            "text",
+            "lang"
+          ],
+          "expected_rows": 2974,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 276872,
+              "sha256": "7dd1bdc0b1701b33663d0a0981e6f812b96a87f1fdc6ac78845bc2cb18370354"
+            },
+            "dataset_info.json": {
+              "bytes": 1181,
+              "sha256": "948503f86cd6d035c9f66a23a03ec78a6a3829c6a959ff494404b6f90e6917b6"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "41f091357b91e1c291abef82f6d9bc825fd7e749e044796bde8ba0ea1e6020b3"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2974,
+          "seconds": 3.15
+        },
+        "validation": {
+          "cached": false,
+          "columns": [
+            "id",
+            "label",
+            "label_text",
+            "text",
+            "lang"
+          ],
+          "expected_rows": 2033,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 189400,
+              "sha256": "eea327f9ee2c729bda0179a6eb539d4cec42d9e8fa695d76acf9ec56b29840e7"
+            },
+            "dataset_info.json": {
+              "bytes": 1181,
+              "sha256": "948503f86cd6d035c9f66a23a03ec78a6a3829c6a959ff494404b6f90e6917b6"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "c5f2aebf98d59074e6a18985ea08635371f2549fed060280a38812e1c5d23de3"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2033,
+          "seconds": 33.34
+        }
+      },
+      "task": "60-way assistant intent (de-DE)",
+      "used": [
+        {
+          "config": "de",
+          "repo": "mteb/amazon_massive_intent",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2026-02-24 21:18:25+00:00",
+            "license": "apache-2.0",
+            "license_name": null,
+            "repo": "mteb/amazon_massive_intent",
+            "sha": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+          }
+        }
+      ]
+    },
+    "massive_scenario": {
+      "attempts": [
+        {
+          "config": "en",
+          "errors": {},
+          "repo": "mteb/amazon_massive_scenario",
+          "splits": {
+            "test": {
+              "cached": true,
+              "columns": [
+                "id",
+                "label",
+                "label_text",
+                "text",
+                "lang"
+              ],
+              "expected_rows": 2974,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 217528,
+                  "sha256": "a97a08dd35be249042880ae48c503ee43fe4b3c10ffc5e9e846ef3e98eff2aae"
+                },
+                "dataset_info.json": {
+                  "bytes": 1188,
+                  "sha256": "7ba59213247863201068ede5566d1549d2beb9e63d64775e69034a0be4c81622"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "9b1e33199e8ddfddc7beebcebe0def47574bcc7918a8d9b68d23362da91d488f"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2974,
+              "seconds": null
+            },
+            "train": {
+              "cached": true,
+              "columns": [
+                "id",
+                "label",
+                "label_text",
+                "text",
+                "lang"
+              ],
+              "expected_rows": 11514,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 849048,
+                  "sha256": "e5f2e1bed4e41a03813120c6b03ab4265e4ab0df076c5f2be9e21e85cff708f5"
+                },
+                "dataset_info.json": {
+                  "bytes": 1188,
+                  "sha256": "7ba59213247863201068ede5566d1549d2beb9e63d64775e69034a0be4c81622"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "d69684f2eceef00fce8ce11c3f41a2b837196fc2257d5610c9922a102d0aae7a"
+                }
+              },
+              "matches_expected": true,
+              "rows": 11514,
+              "seconds": null
+            },
+            "validation": {
+              "cached": true,
+              "columns": [
+                "id",
+                "label",
+                "label_text",
+                "text",
+                "lang"
+              ],
+              "expected_rows": 2033,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 150280,
+                  "sha256": "d664dfce7a31b7e079fca46dc9243624bfd0c4b8826715c26b0911dd093dc87c"
+                },
+                "dataset_info.json": {
+                  "bytes": 1188,
+                  "sha256": "7ba59213247863201068ede5566d1549d2beb9e63d64775e69034a0be4c81622"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "12230b2cacbfde6abade8cff67b957ee2b363ba5808a52560e3a2d87d3f089da"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2033,
+              "seconds": null
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2022-11-16 15:44:51+00:00",
+        "license": [
+          "cc-by-4.0"
+        ],
+        "license_name": null,
+        "repo": "AmazonScience/massive",
+        "sha": "ff6bd8e4b27c3543e4f8fe2108f32bb95a6f8740"
+      },
+      "competitor_basis": "secondary axis of the same corpus",
+      "family": "primary",
+      "kind": "task",
+      "mirror_note": "canonical ships only a loading script; datasets>=4 refuses it",
+      "path": "data/raw/massive_scenario",
+      "splits": {
+        "test": {
+          "cached": true,
+          "columns": [
+            "id",
+            "label",
+            "label_text",
+            "text",
+            "lang"
+          ],
+          "expected_rows": 2974,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 217528,
+              "sha256": "a97a08dd35be249042880ae48c503ee43fe4b3c10ffc5e9e846ef3e98eff2aae"
+            },
+            "dataset_info.json": {
+              "bytes": 1188,
+              "sha256": "7ba59213247863201068ede5566d1549d2beb9e63d64775e69034a0be4c81622"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "9b1e33199e8ddfddc7beebcebe0def47574bcc7918a8d9b68d23362da91d488f"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2974,
+          "seconds": null
+        },
+        "train": {
+          "cached": true,
+          "columns": [
+            "id",
+            "label",
+            "label_text",
+            "text",
+            "lang"
+          ],
+          "expected_rows": 11514,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 849048,
+              "sha256": "e5f2e1bed4e41a03813120c6b03ab4265e4ab0df076c5f2be9e21e85cff708f5"
+            },
+            "dataset_info.json": {
+              "bytes": 1188,
+              "sha256": "7ba59213247863201068ede5566d1549d2beb9e63d64775e69034a0be4c81622"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "d69684f2eceef00fce8ce11c3f41a2b837196fc2257d5610c9922a102d0aae7a"
+            }
+          },
+          "matches_expected": true,
+          "rows": 11514,
+          "seconds": null
+        },
+        "validation": {
+          "cached": true,
+          "columns": [
+            "id",
+            "label",
+            "label_text",
+            "text",
+            "lang"
+          ],
+          "expected_rows": 2033,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 150280,
+              "sha256": "d664dfce7a31b7e079fca46dc9243624bfd0c4b8826715c26b0911dd093dc87c"
+            },
+            "dataset_info.json": {
+              "bytes": 1188,
+              "sha256": "7ba59213247863201068ede5566d1549d2beb9e63d64775e69034a0be4c81622"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "12230b2cacbfde6abade8cff67b957ee2b363ba5808a52560e3a2d87d3f089da"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2033,
+          "seconds": null
+        }
+      },
+      "task": "18-way assistant scenario (en-US)",
+      "used": [
+        {
+          "config": "en",
+          "repo": "mteb/amazon_massive_scenario",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2025-05-04 16:08:05+00:00",
+            "license": "apache-2.0",
+            "license_name": null,
+            "repo": "mteb/amazon_massive_scenario",
+            "sha": "58871793b91addb7c5f7afff26ccf08737fb6697"
+          }
+        }
+      ]
+    },
+    "wikipedia_en": {
+      "bytes_compressed": 1312160666,
+      "bytes_text": 3000000628,
+      "bytes_uncompressed": 3051392430,
+      "cached": false,
+      "cap_bytes": 3000000000,
+      "configs": [
+        "20231101.en"
+      ],
+      "docs": 813715,
+      "exhausted": false,
+      "group": "english",
+      "kind": "corpus",
+      "records_recomputed": "2026-10-27T04:19:11-0700",
+      "role": "encyclopaedic prose, clean register",
+      "seconds": 180.5,
+      "shards": [
+        {
+          "bytes_compressed": 470463155,
+          "bytes_text": 1073750609,
+          "bytes_uncompressed": 1090961721,
+          "docs": 253220,
+          "path": "data/corpus/wikipedia_en.000.jsonl.gz",
+          "seconds": 13.8,
+          "sha256": "090bada1655859023969687db4e19e1c39eb02de2b21419d8ac18fc81028d8c9"
+        },
+        {
+          "bytes_compressed": 470508097,
+          "bytes_text": 1073744537,
+          "bytes_uncompressed": 1092268661,
+          "docs": 302561,
+          "path": "data/corpus/wikipedia_en.001.jsonl.gz",
+          "seconds": 73.3,
+          "sha256": "db506730c26b29a29f4c5acc4d40e851a515be2ef07157f765962d2e5f50269d"
+        },
+        {
+          "bytes_compressed": 371189414,
+          "bytes_text": 852505482,
+          "bytes_uncompressed": 868162048,
+          "docs": 257934,
+          "path": "data/corpus/wikipedia_en.002.jsonl.gz",
+          "seconds": 10.8,
+          "sha256": "2d3aa2340ca62dd712e795f749e45412da0f72fa8a353c3e5510ec20934d9027"
+        }
+      ],
+      "source": {
+        "gated": false,
+        "last_modified": "2024-01-09 09:40:51+00:00",
+        "license": [
+          "cc-by-sa-3.0",
+          "gfdl"
+        ],
+        "license_name": null,
+        "repo": "wikimedia/wikipedia",
+        "sha": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa"
+      },
+      "text_field": "text"
+    },
+    "wikipedia_multilingual": {
+      "bytes_compressed": 855956666,
+      "bytes_text": 2000009507,
+      "bytes_uncompressed": 2030659782,
+      "cached": false,
+      "cap_bytes": 2000000000,
+      "configs": [
+        "20231101.de",
+        "20231101.fr",
+        "20231101.es",
+        "20231101.zh"
+      ],
+      "docs": 731016,
+      "group": "multilingual",
+      "kind": "corpus",
+      "records_recomputed": "2026-10-27T04:19:23-0700",
+      "role": "multilingual arm: de/fr/es/zh prose",
+      "seconds": 275.3,
+      "shards": [
+        {
+          "bytes_compressed": 467113351,
+          "bytes_text": 1073742032,
+          "bytes_uncompressed": 1084122532,
+          "docs": 74783,
+          "path": "data/corpus/wikipedia_multilingual.000.jsonl.gz",
+          "seconds": 144.4,
+          "sha256": "4a9e0a6ad1cbb51c5f5a12853d539bf5647f709f5fa0085a9b84facb1e4215b0"
+        },
+        {
+          "bytes_compressed": 388843315,
+          "bytes_text": 926267475,
+          "bytes_uncompressed": 946537250,
+          "docs": 656233,
+          "path": "data/corpus/wikipedia_multilingual.001.jsonl.gz",
+          "seconds": 67.9,
+          "sha256": "42058d65eae5242bf4fcf0714a16bf3380c16e60df49a85443747d768e3b39a0"
+        }
+      ],
+      "source": {
+        "gated": false,
+        "last_modified": "2024-01-09 09:40:51+00:00",
+        "license": [
+          "cc-by-sa-3.0",
+          "gfdl"
+        ],
+        "license_name": null,
+        "repo": "wikimedia/wikipedia",
+        "sha": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa"
+      },
+      "text_field": "text"
+    },
+    "wikitext103": {
+      "attempts": [
+        {
+          "config": "wikitext-103-raw-v1",
+          "errors": {},
+          "repo": "Salesforce/wikitext",
+          "splits": {
+            "test": {
+              "cached": true,
+              "columns": [
+                "text"
+              ],
+              "expected_rows": null,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 1306200,
+                  "sha256": "2b8a3efac7b468cbe6432edba5f55c21e435d93873acc6727431f08d5ed328ea"
+                },
+                "dataset_info.json": {
+                  "bytes": 947,
+                  "sha256": "4cb476a2c9cc79ac7dab0abae224878639fc3ad356dbeb24937de0139b4047e9"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "586edc33eda0c3debb8e44ae2bd83062d8429154dc5193356659cfb3823b0681"
+                }
+              },
+              "matches_expected": null,
+              "rows": 4358,
+              "seconds": null
+            },
+            "train": {
+              "cached": true,
+              "columns": [
+                "text"
+              ],
+              "expected_rows": null,
+              "files": {
+                "data-00000-of-00002.arrow": {
+                  "bytes": 273388040,
+                  "sha256": "91568625faf129091f8a0d1e9f20ea26c5fbfdd943abf6dc78cc74dd43ade4c3"
+                },
+                "data-00001-of-00002.arrow": {
+                  "bytes": 273422592,
+                  "sha256": "776ee05bb8a9f5374624d66c4334e62bb3ab4ad90e0cdc4f5bc1b9d48f0c5d76"
+                },
+                "dataset_info.json": {
+                  "bytes": 947,
+                  "sha256": "4cb476a2c9cc79ac7dab0abae224878639fc3ad356dbeb24937de0139b4047e9"
+                },
+                "state.json": {
+                  "bytes": 309,
+                  "sha256": "7adc6432b06622f472e273901b260b0cbedc4f63393b819e305b0ad6fbea5c4b"
+                }
+              },
+              "matches_expected": null,
+              "rows": 1801350,
+              "seconds": null
+            },
+            "validation": {
+              "cached": true,
+              "columns": [
+                "text"
+              ],
+              "expected_rows": null,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 1160224,
+                  "sha256": "8e136ab7130c5fca602eb406ce2557967a974d901b53c4f2992f87b873e0fe5b"
+                },
+                "dataset_info.json": {
+                  "bytes": 947,
+                  "sha256": "4cb476a2c9cc79ac7dab0abae224878639fc3ad356dbeb24937de0139b4047e9"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "2424b1916b0eecd5908f896d210e3e5d57a3f27768c8e1dadac894df4214cce3"
+                }
+              },
+              "matches_expected": null,
+              "rows": 3760,
+              "seconds": null
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2024-01-04 16:49:18+00:00",
+        "license": [
+          "cc-by-sa-3.0",
+          "gfdl"
+        ],
+        "license_name": null,
+        "repo": "Salesforce/wikitext",
+        "sha": "b08601e04326c79dfdd32d625aee71d232d685c3"
+      },
+      "competitor_basis": "none \u2014 the standard perplexity reference",
+      "family": "secondary",
+      "kind": "task",
+      "mirror_note": "expectations left empty on purpose: the commonly quoted 4,358/4,358 counts belong to wikitext-103-v1 (tokenised). raw-v1 has different row counts and asserting the wrong one produces a false MISMATCH flag",
+      "path": "data/raw/wikitext103",
+      "splits": {
+        "test": {
+          "cached": true,
+          "columns": [
+            "text"
+          ],
+          "expected_rows": null,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 1306200,
+              "sha256": "2b8a3efac7b468cbe6432edba5f55c21e435d93873acc6727431f08d5ed328ea"
+            },
+            "dataset_info.json": {
+              "bytes": 947,
+              "sha256": "4cb476a2c9cc79ac7dab0abae224878639fc3ad356dbeb24937de0139b4047e9"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "586edc33eda0c3debb8e44ae2bd83062d8429154dc5193356659cfb3823b0681"
+            }
+          },
+          "matches_expected": null,
+          "rows": 4358,
+          "seconds": null
+        },
+        "train": {
+          "cached": true,
+          "columns": [
+            "text"
+          ],
+          "expected_rows": null,
+          "files": {
+            "data-00000-of-00002.arrow": {
+              "bytes": 273388040,
+              "sha256": "91568625faf129091f8a0d1e9f20ea26c5fbfdd943abf6dc78cc74dd43ade4c3"
+            },
+            "data-00001-of-00002.arrow": {
+              "bytes": 273422592,
+              "sha256": "776ee05bb8a9f5374624d66c4334e62bb3ab4ad90e0cdc4f5bc1b9d48f0c5d76"
+            },
+            "dataset_info.json": {
+              "bytes": 947,
+              "sha256": "4cb476a2c9cc79ac7dab0abae224878639fc3ad356dbeb24937de0139b4047e9"
+            },
+            "state.json": {
+              "bytes": 309,
+              "sha256": "7adc6432b06622f472e273901b260b0cbedc4f63393b819e305b0ad6fbea5c4b"
+            }
+          },
+          "matches_expected": null,
+          "rows": 1801350,
+          "seconds": null
+        },
+        "validation": {
+          "cached": true,
+          "columns": [
+            "text"
+          ],
+          "expected_rows": null,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 1160224,
+              "sha256": "8e136ab7130c5fca602eb406ce2557967a974d901b53c4f2992f87b873e0fe5b"
+            },
+            "dataset_info.json": {
+              "bytes": 947,
+              "sha256": "4cb476a2c9cc79ac7dab0abae224878639fc3ad356dbeb24937de0139b4047e9"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "2424b1916b0eecd5908f896d210e3e5d57a3f27768c8e1dadac894df4214cce3"
+            }
+          },
+          "matches_expected": null,
+          "rows": 3760,
+          "seconds": null
+        }
+      },
+      "task": "held-out perplexity corpus",
+      "used": [
+        {
+          "config": "wikitext-103-raw-v1",
+          "repo": "Salesforce/wikitext",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2024-01-04 16:49:18+00:00",
+            "license": [
+              "cc-by-sa-3.0",
+              "gfdl"
+            ],
+            "license_name": null,
+            "repo": "Salesforce/wikitext",
+            "sha": "b08601e04326c79dfdd32d625aee71d232d685c3"
+          }
+        }
+      ]
+    },
+    "winogrande": {
+      "attempts": [
+        {
+          "config": "winogrande_xl",
+          "errors": {},
+          "repo": "allenai/winogrande",
+          "splits": {
+            "train": {
+              "cached": false,
+              "columns": [
+                "sentence",
+                "option1",
+                "option2",
+                "answer"
+              ],
+              "expected_rows": 40398,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 5202424,
+                  "sha256": "8e3c8ec1e0f25ae126ea7d2da2e540a25d7f81d225945256e8cb7630fa24ca7e"
+                },
+                "dataset_info.json": {
+                  "bytes": 1090,
+                  "sha256": "d16c6ef3a07d2a6e48c705c3ed4d2c31973785a98ae3cffe8f63e941bff45f58"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "53b7277e229683bd396bd31f576b5b4ee1f5a4336b53ba6d72f7bebdc5feb5aa"
+                }
+              },
+              "matches_expected": true,
+              "rows": 40398,
+              "seconds": 2.87
+            },
+            "validation": {
+              "cached": false,
+              "columns": [
+                "sentence",
+                "option1",
+                "option2",
+                "answer"
+              ],
+              "expected_rows": 1267,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 165504,
+                  "sha256": "992af8404b202ada4356228ed2ebb27f10495126efdf78678ced33e94e82b830"
+                },
+                "dataset_info.json": {
+                  "bytes": 1090,
+                  "sha256": "d16c6ef3a07d2a6e48c705c3ed4d2c31973785a98ae3cffe8f63e941bff45f58"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "8c7a231b3823682bb2f56a35873ed7a1540e14cf35d2da0b6c16e72ceae8a74c"
+                }
+              },
+              "matches_expected": true,
+              "rows": 1267,
+              "seconds": 0.52
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2025-07-11 17:33:56+00:00",
+        "license": null,
+        "license_name": null,
+        "repo": "allenai/winogrande",
+        "sha": "01e74176c63542e6b0bcb004dcdea22d94fb67b5"
+      },
+      "competitor_basis": "none \u2014 standard LM sanity check",
+      "family": "secondary",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/winogrande",
+      "splits": {
+        "train": {
+          "cached": false,
+          "columns": [
+            "sentence",
+            "option1",
+            "option2",
+            "answer"
+          ],
+          "expected_rows": 40398,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 5202424,
+              "sha256": "8e3c8ec1e0f25ae126ea7d2da2e540a25d7f81d225945256e8cb7630fa24ca7e"
+            },
+            "dataset_info.json": {
+              "bytes": 1090,
+              "sha256": "d16c6ef3a07d2a6e48c705c3ed4d2c31973785a98ae3cffe8f63e941bff45f58"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "53b7277e229683bd396bd31f576b5b4ee1f5a4336b53ba6d72f7bebdc5feb5aa"
+            }
+          },
+          "matches_expected": true,
+          "rows": 40398,
+          "seconds": 2.87
+        },
+        "validation": {
+          "cached": false,
+          "columns": [
+            "sentence",
+            "option1",
+            "option2",
+            "answer"
+          ],
+          "expected_rows": 1267,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 165504,
+              "sha256": "992af8404b202ada4356228ed2ebb27f10495126efdf78678ced33e94e82b830"
+            },
+            "dataset_info.json": {
+              "bytes": 1090,
+              "sha256": "d16c6ef3a07d2a6e48c705c3ed4d2c31973785a98ae3cffe8f63e941bff45f58"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "8c7a231b3823682bb2f56a35873ed7a1540e14cf35d2da0b6c16e72ceae8a74c"
+            }
+          },
+          "matches_expected": true,
+          "rows": 1267,
+          "seconds": 0.52
+        }
+      },
+      "task": "2-choice coreference resolution",
+      "used": [
+        {
+          "config": "winogrande_xl",
+          "repo": "allenai/winogrande",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2025-07-11 17:33:56+00:00",
+            "license": null,
+            "license_name": null,
+            "repo": "allenai/winogrande",
+            "sha": "01e74176c63542e6b0bcb004dcdea22d94fb67b5"
+          }
+        }
+      ]
+    },
+    "xnli": {
+      "attempts": [
+        {
+          "config": "en",
+          "errors": {},
+          "repo": "facebook/xnli",
+          "splits": {
+            "test": {
+              "cached": true,
+              "columns": [
+                "premise",
+                "hypothesis",
+                "label"
+              ],
+              "expected_rows": 5010,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 877408,
+                  "sha256": "6fbf1a8f930c4f5f2a67f4f68d74a8ecf57eda5936bc668821c73b4e7d28e389"
+                },
+                "dataset_info.json": {
+                  "bytes": 1061,
+                  "sha256": "fcfcdbe04e2e7f9461eccf4fe7e0e5f9b2e3a77f66a3d11665a48f1255f33abc"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "155df673072c080d20523d53e278a462db803fe55bf509b95a4de52d729c2d83"
+                }
+              },
+              "matches_expected": true,
+              "rows": 5010,
+              "seconds": null
+            },
+            "train": {
+              "cached": true,
+              "columns": [
+                "premise",
+                "hypothesis",
+                "label"
+              ],
+              "expected_rows": 392702,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 74560464,
+                  "sha256": "51dbb4e1f8519bfcb505a391796272b858ddc4e2679ac45540b70bddf1ee0da9"
+                },
+                "dataset_info.json": {
+                  "bytes": 1061,
+                  "sha256": "fcfcdbe04e2e7f9461eccf4fe7e0e5f9b2e3a77f66a3d11665a48f1255f33abc"
+                },
+                "state.json": {
+                  "bytes": 250,
+                  "sha256": "809e37a7d146fb6f982a4b7250174955cb915fc8738b167026bb20d40fc49dd7"
+                }
+              },
+              "matches_expected": true,
+              "rows": 392702,
+              "seconds": null
+            },
+            "validation": {
+              "cached": true,
+              "columns": [
+                "premise",
+                "hypothesis",
+                "label"
+              ],
+              "expected_rows": 2490,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 434864,
+                  "sha256": "962848922c7bc389f6fa35041fe7de151f1a38cb045890f3497f1ec6b0f782e7"
+                },
+                "dataset_info.json": {
+                  "bytes": 1061,
+                  "sha256": "fcfcdbe04e2e7f9461eccf4fe7e0e5f9b2e3a77f66a3d11665a48f1255f33abc"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "e4c506c5ab217222a9d8635c9383cfceb6c60ee4ff31e105525a3c614d8dd869"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2490,
+              "seconds": null
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2024-01-05 08:30:52+00:00",
+        "license": null,
+        "license_name": null,
+        "repo": "facebook/xnli",
+        "sha": "b8dd5d7af51114dbda02c0e3f6133f332186418e"
+      },
+      "competitor_basis": "Laya (XNLI); non-commercial licence",
+      "family": "primary",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/xnli",
+      "splits": {
+        "test": {
+          "cached": true,
+          "columns": [
+            "premise",
+            "hypothesis",
+            "label"
+          ],
+          "expected_rows": 5010,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 877408,
+              "sha256": "6fbf1a8f930c4f5f2a67f4f68d74a8ecf57eda5936bc668821c73b4e7d28e389"
+            },
+            "dataset_info.json": {
+              "bytes": 1061,
+              "sha256": "fcfcdbe04e2e7f9461eccf4fe7e0e5f9b2e3a77f66a3d11665a48f1255f33abc"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "155df673072c080d20523d53e278a462db803fe55bf509b95a4de52d729c2d83"
+            }
+          },
+          "matches_expected": true,
+          "rows": 5010,
+          "seconds": null
+        },
+        "train": {
+          "cached": true,
+          "columns": [
+            "premise",
+            "hypothesis",
+            "label"
+          ],
+          "expected_rows": 392702,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 74560464,
+              "sha256": "51dbb4e1f8519bfcb505a391796272b858ddc4e2679ac45540b70bddf1ee0da9"
+            },
+            "dataset_info.json": {
+              "bytes": 1061,
+              "sha256": "fcfcdbe04e2e7f9461eccf4fe7e0e5f9b2e3a77f66a3d11665a48f1255f33abc"
+            },
+            "state.json": {
+              "bytes": 250,
+              "sha256": "809e37a7d146fb6f982a4b7250174955cb915fc8738b167026bb20d40fc49dd7"
+            }
+          },
+          "matches_expected": true,
+          "rows": 392702,
+          "seconds": null
+        },
+        "validation": {
+          "cached": true,
+          "columns": [
+            "premise",
+            "hypothesis",
+            "label"
+          ],
+          "expected_rows": 2490,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 434864,
+              "sha256": "962848922c7bc389f6fa35041fe7de151f1a38cb045890f3497f1ec6b0f782e7"
+            },
+            "dataset_info.json": {
+              "bytes": 1061,
+              "sha256": "fcfcdbe04e2e7f9461eccf4fe7e0e5f9b2e3a77f66a3d11665a48f1255f33abc"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "e4c506c5ab217222a9d8635c9383cfceb6c60ee4ff31e105525a3c614d8dd869"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2490,
+          "seconds": null
+        }
+      },
+      "task": "3-way natural language inference (en)",
+      "used": [
+        {
+          "config": "en",
+          "repo": "facebook/xnli",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2024-01-05 08:30:52+00:00",
+            "license": null,
+            "license_name": null,
+            "repo": "facebook/xnli",
+            "sha": "b8dd5d7af51114dbda02c0e3f6133f332186418e"
+          }
+        }
+      ]
+    },
+    "xnli_de": {
+      "attempts": [
+        {
+          "config": "de",
+          "errors": {},
+          "repo": "facebook/xnli",
+          "splits": {
+            "test": {
+              "cached": false,
+              "columns": [
+                "premise",
+                "hypothesis",
+                "label"
+              ],
+              "expected_rows": 5010,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 998768,
+                  "sha256": "cc7ea502d0147cbcb5649765c57dac52268c19d64f3d73ed94dbb3609654aeb5"
+                },
+                "dataset_info.json": {
+                  "bytes": 1061,
+                  "sha256": "73ee36afdbec860341f89bee8f66188cf72effdf2814765a56e4ece90103bfec"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "db27bade02a127b3eb4db39f4fd07aca6288c6a43a102dd5872c04bca6a448b7"
+                }
+              },
+              "matches_expected": true,
+              "rows": 5010,
+              "seconds": 0.74
+            },
+            "validation": {
+              "cached": false,
+              "columns": [
+                "premise",
+                "hypothesis",
+                "label"
+              ],
+              "expected_rows": 2490,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 496000,
+                  "sha256": "8bf2c6732dfed0625002d40e45484f6cef82ae79c95e6b424e48bd1b8004dc04"
+                },
+                "dataset_info.json": {
+                  "bytes": 1061,
+                  "sha256": "73ee36afdbec860341f89bee8f66188cf72effdf2814765a56e4ece90103bfec"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "0a9986da4f25f5e80382b6f13dee48718f8dbc2d4ffb8cb34117cd877112ad8b"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2490,
+              "seconds": 10.49
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2024-01-05 08:30:52+00:00",
+        "license": null,
+        "license_name": null,
+        "repo": "facebook/xnli",
+        "sha": "b8dd5d7af51114dbda02c0e3f6133f332186418e"
+      },
+      "competitor_basis": "Laya (multilingual XNLI)",
+      "family": "multilingual",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/xnli_de",
+      "splits": {
+        "test": {
+          "cached": false,
+          "columns": [
+            "premise",
+            "hypothesis",
+            "label"
+          ],
+          "expected_rows": 5010,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 998768,
+              "sha256": "cc7ea502d0147cbcb5649765c57dac52268c19d64f3d73ed94dbb3609654aeb5"
+            },
+            "dataset_info.json": {
+              "bytes": 1061,
+              "sha256": "73ee36afdbec860341f89bee8f66188cf72effdf2814765a56e4ece90103bfec"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "db27bade02a127b3eb4db39f4fd07aca6288c6a43a102dd5872c04bca6a448b7"
+            }
+          },
+          "matches_expected": true,
+          "rows": 5010,
+          "seconds": 0.74
+        },
+        "validation": {
+          "cached": false,
+          "columns": [
+            "premise",
+            "hypothesis",
+            "label"
+          ],
+          "expected_rows": 2490,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 496000,
+              "sha256": "8bf2c6732dfed0625002d40e45484f6cef82ae79c95e6b424e48bd1b8004dc04"
+            },
+            "dataset_info.json": {
+              "bytes": 1061,
+              "sha256": "73ee36afdbec860341f89bee8f66188cf72effdf2814765a56e4ece90103bfec"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "0a9986da4f25f5e80382b6f13dee48718f8dbc2d4ffb8cb34117cd877112ad8b"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2490,
+          "seconds": 10.49
+        }
+      },
+      "task": "3-way NLI (de)",
+      "used": [
+        {
+          "config": "de",
+          "repo": "facebook/xnli",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2024-01-05 08:30:52+00:00",
+            "license": null,
+            "license_name": null,
+            "repo": "facebook/xnli",
+            "sha": "b8dd5d7af51114dbda02c0e3f6133f332186418e"
+          }
+        }
+      ]
+    },
+    "xnli_es": {
+      "attempts": [
+        {
+          "config": "es",
+          "errors": {},
+          "repo": "facebook/xnli",
+          "splits": {
+            "test": {
+              "cached": false,
+              "columns": [
+                "premise",
+                "hypothesis",
+                "label"
+              ],
+              "expected_rows": 5010,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 972088,
+                  "sha256": "724d5cf159a683a0eb095e49f61e40bb7cf653884e764db75d6003ffff29f6db"
+                },
+                "dataset_info.json": {
+                  "bytes": 1061,
+                  "sha256": "dc3f02143649dbe26db8a4fe78963500976cc1bbb435f72459393ac5fc0cea41"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "e3da0dfdcb903a851622cc5120db42bfa4d74df35ba84df453da8842b73f7fa2"
+                }
+              },
+              "matches_expected": true,
+              "rows": 5010,
+              "seconds": 0.74
+            },
+            "validation": {
+              "cached": false,
+              "columns": [
+                "premise",
+                "hypothesis",
+                "label"
+              ],
+              "expected_rows": 2490,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 479824,
+                  "sha256": "8392d69fe7e428c080401638ae5b447a776de9d78ad68ab46a461beb7b30dff7"
+                },
+                "dataset_info.json": {
+                  "bytes": 1061,
+                  "sha256": "dc3f02143649dbe26db8a4fe78963500976cc1bbb435f72459393ac5fc0cea41"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "667ae1c1513729d8af68744fde263e2a798dedfa707d7601427a08cbcac2ef4e"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2490,
+              "seconds": 7.14
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2024-01-05 08:30:52+00:00",
+        "license": null,
+        "license_name": null,
+        "repo": "facebook/xnli",
+        "sha": "b8dd5d7af51114dbda02c0e3f6133f332186418e"
+      },
+      "competitor_basis": "Laya (multilingual XNLI)",
+      "family": "multilingual",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/xnli_es",
+      "splits": {
+        "test": {
+          "cached": false,
+          "columns": [
+            "premise",
+            "hypothesis",
+            "label"
+          ],
+          "expected_rows": 5010,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 972088,
+              "sha256": "724d5cf159a683a0eb095e49f61e40bb7cf653884e764db75d6003ffff29f6db"
+            },
+            "dataset_info.json": {
+              "bytes": 1061,
+              "sha256": "dc3f02143649dbe26db8a4fe78963500976cc1bbb435f72459393ac5fc0cea41"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "e3da0dfdcb903a851622cc5120db42bfa4d74df35ba84df453da8842b73f7fa2"
+            }
+          },
+          "matches_expected": true,
+          "rows": 5010,
+          "seconds": 0.74
+        },
+        "validation": {
+          "cached": false,
+          "columns": [
+            "premise",
+            "hypothesis",
+            "label"
+          ],
+          "expected_rows": 2490,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 479824,
+              "sha256": "8392d69fe7e428c080401638ae5b447a776de9d78ad68ab46a461beb7b30dff7"
+            },
+            "dataset_info.json": {
+              "bytes": 1061,
+              "sha256": "dc3f02143649dbe26db8a4fe78963500976cc1bbb435f72459393ac5fc0cea41"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "667ae1c1513729d8af68744fde263e2a798dedfa707d7601427a08cbcac2ef4e"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2490,
+          "seconds": 7.14
+        }
+      },
+      "task": "3-way NLI (es)",
+      "used": [
+        {
+          "config": "es",
+          "repo": "facebook/xnli",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2024-01-05 08:30:52+00:00",
+            "license": null,
+            "license_name": null,
+            "repo": "facebook/xnli",
+            "sha": "b8dd5d7af51114dbda02c0e3f6133f332186418e"
+          }
+        }
+      ]
+    },
+    "xnli_fr": {
+      "attempts": [
+        {
+          "config": "fr",
+          "errors": {},
+          "repo": "facebook/xnli",
+          "splits": {
+            "test": {
+              "cached": false,
+              "columns": [
+                "premise",
+                "hypothesis",
+                "label"
+              ],
+              "expected_rows": 5010,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 1031528,
+                  "sha256": "8b5bdb035ad412adfaefec5ac3d726145063d1417622ad9e4bf3ed2130c6c672"
+                },
+                "dataset_info.json": {
+                  "bytes": 1062,
+                  "sha256": "f56cc5028c41047d82595d235afa663572aae43e6057b122c7646e551d7cf768"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "7581d2a004c0b6aa5db0baf5a0c720121c3c85a9f0cdf39e266480932662e9c1"
+                }
+              },
+              "matches_expected": true,
+              "rows": 5010,
+              "seconds": 0.74
+            },
+            "validation": {
+              "cached": false,
+              "columns": [
+                "premise",
+                "hypothesis",
+                "label"
+              ],
+              "expected_rows": 2490,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 511504,
+                  "sha256": "0dc56f5b41701d1cf03ae57947e5064a32de5ac97b4cf31960f11d1e58c6af74"
+                },
+                "dataset_info.json": {
+                  "bytes": 1062,
+                  "sha256": "f56cc5028c41047d82595d235afa663572aae43e6057b122c7646e551d7cf768"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "6b0f166534ef91dc2d6a89ef4a7fb7f926461d10289d01193518a961b43a1f61"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2490,
+              "seconds": 7.1
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2024-01-05 08:30:52+00:00",
+        "license": null,
+        "license_name": null,
+        "repo": "facebook/xnli",
+        "sha": "b8dd5d7af51114dbda02c0e3f6133f332186418e"
+      },
+      "competitor_basis": "Laya (multilingual XNLI)",
+      "family": "multilingual",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/xnli_fr",
+      "splits": {
+        "test": {
+          "cached": false,
+          "columns": [
+            "premise",
+            "hypothesis",
+            "label"
+          ],
+          "expected_rows": 5010,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 1031528,
+              "sha256": "8b5bdb035ad412adfaefec5ac3d726145063d1417622ad9e4bf3ed2130c6c672"
+            },
+            "dataset_info.json": {
+              "bytes": 1062,
+              "sha256": "f56cc5028c41047d82595d235afa663572aae43e6057b122c7646e551d7cf768"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "7581d2a004c0b6aa5db0baf5a0c720121c3c85a9f0cdf39e266480932662e9c1"
+            }
+          },
+          "matches_expected": true,
+          "rows": 5010,
+          "seconds": 0.74
+        },
+        "validation": {
+          "cached": false,
+          "columns": [
+            "premise",
+            "hypothesis",
+            "label"
+          ],
+          "expected_rows": 2490,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 511504,
+              "sha256": "0dc56f5b41701d1cf03ae57947e5064a32de5ac97b4cf31960f11d1e58c6af74"
+            },
+            "dataset_info.json": {
+              "bytes": 1062,
+              "sha256": "f56cc5028c41047d82595d235afa663572aae43e6057b122c7646e551d7cf768"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "6b0f166534ef91dc2d6a89ef4a7fb7f926461d10289d01193518a961b43a1f61"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2490,
+          "seconds": 7.1
+        }
+      },
+      "task": "3-way NLI (fr)",
+      "used": [
+        {
+          "config": "fr",
+          "repo": "facebook/xnli",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2024-01-05 08:30:52+00:00",
+            "license": null,
+            "license_name": null,
+            "repo": "facebook/xnli",
+            "sha": "b8dd5d7af51114dbda02c0e3f6133f332186418e"
+          }
+        }
+      ]
+    },
+    "xnli_zh": {
+      "attempts": [
+        {
+          "config": "zh",
+          "errors": {},
+          "repo": "facebook/xnli",
+          "splits": {
+            "test": {
+              "cached": false,
+              "columns": [
+                "premise",
+                "hypothesis",
+                "label"
+              ],
+              "expected_rows": 5010,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 780216,
+                  "sha256": "774925d612e77b4d72e940af10edafed456fa8826802fe3cf543fc8e8a79824e"
+                },
+                "dataset_info.json": {
+                  "bytes": 1061,
+                  "sha256": "d248aada4f43f0ac5e74be052821750c67abe578b4308e1a7d6508de239d30b2"
+                },
+                "state.json": {
+                  "bytes": 249,
+                  "sha256": "9aa03391998c296f46cbb33165128f1769fa26e0871bed4485237599165698aa"
+                }
+              },
+              "matches_expected": true,
+              "rows": 5010,
+              "seconds": 0.75
+            },
+            "validation": {
+              "cached": false,
+              "columns": [
+                "premise",
+                "hypothesis",
+                "label"
+              ],
+              "expected_rows": 2490,
+              "files": {
+                "data-00000-of-00001.arrow": {
+                  "bytes": 386248,
+                  "sha256": "c373f7be0d7593373d52bf0f272f21920f3030db6a6c8b4e03329a7c5934954b"
+                },
+                "dataset_info.json": {
+                  "bytes": 1061,
+                  "sha256": "d248aada4f43f0ac5e74be052821750c67abe578b4308e1a7d6508de239d30b2"
+                },
+                "state.json": {
+                  "bytes": 255,
+                  "sha256": "bbfeee3b4a03b144129fecf8bdebfa951273ac49d0dcc892c237b06bb0cfd44b"
+                }
+              },
+              "matches_expected": true,
+              "rows": 2490,
+              "seconds": 7.86
+            }
+          }
+        }
+      ],
+      "canonical": {
+        "gated": false,
+        "last_modified": "2024-01-05 08:30:52+00:00",
+        "license": null,
+        "license_name": null,
+        "repo": "facebook/xnli",
+        "sha": "b8dd5d7af51114dbda02c0e3f6133f332186418e"
+      },
+      "competitor_basis": "Laya (multilingual XNLI)",
+      "family": "multilingual",
+      "kind": "task",
+      "mirror_note": null,
+      "path": "data/raw/xnli_zh",
+      "splits": {
+        "test": {
+          "cached": false,
+          "columns": [
+            "premise",
+            "hypothesis",
+            "label"
+          ],
+          "expected_rows": 5010,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 780216,
+              "sha256": "774925d612e77b4d72e940af10edafed456fa8826802fe3cf543fc8e8a79824e"
+            },
+            "dataset_info.json": {
+              "bytes": 1061,
+              "sha256": "d248aada4f43f0ac5e74be052821750c67abe578b4308e1a7d6508de239d30b2"
+            },
+            "state.json": {
+              "bytes": 249,
+              "sha256": "9aa03391998c296f46cbb33165128f1769fa26e0871bed4485237599165698aa"
+            }
+          },
+          "matches_expected": true,
+          "rows": 5010,
+          "seconds": 0.75
+        },
+        "validation": {
+          "cached": false,
+          "columns": [
+            "premise",
+            "hypothesis",
+            "label"
+          ],
+          "expected_rows": 2490,
+          "files": {
+            "data-00000-of-00001.arrow": {
+              "bytes": 386248,
+              "sha256": "c373f7be0d7593373d52bf0f272f21920f3030db6a6c8b4e03329a7c5934954b"
+            },
+            "dataset_info.json": {
+              "bytes": 1061,
+              "sha256": "d248aada4f43f0ac5e74be052821750c67abe578b4308e1a7d6508de239d30b2"
+            },
+            "state.json": {
+              "bytes": 255,
+              "sha256": "bbfeee3b4a03b144129fecf8bdebfa951273ac49d0dcc892c237b06bb0cfd44b"
+            }
+          },
+          "matches_expected": true,
+          "rows": 2490,
+          "seconds": 7.86
+        }
+      },
+      "task": "3-way NLI (zh)",
+      "used": [
+        {
+          "config": "zh",
+          "repo": "facebook/xnli",
+          "source_meta": {
+            "gated": false,
+            "last_modified": "2024-01-05 08:30:52+00:00",
+            "license": null,
+            "license_name": null,
+            "repo": "facebook/xnli",
+            "sha": "b8dd5d7af51114dbda02c0e3f6133f332186418e"
+          }
+        }
+      ]
+    }
+  },
+  "environment": {
+    "captured": "2026-10-27T04:35:41-0700",
+    "datasets": "5.0.1",
+    "hf_home": "/Users/arpituppal/Downloads/jev-zero/data/.hf",
+    "host": "Arpits-MacBook-Pro.local",
+    "huggingface_hub": "1.33.0",
+    "machine": "arm64",
+    "mps_available": true,
+    "os": "macOS-27.0-arm64-arm-64bit",
+    "python": "3.11.14",
+    "torch": "2.14.0"
+  },
+  "models": {
+    "laya": {
+      "bytes_total": 2372594929,
+      "files": [
+        {
+          "bytes": 1913,
+          "path": ".gitattributes",
+          "sha256": "4df0e0949c31f080be9a0ccce253e9b176ddbdd953e97796607ff2a20bc5ec7c"
+        },
+        {
+          "bytes": 23187,
+          "path": "README.md",
+          "sha256": "00355613796b3f5860b0d5b20392381d26580ec242e04a1fd150c7f116858602"
+        },
+        {
+          "bytes": 260892,
+          "path": "assets/laya_benchmark.png",
+          "sha256": "e01e49f0d842b4616e44c4c9a0feb92a9ae45efeb533f8f838888715dc89c2b9"
+        },
+        {
+          "bytes": 278159,
+          "path": "assets/laya_benchmark_common.png",
+          "sha256": "183b0b17e8d90e091582e415d9f1da0ef34b40c3db6ccd2c8bbfd2b9232b95a6"
+        },
+        {
+          "bytes": 216412,
+          "path": "assets/laya_vs_jev.png",
+          "sha256": "5c06517ea7f3e5f3f84873ddaa3cb470f101ad0276f921c58886f8fb12fbe0a8"
+        },
+        {
+          "bytes": 487005,
+          "path": "assets/laya_vs_jev_full.png",
+          "sha256": "ee47b751d524a0bb65159e026141b4ce70cc83d03b14df8ec68afbc7bcdb95b3"
+        },
+        {
+          "bytes": 27666,
+          "path": "assets/logo-lockup-dark.png",
+          "sha256": "e683b423cf4f13961fced54a29fad6bb8bb733a0bfc28960c011f8b9f773ca7c"
+        },
+        {
+          "bytes": 1590,
+          "path": "assets/logo-lockup-dark.svg",
+          "sha256": "40c23ec9db5837c09e5ef7d6dc46ffda8eda28f50d2040936e23e882b9c46b93"
+        },
+        {
+          "bytes": 26761,
+          "path": "assets/logo-lockup.png",
+          "sha256": "e0235069e914c7889612fcba8b0a8c82133a6ee8a871c9076e867c22fa156f4d"
+        },
+        {
+          "bytes": 1590,
+          "path": "assets/logo-lockup.svg",
+          "sha256": "a1f8e8b98fbcc7cd410e42ba997548c01fe780217d82678a38d24a39e6365821"
+        },
+        {
+          "bytes": 17378,
+          "path": "assets/logo-mark-ink.png",
+          "sha256": "f542388fb4ddaf5f1afe44db8fead9303f75ba38913a0b94654976a89c6f6b35"
+        },
+        {
+          "bytes": 1320,
+          "path": "assets/logo-mark-ink.svg",
+          "sha256": "c95f251f6e7fe888995763645d8ad351323f64fa0eff7d8d17f65aac90e0108c"
+        },
+        {
+          "bytes": 1380,
+          "path": "assets/logo-mark-mono.svg",
+          "sha256": "c8d281d8a6c9ae3d0c2864e291ce9a463f50f8f52b5ef1b271d3c277b7a75c28"
+        },
+        {
+          "bytes": 17962,
+          "path": "assets/logo-mark.png",
+          "sha256": "bb04c3ec2afbf455d81f73512e79fce1bc910444e3258335e66305d3ab969367"
+        },
+        {
+          "bytes": 1320,
+          "path": "assets/logo-mark.svg",
+          "sha256": "377539eb0f4255bc27fb53afffaa1b9e1acffafa4f3699c6a673dafd8b7bd870"
+        },
+        {
+          "bytes": 160,
+          "path": "config.json",
+          "sha256": "7add7c041b53f7091e65908553af79ab3f077946e5f2312d510ae13b17c7c134"
+        },
+        {
+          "bytes": 3937,
+          "path": "email_utils.py",
+          "sha256": "1b1c0a6e23251ac8cae81e723bc98a31ca5483522c742937e263c2ecee42f343"
+        },
+        {
+          "bytes": 2083,
+          "path": "encoder/config.json",
+          "sha256": "bf3ab80598fdccf414855a2ce80f22859e4492d06ca8a62ddd1cfb63972f8979"
+        },
+        {
+          "bytes": 467466,
+          "path": "eval/benchmark_comparison.png",
+          "sha256": "78e4b926bfca3950ff5441d1030a1453515973fbe5d7dd70a1c764a81f0d3d38"
+        },
+        {
+          "bytes": 65436,
+          "path": "eval/reliability_eval_in.png",
+          "sha256": "9dd0e76e2f4f03042f23d479f8f318b77abbcca6a3ba97923fb5cd20d3e2c15e"
+        },
+        {
+          "bytes": 72014,
+          "path": "eval/reliability_eval_zs.png",
+          "sha256": "4e0c014b721b0d32aadeaf8a643ee41fd2a30bdfddda1b44124aa64d2fd08490"
+        },
+        {
+          "bytes": 2976,
+          "path": "eval/results.json",
+          "sha256": "13b0c98eb9c0f65c7ff3452321dabdfa22d96655454dfb14116983ae7d681a60"
+        },
+        {
+          "bytes": 1608,
+          "path": "eval/results.md",
+          "sha256": "d8477988dc14e30e2430eb5ddead07506fe2d2df25e75ee0b9379b20022cee28"
+        },
+        {
+          "bytes": 842609210,
+          "path": "model.safetensors",
+          "sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c"
+        },
+        {
+          "bytes": 1938,
+          "path": "multilingual/encoder/config.json",
+          "sha256": "83f6916d13ef0f556ac461f28308dc2bffa7ebeadee8ec9e2db5812020ea5bb4"
+        },
+        {
+          "bytes": 643835514,
+          "path": "multilingual/model.safetensors",
+          "sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204"
+        },
+        {
+          "bytes": 472,
+          "path": "multilingual/rl_agent_config.json",
+          "sha256": "25061739243b617ad88d1219ba6f8a9c86c5881ca28df024fa2d9b3b2fcc30c6"
+        },
+        {
+          "bytes": 34363188,
+          "path": "multilingual/tokenizer/tokenizer.json",
+          "sha256": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f"
+        },
+        {
+          "bytes": 524,
+          "path": "multilingual/tokenizer/tokenizer_config.json",
+          "sha256": "6c6b2d8e3c84ce0e671c129cd6b374b235d6f9863042a5836358d00a89bbb5a1"
+        },
+        {
+          "bytes": 4732,
+          "path": "rl_agent_api.py",
+          "sha256": "be3b46819c9999c3ef88e0f2ecf6d3ab1cdfed1d9a8b466fc89811e34d44031b"
+        },
+        {
+          "bytes": 745,
+          "path": "rl_agent_config.json",
+          "sha256": "ae287b56bbcf5f8c4f4541ae9dfd00c914c4c48b940b8398c3058af37ba92bbd"
+        },
+        {
+          "bytes": 19139,
+          "path": "rl_common.py",
+          "sha256": "8d83611d480c971d640a7b7d3aa2f2219c5e8455e9cc2329fd073681bd8be23e"
+        },
+        {
+          "bytes": 3583228,
+          "path": "tokenizer/tokenizer.json",
+          "sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30"
+        },
+        {
+          "bytes": 308,
+          "path": "tokenizer/tokenizer_config.json",
+          "sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+        },
+        {
+          "bytes": 2084,
+          "path": "typed-decisions/encoder/config.json",
+          "sha256": "5268d24ad3b77c8151de5dcb0762ba4391619aad9ab0bda33e36fb083cfeae6d"
+        },
+        {
+          "bytes": 842609220,
+          "path": "typed-decisions/model.safetensors",
+          "sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e"
+        },
+        {
+          "bytes": 847,
+          "path": "typed-decisions/rl_agent_config.json",
+          "sha256": "ebf0cd524d92342a6be5e48e9fca3d7c2babfb5a56ccd79d2171ef5d8c7f7be8"
+        },
+        {
+          "bytes": 3583228,
+          "path": "typed-decisions/tokenizer/tokenizer.json",
+          "sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30"
+        },
+        {
+          "bytes": 337,
+          "path": "typed-decisions/tokenizer/tokenizer_config.json",
+          "sha256": "08d4cf3ac4dca381759441b85b91a6d40e688471dcd33d15d6649eb0a9a854d1"
+        }
+      ],
+      "kind": "model",
+      "license": "apache-2.0",
+      "local_path": "data/models/laya",
+      "params_by_file": {
+        "model.safetensors": {
+          "by_dtype": {
+            "F16": 421293827,
+            "F32": 3
+          },
+          "params": 421293830
+        }
+      },
+      "params_total": 421293830,
+      "repo": "convaiinnovations/laya",
+      "role": "primary baseline: the model the project claims to beat",
+      "seconds": 2.0,
+      "sha": "7b928d828b7b0e022f929d9bd2e44165aa270148"
+    },
+    "laya_multilingual": {
+      "bytes_total": 678212700,
+      "files": [
+        {
+          "bytes": 1580,
+          "path": ".gitattributes",
+          "sha256": "caf3ca02d5e883f643e939cbed54f94237f94c171797f0dfea5e25c7e33315b3"
+        },
+        {
+          "bytes": 9346,
+          "path": "README.md",
+          "sha256": "e85d16c3fe35fe7094ef51a7cfa81144a5cc07558e5faddcff753a8153e38a0b"
+        },
+        {
+          "bytes": 160,
+          "path": "config.json",
+          "sha256": "7add7c041b53f7091e65908553af79ab3f077946e5f2312d510ae13b17c7c134"
+        },
+        {
+          "bytes": 1938,
+          "path": "encoder/config.json",
+          "sha256": "83f6916d13ef0f556ac461f28308dc2bffa7ebeadee8ec9e2db5812020ea5bb4"
+        },
+        {
+          "bytes": 643835514,
+          "path": "model.safetensors",
+          "sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204"
+        },
+        {
+          "bytes": 472,
+          "path": "rl_agent_config.json",
+          "sha256": "25061739243b617ad88d1219ba6f8a9c86c5881ca28df024fa2d9b3b2fcc30c6"
+        },
+        {
+          "bytes": 34363188,
+          "path": "tokenizer/tokenizer.json",
+          "sha256": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f"
+        },
+        {
+          "bytes": 502,
+          "path": "tokenizer/tokenizer_config.json",
+          "sha256": "424b69444bf7b5809dc2cd2e36d0bd71b8055124dd24274d6db3c655d38205e7"
+        }
+      ],
+      "kind": "model",
+      "license": "apache-2.0",
+      "local_path": "data/models/laya_multilingual",
+      "params_by_file": {
+        "model.safetensors": {
+          "by_dtype": {
+            "F16": 321908995,
+            "F32": 3
+          },
+          "params": 321908998
+        }
+      },
+      "params_total": 321908998,
+      "repo": "convaiinnovations/laya-multilingual",
+      "role": "multilingual arm baseline",
+      "seconds": 0.5,
+      "sha": "1720e3e3357cfe1e281542e223f8273b0890ca34"
+    },
+    "laya_typed_decisions": {
+      "bytes_total": 846203738,
+      "files": [
+        {
+          "bytes": 1519,
+          "path": ".gitattributes",
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        {
+          "bytes": 6343,
+          "path": "README.md",
+          "sha256": "83e67a995a70a9a9ef6cc1f8c68da654f11eee081c9bb14de07c37b08fcc3113"
+        },
+        {
+          "bytes": 160,
+          "path": "config.json",
+          "sha256": "7add7c041b53f7091e65908553af79ab3f077946e5f2312d510ae13b17c7c134"
+        },
+        {
+          "bytes": 2084,
+          "path": "encoder/config.json",
+          "sha256": "5268d24ad3b77c8151de5dcb0762ba4391619aad9ab0bda33e36fb083cfeae6d"
+        },
+        {
+          "bytes": 842609220,
+          "path": "model.safetensors",
+          "sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e"
+        },
+        {
+          "bytes": 847,
+          "path": "rl_agent_config.json",
+          "sha256": "ebf0cd524d92342a6be5e48e9fca3d7c2babfb5a56ccd79d2171ef5d8c7f7be8"
+        },
+        {
+          "bytes": 3583228,
+          "path": "tokenizer/tokenizer.json",
+          "sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30"
+        },
+        {
+          "bytes": 337,
+          "path": "tokenizer/tokenizer_config.json",
+          "sha256": "08d4cf3ac4dca381759441b85b91a6d40e688471dcd33d15d6649eb0a9a854d1"
+        }
+      ],
+      "kind": "model",
+      "license": "apache-2.0",
+      "local_path": "data/models/laya_typed_decisions",
+      "params_by_file": {
+        "model.safetensors": {
+          "by_dtype": {
+            "F16": 421293830
+          },
+          "params": 421293830
+        }
+      },
+      "params_total": 421293830,
+      "repo": "convaiinnovations/laya-typed-decisions",
+      "role": "baseline for the typed-decisions interface",
+      "seconds": 0.6,
+      "sha": "e929ae5cf69bc34259cd2f95c9e91145b818b1f0"
+    }
+  },
+  "policy": {
+    "cache": "data/.hf (project-local)",
+    "note": "no artefact outside ./data; hashes are of the files written",
+    "shard_target_bytes": 1073741824
+  }
+}

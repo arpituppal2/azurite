@@ -1,0 +1,185 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Agarwal et~al.(2024)Agarwal, Singh, Zhang, Bohnet
+  et~al.}]{agarwal2024manyshot}
+Rishabh Agarwal, Avi Singh, Lei~M. Zhang, Bernd Bohnet, et~al. 2024.
+\newblock \href {https://arxiv.org/abs/2404.11018} {Many-shot in-context
+  learning}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~37.
+
+\bibitem[{Almeida(2026)}]{typesafe2026jev}
+Diogo Almeida. 2026.
+\newblock \href
+  {https://typesafe.ai/blog/introducing-system-one-models-and-jev}
+  {{Introducing {System One} Models \& {Jev}}}.
+\newblock TypeSafe AI Blog.
+\newblock Published 15 September 2026; accessed 29 October 2026.
+
+\bibitem[{Brown et~al.(2020)Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal,
+  Neelakantan, Shyam, Sastry, Askell et~al.}]{brown2020gpt3}
+Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan,
+  Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda
+  Askell, et~al. 2020.
+\newblock \href
+  {https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html}
+  {Language models are few-shot learners}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~33, pages 1877--1901.
+
+\bibitem[{Casanueva et~al.(2020)Casanueva, Tem{\v{c}}inas, Gerz, Henderson, and
+  Vuli{\'c}}]{casanueva2020banking}
+I{\~n}igo Casanueva, Tadas Tem{\v{c}}inas, Daniela Gerz, Matthew Henderson, and
+  Ivan Vuli{\'c}. 2020.
+\newblock \href {https://doi.org/10.18653/v1/2020.nlp4convai-1.5} {Efficient
+  intent detection with dual sentence encoders}.
+\newblock In \emph{Proceedings of the 2nd Workshop on Natural Language
+  Processing for Conversational AI}, pages 38--45. Association for
+  Computational Linguistics.
+
+\bibitem[{Clark et~al.(2022)Clark, Garrette, Turc, and
+  Wieting}]{clark2022canine}
+Jonathan~H. Clark, Dan Garrette, Iulia Turc, and John Wieting. 2022.
+\newblock \href {https://doi.org/10.1162/tacl_a_00448} {{CANINE}: Pre-training
+  an efficient tokenization-free encoder for language representation}.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  10:73--91.
+
+\bibitem[{Devlin et~al.(2019)Devlin, Chang, Lee, and
+  Toutanova}]{devlin2019bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019.
+\newblock \href {https://doi.org/10.18653/v1/N19-1423} {{BERT}: Pre-training of
+  deep bidirectional transformers for language understanding}.
+\newblock In \emph{Proceedings of the 2019 Conference of the North American
+  Chapter of the Association for Computational Linguistics}, pages 4171--4186.
+
+\bibitem[{Dietterich(1998)}]{dietterich1998}
+Thomas~G. Dietterich. 1998.
+\newblock \href {https://doi.org/10.1162/089976698300017197} {Approximate
+  statistical tests for comparing supervised classification learning
+  algorithms}.
+\newblock \emph{Neural Computation}, 10(7):1895--1923.
+
+\bibitem[{Hoffmann et~al.(2022)Hoffmann, Borgeaud, Mensch, Buchatskaya, Cai,
+  Rutherford, de~Las~Casas, Hendricks, Welbl, Clark
+  et~al.}]{hoffmann2022chinchilla}
+Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor
+  Cai, Eliza Rutherford, Diego de~Las~Casas, Lisa~Anne Hendricks, Johannes
+  Welbl, Aidan Clark, et~al. 2022.
+\newblock \href {https://arxiv.org/abs/2203.15556} {Training compute-optimal
+  large language models}.
+\newblock \emph{arXiv preprint arXiv:2203.15556}.
+
+\bibitem[{Hsieh et~al.(2024)Hsieh, Sun, Kriman, Acharya, Rekesh, Jia, and
+  Ginsburg}]{hsieh2024ruler}
+Cheng-Ping Hsieh, Simeng Sun, Samuel Kriman, Shantanu Acharya, Dima Rekesh, Fei
+  Jia, and Boris Ginsburg. 2024.
+\newblock \href {https://arxiv.org/abs/2404.06654} {{RULER}: What's the real
+  context size of your long-context language models?}
+\newblock In \emph{First Conference on Language Modeling}.
+
+\bibitem[{Kaplan et~al.(2020)Kaplan, McCandlish, Henighan, Brown, Chess, Child,
+  Gray, Radford, Wu, and Amodei}]{kaplan2020scaling}
+Jared Kaplan, Sam McCandlish, Tom Henighan, Tom~B. Brown, Benjamin Chess, Rewon
+  Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. 2020.
+\newblock \href {https://arxiv.org/abs/2001.08361} {Scaling laws for neural
+  language models}.
+\newblock \emph{arXiv preprint arXiv:2001.08361}.
+
+\bibitem[{Karpukhin et~al.(2020)Karpukhin, O{\u{g}}uz, Min, Lewis, Wu, Edunov,
+  Chen, and Yih}]{karpukhin2020dpr}
+Vladimir Karpukhin, Barlas O{\u{g}}uz, Sewon Min, Patrick Lewis, Ledell Wu,
+  Sergey Edunov, Danqi Chen, and Wen-tau Yih. 2020.
+\newblock \href {https://doi.org/10.18653/v1/2020.emnlp-main.550} {Dense
+  passage retrieval for open-domain question answering}.
+\newblock In \emph{Proceedings of the 2020 Conference on Empirical Methods in
+  Natural Language Processing}, pages 6769--6781.
+
+\bibitem[{Lewis et~al.(2020)Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal,
+  K{\"u}ttler, Lewis, Yih, Rockt{\"a}schel, Riedel, and Kiela}]{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+  Karpukhin, Naman Goyal, Heinrich K{\"u}ttler, Mike Lewis, Wen-tau Yih, Tim
+  Rockt{\"a}schel, Sebastian Riedel, and Douwe Kiela. 2020.
+\newblock \href
+  {https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html}
+  {Retrieval-augmented generation for knowledge-intensive {NLP} tasks}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~33, pages 9459--9474.
+
+\bibitem[{Liu et~al.(2024)Liu, Lin, Hewitt, Paranjape, Bevilacqua, Petroni, and
+  Liang}]{liu2023lost}
+Nelson~F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua,
+  Fabio Petroni, and Percy Liang. 2024.
+\newblock \href {https://doi.org/10.1162/tacl_a_00638} {Lost in the middle: How
+  language models use long contexts}.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  12:157--173.
+
+\bibitem[{McNemar(1947)}]{mcnemar1947}
+Quinn McNemar. 1947.
+\newblock \href {https://doi.org/10.1007/BF02295996} {Note on the sampling
+  error of the difference between correlated proportions or percentages}.
+\newblock \emph{Psychometrika}, 12(2):153--157.
+
+\bibitem[{Min et~al.(2022)Min, Lyu, Holtzman, Artetxe, Lewis, Hajishirzi, and
+  Zettlemoyer}]{min2022rethinking}
+Sewon Min, Xinxi Lyu, Ari Holtzman, Mikel Artetxe, Mike Lewis, Hannaneh
+  Hajishirzi, and Luke Zettlemoyer. 2022.
+\newblock \href {https://doi.org/10.18653/v1/2022.emnlp-main.759} {Rethinking
+  the role of demonstrations: What makes in-context learning work?}
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in
+  Natural Language Processing}, pages 11048--11064.
+
+\bibitem[{Robertson and Zaragoza(2009)}]{robertson2009bm25}
+Stephen Robertson and Hugo Zaragoza. 2009.
+\newblock \href {https://doi.org/10.1561/1500000019} {The probabilistic
+  relevance framework: {BM25} and beyond}.
+\newblock \emph{Foundations and Trends in Information Retrieval},
+  3(4):333--389.
+
+\bibitem[{{simonmesmith}(2026)}]{smith2026jevbanking}
+{simonmesmith}. 2026.
+\newblock \href {https://github.com/simonmesmith/jev-banking77-experiment}
+  {{Jev on BANKING77}: Reproducible classification evaluation, published {BERT}
+  comparison, costs and latency}.
+\newblock GitHub repository.
+\newblock Model jev-1.13.0; 3,080 official test rows; 24 retrieved labelled
+  training examples and all 77 category definitions per decision; commit
+  5cac4ff; accessed 29 October 2026.
+
+\bibitem[{Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones,
+  Gomez, Kaiser, and Polosukhin}]{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N. Gomez, {\L}ukasz Kaiser, and Illia Polosukhin. 2017.
+\newblock \href
+  {https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html}
+  {Attention is all you need}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~30.
+
+\bibitem[{Wilson(1927)}]{wilson1927}
+Edwin~B. Wilson. 1927.
+\newblock \href {https://doi.org/10.1080/01621459.1927.10502953} {Probable
+  inference, the law of succession, and statistical inference}.
+\newblock \emph{Journal of the American Statistical Association},
+  22(158):209--212.
+
+\bibitem[{Xue et~al.(2022)Xue, Barua, Constant, Al-Rfou, Narang, Kale, Roberts,
+  and Raffel}]{xue2022byt5}
+Linting Xue, Aditya Barua, Noah Constant, Rami Al-Rfou, Sharan Narang, Mihir
+  Kale, Adam Roberts, and Colin Raffel. 2022.
+\newblock \href {https://doi.org/10.1162/tacl_a_00461} {{ByT5}: Towards a
+  token-free future with pre-trained byte-to-byte models}.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  10:291--306.
+
+\bibitem[{Zhang et~al.(2017)Zhang, Bengio, Hardt, Recht, and
+  Vinyals}]{zhang2017rethinking}
+Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals.
+  2017.
+\newblock \href {https://openreview.net/forum?id=Sy8gdB9xx} {Understanding deep
+  learning requires rethinking generalization}.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\end{thebibliography}

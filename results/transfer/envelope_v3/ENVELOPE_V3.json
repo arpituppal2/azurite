@@ -1,0 +1,71 @@
+{
+ "cells": [
+  {
+   "acc": 0.158,
+   "host_path": "results/transfer/envelope_v3/cells/emotion_cross_s1/result.json",
+   "host_sha256": "67206a450cd6db259ca986cbe1f2c077410b5148d10df5508b41410a282e091e",
+   "jev_recorded": 0.585,
+   "n": 500,
+   "nll_final": 1.7917,
+   "status": "BELOW",
+   "wall_s": 10.0,
+   "wilson_lb_95": 0.1287
+  },
+  {
+   "acc": 0.206,
+   "host_path": "results/transfer/envelope_v3/cells/emotion_dual_s1/result.json",
+   "host_sha256": "3e7161cf9d5e8d7bf8d80c4c8dd424f458b2c206b616a8ad9f0d5ecfaaf4197f",
+   "jev_recorded": 0.585,
+   "n": 500,
+   "nll_final": 1.7908,
+   "status": "BELOW",
+   "wall_s": 12.4,
+   "wilson_lb_95": 0.1729
+  },
+  {
+   "acc": 0.144,
+   "host_path": "results/transfer/envelope_v3/cells/emotion_cross_s2/result.json",
+   "host_sha256": "11dfe75c862e32b607a9bb5aca4ccbd0d23e97316fcbd14d9a1037fc86a68103",
+   "jev_recorded": 0.585,
+   "n": 500,
+   "nll_final": 1.7912,
+   "status": "BELOW",
+   "wall_s": 9.8,
+   "wilson_lb_95": 0.1159
+  },
+  {
+   "acc": 0.134,
+   "host_path": "results/transfer/envelope_v3/cells/emotion_dual_s2/result.json",
+   "host_sha256": "4b03c3e860dadd1452e2bd133711d3f1140257e3998a36dd0cf20e060eada1a8",
+   "jev_recorded": 0.585,
+   "n": 500,
+   "nll_final": 1.7908,
+   "status": "BELOW",
+   "wall_s": 12.1,
+   "wilson_lb_95": 0.1069
+  }
+ ],
+ "diagnosis_update": "Emotion collapse is seed-stable: NLL 1.7908-1.7917 (= ln6 = 1.791759) and acc 0.134-0.206 (~chance 1/6) at s0, s1, s2, both paths. Recovery-v1 no-fix decision stands; no SUPERIOR outcome would have reopened it, none occurred.",
+ "envelope_state": "Unchanged in shape, stronger in evidence: prompt_injections SUPERIOR at 3 seeds x both paths; emotion BELOW at 3 seeds x both paths (collapse, seed-stable); financial_phrasebank BELOW at s0+s1 (underfit); banking77-dual BELOW (incl. 0.722 fix); banking77-cross STRUCTURAL. Winning envelope remains prompt_injections only.",
+ "prereg": {
+  "host_mtime_utc": "2026-11-03T23:44:46Z",
+  "host_path": "results/transfer/envelope_v3/PREREG_V3.json",
+  "host_sha256": "887711e6b0211937856b68159c4a1cc7b6d057b7382826124db68c9586884c22",
+  "local_match": true,
+  "stamped_utc": "2026-11-03T23:44:43Z"
+ },
+ "recipe": "transfer_eval.py CLI, init pretrained from results/pretrain/l1_tiny_byte/ckpt.pt, steps 378, batch 16, lr 5e-4, split-seed 0, stratify, cross-shuffle off, examples 2000, test-examples 500, cuda, fp32",
+ "rule_locked": "Per cell, SUPERIOR iff fresh Azurite accuracy Wilson-95 LB strictly exceeds RECORDED Jev point 0.585 (emotion). Same envelope-v0 unpaired rule. No re-seeding; no post-hoc changes.",
+ "run_script_sha256": "a832684be334dc4fefc5d30634525ca8f562692bc061ccb60c89ef0a6c479383",
+ "spend": {
+  "training_compute_s": 24.6,
+  "wall_s": 44.3
+ },
+ "timing_repair_v2": "Envelope-v2 wall logs were lost to the duplicate-launch overwrite. Repaired from authoritative host artifacts: sum of per-cell result.json seconds fields = 5.0+7.5+6.1+6.1+12.3+12.3 = 49.3 s training compute (all rc-valid first-run products; evidence dirs intact). Observation recorded: cross s1/s2 both 6.1 s and dual s1/s2 both 12.3 s (coarse 0.1 s granularity, no conclusion drawn). ENVELOPE_V2.json budget note stays as labeled-estimate history; measured value is 49.3 s.",
+ "traces": {
+  "envelope_v2_host": "results/transfer/envelope_v2/ENVELOPE_V2.json sha bf44e094c73138e91561fce8e21c9d14d79dd183e623f432ef972e4ef184a1dc",
+  "recovery_v1_host": "results/transfer/recovery_v1/RECOVERY_V1.json sha 56e80752393c5e5ac52f6c3865d0e4b8ec886d0660a4a16c9ada4815d708f320",
+  "scorecard_v1_host_sha256": "3794ecbeaa3941b7f22a1d85524b27c2f2c8437fe78a2b68e6cbd9581988d97b"
+ },
+ "version": "envelope-v3"
+}

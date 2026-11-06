@@ -1,0 +1,222 @@
+\chapter{Conclusion and future work}
+\label{ch:conclusion}
+
+\section{What is established}
+
+The strongest result is a measurement-protocol result, and it is narrower than the
+pre-loss manuscript claimed. Six sampled draws of one frozen checkpoint span
+\ProtoOldSpread{} bits/byte, larger than the small-versus-mid difference the
+fixed-data ladder was built to resolve. A seed makes a number reproducible, not
+representative. The exhaustive replicate that would have established a
+lower-noise protocol was lost with the first sandbox; the exhaustive rows are
+pending, and no reduction ratio is claimed.
+
+At the 2.41M-parameter rung, byte-level pretraining transfers decision-relevant
+structure on Banking77: \TransferBankGain{} percentage points over a matched random
+initialisation, with a consistent direction across three seeds. The AG News
+balanced comparison is \TransferAgGain{} percentage points with a paired
+crossed-bootstrap 95\% interval of \TransferAgLo{} to \TransferAgHi{}, so it is
+\TransferAgVerdict. The historical AG News gain is withdrawn. A separate
+8,000-row Banking77 arm reaches \ShipAcc\% (95\% Wilson \ShipLo--\ShipHi), which
+overlaps the cited Jev interval; it is above the point estimate, not a
+demonstrated win.
+
+The public-task suite establishes a capability boundary rather than a blanket
+victory: against the pre-registered 78.8\% Jev cell it is a clear point win, but
+the strongest public Jev run reports 92.40\% on the full Banking77 test and is
+above it, so the flagship claim does not survive that comparator. The
+protocol-matched test on all 3{,}080 rows and the same 24 examples returns
+\JevMatchPctAOne\% on the primary arm (\JevMatchAOneLo--\JevMatchAOneHi) and
+\JevMatchPctNoEx\% without examples, so the gap survives and is not a row-set
+artifact. The diagnosed pooling failure was tested next with a pre-registered
+query-anchored head: it lifts the example arm from \QueryPctOldTwo\% to
+\QueryPctQueryTwo\% (\QueryMechGain{} points, $\QueryMechPText$), which establishes
+mean-pool dilution as the mechanism, but it remains \QueryDiffAbs{} points below
+Jev ($\QueryPValueText$) and the P0 bar is missed. The frozen examples are not
+test-clean: \ContamSupportMatches{} support messages are official test rows and
+\ContamEvalRows{} rows retrieve at least one; the decontaminated product rerun
+scores \ContamCleanAcc\%, so the gap is not a leakage artefact. The residual was diagnosed as
+an information-budget gap: \QueryEff{} complete examples in 1{,}020 bytes and no
+category definitions, against Jev's 24 examples and 77 definitions. That lever
+is now measured: the pre-registered 5{,}120-byte joint fine-tune with all 24
+examples reaches \LenPctLenTwo\% (95\% Wilson \LenLoLenTwo--\LenHiLenTwo),
+\LenDiffAbs{} points below Jev ($\LenPValueText$) and \LenNativeGapAbs{} points
+below the native-window query head, and it is \LenVsOldZeroGain{} against a
+message-only mean-pool control despite reading the examples (+\LenMechGainAbs{}
+over the old head on the same packed contexts). More context alone therefore
+does not buy parity, and the joint schedule confounds the example budget with
+the separate adaptation that amendment 1 dropped. The only remaining lever is the
+full-information 16k--32k-byte arm, costed at \LenNextShortLo--\LenNextShortHi{}
+and \LenNextLongLo--\LenNextLongHi{} GPU-hours. It is the last lever worth
+paying for rather than a likely win: the largest context effect measured here is
++0.65 points, and recovering \LenDiffAbs{} from definitions alone would be an
+order of magnitude larger. If it misses, the bar is out of reach for this class
+and budget.
+Clear Jev wins remain
+on DAIR Emotion and Financial PhraseBank. Three cells remain clear
+deficits. Nine tasks were measured at three rungs under one
+pre-registered recipe, all on
+the corrected dual path, with every cell at a rung scored on the same test rows.
+Azurite is clearly above the cited point on \SuiteSmallClear, \SuiteMidClear{}
+and \SuiteLargeClear{} of \SuiteComparatorCells{} comparator cells at 14.4M,
+33.7M and 113.47M, and not clearly below on \SuiteSmallAtOrAboveThree,
+\SuiteMidAtOrAboveThree{} and \SuiteLargeAtOrAbove. The step from 14.4M to
+113.47M, a \SuiteLargeParamsRatio$\times$ increase in parameters at the same
+token budget, wins \SuiteLargeWins{} cells by \SuiteLargeWinMin{} to
+\SuiteLargeWinMax{} points, loses XNLI by \SuiteLargeLossAbs{} points, and leaves
+\SuiteLargeUnmoved{} cells statistically unmoved. Three cells were executed twice
+on the same checkpoint; the repeats differ by at most \SuiteReplicationMax{}
+points, which is the scale at which those wins should be read.
+
+The candidate-set question is measured at one rung and one seed. Twelve fresh heads
+were trained from the same 113.47M checkpoint, four widths on each of three
+wide-bank tasks, with width the only difference between arms. At 32 candidates
+the trained heads score \EBankWThirtyTwo, \EClincWThirtyTwo{} and \EMassiveWThirtyTwo\% against
+\EBankWK, \EClincWK{} and \EMassiveWK\% at the full bank. Under the
+pre-registered five-point non-inferiority rule the claim \EAggregateVerdict{} on
+\EHolds{} of \ETasks{} tasks. The pass is not a flat curve: accuracy falls as
+the set widens, from \EBankWTwo, \EClincWTwo{} and \EMassiveWTwo\% at width 2 to
+the full bank's \EBankWK, \EClincWK{} and \EMassiveWK\%. The registered claim
+survives because the 32-way head is at or above the full bank (decisively on
+Banking77 and CLINC150, within noise on MASSIVE intent), not because width is
+free; widening from 2 to 32 costs \EBankCostTwoToThirtyTwo, \EClincCostTwoToThirtyTwo{} and
+\EMassiveCostTwoToThirtyTwo{} points. The widest point any suite task can pose is the full
+bank itself; the thesis's original $|C|=64$ target cannot be posed by these three
+banks ($K=77$, $151$, $60$), so 32 against $K$ is the test that exists. This is
+evidence about the 32-way interface at one rung and one seed, not evidence of
+near-perfect accuracy or of an accuracy-neutral width.
+
+The scale verdict is negative where it matters. XNLI is not a weak cell at
+113.47M but a degenerate one: one class on \SuiteLargeXnliTopShare\% of test
+rows, test NLL \SuiteLargeXnliNll{} against $\ln 3 = \SuiteLargeXnliLnK$, mean
+confidence \SuiteLargeXnliConf. At 14.4M and 33.7M the same cell collapses late
+into confident errors (NLL \SuiteSmallXnliNll{} and \SuiteMidXnliNll, ECE
+\SuiteSmallXnliEce{} and \SuiteMidXnliEce), so no rung learned the task and the
+largest one stopped even departing from uniform. CLINC150 is the only one of the
+four named cells that scale moved to a tie
+(\SuiteLargeShortClinc{} points below the cited point); AG News and Language ID remain clear
+deficits. DAIR Emotion's early \SuiteSmallPriorEmotion\% and
+\SuiteMidPriorEmotion\% were a scoring artifact, not a capability floor; the
+dual-path values are valid measurements but not a capability gain. Near-perfect
+accuracy across every benchmark is not demonstrated.
+
+What did scale is the proxy, and that contrast is the result. At $D/N = 10$,
+held-out bits/byte falls from \IsoTinyExh{} at 2.41M parameters to \IsoLargeBpb{}
+at 113.47M across a \IsoRange-fold range, with $\alpha = \AlphaFit$ over the
+\AlphaPoints{} exhaustive rungs and $\alpha = \AlphaFitSampled$ over the
+\AlphaPointsSampled{} sampled ones. A clean loss law and flat decision accuracy
+together say that capacity is not what stands between this system and parity:
+the bottleneck is what the interface and the corpus let the model learn about
+the task, not how many parameters it has.
+
+
+\section{What is not established, and is not claimed}
+
+\textbf{The fixed-data U-curve is not available.} The mid and large fixed-data
+cells were reclaimed. Only the tiny and small cells survive, both sampled, and
+they do not form a four-point sweep. The pre-loss U-shape is therefore withdrawn
+from the evidence base rather than restated.
+
+\textbf{The exhaustive protocol reduction is not available.} The sampled noise
+floor is measured; the exhaustive replicate is not on disk. The claim that
+exhaustive coverage reduces the spread by two orders of magnitude belongs to the
+lost build and is not made here.
+
+\textbf{The context curve is not available.} Only one context point survives;
+the 1{,}024 and 4{,}096 runs were reclaimed. There is no degradation curve to
+report, and no long-context claim is made.
+
+\textbf{The scaling exponent has no seed interval.} The exponent
+$\alpha = \AlphaFit$ (exhaustive) and $\AlphaFitSampled$ (sampled) is fitted on
+one training seed per rung. It is a measurement, not an interval: the per-point
+standard errors measure held-out sampling, and nothing here bounds how much a
+different training seed would move a point. The exponent also inherits the
+sampled draw for its absolute values.
+
+\textbf{Benchmark parity is not established.} The nine-task suite is clearly
+above the cited point on \SuiteSmallClear, \SuiteMidClear{} and \SuiteLargeClear{}
+of \SuiteComparatorCells{} comparator cells at 14.4M, 33.7M and 113.47M, and not
+clearly below on \SuiteSmallAtOrAboveThree, \SuiteMidAtOrAboveThree{} and
+\SuiteLargeAtOrAbove. At 113.47M the clear wins are Banking77, Financial
+PhraseBank, DAIR Emotion and MASSIVE intent; MASSIVE intent's point is Laya's
+card, not a Jev number, and CLINC150 is a tie rather than a win. AG News,
+Language ID and XNLI remain clear deficits, and XNLI is degenerate at the largest
+rung rather than merely low. No near-perfect-accuracy claim survives.
+
+
+\textbf{The coverage curve is not an abstention guarantee.} It is a descriptive
+ranking of this test set by the scorer's own softmax confidence. At 90\% coverage
+the arm is \ShipAtNinety\% accurate and at 50\% it is \ShipAtFifty\%, but those
+figures are properties of this ranking on these rows. They do not establish a
+deployment threshold or a guarantee that a fixed fraction of live traffic can be
+answered at a stated accuracy.
+
+\textbf{A 4B model is not the right instrument for this corpus.} The ceiling is
+permitted, but at \FourBDN{} tokens per parameter a 4B model would be far below
+the compute-optimal line. It would need \FourBTokensB{}B unique tokens and about
+\FourBGPUHours{} GPU-hours at the measured rate. The 2.41M rung is where the
+matched random control is affordable and where the model cannot store its
+fine-tuning set; that is the scientific reason for the choice, not a claim that
+2.41M is the product's final size.
+
+\textbf{Multimodality is unimplemented.} The byte-level input space makes a shared
+representation \emph{possible} --- text, code and quantised audio can share one
+vocabulary with no tokeniser boundary --- but no multimodal data has been trained
+on, and no multimodal result exists. The architectural argument is a statement
+about what the interface permits, not evidence that it works.
+
+\textbf{The long-context claim is unmeasured.} The model has never been trained or
+evaluated beyond a few thousand tokens. A long-context claim requires training at
+length and measuring degradation, which \S\ref{sec:context} begins and does not
+complete.
+
+\section{Future work, with measured costs}
+\label{sec:future-work}
+\label{sec:future}
+
+Costs below are computed from the measured throughputs in Chapter~\ref{ch:method},
+not from published GPU-hour counts.
+
+\begin{description}
+  \item[Restore the fixed-data and protocol evidence.] Re-run the mid and large
+  fixed-data cells and the two exhaustive protocol replicates, pulling each
+  artifact to local disk as it completes. Until then the U-curve and the
+  protocol-reduction claim remain open.
+  \item[Give the measured exponent a seed interval (E3).] The ladder exists at
+  one seed per rung; two more seeds at tiny, small and mid would cost about
+  $1.4$ GPU-hours and convert $\alpha = \AlphaFit$ from a fitted line into a
+  line with a training-variance interval. An exhaustive pass at 113.47M would
+  add the fourth exhaustive point; the sampled score already places it.
+  \item[Seed replication (E1b).] tiny, small and mid at three seeds, $1.2$B tokens,
+  $\approx 1.4$ GPU-hours. Converts the surviving fixed-data ordering from
+  uninterpretable to either claimed or retracted.
+  \item[Candidate-set sweep variants (E4).] The sweep itself is run: three wide-bank
+  tasks, $|C| \in \{2,8,32,K\}$, at 113.47M (\S\ref{sec:candidates}). What remains
+  is a second seed at the same rung and the same twelve-arm grid at 33.7M and
+  14.4M --- thirty-six arms at the measured \EArmHours{} hours each, about
+  \EFutureBothHours{} hours of wall time --- plus staging those two checkpoints on
+  the box. (\EFutureHours{} hours for the seed and one rung.) The six narrow-bank
+  tasks cannot pose $|C|=32$ and are excluded structurally.
+  \item[Context-length sweep (E5).] Accuracy against context from $1$k to $32$k
+  tokens, then to the design target. $\approx 1$ GPU-hour at $32$k.
+  \item[Multimodal training.] No result exists; this requires a data pipeline for
+  quantised audio and a training run at matched tokens. It is a separate
+  dissertation chapter and is scoped as one.
+\end{description}
+
+\section{The claim, restated}
+
+A decider's structural guarantee is real and narrow: it cannot answer outside its
+candidate set. Whether it answers \emph{correctly}, and whether that survives wider
+candidate sets and longer contexts, is the empirical question on which the
+commercial claim rests. This dissertation answers the width half at one rung: a
+trained 32-way interface is at or above the full bank on three wide-bank tasks,
+while a narrower interface is ahead of it by \ECostTwoToThirtyTwoMin--\ECostTwoToThirtyTwoMax{} points, so width is not
+free and the full bank is not a ceiling. The context half remains unmeasured, and
+one rung and one seed cannot establish that these three cells generalise. What the
+dissertation does establish is that the question was not previously measured under
+conditions that could support an answer, that it supplies the instrument which
+makes the measurement possible, and that it reports the width experiment it
+pre-registered, including where the result cuts against the stronger claim. The
+reclamation is part of the record: the numbers that survive are the ones with
+hashes, and the ones that do not are left visibly open.

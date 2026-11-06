@@ -1,0 +1,437 @@
+\chapter{Results}
+\label{ch:results}
+
+Every table in this chapter is generated from result files by the scripts named in
+Appendix~\ref{app:protocol}. Where a run has not survived, the cell reads
+\emph{pending} and the prose says why. A reclaimed result is not replaced with a
+projection.
+
+\section{The protocol noise floor, and the exhaustive check that is missing}
+\label{sec:protocol-result}
+
+One frozen checkpoint (large, step $10{,}000$) was scored six times under the
+sampled protocol at three mask seeds and two window counts. Table~\ref{tab:protocol}
+reports the six draws. They span \ProtoOldSpread{} bits/byte.
+
+That spread is a direct measurement and is larger than the small-versus-mid
+difference the fixed-data ladder was built to resolve. The distinction that
+matters is between \emph{reproducibility} and \emph{accuracy}: the original
+protocol was seeded, which made every number reproducible and none of them
+representative. A seed selects one draw from a small sample and then reports it
+with four decimal places.
+
+The exhaustive replicate is pending. The run directory that contained runs A and
+B was lost with the first sandbox, so this build cannot report the reduction that
+the earlier version claimed. The table marks the two exhaustive rows
+\emph{pending}; no ratio is computed and no ``sampling-free'' claim is made from a
+missing run. This is a narrower result than the pre-loss manuscript, and it is the one
+the surviving evidence supports.
+
+\input{tables/protocol}
+
+\section{The fixed-data size sweep is incomplete}
+\label{sec:fixed-d}
+
+Table~\ref{tab:fixed-d} reports the fixed-budget cells that survive on this
+checkout. The tiny and small rows come from sampled summaries; the mid and large
+rows were reclaimed and have no held-out score on disk. The source column makes
+the difference visible.
+
+The table therefore does not establish a U-shaped scaling law. It cannot: two
+sampled rows from different checkpoints are not a four-point fixed-data sweep, and
+the mid and large cells that produced the turn are gone. What survives is a pair
+of fixed-budget scores and a provenance fact --- the large-rung result that the
+pre-loss PDF reported is not reproducible from this checkout.
+
+This is exactly the kind of hole the thesis is required to leave open. The
+temptation is to keep the old four-row curve because it is in the previous PDF;
+that would make the table look complete while the underlying runs no longer exist.
+The table instead names the lost rows and withholds the curve. The 4B argument in
+\S\ref{sec:why-241m} does not depend on the missing large rung; it depends on the
+corpus arithmetic.
+
+\input{tables/fixed_d}
+
+\section{The token-budget trajectory is not available}
+\label{sec:e2}
+
+The large-rung trajectory was part of the pre-loss build. No trajectory file
+survives, so Table~\ref{tab:e2} is empty. There is no statement here about whether
+additional epochs help or hurt; the earlier sentence that they ``improve briefly
+and then stop'' is withdrawn with the run.
+
+\input{tables/e2}
+
+\section{Transfer: a matched Banking77 gain, an inconclusive AG News result}
+\label{sec:transfer}
+
+Bits per byte is a proxy. The quantity the thesis claims is decision accuracy, so
+the tiny rung was fine-tuned on two classification tasks from a matched random
+initialisation and from the pretrained checkpoint. Both arms use 2,000 training
+rows, 500 test rows, six nominal epochs, and the same order, steps, batch,
+optimiser, learning rate and training seed.
+
+\input{tables/transfer}
+
+On Banking77, pretraining raises accuracy by \TransferBankGain{} percentage
+points: 32.2\% from random initialisation against 74.3\% from the pretrained
+checkpoint, over a class-balanced draw of all seventy-seven labels. The three
+pretrained seeds are 0.750, 0.732 and 0.748 against 0.350, 0.292 and 0.324; the
+direction is consistent, and the gap is large relative to the seed spread.
+
+On AG News the pooled result is \TransferAgGain{} percentage points: 50.67\% for
+the pretrained arm against 49.53\% for random, over 1,500 decisions on 500 unique
+test items. The paired crossed-seed/item bootstrap gives a 95\% interval of
+\TransferAgLo{} to \TransferAgHi{} percentage points, so the pre-registered
+verdict is \TransferAgVerdict. The per-seed rows in Table~\ref{tab:transfer}
+show why: the three differences are +0.20, +2.80 and +0.40 points, all inside
+their own item-bootstrap intervals, and the pooled interval is wider than the
+effect it is asked to resolve. The earlier AG News estimate lay above this
+interval and is withdrawn; it is not evidence for the new protocol and it is not
+restated as if it were.
+
+The 8,000-row Banking77 score arm reaches \ShipAcc\% (95\% Wilson
+\ShipLo--\ShipHi) in Table~\ref{tab:rows}. That is a row-scaling result, not the
+matched transfer contrast: its random-initialisation control at 8,000 rows was
+not run. It is therefore not evidence that the 2,000-row gain is larger at 8k,
+and it is not a single-checkpoint continuation of the six AG News transfer cells.
+
+\section{Why the transfer probe is 2.41M, not 4B}
+\label{sec:why-241m}
+
+The 4B ceiling is a permission, not the right instrument for this corpus. The
+corpus has \CorpusTokens{} tokens. At 2.41M parameters that is 677 tokens per
+parameter; at 4B it is \FourBDN{} tokens per parameter, about
+\FourBFactor$\times$ fewer than the 113M rung and far below the compute-optimal
+line. At $D/N=20$ a 4B model would need \FourBTokensB{}B unique tokens, roughly
+49 times the corpus, and about \FourBGPUHours{} GPU-hours at the measured
+throughput. On a single card that is years of wall-clock before data collection.
+
+The tiny rung is where a matched random-initialisation control is affordable and
+where the model cannot store its fine-tuning set. That is the scientific reason
+for the choice, not a claim that 2.41M is the product's final size. A 4B model on
+1.63B tokens would be a memorisation measurement; the missing large-rung evidence
+does not make that arithmetic go away.
+
+\section{Evidence identity and the reclamation}
+\label{sec:reclamation}
+
+The first sandbox was reclaimed on 2026-10-28. The original AG News source
+checkpoint \texttt{3cf421\ldots bed8} was lost with the disk and cannot be restored
+byte-for-byte. The v2 corpus was rebuilt from the checked-in builder and
+reproduced its recorded SHA-256 exactly. The replacement checkpoint is
+\texttt{817e7f04\ldots0410}: seq 1024, batch 16, seed 0, 6,104 steps,
+100,007,936 tokens, held-out 1.2937 bits/byte. It reproduces the protocol but not
+the bitwise weights, because GPU execution is not bitwise-deterministic.
+
+The six AG News cells are a valid paired comparison on the amended checkpoint;
+they are not a continuation of the exact Banking77 initialisation. The Banking77
+84.3\% row uses the surviving pre-loss comparator
+\texttt{499fd68c\ldots ebdc}, not \texttt{817e7f04\ldots0410}. The two rows are
+kept separate for that reason, and the table says so rather than averaging them
+into a false single-checkpoint comparison.
+
+Completed records were not overwritten. The recovered tree is isolated under
+\texttt{results/recovered\_20261028/} and its manifest hashes the corpus, all six
+AG News cells, the twenty-seven suite runs (nine tasks at three rungs) and the permutation controls. A second
+reclamation now costs wall-clock, not results.
+
+\section{The public-task suite: a capability boundary at three rungs}
+\label{sec:suite}
+
+Table~\ref{tab:suite} reports nine tasks at three rungs under one pre-registered
+recipe: LR \(10^{-4}\), exactly 3{,}000 optimizer steps, batch 32, 4{,}000
+stratified training rows and 2{,}000 test rows where the split allows, seed 0,
+an unfrozen encoder, and each checkpoint's native context. The recipe is
+identical for every cell; there is no per-task learning rate, step count, row
+cap, or prompt. Every Azurite cell is measured on the dual context-candidate
+path, and every cell at a given rung is scored on the identical test rows, which
+is what licenses the paired comparisons quoted below. The 113.47M cell is the
+fourth size in the pretraining ladder but the third measured on this suite; the
+two smaller suite rungs are the 14.4M and 33.7M checkpoints.
+
+The 113.47M column is a single new run from fresh weights, not a continuation of
+the run lost on 2026-10-28: \SuiteCkptLargeTokens{} tokens, step
+\SuiteCkptLargeStep, checkpoint \SuiteCkptLarge. Its cells ran in capped
+concurrency waves after a nine-way wave exhausted the card's memory; the failed
+attempts produced no result and are kept as an infrastructure record rather than
+averaged into anything.
+
+
+The final recipe is not the 500-step, \(5\times10^{-4}\) protocol that produced
+the superseded table. That earlier mid-rung result was primarily an optimization
+failure, not a capacity ceiling: the pre-registered four-arm sweep over learning
+rate and step budget selected \(10^{-4}\) at 3{,}000 steps, and every
+\(5\times10^{-4}\) arm collapsed in accuracy, NLL, and calibration. The final
+table applies that single winning setting unchanged to every task. This is the
+learning-rate finding, and it is why the earlier suite is superseded rather than
+supplemented.
+
+At 14.4M, \SuiteSmallAtOrAboveThree{} of \SuiteComparatorCells{} comparator
+cells are not clearly below their cited point, of which \SuiteSmallClear{} are
+clear wins and one is a tie. Banking77 reaches \SuiteSmallBank\%
+(\SuiteSmallGapBank{} points against 78.8), Financial PhraseBank
+\SuiteSmallFinancial\% (\SuiteSmallGapFinancial{} against 73.0), and DAIR
+Emotion \SuiteSmallEmotion\% (\SuiteSmallGapEmotion{} against 48.0); all three
+clear their points. MASSIVE intent reaches \SuiteSmallMassiveIntent\%
+(\SuiteSmallGapMassiveIntent{} against Laya's \SuiteCitedMassiveIntent\% card
+\citep{laya2026card}),
+but its interval includes the card value, so it is a tie inside sampling noise
+and not a Jev win. The four remaining comparator cells are below: CLINC150
+\SuiteSmallGapClinc, AG News \SuiteSmallGapAg, XNLI \SuiteSmallGapXnli, and
+Language ID \SuiteSmallGapLang{} points. MASSIVE scenario has no cited point and
+is an internal diagnostic.
+
+At 33.7M, four comparator cells are not clearly below their cited points: three
+clear wins, Banking77 \SuiteMidBank\% (\SuiteMidGapBank{}), DAIR Emotion
+\SuiteMidEmotion\% (\SuiteMidGapEmotion{}), and Financial PhraseBank
+\SuiteMidFinancial\% (\SuiteMidGapFinancial{}), plus one tie, MASSIVE intent
+\SuiteMidMassiveIntent\% (\SuiteMidGapMassiveIntent), whose interval
+\SuiteMidMassiveIntentLo--\SuiteMidMassiveIntentHi{} contains Laya's
+\SuiteCitedMassiveIntent\%. The remaining four are clear below: CLINC150
+\SuiteMidGapClinc, AG News \SuiteMidGapAg, XNLI \SuiteMidGapXnli, and Language ID
+\SuiteMidGapLang{} points. An earlier version reported three of eight here because
+it counted the MASSIVE intent tie as a loss; the rule stated under the table is
+the interval rule, and under it the count is four, of which three are clear. The
+33.7M rung is worse than 14.4M on \SuiteLargerWorse{} of \SuiteTasks{} cells, so
+this step is not a scale gain over the smaller one; \S\ref{sec:suite} shows the
+113.47M rung does not restore monotonicity either.
+
+
+At 113.47M, five of eight comparator cells are not clearly below their cited
+points. Four are clear wins: Banking77 \SuiteLargeBank\% (\SuiteLargeGapBank),
+Financial PhraseBank \SuiteLargeFinancial\% (\SuiteLargeGapFinancial), DAIR
+Emotion \SuiteLargeEmotion\% (\SuiteLargeGapEmotion), and MASSIVE intent
+\SuiteLargeMassiveIntent\% (\SuiteLargeGapMassiveIntent), the first rung at which
+that cell clears Laya's \SuiteCitedMassiveIntent\% card rather than tying it.
+CLINC150 is a tie: \SuiteLargeClinc\%, \SuiteLargeShortClinc{} points below the
+cited point, with an interval of \SuiteLargeClincLo--\SuiteLargeClincHi{} that
+covers the cited \SuiteCitedClinc. Three cells are clear below: AG News by
+\SuiteLargeShortAg, Language ID by \SuiteLargeShortLang, and XNLI by
+\SuiteLargeShortXnli{} points. MASSIVE scenario has no
+cited point and remains an internal diagnostic. These counts use the
+pre-registered comparator points; the strongest public Jev run on Banking77 is
+above \SuiteLargeBank\% and is protocol-matched in \S\ref{sec:jev-matched},
+where both pre-registered heads fall short; the best arm reaches
+\QueryPctQueryTwo\%, so that cell is not a win over the best public comparator.
+
+
+The path correction changes what is attributable to the model. Eight cells
+changed from the candidate-only cross encoder to the dual path: AG News, DAIR
+Emotion, XNLI, and Financial PhraseBank at both rungs. Their former values are
+retired, not compared as capability measurements. The 14.4M exact controls are
+Banking77 \SuiteSmallBank\%, CLINC150 \SuiteSmallClinc\%, and MASSIVE intent
+\SuiteSmallMassiveIntent\%: the same scores and the same per-example decisions,
+so those earlier measurements remain valid. The other already-dual cells move
+by \SuiteSmallDeltaMassiveScenario, \SuiteSmallDeltaLang,
+\SuiteMidDeltaBank, \SuiteMidDeltaClinc, \SuiteMidDeltaMassiveIntent,
+\SuiteMidDeltaMassiveScenario, and \SuiteMidDeltaLang{} points. Because their
+path did not change, those deltas are run-to-run variation and are not credited
+to the fix.
+
+DAIR Emotion is the largest path effect and the clearest warning against
+reading a harness repair as a capability gain. The retired candidate-only
+cross-encoder values were \SuiteSmallPriorEmotion\% and \SuiteMidPriorEmotion\%,
+below the \SuiteEmotionMajority\% majority baseline. On the dual path the same
+checkpoints and recipe score \SuiteSmallEmotion\% and \SuiteMidEmotion\%,
+above the cited 48.0. The \SuiteSmallDeltaEmotion{} and \SuiteMidDeltaEmotion{}
+point changes are scoring corrections, not model improvements: the pre-trained
+checkpoint, the 3{,}000-step recipe, and the seed are unchanged, and only the
+scoring path differs. The post-fix values are valid measurements and stand in the table, but
+the jump is evidence that the earlier failure was an artifact of not reading
+candidate context, not that the decider crossed a capability threshold. The
+113.47M cell is \SuiteLargeVsSmallEmotion{} points from its 14.4M counterpart
+(exact $p = \SuiteLargeVSSmallPEmotion$), so the correction does not create a
+scale gain either.
+
+XNLI is not the same story. The retired cross-encoder value at 14.4M was
+\SuiteSmallXnliRaw\%; the flat packer lost the hypothesis entirely in
+\SuiteXnliAbsentTest{} of \SuiteXnliTestN{} test pairs (and
+\SuiteXnliAbsentTrain{} of \SuiteXnliTrainN{} training rows), so that number is
+not a capability measurement. The dual path reaches \SuiteSmallXnli\% (95\%
+Wilson \SuiteSmallXnliLo--\SuiteSmallXnliHi), a \SuiteSmallXnliGain{} point
+change, but still \SuiteSmallXnliShortfall{} points below the cited 86.0\%. The
+earlier field-aware-cross value of \SuiteSmallXnliPriorFix\% is also superseded
+by this measurement. At 14.4M the 256-token window still truncates some pairs
+and the field-aware dual packer was deliberately not attempted, so part of that
+shortfall may be context. The 33.7M result removes that explanation: its
+1{,}024-token context holds every test pair, and it scores \SuiteMidXnli\% (95\%
+Wilson \SuiteMidXnliLo--\SuiteMidXnliHi), statistically indistinguishable from
+the \SuiteXnliChance\% chance rate and \SuiteMidXnliShortfall{} points below the
+cited point. XNLI is therefore a genuine model failure at both smaller
+rungs, not a packing artifact at 33.7M.
+
+XNLI at 113.47M is not a weaker version of the same failure; it is a degenerate
+cell. It assigns one class to \SuiteLargeXnliTopShare\% of the test rows, its
+test NLL is \SuiteLargeXnliNll{} against $\ln 3 = \SuiteLargeXnliLnK$, its mean
+confidence is \SuiteLargeXnliConf{} and its ECE is \SuiteLargeXnliEce. Those are
+the signatures of a constant uniform distribution: the model has learned nothing
+on the task and is not wrong in an informative way. Against 14.4M it gets
+\SuiteLargeOnlyXnli{} rows right that 14.4M gets wrong and \SuiteSmallOnlyXnli{}
+wrong that 14.4M gets right (exact $p = \SuiteLargeVSSmallPXnli$). The smaller
+rungs were not doing the task either --- their NLLs are \SuiteSmallXnliNll{} and
+\SuiteMidXnliNll{} with ECE \SuiteSmallXnliEce{} and \SuiteMidXnliEce, the
+profile of a late-training collapse into confident errors --- but they at least
+departed from uniform. Scaling removed that departure.
+
+The scale question the ladder was built to answer therefore has a measured
+answer, and it is negative. Against 14.4M, a \SuiteLargeParamsRatio$\times$
+increase in parameters at the same token budget wins \SuiteLargeWins{} cells ---
+\SuiteLargeWinCells{} --- by \SuiteLargeWinMin{} to \SuiteLargeWinMax{} points,
+loses \SuiteLargeLosses{} cell, XNLI, by \SuiteLargeLossAbs{} points, and leaves
+\SuiteLargeUnmoved{} cells statistically unmoved. The wins sit just above the
+measured run-to-run floor: across \SuiteReplicationCells{} cells executed twice
+on the same checkpoint and test draw, the repeats differ by at most
+\SuiteReplicationMax{} points while flipping up to \SuiteReplicationFlips{} of
+2{,}000 predictions. The single loss is \SuiteLargeLossOverWinMax$\times$ the
+largest win and points the wrong way. None of XNLI, AG News, CLINC150 or
+Language ID is closed; CLINC150 is the only one of the four that scale moved to
+a tie, and it moved it by \SuiteLargeVsSmallClinc{} points. Capacity is therefore not
+sufficient for these four cells.
+
+The checkpoint is identified by hash, not by filename: \SuiteCkptLarge, with the
+step and token count above. Every cell's \texttt{evidence/provenance.json} names
+the same SHA-256, and the per-example decisions, metric histories and evidence
+tensors are on local disk, hash-checked against their records. The recipe and the
+nine cells were fixed before the first large cell ran:
+\texttt{results/suite\_large\_113m/PRE\_REGISTRATION.md} (SHA-256
+\SuitePreRegSha) is in the run manifest. The nine cells cost
+\SuiteLargeGpuHours{} GPU-hours of measured evaluation. Nothing in this section
+was retuned after the result was seen, and no cell was dropped.
+
+
+The cross-harness caveat governs every row. The cited values come from different
+tokenizers, pretraining corpora, model sizes, and evaluation harnesses; the
+Azurite values are single-seed point estimates with binomial intervals, not
+seed-aware ones. A point above a cited number is not a demonstrated win, and an
+interval overlap is not parity. MASSIVE intent's cited point is Laya's model card
+\citep{laya2026card}, not a Jev number. The table is a capability boundary, not a head-to-head.
+
+\input{tables/suite3}
+
+Every cell in that table is expanded in Table~\ref{tab:suite-ci}, with its Wilson
+interval, its gap against the cited point and the exact paired test against
+14.4M; the counts quoted above are the columns of that table, not a separate
+analysis.
+
+\input{tables/suite3_ci}
+
+\section{Matched-\texorpdfstring{$D/N$}{D/N} scaling is measured}
+\label{sec:iso}
+
+Table~\ref{tab:iso-dn} is the ladder the fixed-data sweep could not be: four
+rungs at matched tokens per parameter, $D/N = 10$, on the v2 corpus. Tiny,
+small and mid carry the exhaustive non-overlapping score; all four carry the
+sampled-64 score at the identical configuration (64 windows of 1{,}024 bytes,
+mask seed 1234). Held-out bits/byte falls from \IsoTinyExh{} at 2.41M parameters to
+\IsoSmallExh{} at 14.26M and \IsoMidExh{} at 33.70M on the exhaustive protocol,
+and from \IsoTinySamp{} to \IsoSmallSamp, \IsoMidSamp{} and \IsoLargeBpb{} on the
+sampled one.
+
+A least-squares fit of $\log \mathrm{bpb}$ on $\log N$ gives
+$\alpha = \AlphaFit$ over the \AlphaPoints{} exhaustive rungs and
+$\alpha = \AlphaFitSampled$ over the \AlphaPointsSampled{} sampled rungs. The
+two protocols disagree on the exponent by \AlphaGap, which is small compared
+with the \IsoRange-fold range of $N$ they are fitted across. At
+$\alpha \approx 0.35$, a four-fold increase in parameters at fixed tokens per
+parameter multiplies bits/byte by \IsoStepFactor: a \IsoStepDrop\% reduction in
+held-out loss, every four-fold step, across the whole ladder.
+
+Three limits belong on the number rather than in a footnote. The fit has four
+rungs and one training seed each, so it has no interval that accounts for
+run-to-run training variance; the per-point standard errors
+($\approx \IsoStderrMax$ bits/byte on the exhaustive pass) are far smaller than the
+between-rung differences, but they measure sampling of the held-out region, not
+seeds. The large rung has only the sampled score because its exhaustive pass
+was not run, so its exhaustive cell is marked absent rather than extrapolated.
+And the absolute values inherit the sampled protocol's draw: all four rungs
+share one draw, which is what licenses the comparison between them, but
+\S\ref{sec:protocol-result} is the evidence that a different draw moves the
+absolute value.
+
+What the exponent establishes is a property of the proxy, not of the product.
+Pretraining loss improves smoothly and predictably with capacity at fixed data
+per parameter. Whether that improvement reaches decision accuracy is a separate
+measurement, and \S\ref{sec:suite} reports it: the same three rungs, on the same
+checkpoints, do not convert this loss curve into benchmark parity.
+
+\input{tables/iso_dn}
+
+
+\section{The context-length curve is a single point}
+\label{sec:context}
+
+Table~\ref{tab:context} has one measured row, seq 256 at 0.9901 bits/byte, and two
+pending rows. The 1,024 and 4,096 runs were reclaimed. A one-point curve is not a
+degradation result; the long-context claim remains a design target rather than a
+measured property.
+
+\input{tables/context}
+
+\input{sections/04d-candidates}
+
+\section{Summary of the measured position}
+
+\begin{enumerate}
+  \item \textbf{High confidence.} The sampled protocol has a noise floor of
+  \ProtoOldSpread{} bits/byte on one frozen checkpoint, larger than the
+  small-versus-mid effect the ladder was built to resolve. This is a direct
+  measurement from the surviving six draws.
+  \item \textbf{Moderate confidence.} At 2.41M parameters, byte-level pretraining
+  transfers decision-relevant structure on 77-way Banking77:
+  \TransferBankGain{} percentage points over a matched random initialisation. The
+  AG News balanced result is \TransferAgGain{} percentage points with an interval
+  that crosses zero; it is \TransferAgVerdict, not a gain.
+  \item \textbf{Descriptive, not a win.} The 8,000-row Banking77 arm reaches
+  \ShipAcc\% (95\% Wilson \ShipLo--\ShipHi), overlapping the pre-registered Jev
+  interval (78.8\%, 73.1--83.6). The point estimate is above that comparator,
+  the interval is not, and the rows are not shared. The protocol-matched test in
+  \S\ref{sec:jev-matched} confirms the gap on shared rows: the mean-pool head
+  reaches \JevMatchPctAOne\% with the same 24 examples and \JevMatchPctNoEx\%
+  without them. A second, pre-registered query-anchored head recovers the
+  example context to \QueryPctQueryTwo\%, still \QueryDiffAbs{} points below
+  Jev; the pooling diagnosis is confirmed as a mechanism, not as a P0 win.
+  \item \textbf{A capability boundary, not parity.} The nine-task suite at three
+  rungs reaches, or is not clearly below, the cited point on
+  \SuiteSmallAtOrAboveThree{} of \SuiteComparatorCells{} comparator cells at
+  14.4M, \SuiteMidAtOrAboveThree{} at 33.7M and \SuiteLargeAtOrAbove{} at
+  113.47M, of which \SuiteSmallClear, \SuiteMidClear{} and \SuiteLargeClear{} are
+  clear wins. The Banking77 win is against the pre-registered 78.8\% zero-shot
+  cell; a stronger public Jev run reports 92.40\%, above \SuiteLargeBank\%, so the
+  flagship comparison does not survive that comparator \citep{smith2026jevbanking}.
+  The protocol-matched run on the same 3,080 rows returns \JevMatchPctAOne\%
+  with the mean-pool head (\JevMatchPctNoEx\% without examples); the
+  query-anchored head returns \QueryPctQueryTwo\% and still misses Jev by
+  \QueryDiffAbs{} points, so the gap survives both heads.
+  The \SuiteLargeParamsRatio$\times$ increase from 14.4M wins
+  \SuiteLargeWins{} cells by \SuiteLargeWinMin{} to \SuiteLargeWinMax{} points,
+  loses XNLI by \SuiteLargeLossAbs{} points, and leaves \SuiteLargeUnmoved{}
+  cells unmoved: capacity alone does not close the four cells the thesis needed. XNLI at 113.47M is a degenerate uniform predictor
+  (\SuiteLargeXnliNll{} nats, one class on \SuiteLargeXnliTopShare\% of rows),
+  not a weak attempt, and the \SuiteReplicationCells-cell replication puts the run-to-run floor at
+  \SuiteReplicationMax{} points. DAIR Emotion's retired
+  \SuiteSmallPriorEmotion\% and \SuiteMidPriorEmotion\% were a candidate-only
+  scoring artifact; its dual-path values are valid measurements, but the change
+  is not a capability gain.
+  \item \textbf{The width test, at one rung and one seed.} On the three wide-bank
+  tasks, a head trained at 32 candidates scores \EBankWThirtyTwo, \EClincWThirtyTwo{} and
+  \EMassiveWThirtyTwo\% against \EBankWK, \EClincWK{} and \EMassiveWK\% at the full
+  bank. Under the pre-registered 5-point non-inferiority rule the claim
+  \EAggregateVerdict{} on \EHolds{} of \ETasks{} tasks. The curve falls with
+  width --- 2 candidates reach \EBankWTwo, \EClincWTwo{} and \EMassiveWTwo\% --- so
+  the pass is driven by 32 matching or exceeding the full bank, not by width
+  being free.
+  This is evidence about the 32-way interface at 113.47M, not a demonstration of
+  near-perfect accuracy; the full grid is costed in \S\ref{sec:future}.
+  \item \textbf{Measured scaling in the proxy.} At $D/N = 10$ the held-out loss
+  follows $\mathrm{bpb} \propto N^{-\alpha}$ with $\alpha = \AlphaFit$ over the
+  \AlphaPoints{} exhaustive rungs and $\alpha = \AlphaFitSampled$ over the
+  \AlphaPointsSampled{} sampled rungs, across a \IsoRange-fold range of
+  parameters. The proxy scales cleanly; the decision accuracy in the previous
+  item does not. That contrast, not the loss curve alone, is the thesis's answer
+  on scale.
+  \item \textbf{Not established.} The fixed-data U-shape, the exhaustive protocol
+  reduction, the context-length curve and any 4B result. These are visibly
+  pending, with the reason stated in the relevant section.
+
+\end{enumerate}

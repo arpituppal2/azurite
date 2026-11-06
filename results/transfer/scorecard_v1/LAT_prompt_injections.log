@@ -1,0 +1,13 @@
+{
+ "dual": {
+  "per_decision_ms_batch1": 3.8689938200695906,
+  "per_decision_ms_batch16": 0.344865757504067,
+  "per_decision_ms_batch64": 0.3080280621878728
+ },
+ "cross": {
+  "per_decision_ms_batch1": 2.1983179000380915,
+  "per_decision_ms_batch16": 0.22342824500356073,
+  "per_decision_ms_batch64": 0.18725282531136145
+ }
+}
+wall_s 4.7

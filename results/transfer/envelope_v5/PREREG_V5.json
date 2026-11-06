@@ -1,0 +1,21 @@
+{
+ "version": "v5",
+ "kind": "replication of v1 prompt_injections win, one fresh seed per path",
+ "task": "prompt_injections",
+ "recipe": "v1 Execution-1 identical (546/116, 378 steps, batch16, lr5e-4, strat-seed0, anchor 817e7f04)",
+ "rule": "SUPERIOR iff Wilson-95 LB strictly exceeds RECORDED Jev 0.741",
+ "cells": {
+  "cross_s1": {
+   "acc": 0.8879,
+   "lb": 0.8176,
+   "sha": "be8b23a45aae7634"
+  },
+  "dual_s1": {
+   "acc": 0.8966,
+   "lb": 0.8279,
+   "sha": "e2e582b2b74447a4"
+  }
+ },
+ "verdict": "both SUPERIOR; win holds 2 seeds x 2 paths",
+ "status": "LOCKED pre-launch in PREREG_V5.md; executed without deviation"
+}

@@ -1,0 +1,38 @@
+{
+ "budget": {
+  "note": "6 cells x ~11-19 s each; total expected < 300 s wall",
+  "per_cell_timeout_s": 180
+ },
+ "cells": [
+  {
+   "args": "--task prompt_injections --arm byte --rung tiny --init pretrained --path cross --steps 378 --batch 16 --lr 5e-4 --seed 1 --split-seed 0 --stratify --cross-shuffle off --examples 2000 --test-examples 500 --device cuda",
+   "name": "pi_cross_s1"
+  },
+  {
+   "args": "--task prompt_injections --arm byte --rung tiny --init pretrained --path dual --steps 378 --batch 16 --lr 5e-4 --seed 1 --split-seed 0 --stratify --cross-shuffle off --examples 2000 --test-examples 500 --device cuda",
+   "name": "pi_dual_s1"
+  },
+  {
+   "args": "--task prompt_injections --arm byte --rung tiny --init pretrained --path cross --steps 378 --batch 16 --lr 5e-4 --seed 2 --split-seed 0 --stratify --cross-shuffle off --examples 2000 --test-examples 500 --device cuda",
+   "name": "pi_cross_s2"
+  },
+  {
+   "args": "--task prompt_injections --arm byte --rung tiny --init pretrained --path dual --steps 378 --batch 16 --lr 5e-4 --seed 2 --split-seed 0 --stratify --cross-shuffle off --examples 2000 --test-examples 500 --device cuda",
+   "name": "pi_dual_s2"
+  },
+  {
+   "args": "--task financial_phrasebank --arm byte --rung tiny --init pretrained --path cross --steps 378 --batch 16 --lr 5e-4 --seed 1 --split-seed 0 --stratify --cross-shuffle off --examples 2000 --test-examples 500 --device cuda",
+   "jev_recorded": 0.73,
+   "name": "fpb_cross_s1"
+  },
+  {
+   "args": "--task financial_phrasebank --arm byte --rung tiny --init pretrained --path dual --steps 378 --batch 16 --lr 5e-4 --seed 1 --split-seed 0 --stratify --cross-shuffle off --examples 2000 --test-examples 500 --device cuda",
+   "jev_recorded": 0.73,
+   "name": "fpb_dual_s1"
+  }
+ ],
+ "created_utc": "2026-11-03T23:39:21Z",
+ "locked_rule": "Per cell, SUPERIOR iff fresh Azurite accuracy Wilson-95 lower bound strictly exceeds the RECORDED Jev point (prompt_injections 0.741, financial_phrasebank 0.73). Same unpaired envelope-v0 rule as superiority_v1. Losses and wins both reported; no re-seeding, no post-hoc bar changes.",
+ "purpose": "Envelope-v2: seed-robustness of the prompt_injections win (seeds 1,2 both paths) + one additional K<=16 task (financial_phrasebank K=3, seed 1 both paths) under identical recipe. K=77 tasks excluded (cross K-cap 16 structural).",
+ "recipe_base": "transfer_eval.py CLI, init pretrained from results/pretrain/l1_tiny_byte/ckpt.pt, cuda, fp32"
+}

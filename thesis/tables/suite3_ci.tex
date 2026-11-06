@@ -1,0 +1,36 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Every 113.47M cell with its 95\% Wilson interval, its gap against the
+cited point, and the exact paired McNemar test against the 14.4M cell on the same
+test rows. $K$ is the number of classes, $n$ the number of scored test rows.
+Verdict is the interval rule: \emph{above} and \emph{below} mean the Wilson
+interval excludes the cited point, \emph{tie} that it covers it. The last two
+columns compare the two Azurite rungs directly, not either against the citation.
+Read from \texttt{results/suite\_large\_113m/COMPARISON.json}; the generator
+recomputes every cell and refuses a mismatch.}
+\label{tab:suite-ci}
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}lrrrrrlrr@{}}
+\toprule
+Task & $K$ & $n$ & Acc. & 95\% CI & $\Delta$ cited & Verdict &
+$\Delta$ vs 14.4M & $p$ \\
+\midrule
+AG News & 4 & 2,000 & 85.75 & 84.15--87.21 & $-5.25$ & below & $+2.60$ & $9.5\times10^{-4}$ \\
+DAIR Emotion & 6 & 2,000 & 81.70 & 79.95--83.33 & $+33.70$ & above & $-0.55$ & 0.58 \\
+Banking77 & 77 & 2,000 & 88.45 & 86.97--89.78 & $+9.65$ & above & $+0.40$ & 0.58 \\
+CLINC150 & 151 & 2,000 & 88.50 & 87.03--89.82 & $-1.00$ & tie & $+1.70$ & 0.01 \\
+MASSIVE intent & 60 & 2,000 & 82.00 & 80.26--83.62 & $+3.70$ & above & $+2.80$ & $8.4\times10^{-5}$ \\
+MASSIVE scenario & 18 & 2,000 & 83.90 & 82.22--85.45 & --- & --- & $-0.25$ & 0.76 \\
+XNLI & 3 & 2,000 & 33.90 & 31.86--36.00 & $-52.10$ & below & $-9.95$ & $3.6\times10^{-10}$ \\
+Language ID & 20 & 2,000 & 95.80 & 94.83--96.59 & $-3.80$ & below & $-0.50$ & 0.24 \\
+Financial PhraseBank & 3 & 1,000 & 90.10 & 88.09--91.80 & $+17.10$ & above & $+2.00$ & 0.05 \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\footnotesize
+$\Delta$ is in percentage points. MASSIVE intent's cited point is Laya's card
+(78.30), not a Jev number;
+MASSIVE scenario has no published point and its gap column is empty. A tie is not
+parity: it means this test draw cannot separate the two values.
+\end{table}

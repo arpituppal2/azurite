@@ -1,0 +1,110 @@
+\section{The candidate-set sweep: width has to be trained}
+\label{sec:candidates}
+
+Every suite cell fixes its task's label width, so the suite cannot say what
+happens to accuracy as the candidate set widens. That is the question the
+commercial claim turns on, and \S\ref{sec:future} named a candidate-set sweep as
+the direct test. The obvious implementation of that sweep is not an experiment.
+With one fixed model and one fixed bank, restricting a row to a subset that still
+contains the gold can only delete a wrong argmax: if the full-bank argmax is the
+gold it remains the argmax of the subset, and if it is not, deleting it can only
+help. Restricted accuracy is therefore at least the full-bank accuracy by
+construction, whatever the model learned, and a curve produced that way would
+``hold'' for a model that had learned nothing. Width has to be trained.
+
+The sweep therefore trains a fresh decision head for each width. Every arm starts
+from the same pretrained checkpoint (\SuiteCkptLarge, step \SuiteCkptLargeStep),
+uses the suite's frozen fine-tuning recipe --- 4{,}000 stratified training rows,
+3{,}000 optimizer steps, batch 32, LR \(10^{-4}\), AdamW, seed 0, the
+checkpoint's 1{,}024-byte context --- and is tested on the suite's 2{,}000 test
+rows at the width it was trained at. The only difference between arms is
+\(|C|\): each training row is packed against its gold plus \(|C|-1\) distractors
+drawn uniformly without replacement, with the sampling seed fixed by a hash of
+task, width, step and row. Three wide-bank tasks are used: Banking77
+(\(K=\EBankK\)), CLINC150 (\(K=\EClincK\)) and MASSIVE intent
+(\(K=\EMassiveK\)), at \(|C| \in \{2, 8, 32, K\}\).
+
+The design, the sampling rule and the decision rule were written and hashed
+before any valid accuracy existed; both amendments, including the one that voids
+the first launch, are inside the hashed file (\texttt{results/e4\_candidate\_sweep/}, SHA-256
+\EPreregSha). A first launch was voided by the harness check: the width-\(K\)
+Banking77 arm scored outside the 0.2-point tolerance because the decision head
+was not seeded, so every arm had started from a different random
+initialisation. Those runs are preserved under \texttt{\_invalid\_init} with
+their reason and are excluded from every number here; the trainer now seeds
+before building the head, and the design is unchanged. The pre-registered primary rule is a non-inferiority test: the
+claim that accuracy holds at \(|C|=32\) survives for a task only if the paired,
+one-sided 95\% bootstrap lower bound on
+\(\mathrm{acc}(32)-\mathrm{acc}(K)\) is above \(-5.0\) points. The pre-registration also set a harness check: the
+width-\(K\) arm, trained by the same code and schedule as the suite cell, should
+reproduce the published value within 0.2 points, and any larger deviation is
+reported as a discrepancy rather than repaired by substituting the published
+number. Table~\ref{tab:e4} reports every arm; the full-bank arms are the same
+recipe as the suite cells, not the published numbers.
+
+\input{tables/e4}
+
+\paragraph{What the sweep found.} On Banking77 the width-32 arm reaches
+\EBankWThirtyTwo\% (95\% Wilson \EBankWThirtyTwoLo--\EBankWThirtyTwoHi) against \EBankWK\% at
+width \(K\), a difference of \EBankDelta{} points with a lower bound of
+\EBankLower{}; the rule's verdict is that the claim \EBankVerdict. On CLINC150
+the corresponding numbers are \EClincWThirtyTwo\% against \EClincWK\%, a
+difference of \EClincDelta{} points and a lower bound of \EClincLower, so the
+verdict is that the claim \EClincVerdict. On MASSIVE intent the width-32 arm
+reaches \EMassiveWThirtyTwo\% against \EMassiveWK\%, a difference of
+\EMassiveDelta{} points (lower bound \EMassiveLower), and the verdict is that the
+claim \EMassiveVerdict. Across the three tasks the pre-registered claim
+\EAggregateVerdict{} on \EHolds{} of \ETasks{} tasks.
+
+\paragraph{The curve falls with width.} The non-inferiority test passes on every
+task: the 32-way head is at or above the full bank everywhere, decisively so on
+Banking77 and CLINC150 and within noise on MASSIVE intent. That is not a flat curve. Accuracy declines
+monotonically as the candidate set widens. On Banking77, 2 candidates reach
+\EBankWTwo\%, 8 reach \EBankWEight\%, 32 reach \EBankWThirtyTwo\% and the full bank
+\EBankWK\%; CLINC150 gives \EClincWTwo, \EClincWEight, \EClincWThirtyTwo{} and
+\EClincWK\%, and MASSIVE intent \EMassiveWTwo, \EMassiveWEight, \EMassiveWThirtyTwo{}
+and \EMassiveWK\%. The width-8 arm is ahead of the width-32 arm by
+\EBankWidthEightVsThirtyTwo{} points on Banking77, \EClincWidthEightVsThirtyTwo{} on CLINC150 and
+\EMassiveWidthEightVsThirtyTwo{} on MASSIVE intent.
+
+The arms are also not interchangeable. Re-scored on the full bank, the heads
+trained at width 2 fall to \EBankFullKAtTwo, \EClincFullKAtTwo{} and
+\EMassiveFullKAtTwo\%, and those trained at width 32 reach \EBankFullKAtThirtyTwo,
+\EClincFullKAtThirtyTwo{} and \EMassiveFullKAtThirtyTwo\% on the full bank. Training at a
+width teaches a head for that width; the at-width column is the comparison the
+pre-registration fixed, and a narrow head is not a full-bank model that happens
+to have seen fewer candidates.
+
+So the registered claim survives, but the stronger reading does not. The 32-way
+interface is at or above the full bank on every task, but because the full bank
+is the hardest point in this curve, not because width is free. Widening from 2 to 32 costs \EBankCostTwoToThirtyTwo{} points on Banking77,
+\EClincCostTwoToThirtyTwo{} on CLINC150 and \EMassiveCostTwoToThirtyTwo{} on MASSIVE intent. A product
+that could pose 8 candidates would score higher than one posing 32 on these
+three tasks; the 32-way interface is a compromise between coverage and accuracy,
+not an accuracy-neutral choice. The valuation claim needs the registered
+direction, and that direction is supported; it does not get the stronger claim
+that accuracy is flat as the set widens.
+
+The harness check is reported rather than assumed. The width-\(K\) arms score
+\EBankWK, \EClincWK{} and \EMassiveWK\% against published suite values of
+\EBankPublished, \EClincPublished{} and \EMassivePublished\%, so the absolute
+deviations are \EBankHarnessDelta, \EClincHarnessDelta{} and
+\EMassiveHarnessDelta{} points. The 0.2-point tolerance was set before the run
+and two arms exceed it; the largest, \EMaxHarnessDelta{} points, is still inside
+the \SuiteReplicationMax-point run-to-run floor the suite measured on repeated
+cells. That is a level offset of the same size as the suite's own repeat noise,
+and it is reported rather than hidden by substituting the published number.
+The width comparison itself is within-run --- both arms trained by the same code
+on the same rows --- so a level offset against the published cell shifts the
+whole curve rather than the difference the rule tests.
+
+What the sweep establishes is bounded. It is one seed per arm, one rung, three
+English tasks and 4{,}000 training rows; the per-width arms differ in
+optimisation trajectory as well as width, which is inherent to training the width
+rather than simulating it. It says that at 113.47M a trained 32-way interface
+is at or above the full bank on these cells, and that narrower interfaces do
+better still;
+it does not say that accuracy is constant in width, and it does not establish
+near-perfect accuracy at any width. The remaining grid --- a second seed, and the
+same twelve arms at the 14.4M and 33.7M rungs --- is costed in
+\S\ref{sec:future}.

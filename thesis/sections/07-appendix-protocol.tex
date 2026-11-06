@@ -1,0 +1,134 @@
+\chapter{Reproducing every number}
+\label{app:protocol}
+
+Every table in this dissertation is emitted from result files by one of four
+generators: \texttt{thesis/gen\_tables.py} for the training ladder,
+\texttt{thesis/gen\_scaling.py} for the row-scaling and risk-coverage tables,
+\texttt{thesis/gen\_comparator.py} for decode-versus-score and the CDN probe, and
+\texttt{thesis/gen\_suite.py} for the public-task suite. Every inline figure in the
+prose is a macro from one of those generators. Nothing is transcribed by hand,
+because three numbers in this project's history were transcribed by hand and two
+of them were wrong: one could not be re-derived at all, and one split boundary was
+off by a factor of two because element counts were accumulated into a byte counter.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Provenance of every reported quantity.}
+\begin{tabular}{@{}p{0.27\linewidth}p{0.67\linewidth}@{}}
+\toprule
+Quantity & Command \\
+\midrule
+Corpus build & \texttt{python3 scripts/build\_corpus.py --target-bytes 1.6e9} \\
+Ladder tables & \texttt{python3 thesis/gen\_tables.py} \\
+Row scaling and coverage & \texttt{python3 thesis/gen\_scaling.py} \\
+Decode versus score & \texttt{python3 thesis/gen\_comparator.py} \\
+Public-task suite & \texttt{python3 thesis/gen\_suite.py} \\
+Three-rung suite (Table~\ref{tab:suite}) & \texttt{python3 thesis/gen\_suite\_three.py} \\
+Exhaustive score & \texttt{python3 scripts/eval\_full.py --run <dir> --rung <r>} \\
+All rungs, one table & \texttt{python3 scripts/score\_curve.py} \\
+Segmented training & \texttt{python3 scripts/train\_segments.py} \\
+Milestone trajectory & \texttt{python3 scripts/track\_curve.py} \\
+Unattended plan & \texttt{python3 scripts/gpu\_queue.py --plan research/queue\_iso10.json} \\
+Transfer matrix & \texttt{python3 scripts/transfer\_sweep.py} \\
+Sandbox re-stage & \texttt{scripts/molab\_sync.sh --all} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Why the scorer is deliberately slow}
+
+The exhaustive scorer evaluates every held-out window in order rather than
+sampling, at a cost of $62$--$81$ seconds per checkpoint. The sampled alternative
+produced the \ProtoOldSpread{} spread reported in \S\ref{sec:protocol-result},
+which is larger than the effect the ladder was designed to resolve. The exhaustive
+replicates that would quantify the reduction were lost with the first sandbox and
+are marked pending; the cost is stated here even though the comparison cannot be
+completed from this checkout.
+
+\section{Checkpoint identity and the reclamation}
+
+The first sandbox was reclaimed on 2026-10-28. The original AG News source
+checkpoint \texttt{3cf421\ldots bed8} (28,973,877 bytes; step 6,104;
+100,007,936 tokens) was lost with the disk and was never copied to the local
+checkout. The v2 corpus was rebuilt from the checked-in builder and reproduced its
+recorded SHA-256 exactly: \CorpusSha. The replacement checkpoint is
+\texttt{817e7f04\ldots6140410}
+(28,973,877 bytes; step 6,104; 100,007,936 tokens; held-out 1.2937 bits/byte).
+It reproduces the protocol but not the bitwise weights, because GPU execution is
+not bitwise-deterministic.
+
+The six AG News cells use the replacement checkpoint. The Banking77 84.3\% row
+uses the surviving pre-loss comparator
+\texttt{499fd68c\ldots24eebdc}.
+The two identities are not interchangeable, and no result in this thesis averages
+them into a single-checkpoint comparison.
+
+The evidence tree \texttt{results/recovered\_20261028/} is isolated from the
+canonical results tree and is accompanied by \texttt{MANIFEST.sha256}, which records
+the full digests (abbreviated above for the page) and hashes the corpus, the six
+AG News cells, the twenty-seven suite runs (nine tasks at three rungs) and the
+permutation controls. A second reclamation costs wall-clock, not results.
+
+The public-task record spans two directories. \texttt{results/suite\_dual/}
+holds the eighteen two-rung cells, their \texttt{SUITE.json} and their
+validation. \texttt{results/}\allowbreak\texttt{suite\_large\_113m/} holds the
+nine 113.47M cells,
+their pre-registration, the checkpoint record, the replication runs, the
+three-rung \texttt{COMPARISON.json} and a manifest of all 92 files.
+\texttt{thesis/gen\_suite\_three.py} reads the comparison, re-hashes every
+per-cell \texttt{result.json}, recomputes each accuracy from its own predictions,
+and asserts the 113.47M source-checkpoint digest before emitting
+\texttt{tables/suite3.tex}; a mismatch stops the build. The
+earlier \texttt{results/suite\_final/} tree is retained only as \emph{prior}
+metadata for the eight cells whose path changed and for the exact controls; it is
+not the current capability record.
+
+\section{Checkpoint discipline and the third rung}
+\label{app:checkpoint}
+
+The lost 113.47M attempt is the reason this section exists. It completed
+\SuiteLostSegments{} bounded segments, reached $\SuiteLostTokens$ of
+$\SuiteLostTarget$ tokens ($\SuiteLostPct\%$) at step $\SuiteLostStep$, and its
+sandbox was recycled mid-segment.
+\texttt{driver.json}, \texttt{run.json} and \texttt{train.jsonl} survived; no
+\texttt{ckpt.pt}, \texttt{checkpoint.json} or \texttt{segment.json} did. The
+training loop had saved weights at every boundary, but the puller licensed a
+weight pull only on a completion marker, so the last boundary weights were never
+copied; a fresh run had no step-0 checkpoint; and \texttt{--resume} did not
+verify the weights it loaded. The 980.7M-token offset is not a resumable model.
+
+All four defects are fixed and covered by regression tests in
+\path{tests/test_pretrain_resume.py}: saves are atomic; a checkpoint is published at step 0; every checkpoint records the step,
+token offset, target, geometry, seed, RNG states and the weights SHA-256;
+\texttt{--resume} refuses to restart from zero, to change the budget or geometry,
+or to load an unloadable checkpoint; and \texttt{scripts/molab\_pull.py} pulls on
+\texttt{checkpoint.json} alone and verifies the described byte count and digest. A
+second race surfaced on replay: the rolling \texttt{ckpt.pt} is replaced at the
+next boundary, so a slow puller can miss the boundary artifact. Each boundary is
+now archived to \texttt{checkpoints/seg\_<index>\_step\_<step>/} and hash-verified
+before the next segment starts, and each artifact is pulled locally and verified
+before the following segment is launched. A sandbox death can therefore cost at
+most one segment.
+
+The third rung is a \emph{new} run under that discipline, not a continuation:
+fresh weights, step \SuiteCkptLargeStep, \SuiteCkptLargeTokens{} tokens,
+checkpoint \SuiteCkptLarge, staged from the local corpus whose digest matches the
+run record. Its evaluation ran in capped waves after the first nine-way wave
+exhausted the 97{,}887 MiB card: five cells fit and four died with CUDA OOM, and
+a later third co-residency exceeded the card. The failed waves produced
+no \texttt{result.json} and are preserved under
+\texttt{results/}\allowbreak\texttt{suite\_large\_113m/}\allowbreak\texttt{\_failed\_wave\{1,2\}/}
+with their verbatim reasons; they are infrastructure records, not measurements,
+and no cell was dropped or averaged across attempts.
+
+\section{Why a partial run cannot be graded}
+
+A run writes \texttt{summary.json} only after the held-out evaluation finishes. An
+interrupted rung therefore has no summary and cannot be averaged into a table as
+though it were complete. The driver additionally deletes the previous segment
+record before each run, because a completed segment was once reported as having
+reached $96{,}337{,}920$ tokens when it had actually finished at $100{,}007{,}936$:
+the record had been inherited from the segment before it. The reclamation record
+follows the same rule at the artifact level: a cell with no surviving summary is
+printed as pending, not reconstructed from the old PDF.

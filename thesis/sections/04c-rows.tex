@@ -1,0 +1,71 @@
+\section{Where the accuracy is: rows, then rung}\label{sec:rows-and-rung}
+
+The 77-way number in Table~\ref{tab:jev77} holds two things fixed that a
+committee should refuse to take on trust: the fine-tune budget and the
+2.41M-parameter rung. Both were choices. This section moves each of them once,
+with everything else fixed: the same pretrained checkpoint, five epochs, batch
+32, learning rate $5\times10^{-4}$, and a split seed that gives every training
+seed the same rows. Each seed is scored on 1{,}000 held-out rows instead of
+300, because the comparison being decided here turns on a few points and a
+$\pm 5$ point interval cannot decide it.
+
+Table~\ref{tab:rows} reports the result. Every populated cell is a measurement
+on this machine; a cell that reads \emph{pending} is a run not present in this
+checkout, not a projection.
+
+\input{tables/scaling}
+
+\paragraph{Rows.} At the tiny rung, going from 1{,}600 to 8{,}000 distinct
+fine-tune rows moves accuracy from \RowTinyBaseAcc\% (95\% Wilson
+\RowTinyBaseLo--\RowTinyBaseHi) to \RowTinyWideAcc\% (\RowTinyWideLo--\RowTinyWideHi),
+a gain of \RowTinyGain{} points. The same lever at the small rung is not available:
+its 1{,}600-row cell reads \RowSmallBaseAcc\% and its 8{,}000-row cell is
+pending. The lever is not free of confounds and one is
+worth naming: the protocol holds \emph{epochs} fixed, so eight thousand rows
+also buy five times the optimiser steps. Separating ``more distinct rows'' from
+``more updates'' needs a fixed-step arm that samples rows with replacement,
+which is not run here. These numbers are therefore an upper bound on the effect
+of data alone.
+
+\paragraph{Rung.} Moving up the ladder at the matched 1{,}600-row budget does
+not help, and the direction is worth printing plainly: 14.26M parameters
+reaches \RowRungBase\% against \RowRungTiny\% at 2.41M, a change of
+\RowRungGain{} points. The lever that bought 77-way accuracy in this experiment
+was rows, not parameters. Two caveats keep that from being a claim about
+scaling in general. The rung is a bundle --- the small checkpoint was pretrained
+on 142.6M tokens at context 1{,}024, the tiny one on 100M tokens at context 256
+--- and the small arm costs \RowSmallBaseLat\,ms per decision against \RowTinyBaseLat\,ms,
+so it is strictly more expensive for less accuracy at this budget. Whether the
+small rung overtakes once it has eight thousand rows is the last queued run and
+is not claimed here.
+
+\paragraph{The verdict.} \ShipHeadline. \ShipGapSentence. \ShipFuture.
+
+\paragraph{Accuracy at coverage.} A single accuracy number hides how the
+scorer's confidence is distributed, so Table~\ref{tab:risk-coverage} ranks the
+test rows by maximum softmax probability and reports accuracy in the top $c$
+fraction. This is a descriptive test-set ranking curve, not an abstention
+guarantee: the ranking is measured with the test labels in hand, no threshold is
+fixed before seeing the test set, and a deployment would face different rows.
+
+\input{tables/risk_coverage}
+
+At 90\% coverage the arm is \ShipAtNinety\% accurate; at 50\% coverage it is
+\ShipAtFifty\%. The 50\% point is a property of this ranking on this test set,
+not a promise that half of deployment traffic can be answered at \ShipAtFifty\%.
+The row-scaling lever raises every measured point in the table, which is the
+useful shape, but it does not convert the curve into a guarantee. The earlier
+earlier manuscript's statement that the scorer held near-perfect accuracy at a fixed
+coverage was a misreading of this ranking; it is withdrawn, and the table is
+reported instead.
+
+\paragraph{What this does not settle.} Three things. The comparison to the
+cited 78.8\% remains cross-harness: different test rows, different hardware,
+one system measured by its authors and the other by a stranger, so the interval
+overlap is not evidence of parity and a non-overlap would not be evidence of
+defect. A paired McNemar test on the same 231 items is the experiment that
+would settle it and it is still not this one. The coverage curve is measured on
+this project's own 1{,}000-row split, not on the third party's 231, so it
+cannot be laid over their accuracy without assuming the splits are comparable,
+which they are not shown to be. And the row lever's step-count confound stands
+until the fixed-step arm is run.

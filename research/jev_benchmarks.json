@@ -1,0 +1,578 @@
+{
+  "source": "Deusser, Sparrenberg, Sifa, Evaluating and Benchmarking the System One Model Jev, arXiv:2609.37647v1, Table 2",
+  "url": "https://arxiv.org/html/2609.37647v1",
+  "model": "jev-1.13.0",
+  "evaluated": "2026-09-29",
+  "note": "Published zero-shot points, not paired runs. Scores are the paper's primary metric; ECE is the first Choice or Noul question. 'azurite_status' is the local execution state, not a Jev result.",
+  "families": {
+    "text_classification": [
+      {
+        "dataset": "AG News",
+        "hf": "fancyzhx/ag_news",
+        "split": "test",
+        "n": 7600,
+        "metric": "accuracy",
+        "score": 0.885,
+        "ci": [
+          0.878,
+          0.891
+        ],
+        "ece": 0.077,
+        "primitive": "Choice(4)",
+        "azurite_status": "not_completed_this_sweep"
+      },
+      {
+        "dataset": "IMDB",
+        "hf": "stanfordnlp/imdb",
+        "split": "test",
+        "n": 25000,
+        "metric": "accuracy",
+        "score": 0.965,
+        "ci": [
+          0.963,
+          0.967
+        ],
+        "ece": 0.019,
+        "primitive": "Choice(2)",
+        "azurite_status": "partial_early_stop"
+      },
+      {
+        "dataset": "Rotten Tomatoes",
+        "hf": "cornell-movie-review-data/rotten_tomatoes",
+        "split": "test",
+        "n": 1066,
+        "metric": "accuracy",
+        "score": 0.933,
+        "ci": [
+          0.917,
+          0.947
+        ],
+        "ece": 0.038,
+        "primitive": "Choice(2)",
+        "azurite_status": "completed_below"
+      },
+      {
+        "dataset": "SST-2",
+        "hf": "stanfordnlp/sst2",
+        "split": "validation",
+        "n": 872,
+        "metric": "accuracy",
+        "score": 0.964,
+        "ci": [
+          0.951,
+          0.975
+        ],
+        "ece": 0.015,
+        "primitive": "Choice(2)",
+        "azurite_status": "completed_below"
+      },
+      {
+        "dataset": "Emotion",
+        "hf": "dair-ai/emotion",
+        "split": "test",
+        "n": 2000,
+        "metric": "accuracy",
+        "score": 0.585,
+        "ci": [
+          0.563,
+          0.605
+        ],
+        "ece": 0.279,
+        "primitive": "Choice(6)",
+        "azurite_status": "completed_above"
+      },
+      {
+        "dataset": "Financial PhraseBank",
+        "hf": "atrost/financial_phrasebank",
+        "split": "test",
+        "n": 970,
+        "metric": "accuracy",
+        "score": 0.73,
+        "ci": [
+          0.699,
+          0.756
+        ],
+        "ece": 0.138,
+        "primitive": "Choice(3)",
+        "azurite_status": "completed_above"
+      },
+      {
+        "dataset": "SMS Spam",
+        "hf": "ucirvine/sms_spam",
+        "split": "all",
+        "n": 5574,
+        "metric": "F1",
+        "score": 0.938,
+        "ci": [
+          0.924,
+          0.95
+        ],
+        "ece": 0.033,
+        "primitive": "Noul",
+        "azurite_status": "completed_below"
+      },
+      {
+        "dataset": "Language ID",
+        "hf": "papluca/language-identification",
+        "split": "test",
+        "n": 10000,
+        "metric": "accuracy",
+        "score": 0.996,
+        "ci": [
+          0.995,
+          0.997
+        ],
+        "ece": 0.003,
+        "primitive": "Choice(20)",
+        "azurite_status": "not_completed_this_sweep"
+      },
+      {
+        "dataset": "GoEmotions",
+        "hf": "google-research-datasets/go_emotions",
+        "split": "test",
+        "n": 5427,
+        "metric": "macro-F1",
+        "score": 0.243,
+        "ci": [
+          0.236,
+          0.249
+        ],
+        "ece": 0.176,
+        "primitive": "Noul x28",
+        "azurite_status": "needs_multilabel_harness"
+      }
+    ],
+    "intent_topic_routing": [
+      {
+        "dataset": "Banking77",
+        "hf": "mteb/banking77",
+        "split": "test",
+        "n": 3076,
+        "metric": "accuracy",
+        "score": 0.797,
+        "ci": [
+          0.782,
+          0.812
+        ],
+        "ece": 0.087,
+        "primitive": "Choice(77)",
+        "azurite_status": "completed_above"
+      },
+      {
+        "dataset": "CLINC150",
+        "hf": "clinc/clinc_oos",
+        "split": "test",
+        "n": 5500,
+        "metric": "accuracy",
+        "score": 0.895,
+        "ci": [
+          0.885,
+          0.902
+        ],
+        "ece": 0.025,
+        "primitive": "Choice(151)",
+        "azurite_status": "completed_below_4k_arm"
+      },
+      {
+        "dataset": "SIB-200",
+        "hf": "Davlan/sib200",
+        "split": "test",
+        "n": 41820,
+        "metric": "accuracy",
+        "score": 0.815,
+        "ci": [
+          0.812,
+          0.819
+        ],
+        "ece": 0.045,
+        "primitive": "Choice(7)",
+        "azurite_status": "not_started"
+      }
+    ],
+    "nli_paraphrase_grounding": [
+      {
+        "dataset": "ANLI",
+        "hf": "facebook/anli",
+        "split": "test R1-R3",
+        "n": 3200,
+        "metric": "accuracy",
+        "score": 0.739,
+        "ci": [
+          0.725,
+          0.754
+        ],
+        "ece": 0.102,
+        "primitive": "Choice(3)",
+        "azurite_status": "partial_early_stop"
+      },
+      {
+        "dataset": "AfriXNLI",
+        "hf": "masakhane/afrixnli",
+        "split": "test",
+        "n": 10800,
+        "metric": "accuracy",
+        "score": 0.64,
+        "ci": [
+          0.631,
+          0.65
+        ],
+        "ece": 0.165,
+        "primitive": "Choice(3)",
+        "azurite_status": "not_started"
+      },
+      {
+        "dataset": "PAWS",
+        "hf": "google-research-datasets/paws",
+        "split": "test",
+        "n": 8000,
+        "metric": "accuracy",
+        "score": 0.85,
+        "ci": [
+          0.842,
+          0.857
+        ],
+        "ece": 0.04,
+        "primitive": "Noul",
+        "azurite_status": "partial_early_stop"
+      },
+      {
+        "dataset": "LLM-AggreFact",
+        "hf": "lytang/LLM-AggreFact",
+        "split": "test",
+        "n": 29320,
+        "metric": "balanced accuracy",
+        "score": 0.786,
+        "ci": [
+          0.776,
+          0.796
+        ],
+        "ece": 0.128,
+        "primitive": "Noul",
+        "azurite_status": "not_started"
+      }
+    ],
+    "reading_comprehension_knowledge": [
+      {
+        "dataset": "BoolQ",
+        "hf": "google/boolq",
+        "split": "validation",
+        "n": 3270,
+        "metric": "accuracy",
+        "score": 0.913,
+        "ci": [
+          0.904,
+          0.922
+        ],
+        "ece": 0.043,
+        "primitive": "Noul",
+        "azurite_status": "partial_early_stop"
+      },
+      {
+        "dataset": "Belebele",
+        "hf": "facebook/belebele",
+        "split": "test",
+        "n": 109800,
+        "metric": "accuracy",
+        "score": 0.867,
+        "ci": [
+          0.865,
+          0.869
+        ],
+        "ece": 0.015,
+        "primitive": "Choice(4)",
+        "azurite_status": "needs_per_row_choice_harness"
+      },
+      {
+        "dataset": "PubMedQA",
+        "hf": "qiaojin/PubMedQA",
+        "split": "all",
+        "n": 1000,
+        "metric": "accuracy",
+        "score": 0.787,
+        "ci": [
+          0.762,
+          0.812
+        ],
+        "ece": 0.129,
+        "primitive": "Choice(3)",
+        "azurite_status": "not_started"
+      },
+      {
+        "dataset": "MMLU",
+        "hf": "tasksource/mmlu",
+        "split": "test",
+        "n": 14042,
+        "metric": "accuracy",
+        "score": 0.918,
+        "ci": [
+          0.913,
+          0.923
+        ],
+        "ece": 0.025,
+        "primitive": "Choice(4)",
+        "azurite_status": "needs_per_row_choice_harness"
+      },
+      {
+        "dataset": "C-Eval",
+        "hf": "ceval/ceval-exam",
+        "split": "test",
+        "n": 12342,
+        "metric": "accuracy",
+        "score": 0.839,
+        "ci": [
+          0.832,
+          0.846
+        ],
+        "ece": 0.014,
+        "primitive": "Choice(4)",
+        "azurite_status": "needs_per_row_choice_harness"
+      }
+    ],
+    "commonsense_reasoning": [
+      {
+        "dataset": "BIG-bench (MC)",
+        "hf": "tasksource/bigbench",
+        "split": "validation",
+        "n": 13227,
+        "metric": "accuracy",
+        "score": 0.814,
+        "ci": [
+          0.808,
+          0.821
+        ],
+        "ece": 0.026,
+        "primitive": "Choice(2-118)",
+        "azurite_status": "needs_per_row_choice_harness"
+      },
+      {
+        "dataset": "HellaSwag",
+        "hf": "Rowan/hellaswag",
+        "split": "validation",
+        "n": 10042,
+        "metric": "accuracy",
+        "score": 0.955,
+        "ci": [
+          0.951,
+          0.959
+        ],
+        "ece": 0.019,
+        "primitive": "Choice(4)",
+        "azurite_status": "needs_per_row_choice_harness"
+      },
+      {
+        "dataset": "WinoGrande",
+        "hf": "allenai/winogrande",
+        "split": "validation",
+        "n": 1267,
+        "metric": "accuracy",
+        "score": 0.914,
+        "ci": [
+          0.899,
+          0.93
+        ],
+        "ece": 0.025,
+        "primitive": "Choice(2)",
+        "azurite_status": "needs_per_row_choice_harness"
+      },
+      {
+        "dataset": "ARC (E+C)",
+        "hf": "allenai/ai2_arc",
+        "split": "test",
+        "n": 3548,
+        "metric": "accuracy",
+        "score": 0.988,
+        "ci": [
+          0.984,
+          0.991
+        ],
+        "ece": 0.005,
+        "primitive": "Choice(3-5)",
+        "azurite_status": "needs_per_row_choice_harness"
+      },
+      {
+        "dataset": "CommonsenseQA",
+        "hf": "tau/commonsense_qa",
+        "split": "validation",
+        "n": 1221,
+        "metric": "accuracy",
+        "score": 0.882,
+        "ci": [
+          0.864,
+          0.9
+        ],
+        "ece": 0.031,
+        "primitive": "Choice(5)",
+        "azurite_status": "needs_per_row_choice_harness"
+      },
+      {
+        "dataset": "alphaNLI (ART)",
+        "hf": "allenai/art",
+        "split": "validation",
+        "n": 1532,
+        "metric": "accuracy",
+        "score": 0.839,
+        "ci": [
+          0.819,
+          0.858
+        ],
+        "ece": 0.065,
+        "primitive": "Choice(2)",
+        "azurite_status": "needs_per_row_choice_harness"
+      }
+    ],
+    "safety_moderation_legal": [
+      {
+        "dataset": "ToxiGen",
+        "hf": "toxigen/toxigen-data",
+        "split": "test",
+        "n": 940,
+        "metric": "accuracy (toxic)",
+        "score": 0.878,
+        "ci": [
+          0.857,
+          0.898
+        ],
+        "ece": 0.046,
+        "primitive": "Noul + Score",
+        "azurite_status": "completed_below"
+      },
+      {
+        "dataset": "OpenAI Moderation",
+        "hf": "mmathys/openai-moderation-api-evaluation",
+        "split": "all",
+        "n": 1680,
+        "metric": "mean AUPRC",
+        "score": 0.717,
+        "ci": [
+          0.675,
+          0.759
+        ],
+        "ece": 0.036,
+        "primitive": "Noul x8",
+        "azurite_status": "needs_multilabel_harness"
+      },
+      {
+        "dataset": "ToxicChat",
+        "hf": "lmsys/toxic-chat",
+        "split": "test",
+        "n": 5083,
+        "metric": "F1 (toxic)",
+        "score": 0.786,
+        "ci": [
+          0.753,
+          0.821
+        ],
+        "ece": 0.016,
+        "primitive": "Noul x2",
+        "azurite_status": "completed_below"
+      },
+      {
+        "dataset": "Prompt Injections",
+        "hf": "deepset/prompt-injections",
+        "split": "test",
+        "n": 116,
+        "metric": "accuracy",
+        "score": 0.741,
+        "ci": [
+          0.664,
+          0.828
+        ],
+        "ece": 0.236,
+        "primitive": "Noul",
+        "azurite_status": "completed_above"
+      },
+      {
+        "dataset": "AGB-DE",
+        "hf": "d4br4/agb-de",
+        "split": "test",
+        "n": 755,
+        "metric": "F1",
+        "score": 0.204,
+        "ci": [
+          0.122,
+          0.282
+        ],
+        "ece": 0.264,
+        "primitive": "Noul",
+        "azurite_status": "completed_above"
+      },
+      {
+        "dataset": "UNFAIR-ToS",
+        "hf": "coastalcph/lex_glue",
+        "split": "test",
+        "n": 1607,
+        "metric": "micro-F1",
+        "score": 0.499,
+        "ci": [
+          0.449,
+          0.544
+        ],
+        "ece": 0.088,
+        "primitive": "Noul x8",
+        "azurite_status": "needs_multilabel_harness"
+      }
+    ],
+    "rubric_scoring": [
+      {
+        "dataset": "STS-B",
+        "hf": "sentence-transformers/stsb",
+        "split": "test",
+        "n": 1379,
+        "metric": "Spearman",
+        "score": 0.89,
+        "ci": [
+          0.879,
+          0.901
+        ],
+        "ece": null,
+        "primitive": "Score(6)",
+        "azurite_status": "needs_ordinal_head"
+      },
+      {
+        "dataset": "SST-5",
+        "hf": "SetFit/sst5",
+        "split": "test",
+        "n": 2210,
+        "metric": "accuracy",
+        "score": 0.579,
+        "ci": [
+          0.56,
+          0.599
+        ],
+        "ece": null,
+        "primitive": "Score(5)",
+        "azurite_status": "needs_ordinal_head"
+      },
+      {
+        "dataset": "SummEval",
+        "hf": "mteb/summeval",
+        "split": "test",
+        "n": 1600,
+        "metric": "mean Spearman",
+        "score": 0.554,
+        "ci": [
+          0.523,
+          0.571
+        ],
+        "ece": null,
+        "primitive": "Score(5) x4",
+        "azurite_status": "needs_ordinal_head"
+      },
+      {
+        "dataset": "HelpSteer2",
+        "hf": "nvidia/HelpSteer2",
+        "split": "validation",
+        "n": 1038,
+        "metric": "mean Spearman",
+        "score": 0.412,
+        "ci": [
+          0.38,
+          0.444
+        ],
+        "ece": null,
+        "primitive": "Score(5) x5",
+        "azurite_status": "needs_ordinal_head"
+      }
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+ "task": "banking77",
+ "path": "funnel",
+ "funnel_m": 8,
+ "model": "answerdotai/ModernBERT-base",
+ "model_license": "Apache-2.0",
+ "model_revision": "",
+ "hidden": 768,
+ "k": 77,
+ "train_examples": 2000,
+ "test_examples": 500,
+ "dual_steps": 378,
+ "cross_steps": 378,
+ "batch": 16,
+ "lr": 0.0005,
+ "seed": 0,
+ "split_seed": 0,
+ "seconds_retriever": 36.4,
+ "seconds_reranker": 55.3,
+ "seconds": 91.7,
+ "funnel_recall_train": 0.969,
+ "funnel_recall_test": 0.926,
+ "funnel_miss_test": 37,
+ "retrieved_only": {
+  "n": 463,
+  "accuracy": 0.7732,
+  "nll": 1.0016,
+  "ece": 0.1396
+ },
+ "final": {
+  "n": 500,
+  "accuracy": 0.716,
+  "nll": null,
+  "ece": null,
+  "note": "end-to-end over ALL test rows, misses as errors"
+ },
+ "history_retriever": [
+  {
+   "step": 0,
+   "n": 500,
+   "accuracy": 0.056,
+   "nll": 4.3022,
+   "ece": 0.0118,
+   "mean_confidence": 0.0442
+  },
+  {
+   "step": 63,
+   "n": 500,
+   "accuracy": 0.15,
+   "nll": 2.9844,
+   "ece": 0.0305,
+   "mean_confidence": 0.1685
+  },
+  {
+   "step": 126,
+   "n": 500,
+   "accuracy": 0.2,
+   "nll": 2.6297,
+   "ece": 0.0485,
+   "mean_confidence": 0.2463
+  },
+  {
+   "step": 189,
+   "n": 500,
+   "accuracy": 0.312,
+   "nll": 2.3335,
+   "ece": 0.0638,
+   "mean_confidence": 0.3301
+  },
+  {
+   "step": 252,
+   "n": 500,
+   "accuracy": 0.39,
+   "nll": 1.9217,
+   "ece": 0.042,
+   "mean_confidence": 0.3965
+  },
+  {
+   "step": 315,
+   "n": 500,
+   "accuracy": 0.514,
+   "nll": 1.6727,
+   "ece": 0.0361,
+   "mean_confidence": 0.4951
+  },
+  {
+   "step": 377,
+   "n": 500,
+   "accuracy": 0.558,
+   "nll": 1.5978,
+   "ece": 0.0426,
+   "mean_confidence": 0.5614
+  }
+ ],
+ "history_reranker": [
+  {
+   "step": 0,
+   "n": 463,
+   "accuracy": 0.2851,
+   "nll": 1.9401,
+   "ece": 0.0884,
+   "mean_confidence": 0.1967,
+   "retrieved_only": true
+  },
+  {
+   "step": 63,
+   "n": 463,
+   "accuracy": 0.6156,
+   "nll": 1.1604,
+   "ece": 0.0449,
+   "mean_confidence": 0.6301,
+   "retrieved_only": true
+  },
+  {
+   "step": 126,
+   "n": 463,
+   "accuracy": 0.6911,
+   "nll": 0.9757,
+   "ece": 0.0592,
+   "mean_confidence": 0.6483,
+   "retrieved_only": true
+  },
+  {
+   "step": 189,
+   "n": 463,
+   "accuracy": 0.7365,
+   "nll": 0.8945,
+   "ece": 0.1016,
+   "mean_confidence": 0.8349,
+   "retrieved_only": true
+  },
+  {
+   "step": 252,
+   "n": 463,
+   "accuracy": 0.7516,
+   "nll": 0.8131,
+   "ece": 0.0846,
+   "mean_confidence": 0.8339,
+   "retrieved_only": true
+  },
+  {
+   "step": 315,
+   "n": 463,
+   "accuracy": 0.7646,
+   "nll": 0.8137,
+   "ece": 0.0831,
+   "mean_confidence": 0.8477,
+   "retrieved_only": true
+  },
+  {
+   "step": 377,
+   "n": 463,
+   "accuracy": 0.7732,
+   "nll": 1.0016,
+   "ece": 0.1396,
+   "mean_confidence": 0.9129,
+   "retrieved_only": true
+  }
+ ],
+ "dataset_fingerprints": {
+  "train": "3b28f7873574ab94",
+  "test": "e3aef745a26bd9d6"
+ },
+ "runtime": {
+  "device": "cuda",
+  "torch": "2.11.0+cu130",
+  "python": "3.13.11 (main, Feb  3 2026, 03:08:54) [GCC 14.2.0]",
+  "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.41"
+ },
+ "evidence": {
+  "keep_sha256": "1860b204ff5a9398a9c1f1875383a062873c9f69a711899d6ef486b538aeccf2"
+ },
+ "device": "cuda",
+ "stratified": true
+}

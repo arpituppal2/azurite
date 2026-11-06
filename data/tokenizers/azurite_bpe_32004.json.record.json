@@ -1,0 +1,14 @@
+{
+ "arm": "bpe",
+ "out_path": "data/tokenizers/azurite_bpe_32004.json",
+ "vocab_size": 32004,
+ "corpus_files": [
+  "/Users/arpituppal/Downloads/jev-zero/data/tokenizers/_train_sample.jsonl"
+ ],
+ "documents": 37545,
+ "bytes": 212360165,
+ "sha256_of_training_text": "f21f681968d3614444464909a6ede5b45afcf35e505d4c2fed129686144f878d",
+ "sample_bytes_cap": null,
+ "seed": 0,
+ "learned_from": "local corpus, trained here"
+}

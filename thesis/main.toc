@@ -1,0 +1,86 @@
+\contentsline {chapter}{Degree and Department}{i}{chapter*.1}%
+\contentsline {chapter}{Abstract}{ii}{chapter*.2}%
+\contentsline {chapter}{Acknowledgments}{v}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}The claim being valued}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Two claims, only one of which is free}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Why the record is narrower than the first report}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Contributions}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Why the transfer probe is 2.41M, not 4B}{3}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Evidence identity and the reclamation}{3}{section.1.6}%
+\contentsline {section}{\numberline {1.7}What would refute this dissertation}{4}{section.1.7}%
+\contentsline {chapter}{\numberline {2}Background and related work}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Scaling laws and their limits}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Memorisation, double descent and the objective}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Tokenisation and byte-level modelling}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Long context: mechanisms and measurement}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.5}In-context learning and task induction}{8}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Selecting among candidates}{8}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Ranking and reranking}{8}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Constrained decoding is not selection}{8}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Set-valued prediction, conformal sets and selective classification}{9}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}Set architectures}{9}{subsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.6.5}Candidate generation and retrieval}{10}{subsection.2.6.5}%
+\contentsline {subsection}{\numberline {2.6.6}The decider claim and its public evidence}{10}{subsection.2.6.6}%
+\contentsline {section}{\numberline {2.7}Multimodality and a shared byte space}{11}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Evaluating a decider}{11}{section.2.8}%
+\contentsline {section}{\numberline {2.9}What the literature does not answer}{12}{section.2.9}%
+\contentsline {chapter}{\numberline {3}Method}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Encoding}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Objective}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.3}The ladder and its geometry}{13}{section.3.3}%
+\contentsline {section}{\numberline {3.4}The corpus and its split}{14}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Evaluation}{15}{section.3.5}%
+\contentsline {paragraph}{Sampled.}{15}{section*.8}%
+\contentsline {paragraph}{Exhaustive.}{15}{section*.9}%
+\contentsline {paragraph}{Why seeding was not enough.}{15}{section*.10}%
+\contentsline {section}{\numberline {3.6}Execution}{15}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Results}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}The protocol noise floor, and the exhaustive check that is missing}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}The fixed-data size sweep is incomplete}{17}{section.4.2}%
+\contentsline {section}{\numberline {4.3}The token-budget trajectory is not available}{19}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Transfer: a matched Banking77 gain, an inconclusive AG News result}{19}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Why the transfer probe is 2.41M, not 4B}{20}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Evidence identity and the reclamation}{20}{section.4.6}%
+\contentsline {section}{\numberline {4.7}The public-task suite: a capability boundary at three rungs}{21}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Matched-$D/N$ scaling is measured}{25}{section.4.8}%
+\contentsline {section}{\numberline {4.9}The context-length curve is a single point}{26}{section.4.9}%
+\contentsline {section}{\numberline {4.10}The candidate-set sweep: width has to be trained}{26}{section.4.10}%
+\contentsline {paragraph}{What the sweep found.}{29}{section*.20}%
+\contentsline {paragraph}{The curve falls with width.}{29}{section*.21}%
+\contentsline {section}{\numberline {4.11}Summary of the measured position}{30}{section.4.11}%
+\contentsline {chapter}{\numberline {5}The comparator}{32}{chapter.5}%
+\contentsline {section}{\numberline {5.1}What Jev publishes, and what a third party measured}{32}{section.5.1}%
+\contentsline {section}{\numberline {5.2}The falsification criterion, stated before the results}{33}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Mechanism: decode versus score}{33}{section.5.3}%
+\contentsline {section}{\numberline {5.4}The 77-way number, side by side}{35}{section.5.4}%
+\contentsline {paragraph}{A correction, recorded rather than quietly replaced.}{35}{section*.23}%
+\contentsline {subsection}{\numberline {5.4.1}The strongest public Jev run, and what it does to the claim}{36}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}The protocol-matched test, and its verdict}{36}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}The query-anchored head: testing the pooling diagnosis}{38}{subsection.5.4.3}%
+\contentsline {paragraph}{Contamination check.}{39}{section*.26}%
+\contentsline {subsection}{\numberline {5.4.4}The 5,120-byte joint fine-tune: testing the information budget}{41}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}Where the accuracy is: rows, then rung}{45}{section.5.5}%
+\contentsline {paragraph}{Rows.}{46}{section*.34}%
+\contentsline {paragraph}{Rung.}{46}{section*.35}%
+\contentsline {paragraph}{The verdict.}{46}{section*.36}%
+\contentsline {paragraph}{Accuracy at coverage.}{46}{section*.37}%
+\contentsline {paragraph}{What this does not settle.}{47}{section*.39}%
+\contentsline {section}{\numberline {5.6}The price of a sequence on a token-billed CDN}{47}{section.5.6}%
+\contentsline {section}{\numberline {5.7}The four axes, measured against cited}{48}{section.5.7}%
+\contentsline {section}{\numberline {5.8}What the comparison establishes}{49}{section.5.8}%
+\contentsline {chapter}{\numberline {6}Threats to validity}{51}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Statistical}{51}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Construct}{52}{section.6.2}%
+\contentsline {section}{\numberline {6.3}External}{52}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Methodological}{53}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Conclusion and future work}{54}{chapter.7}%
+\contentsline {section}{\numberline {7.1}What is established}{54}{section.7.1}%
+\contentsline {section}{\numberline {7.2}What is not established, and is not claimed}{56}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Future work, with measured costs}{57}{section.7.3}%
+\contentsline {section}{\numberline {7.4}The claim, restated}{58}{section.7.4}%
+\contentsline {chapter}{\numberline {A}Reproducing every number}{59}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Why the scorer is deliberately slow}{59}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Checkpoint identity and the reclamation}{60}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Checkpoint discipline and the third rung}{60}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Why a partial run cannot be graded}{61}{section.A.4}%

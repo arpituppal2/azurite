@@ -1,0 +1,22 @@
+amp off -> off
+task=banking77 path=funnel K=77 M=8 init=pretrained train=2000 test=500 dual_steps=378 cross_steps=378 device=cuda
+/marimo/azurite_ws/scripts/transfer_eval.py:314: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  f"  {log_prefix}step {step:>4}/{total_steps}  loss {float(loss):.4f}  "
+  A/step    0/378  loss 3.9398  test acc 0.0680  ece 0.057
+  A/step   63/378  loss 2.3392  test acc 0.4200  ece 0.046
+  A/step  126/378  loss 1.1567  test acc 0.6060  ece 0.095
+  A/step  189/378  loss 1.6322  test acc 0.6220  ece 0.064
+  A/step  252/378  loss 0.9582  test acc 0.6600  ece 0.056
+  A/step  315/378  loss 1.2176  test acc 0.7160  ece 0.052
+  A/step  377/378  loss 0.2853  test acc 0.7420  ece 0.032
+  funnel recall@8: train 0.9960 test 0.9560
+  B/step    0/378  loss 2.1072  test acc 0.2218  ece 0.060
+  B/step   63/378  loss 0.3351  test acc 0.7762  ece 0.187
+  B/step  126/378  loss 0.4261  test acc 0.7762  ece 0.100
+  B/step  189/378  loss 0.0471  test acc 0.7782  ece 0.165
+  B/step  252/378  loss 0.3261  test acc 0.7762  ece 0.111
+  B/step  315/378  loss 0.3545  test acc 0.7908  ece 0.143
+  B/step  377/378  loss 0.0696  test acc 0.7845  ece 0.146
+  funnel end-to-end test acc 0.7500 (retrieved-only 0.7845, misses 22)  73s
+wrote results/transfer/envelope_v6/result_s0.json

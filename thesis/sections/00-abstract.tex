@@ -1,0 +1,136 @@
+A decider constrains a model's output to a candidate set and selects among the
+candidates. \textsc{Jev} is built on the proposition that this constraint is the
+mechanism behind reliable machine judgement, and an enterprise valuation of
+roughly ten billion dollars rests on that proposition. This dissertation separates
+the part of the claim that is a theorem from the part that is an empirical
+assertion, and measures the latter.
+
+The theorem is trivial and worth stating: a decider cannot emit a candidate that
+is not in its set. The empirical assertion is that the selected candidate is the
+correct one, and that this holds as the candidate set widens, as context grows,
+and as the domain shifts. Nothing about the interface implies it, and it is what
+the valuation requires.
+
+The empirical record is narrower than the pre-loss manuscript claimed, and the
+narrowing is part of the result. Six sampled draws of one frozen checkpoint span
+\ProtoOldSpread{} bits/byte, a spread larger than the small-versus-mid difference
+the ladder was built to resolve. The exhaustive replicate that would have
+established a lower-noise protocol was lost with the first sandbox and is marked
+pending; this dissertation does not claim the reduction. The fixed-data sweep is
+likewise incomplete: only the tiny and small cells survive, both under the sampled
+protocol, while the mid and large cells were reclaimed. No U-shaped scaling law is
+claimed from the surviving two rows.
+
+The transfer result is measured at the \textbf{2.41M-parameter} rung with a
+matched random initialisation, 2,000 training rows and 500 test rows. Banking77
+rises by \TransferBankGain{} percentage points over random initialisation. On a
+class-balanced AG News comparison the pooled gain is \TransferAgGain{} percentage
+points with a paired crossed-bootstrap 95\% interval of \TransferAgLo{} to
+\TransferAgHi{} percentage points, so the result is \TransferAgVerdict: the
+historical AG News gain is withdrawn. A separate 8,000-row Banking77 arm reaches
+\ShipAcc\% (95\% Wilson \ShipLo--\ShipHi), which overlaps the cited Jev interval
+(78.8\%, 73.1--83.6); it is not a demonstrated win.
+
+The 2.41M rung is an instrument, not the project ceiling. On the
+\CorpusTokens-token corpus a 4B model would see \FourBDN{} tokens per parameter,
+about \FourBFactor$\times$ fewer than the 113M rung and far below the
+compute-optimal line; at $D/N=20$ it would need \FourBTokensB{}B unique tokens and
+roughly \FourBGPUHours{} GPU-hours at the measured rate. The 4B ceiling is
+therefore a permission, not a result, and spending it on this corpus would measure
+storage rather than transfer.
+
+The comparative record is measured at three rungs, not assumed. A nine-task
+public suite, run under one pre-registered recipe at 14.4M, 33.7M and 113.47M
+parameters, places Azurite clearly above the cited point on \SuiteSmallClear,
+\SuiteMidClear{} and \SuiteLargeClear{} of \SuiteComparatorCells{} comparator
+cells respectively, and not clearly below on \SuiteSmallAtOrAboveThree,
+\SuiteMidAtOrAboveThree{} and \SuiteLargeAtOrAbove. At 113.47M the clear wins are
+Banking77 \SuiteLargeBank\%, Financial PhraseBank \SuiteLargeFinancial\%, DAIR
+Emotion \SuiteLargeEmotion\% and MASSIVE intent \SuiteLargeMassiveIntent\%;
+MASSIVE intent's cited point is Laya's \SuiteCitedMassiveIntent\% card, not a Jev
+number. The Banking77 win is against the pre-registered 78.8\% zero-shot cell;
+the strongest public Jev run reports 92.40\% on the full 3,080-row test, above
+\SuiteLargeBank\%, so the flagship comparison does not survive that comparator
+\citep{smith2026jevbanking}. A protocol-matched run on those same 3,080 rows
+with the same 24 examples returns \JevMatchPctAOne\% on the primary arm
+(\JevMatchAOneLo--\JevMatchAOneHi), against \JevMatchPctNoEx\%
+(\JevMatchNoExLo--\JevMatchNoExHi) with no examples; the pre-registered verdict
+is that \JevMatchVerdict. Testing the diagnosed pooling failure with a
+separately pre-registered query-anchored head recovers the example arm from
+\QueryPctOldTwo\% to \QueryPctQueryTwo\%, but the best arm is still
+\QueryDiffAbs{} points below Jev ($\QueryPValueText$), so the P0 bar remains
+missed. The frozen examples are not test-clean: \ContamSupportMatches{} support
+messages are test rows and \ContamEvalRows{} rows retrieve at least one, but a
+decontaminated product rerun scores \ContamCleanAcc\% and the gap survives.
+Running the diagnosed information-budget lever --- one pre-registered
+5{,}120-byte joint fine-tune carrying all 24 examples --- reaches
+\LenPctLenTwo\% (95\% Wilson \LenLoLenTwo--\LenHiLenTwo) and misses by
+\LenDiffAbs{} points ($\LenPValueText$). It reads the examples (+\LenMechGainAbs{}
+over the old head on the same packed contexts) but is still \LenNativeGapAbs{}
+points below the native-window head and \LenVsOldZeroAbs{} points below a
+message-only mean-pool control, so more context did not buy parity. The
+remaining path is the full-information 16k--32k-byte arm, costed at
+\LenNextShortLo--\LenNextShortHi{} GPU-hours at 16k and
+\LenNextLongLo--\LenNextLongHi{} at 32k; if it also misses, the P0 bar is out of
+reach for this model class
+and budget. Clear Jev wins remain on DAIR Emotion and Financial PhraseBank. CLINC150 is a tie, \SuiteLargeShortClinc{} points
+below its cited point; AG News (\SuiteLargeShortAg{} points), Language ID
+(\SuiteLargeShortLang) and XNLI (\SuiteLargeShortXnli{}) remain clear deficits.
+
+The larger rung does not buy parity. Against 14.4M, a
+\SuiteLargeParamsRatio$\times$ increase in parameters at the same token budget
+wins \SuiteLargeWins{} cells --- \SuiteLargeWinCells{} --- by \SuiteLargeWinMin{}
+to \SuiteLargeWinMax{} points, loses XNLI by \SuiteLargeLossAbs{} points and
+leaves \SuiteLargeUnmoved{} cells statistically unmoved;
+\SuiteReplicationCells{} cells were executed twice on the same checkpoint, and the
+repeats differ by at most \SuiteReplicationMax{} points. XNLI at 113.47M
+is not a weak attempt but a degenerate uniform predictor: one class on
+\SuiteLargeXnliTopShare\% of test rows, test NLL \SuiteLargeXnliNll{} against
+$\ln 3 = \SuiteLargeXnliLnK$, mean confidence \SuiteLargeXnliConf. At 14.4M and
+33.7M the same cell collapses late into confident errors (NLL
+\SuiteSmallXnliNll{} and \SuiteMidXnliNll, ECE \SuiteSmallXnliEce{} and
+\SuiteMidXnliEce); scaling removed even that departure. XNLI, AG News, CLINC-OOS
+and Language ID are therefore not closed by scale.
+
+The proxy, by contrast, scales cleanly: at $D/N = 10$ held-out bits/byte falls
+from \IsoTinyExh{} at 2.41M parameters to \IsoLargeBpb{} at 113.47M, and the fit
+$\mathrm{bpb} \propto N^{-\alpha}$ gives $\alpha = \AlphaFit$ on the
+\AlphaPoints{} exhaustive rungs and $\alpha = \AlphaFitSampled$ on the
+\AlphaPointsSampled{} sampled ones. A smooth loss law and flat-to-negative
+decision accuracy are not a contradiction; they locate the bottleneck outside
+capacity, in what the interface and the data let the model learn.
+
+The decider's own axis was measured separately, because the suite cannot vary it:
+every cell fixes its task's label width. Training a fresh head at each width from
+the same 113.47M checkpoint on three wide-bank tasks, accuracy at 32 candidates is
+\EBankWThirtyTwo, \EClincWThirtyTwo{} and \EMassiveWThirtyTwo\% against \EBankWK, \EClincWK{} and
+\EMassiveWK\% at the full bank. The curve falls with width: 2 candidates reach
+\EBankWTwo, \EClincWTwo{} and \EMassiveWTwo\%. Under the rule that was hashed before
+the run --- a five-point non-inferiority margin on the paired lower bound --- the
+claim \EAggregateVerdict{} on \EHolds{} of \ETasks{} tasks: 32 is at or above the
+full bank on each, decisively on two and within noise on the third. That is not evidence that width is
+free: widening from 2 to 32 costs \EBankCostTwoToThirtyTwo, \EClincCostTwoToThirtyTwo{} and
+\EMassiveCostTwoToThirtyTwo{} points, and the full bank is the lowest point in the curve.
+This is a single-seed result at one rung, not a proof that accuracy is flat.
+
+DAIR Emotion's retired \SuiteSmallPriorEmotion\% and \SuiteMidPriorEmotion\% were
+a candidate-only scoring artifact, not capability floors; its dual-path values
+are valid measurements but not a capability gain. The suite's earlier gains were
+an optimization artifact of a 500-step, \(5\times10^{-4}\) recipe; a
+pre-registered sweep selected \(10^{-4}\) at 3,000 steps, and the table applies
+it unchanged to every task. The suite is a protocol comparison across label
+spaces and hardware, not a head-to-head with either vendor, and near-perfect
+accuracy across every benchmark is not demonstrated.
+
+
+One methodological fact is stated rather than buried: the first sandbox was
+reclaimed on 2026-10-28. The AG News cells use the amended checkpoint
+\texttt{817e7f04\ldots0410}; the Banking77 84.3\% row uses the surviving pre-loss
+checkpoint \texttt{499fd68c\ldots ebdc}; the two are not a single-checkpoint
+continuation. Every surviving artifact is identified by hash, and the missing
+cells are left visibly open rather than filled with a number.
+
+The dissertation does not conclude that the decider claim is false. It establishes
+which parts of the claim have been demonstrated, shows that those parts are
+narrower than the claim's use, supplies the instrument that makes the decisive
+measurement possible, and states in advance what result would overturn it.

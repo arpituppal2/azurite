@@ -1,0 +1,12 @@
+{"cell": "cross_s0", "rc": 0, "wall_s": 13.6, "peak_gpu_mib": 2345, "acc": 0.478, "accept": true}
+{"cell": "random_cross_s0", "rc": 0, "wall_s": 13.6, "peak_gpu_mib": 2345, "acc": 0.526, "accept": true}
+{"cell": "dual_pretrained_s0", "rc": 0, "wall_s": 19.9, "peak_gpu_mib": 3015, "acc": 0.462, "accept": true}
+{"cell": "dual_random_s0", "rc": 0, "wall_s": 19.8, "peak_gpu_mib": 3015, "acc": 0.248, "accept": true}
+{"cell": "cross_s1", "rc": 0, "wall_s": 13.1, "peak_gpu_mib": 2345, "acc": 0.47, "accept": true}
+{"cell": "random_cross_s1", "rc": 0, "wall_s": 13.5, "peak_gpu_mib": 2345, "acc": 0.504, "accept": true}
+{"cell": "dual_pretrained_s1", "rc": 0, "wall_s": 19.7, "peak_gpu_mib": 3015, "acc": 0.316, "accept": true}
+{"cell": "dual_random_s1", "rc": 0, "wall_s": 19.7, "peak_gpu_mib": 3015, "acc": 0.25, "accept": true}
+{"cell": "cross_s2", "rc": 0, "wall_s": 13.2, "peak_gpu_mib": 2345, "acc": 0.334, "accept": true}
+{"cell": "random_cross_s2", "rc": 0, "wall_s": 13.0, "peak_gpu_mib": 2345, "acc": 0.496, "accept": true}
+{"cell": "dual_pretrained_s2", "rc": 0, "wall_s": 19.3, "peak_gpu_mib": 3015, "acc": 0.46, "accept": true}
+{"cell": "dual_random_s2", "rc": 0, "wall_s": 19.5, "peak_gpu_mib": 3015, "acc": 0.25, "accept": true}

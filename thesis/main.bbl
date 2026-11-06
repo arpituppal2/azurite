@@ -1,0 +1,641 @@
+\begin{thebibliography}{93}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{AbdelStark}(2026)]{abdelstark2026jev}
+{AbdelStark}.
+\newblock {jev-benchmarks}: Probability-aware evaluation for typed decision
+  models.
+\newblock GitHub repository,
+  \url{https://github.com/AbdelStark/jev-benchmarks}, 2026.
+\newblock Repository created 17 September 2026; accessed 29 October 2026.
+
+\bibitem[Akyürek et~al.(2022)Akyürek, Schuurmans, Andreas, Ma, and
+  Zhou]{akyurek2022what}
+Ekin Akyürek, Dale Schuurmans, Jacob Andreas, Tengyu Ma, and Denny Zhou.
+\newblock {What learning algorithm is in-context learning? Investigations with
+  linear models}.
+\newblock \emph{arXiv preprint arXiv:2211.15661}, 2022.
+
+\bibitem[Almeida(2026)]{typesafe2026jev}
+Diogo Almeida.
+\newblock {Introducing {System One} Models \& {Jev}}.
+\newblock TypeSafe AI Blog,
+  \url{https://typesafe.ai/blog/introducing-system-one-models-and-jev},
+  September 2026.
+\newblock Published 15 September 2026; accessed 29 October 2026.
+
+\bibitem[Angelopoulos et~al.(2020)Angelopoulos, Bates, Malik, and
+  Jordan]{angelopoulos2021uncertainty}
+Anastasios Angelopoulos, Stephen Bates, Jitendra Malik, and Michael~I. Jordan.
+\newblock {Uncertainty Sets for Image Classifiers using Conformal Prediction}.
+\newblock \emph{arXiv preprint arXiv:2009.14193}, 2020.
+
+\bibitem[Angelopoulos and Bates(2021)]{angelopoulos2023gentle}
+Anastasios~N. Angelopoulos and Stephen Bates.
+\newblock {A Gentle Introduction to Conformal Prediction and Distribution-Free
+  Uncertainty Quantification}.
+\newblock \emph{arXiv preprint arXiv:2107.07511}, 2021.
+
+\bibitem[Baevski et~al.(2020)Baevski, Zhou, Mohamed, and
+  Auli]{baevski2020wav2vec}
+Alexei Baevski, Henry Zhou, Abdelrahman Mohamed, and Michael Auli.
+\newblock {wav2vec 2.0: A Framework for Self-Supervised Learning of Speech
+  Representations}.
+\newblock \emph{arXiv preprint arXiv:2006.11477}, 2020.
+
+\bibitem[Bai et~al.(2023)Bai, Lv, Zhang, Lyu, Tang, Huang, Du, Liu,
+  et~al.]{bai2023longbench}
+Yushi Bai, Xin Lv, Jiajie Zhang, Hongchang Lyu, Jiankai Tang, Zhidian Huang,
+  Zhengxiao Du, Xiao Liu, et~al.
+\newblock {LongBench: A Bilingual, Multitask Benchmark for Long Context
+  Understanding}.
+\newblock \emph{arXiv preprint arXiv:2308.14508}, 2023.
+
+\bibitem[Bates et~al.(2021)Bates, Angelopoulos, Lei, Malik, and
+  Jordan]{bates2021risk}
+Stephen Bates, Anastasios Angelopoulos, Lihua Lei, Jitendra Malik, and
+  Michael~I. Jordan.
+\newblock {Distribution-Free, Risk-Controlling Prediction Sets}.
+\newblock \emph{arXiv preprint arXiv:2101.02703}, 2021.
+
+\bibitem[Belkin et~al.(2019)Belkin, Hsu, Ma, and Soumik]{belkin2019reconciling}
+Mikhail Belkin, Daniel Hsu, Siyuan Ma, and Soumik Soumik.
+\newblock Reconciling modern machine-learning practice and the classical
+  bias--variance trade-off.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 116\penalty0
+  (32):\penalty0 15849--15854, 2019.
+
+\bibitem[Beltagy et~al.(2020)Beltagy, Peters, and Cohan]{beltagy2020longformer}
+Iz~Beltagy, Matthew~E. Peters, and Arman Cohan.
+\newblock {Longformer: The Long-Document Transformer}.
+\newblock \emph{arXiv preprint arXiv:2004.05150}, 2020.
+
+\bibitem[Besiroglu et~al.(2024)Besiroglu, Erdil, Barnett, and
+  You]{besiroglu2024replication}
+Tamay Besiroglu, Ege Erdil, Matthew Barnett, and Josh You.
+\newblock {Chinchilla Scaling: A replication attempt}.
+\newblock \emph{arXiv preprint arXiv:2404.10102}, 2024.
+
+\bibitem[Bommasani et~al.(2021)Bommasani, Hudson, Adeli, Altman, Arora, von
+  Arx, Bernstein, Bohg, et~al.]{bommasani2021foundation}
+Rishi Bommasani, Drew~A. Hudson, Ehsan Adeli, Russ Altman, Simran Arora, Sydney
+  von Arx, Michael~S. Bernstein, Jeannette Bohg, et~al.
+\newblock {On the Opportunities and Risks of Foundation Models}.
+\newblock \emph{arXiv preprint arXiv:2108.07258}, 2021.
+
+\bibitem[Brown et~al.(2020)Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal,
+  Neelakantan, Shyam, et~al.]{brown2020gpt3}
+Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan,
+  Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, et~al.
+\newblock {Language Models are Few-Shot Learners}.
+\newblock \emph{arXiv preprint arXiv:2005.14165}, 2020.
+
+\bibitem[Burges et~al.(2005)Burges, Shaked, Renshaw, Lazier, Deeds, Hamilton,
+  and Hullender]{burges2005ranknet}
+Chris Burges, Tal Shaked, Erin Renshaw, Ari Lazier, Matt Deeds, Nicole
+  Hamilton, and Greg Hullender.
+\newblock {Learning to Rank using Gradient Descent}.
+\newblock In \emph{Proceedings of the 22nd International Conference on Machine
+  Learning}, pages 89--96, 2005.
+\newblock \doi{10.1145/1102351.1102363}.
+
+\bibitem[Cao et~al.(2007)Cao, Qin, Liu, Tsai, and Li]{cao2007listnet}
+Zhe Cao, Tao Qin, Tie-Yan Liu, Ming-Feng Tsai, and Hang Li.
+\newblock {Learning to Rank: From Pairwise Approach to Listwise Approach}.
+\newblock In \emph{Proceedings of the 24th International Conference on Machine
+  Learning}, pages 129--136, 2007.
+\newblock \doi{10.1145/1273496.1273513}.
+
+\bibitem[Card et~al.(2020)Card, Henderson, Khandelwal, Jia, Mahowald, and
+  Jurafsky]{card2020power}
+Dallas Card, Peter Henderson, Urvashi Khandelwal, Robin Jia, Kyle Mahowald, and
+  Dan Jurafsky.
+\newblock {With Little Power Comes Great Responsibility}.
+\newblock \emph{arXiv preprint arXiv:2010.06595}, 2020.
+
+\bibitem[Carion et~al.(2020)Carion, Massa, Synnaeve, Usunier, Kirillov, and
+  Zagoruyko]{carion2020detr}
+Nicolas Carion, Francisco Massa, Gabriel Synnaeve, Nicolas Usunier, Alexander
+  Kirillov, and Sergey Zagoruyko.
+\newblock {End-to-End Object Detection with Transformers}.
+\newblock \emph{arXiv preprint arXiv:2005.12872}, 2020.
+
+\bibitem[{Chameleon Team}(2024)]{chameleon2024}
+{Chameleon Team}.
+\newblock {Chameleon: Mixed-Modal Early-Fusion Foundation Models}.
+\newblock \emph{arXiv preprint arXiv:2405.09818}, 2024.
+
+\bibitem[Chen et~al.(2023)Chen, Wong, Chen, and Tian]{chen2023pi}
+Shouyuan Chen, Sherman Wong, Liangjian Chen, and Yuandong Tian.
+\newblock {Extending Context Window of Large Language Models via Positional
+  Interpolation}.
+\newblock \emph{arXiv preprint arXiv:2306.15595}, 2023.
+
+\bibitem[Chzhen et~al.(2021)Chzhen, Denis, Hebiri, and Lorieul]{chzhen2021set}
+Evgenii Chzhen, Christophe Denis, Mohamed Hebiri, and Titouan Lorieul.
+\newblock {Set-valued classification -- overview via a unified framework}.
+\newblock \emph{arXiv preprint arXiv:2102.12318}, 2021.
+
+\bibitem[Clark et~al.(2022)Clark, Garrette, Turc, and Wieting]{clark2022canine}
+Jonathan~H. Clark, Dan Garrette, Iulia Turc, and John Wieting.
+\newblock {CANINE}: Pre-training an efficient tokenization-free encoder for
+  language representation.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  10:\penalty0 73--91, 2022.
+
+\bibitem[{ConvAI Innovations}(2026)]{laya2026card}
+{ConvAI Innovations}.
+\newblock {Laya}.
+\newblock Hugging Face model card,
+  \url{https://huggingface.co/convaiinnovations/laya}, 2026.
+\newblock No card-stated publication date; repository history records the
+  initial release on 18 September 2026. Accessed 29 October 2026.
+
+\bibitem[Dahani(2026)]{ayautomate2026jev}
+Adel Dahani.
+\newblock {Jev vs Claude Haiku and GPT: Benchmark on 791 Decisions}.
+\newblock AY Automate blog,
+  \url{https://www.ayautomate.com/blog/jev-vs-llm-benchmark}, 2026.
+\newblock Benchmark run 19 September 2026; page updated 24 October 2026; no
+  page-stated publication date; accessed 29 October 2026.
+
+\bibitem[Dao et~al.(2022)Dao, Fu, Ermon, Rudra, and Ré]{dao2022flashattention}
+Tri Dao, Daniel~Y. Fu, Stefano Ermon, Atri Rudra, and Christopher Ré.
+\newblock {FlashAttention: Fast and Memory-Efficient Exact Attention with
+  IO-Awareness}.
+\newblock \emph{arXiv preprint arXiv:2205.14135}, 2022.
+
+\bibitem[Deu{\ss}er et~al.(2026)Deu{\ss}er, Sparrenberg, and Sifa]{bonn2026jev}
+Tobias Deu{\ss}er, Lorenz Sparrenberg, and Rafet Sifa.
+\newblock {Evaluating and Benchmarking the System One Model Jev}.
+\newblock \emph{arXiv preprint arXiv:2609.37647}, 2026.
+\newblock \doi{10.48550/arXiv.2609.37647}.
+
+\bibitem[Devlin et~al.(2019)Devlin, Chang, Lee, and Toutanova]{devlin2019bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock {BERT}: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock In \emph{Proceedings of NAACL-HLT}, 2019.
+
+\bibitem[Dietterich(1998)]{dietterich1998}
+Thomas~G. Dietterich.
+\newblock {Approximate Statistical Tests for Comparing Supervised
+  Classification Learning Algorithms}.
+\newblock \emph{Neural Computation}, 10\penalty0 (7):\penalty0 1895--1923,
+  1998.
+\newblock \doi{10.1162/089976698300017197}.
+
+\bibitem[Dror et~al.(2018)Dror, Baumer, Shlomov, and Reichart]{dror2018}
+Rotem Dror, Gili Baumer, Segev Shlomov, and Roi Reichart.
+\newblock {The Hitchhiker's Guide to Testing Statistical Significance in
+  Natural Language Processing}.
+\newblock In \emph{Proceedings of ACL}, pages 1383--1392, 2018.
+\newblock \doi{10.18653/v1/P18-1128}.
+
+\bibitem[Défossez et~al.(2022)Défossez, Copet, Synnaeve, and
+  Adi]{defossez2022encodec}
+Alexandre Défossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi.
+\newblock {High Fidelity Neural Audio Compression}.
+\newblock \emph{arXiv preprint arXiv:2210.13438}, 2022.
+
+\bibitem[Gardner et~al.(2020)Gardner, Artzi, Basmova, Berant, Bogin, Chen,
+  Dasigi, Dua, et~al.]{gardner2020contrast}
+Matt Gardner, Yoav Artzi, Victoria Basmova, Jonathan Berant, Ben Bogin, Sihao
+  Chen, Pradeep Dasigi, Dheeru Dua, et~al.
+\newblock {Evaluating Models' Local Decision Boundaries via Contrast Sets}.
+\newblock \emph{arXiv preprint arXiv:2004.02709}, 2020.
+
+\bibitem[Geifman and El-Yaniv(2017)]{geifman2017selective}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock {Selective Classification for Deep Neural Networks}.
+\newblock \emph{arXiv preprint arXiv:1705.08500}, 2017.
+
+\bibitem[Geifman and El-Yaniv(2019)]{geifman2019selectivenet}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock {SelectiveNet: A Deep Neural Network with an Integrated Reject
+  Option}.
+\newblock \emph{arXiv preprint arXiv:1901.09192}, 2019.
+
+\bibitem[{Gemini Team} et~al.(2023){Gemini Team}, Anil, Borgeaud, Alayrac, Yu,
+  Soricut, Schalkwyk, Dai, et~al.]{gemini2023}
+{Gemini Team}, Rohan Anil, Sebastian Borgeaud, Jean-Baptiste Alayrac, Jiahui
+  Yu, Radu Soricut, Johan Schalkwyk, Andrew~M. Dai, et~al.
+\newblock {Gemini: A Family of Highly Capable Multimodal Models}.
+\newblock \emph{arXiv preprint arXiv:2312.11805}, 2023.
+
+\bibitem[Geng et~al.(2023)Geng, Josifoski, Peyrard, and West]{geng2023grammar}
+Saibo Geng, Martin Josifoski, Maxime Peyrard, and Robert West.
+\newblock {Grammar-Constrained Decoding for Structured NLP Tasks without
+  Finetuning}.
+\newblock \emph{arXiv preprint arXiv:2305.13971}, 2023.
+
+\bibitem[Girdhar et~al.(2023)Girdhar, El-Nouby, Liu, Singh, Alwala, Joulin, and
+  Misra]{girdhar2023imagebind}
+Rohit Girdhar, Alaaeldin El-Nouby, Zhuang Liu, Mannat Singh, Kalyan~Vasudev
+  Alwala, Armand Joulin, and Ishan Misra.
+\newblock {ImageBind: One Embedding Space To Bind Them All}.
+\newblock \emph{arXiv preprint arXiv:2305.05665}, 2023.
+
+\bibitem[Gu and Dao(2023)]{gu2023mamba}
+Albert Gu and Tri Dao.
+\newblock {Mamba: Linear-Time Sequence Modeling with Selective State Spaces}.
+\newblock \emph{arXiv preprint arXiv:2312.00752}, 2023.
+
+\bibitem[Guo et~al.(2017)Guo, Pleiss, Sun, and Weinberger]{guo2017calibration}
+Chuan Guo, Geoff Pleiss, Yu~Sun, and Kilian~Q. Weinberger.
+\newblock {On Calibration of Modern Neural Networks}.
+\newblock \emph{arXiv preprint arXiv:1706.04599}, 2017.
+
+\bibitem[Guu et~al.(2020)Guu, Lee, Tung, Pasupat, and Chang]{guu2020realm}
+Kelvin Guu, Kenton Lee, Zora Tung, Panupong Pasupat, and Ming-Wei Chang.
+\newblock {REALM: Retrieval-Augmented Language Model Pre-Training}.
+\newblock \emph{arXiv preprint arXiv:2002.08909}, 2020.
+
+\bibitem[Hoffmann et~al.(2022)Hoffmann, Borgeaud, Mensch, Buchatskaya, Cai,
+  Rutherford, de~Las~Casas, Hendricks, Welbl, Clark,
+  et~al.]{hoffmann2022chinchilla}
+Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor
+  Cai, Eliza Rutherford, Diego de~Las~Casas, Lisa~Anne Hendricks, Johannes
+  Welbl, Aidan Clark, et~al.
+\newblock Training compute-optimal large language models.
+\newblock \emph{arXiv preprint arXiv:2203.15556}, 2022.
+
+\bibitem[Hokamp and Liu(2017)]{hokamp2017grid}
+Chris Hokamp and Qun Liu.
+\newblock {Lexically Constrained Decoding for Sequence Generation Using Grid
+  Beam Search}.
+\newblock \emph{arXiv preprint arXiv:1704.07138}, 2017.
+
+\bibitem[Hsieh et~al.(2024)Hsieh, Sun, Kriman, Acharya, Rekesh, Jia, Zhang, and
+  Ginsburg]{hsieh2024ruler}
+Cheng-Ping Hsieh, Simeng Sun, Samuel Kriman, Shantanu Acharya, Dima Rekesh, Fei
+  Jia, Yang Zhang, and Boris Ginsburg.
+\newblock {RULER: What's the Real Context Size of Your Long-Context Language
+  Models?}
+\newblock \emph{arXiv preprint arXiv:2404.06654}, 2024.
+
+\bibitem[Izacard and Grave(2020)]{izacard2020fid}
+Gautier Izacard and Edouard Grave.
+\newblock {Leveraging Passage Retrieval with Generative Models for Open Domain
+  Question Answering}.
+\newblock \emph{arXiv preprint arXiv:2007.01282}, 2020.
+
+\bibitem[Kaplan et~al.(2020)Kaplan, McCandlish, Henighan, Brown, Chess, Child,
+  Gray, Radford, Wu, and Amodei]{kaplan2020scaling}
+Jared Kaplan, Sam McCandlish, Tom Henighan, Tom~B. Brown, Benjamin Chess, Rewon
+  Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei.
+\newblock Scaling laws for neural language models.
+\newblock \emph{arXiv preprint arXiv:2001.08361}, 2020.
+
+\bibitem[Karpukhin et~al.(2020)Karpukhin, O{\u{g}}uz, Min, Lewis, Wu, Edunov,
+  Chen, and tau Yih]{karpukhin2020dpr}
+Vladimir Karpukhin, Barlas O{\u{g}}uz, Sewon Min, Patrick Lewis, Ledell Wu,
+  Sergey Edunov, Danqi Chen, and Wen tau Yih.
+\newblock {Dense Passage Retrieval for Open-Domain Question Answering}.
+\newblock \emph{arXiv preprint arXiv:2004.04906}, 2020.
+
+\bibitem[Kudo and Richardson(2018)]{kudo2018sentencepiece}
+Taku Kudo and John Richardson.
+\newblock {SentencePiece: A simple and language independent subword tokenizer
+  and detokenizer for Neural Text Processing}.
+\newblock \emph{arXiv preprint arXiv:1808.06226}, 2018.
+
+\bibitem[Kumar et~al.(2019)Kumar, Liang, and Ma]{kumar2019verified}
+Ananya Kumar, Percy Liang, and Tengyu Ma.
+\newblock {Verified Uncertainty Calibration}.
+\newblock \emph{arXiv preprint arXiv:1909.10155}, 2019.
+
+\bibitem[Lee et~al.(2021)Lee, Auli, and Ranzato]{lee2021reranking}
+Ann Lee, Michael Auli, and Marc'Aurelio Ranzato.
+\newblock {Discriminative Reranking for Neural Machine Translation}.
+\newblock In \emph{Proceedings of ACL-IJCNLP}, pages 7250--7264, 2021.
+\newblock \doi{10.18653/v1/2021.acl-long.563}.
+
+\bibitem[Lee et~al.(2018)Lee, Lee, Kim, Kosiorek, Choi, and Teh]{lee2018set}
+Juho Lee, Yoonho Lee, Jungtaek Kim, Adam~R. Kosiorek, Seungjin Choi, and
+  Yee~Whye Teh.
+\newblock {Set Transformer: A Framework for Attention-based
+  Permutation-Invariant Neural Networks}.
+\newblock \emph{arXiv preprint arXiv:1810.00825}, 2018.
+
+\bibitem[Lewis et~al.(2020)Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal,
+  Küttler, Lewis, et~al.]{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+  Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, et~al.
+\newblock {Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks}.
+\newblock \emph{arXiv preprint arXiv:2005.11401}, 2020.
+
+\bibitem[Li et~al.(2022)Li, Holtzman, Fried, Liang, Eisner, Hashimoto,
+  Zettlemoyer, and Lewis]{li2022contrastive}
+Xiang~Lisa Li, Ari Holtzman, Daniel Fried, Percy Liang, Jason Eisner, Tatsunori
+  Hashimoto, Luke Zettlemoyer, and Mike Lewis.
+\newblock {Contrastive Decoding: Open-ended Text Generation as Optimization}.
+\newblock \emph{arXiv preprint arXiv:2210.15097}, 2022.
+
+\bibitem[Liu et~al.(2023)Liu, Lin, Hewitt, Paranjape, Bevilacqua, Petroni, and
+  Liang]{liu2023lost}
+Nelson~F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua,
+  Fabio Petroni, and Percy Liang.
+\newblock {Lost in the Middle: How Language Models Use Long Contexts}.
+\newblock \emph{arXiv preprint arXiv:2307.03172}, 2023.
+
+\bibitem[Liu(2009)]{liu2009ltr}
+Tie-Yan Liu.
+\newblock {Learning to Rank for Information Retrieval}.
+\newblock \emph{Foundations and Trends in Information Retrieval}, 3\penalty0
+  (3):\penalty0 225--331, 2009.
+\newblock \doi{10.1561/1500000016}.
+
+\bibitem[Lu et~al.(2020)Lu, West, Zellers, Bras, Bhagavatula, and
+  Choi]{lu2020neurologic}
+Ximing Lu, Peter West, Rowan Zellers, Ronan~Le Bras, Chandra Bhagavatula, and
+  Yejin Choi.
+\newblock {NeuroLogic Decoding: (Un)supervised Neural Text Generation with
+  Predicate Logic Constraints}.
+\newblock \emph{arXiv preprint arXiv:2010.12884}, 2020.
+
+\bibitem[McNemar(1947)]{mcnemar1947}
+Quinn McNemar.
+\newblock {Note on the Sampling Error of the Difference Between Correlated
+  Proportions or Percentages}.
+\newblock \emph{Psychometrika}, 12\penalty0 (2):\penalty0 153--157, 1947.
+\newblock \doi{10.1007/BF02295996}.
+
+\bibitem[Min et~al.(2022)Min, Lyu, Holtzman, Artetxe, Lewis, Hajishirzi, and
+  Zettlemoyer]{min2022rethinking}
+Sewon Min, Xinxi Lyu, Ari Holtzman, Mikel Artetxe, Mike Lewis, Hannaneh
+  Hajishirzi, and Luke Zettlemoyer.
+\newblock {Rethinking the Role of Demonstrations: What Makes In-Context
+  Learning Work?}
+\newblock \emph{arXiv preprint arXiv:2202.12837}, 2022.
+
+\bibitem[Mortier et~al.(2019)Mortier, Wydmuch, Dembczy{\'n}ski, Hüllermeier,
+  and Waegeman]{mortier2021efficient}
+Thomas Mortier, Marek Wydmuch, Krzysztof Dembczy{\'n}ski, Eyke Hüllermeier,
+  and Willem Waegeman.
+\newblock {Efficient Set-Valued Prediction in Multi-Class Classification}.
+\newblock \emph{arXiv preprint arXiv:1906.08129}, 2019.
+
+\bibitem[Muennighoff et~al.(2023)Muennighoff, Rush, Barak, Scao, Piktus, Tazi,
+  Pyysalo, Wolf, et~al.]{muennighoff2023data}
+Niklas Muennighoff, Alexander~M. Rush, Boaz Barak, Teven~Le Scao, Aleksandra
+  Piktus, Nouamane Tazi, Sampo Pyysalo, Thomas Wolf, et~al.
+\newblock {Scaling Data-Constrained Language Models}.
+\newblock \emph{arXiv preprint arXiv:2305.16264}, 2023.
+
+\bibitem[Nakkiran et~al.(2020)Nakkiran, Kaplun, Bansal, Yang, Barak, and
+  Sutskever]{nakkiran2020deep}
+Preetum Nakkiran, Gal Kaplun, Yamini Bansal, Tristan Yang, Boaz Barak, and Ilya
+  Sutskever.
+\newblock Deep double descent: Where bigger models and more data hurt.
+\newblock \emph{International Conference on Learning Representations}, 2020.
+
+\bibitem[Nixon et~al.(2019)Nixon, Dusenberry, Jerfel, Nguyen, Liu, Zhang, and
+  Tran]{nixon2019measuring}
+Jeremy Nixon, Mike Dusenberry, Ghassen Jerfel, Timothy Nguyen, Jeremiah Liu,
+  Linchuan Zhang, and Dustin Tran.
+\newblock {Measuring Calibration in Deep Learning}.
+\newblock \emph{arXiv preprint arXiv:1904.01685}, 2019.
+
+\bibitem[Olsson et~al.(2022)Olsson, Elhage, Nanda, Joseph, DasSarma, Henighan,
+  Mann, Askell, et~al.]{olsson2022induction}
+Catherine Olsson, Nelson Elhage, Neel Nanda, Nicholas Joseph, Nova DasSarma,
+  Tom Henighan, Ben Mann, Amanda Askell, et~al.
+\newblock {In-context Learning and Induction Heads}.
+\newblock \emph{arXiv preprint arXiv:2209.11895}, 2022.
+
+\bibitem[Pagnoni et~al.(2024)Pagnoni, Pasunuru, Rodriguez, Nguyen, Muller, Li,
+  Zhou, Yu, et~al.]{pagnoni2024blt}
+Artidoro Pagnoni, Ram Pasunuru, Pedro Rodriguez, John Nguyen, Benjamin Muller,
+  Margaret Li, Chunting Zhou, Lili Yu, et~al.
+\newblock {Byte Latent Transformer: Patches Scale Better Than Tokens}.
+\newblock \emph{arXiv preprint arXiv:2412.09871}, 2024.
+
+\bibitem[Penedo et~al.(2024)Penedo, Kydl{\'i}{\v{c}}ek, Ben~Allal, Lozhkov,
+  Mitchell, Raffel, Von~Werra, and Wolf]{penedo2024fineweb}
+Guilherme Penedo, Hynek Kydl{\'i}{\v{c}}ek, Loubna Ben~Allal, Anton Lozhkov,
+  Margaret Mitchell, Colin Raffel, Leandro Von~Werra, and Thomas Wolf.
+\newblock The {FineWeb} datasets: Decanting the web for the finest text data at
+  scale.
+\newblock \emph{arXiv preprint arXiv:2406.17557}, 2024.
+
+\bibitem[Peng et~al.(2023)Peng, Quesnelle, Fan, and Shippole]{peng2023yarn}
+Bowen Peng, Jeffrey Quesnelle, Honglu Fan, and Enrico Shippole.
+\newblock {YaRN: Efficient Context Window Extension of Large Language Models}.
+\newblock \emph{arXiv preprint arXiv:2309.00071}, 2023.
+
+\bibitem[Poli et~al.(2023)Poli, Massaroli, Nguyen, Fu, Dao, Baccus, Bengio,
+  Ermon, et~al.]{poli2023hyena}
+Michael Poli, Stefano Massaroli, Eric Nguyen, Daniel~Y. Fu, Tri Dao, Stephen
+  Baccus, Yoshua Bengio, Stefano Ermon, et~al.
+\newblock {Hyena Hierarchy: Towards Larger Convolutional Language Models}.
+\newblock \emph{arXiv preprint arXiv:2302.10866}, 2023.
+
+\bibitem[Portes et~al.(2023)Portes, Trott, Havens, King, Venigalla, Nadeem,
+  Sardana, Khudia, and Frankle]{portes2023mosaicbert}
+Jacob Portes, Alexander Trott, Sam Havens, Daniel King, Abhinav Venigalla, Moin
+  Nadeem, Nikhil Sardana, Daya Khudia, and Jonathan Frankle.
+\newblock Mosaic {BERT}: A bidirectional encoder optimized for fast
+  pretraining.
+\newblock \emph{Advances in Neural Information Processing Systems}, 2023.
+
+\bibitem[Post and Vilar(2018)]{post2018fast}
+Matt Post and David Vilar.
+\newblock {Fast Lexically Constrained Decoding with Dynamic Beam Allocation for
+  Neural Machine Translation}.
+\newblock \emph{arXiv preprint arXiv:1804.06609}, 2018.
+
+\bibitem[Radford et~al.(2022)Radford, Kim, Xu, Brockman, McLeavey, and
+  Sutskever]{radford2022whisper}
+Alec Radford, Jong~Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and
+  Ilya Sutskever.
+\newblock {Robust Speech Recognition via Large-Scale Weak Supervision}.
+\newblock \emph{arXiv preprint arXiv:2212.04356}, 2022.
+
+\bibitem[Recht et~al.(2019)Recht, Roelofs, Schmidt, and
+  Shankar]{recht2019imagenet}
+Benjamin Recht, Rebecca Roelofs, Ludwig Schmidt, and Vaishaal Shankar.
+\newblock {Do ImageNet Classifiers Generalize to ImageNet?}
+\newblock \emph{arXiv preprint arXiv:1902.10811}, 2019.
+
+\bibitem[Ribeiro et~al.(2020)Ribeiro, Wu, Guestrin, and
+  Singh]{ribeiro2020checklist}
+Marco~Tulio Ribeiro, Tongshuang Wu, Carlos Guestrin, and Sameer Singh.
+\newblock {Beyond Accuracy: Behavioral Testing of NLP models with CheckList}.
+\newblock \emph{Association for Computational Linguistics (ACL), 2020}, 2020.
+
+\bibitem[Romano et~al.(2020)Romano, Sesia, and
+  Candès]{romano2020classification}
+Yaniv Romano, Matteo Sesia, and Emmanuel~J. Candès.
+\newblock {Classification with Valid and Adaptive Coverage}.
+\newblock \emph{Advances in Neural Information Processing Systems 33 (NeurIPS
+  2020)}, 2020.
+
+\bibitem[Sadinle et~al.(2019)Sadinle, Lei, and Wasserman]{sadinle2019least}
+Mauricio Sadinle, Jing Lei, and Larry Wasserman.
+\newblock {Least Ambiguous Set-Valued Classifiers With Bounded Error Levels}.
+\newblock \emph{Journal of the American Statistical Association}, 114\penalty0
+  (525):\penalty0 223--234, 2019.
+\newblock \doi{10.1080/01621459.2017.1395341}.
+
+\bibitem[Sardana et~al.(2024)Sardana, Portes, Doubov, and
+  Frankle]{sardana2023beyond}
+Nikhil Sardana, Jacob Portes, Sasha Doubov, and Jonathan Frankle.
+\newblock {Beyond Chinchilla-Optimal: Accounting for Inference in Language
+  Model Scaling Laws}.
+\newblock \emph{arXiv preprint arXiv:2401.00448}, 2024.
+
+\bibitem[Schaeffer et~al.(2023)Schaeffer, Miranda, and
+  Koyejo]{schaeffer2023emergent}
+Rylan Schaeffer, Brando Miranda, and Sanmi Koyejo.
+\newblock {Are Emergent Abilities of Large Language Models a Mirage?}
+\newblock \emph{arXiv preprint arXiv:2304.15004}, 2023.
+
+\bibitem[Scholak et~al.(2021)Scholak, Schucher, and
+  Bahdanau]{scholak2021picard}
+Torsten Scholak, Nathan Schucher, and Dzmitry Bahdanau.
+\newblock {PICARD: Parsing Incrementally for Constrained Auto-Regressive
+  Decoding from Language Models}.
+\newblock \emph{arXiv preprint arXiv:2109.05093}, 2021.
+
+\bibitem[Sennrich et~al.(2016)Sennrich, Haddow, and Birch]{sennrich2016bpe}
+Rico Sennrich, Barry Haddow, and Alexandra Birch.
+\newblock {Neural Machine Translation of Rare Words with Subword Units}.
+\newblock In \emph{Proceedings of the 54th Annual Meeting of the Association
+  for Computational Linguistics}, pages 1715--1725, 2016.
+\newblock \doi{10.18653/v1/P16-1162}.
+
+\bibitem[Shen et~al.(2004)Shen, Sarkar, and Och]{shen2004reranking}
+Libin Shen, Anoop Sarkar, and Franz~Josef Och.
+\newblock {Discriminative Reranking for Machine Translation}.
+\newblock In \emph{Proceedings of HLT-NAACL}, pages 177--184, 2004.
+
+\bibitem[{simonmesmith}(2026)]{smith2026jevbanking}
+{simonmesmith}.
+\newblock {Jev on BANKING77}: Reproducible classification evaluation, published
+  {BERT} comparison, costs and latency.
+\newblock GitHub repository,
+  \url{https://github.com/simonmesmith/jev-banking77-experiment}, September
+  2026.
+\newblock GitHub handle simonmesmith; model jev-1.13.0; 3,080 official test
+  rows; 24 retrieved labelled training examples and all 77 category definitions
+  per decision; accessed 29 October 2026.
+
+\bibitem[Su et~al.(2021)Su, Lu, Pan, Murtadha, Wen, and Liu]{su2021roformer}
+Jianlin Su, Yu~Lu, Shengfeng Pan, Ahmed Murtadha, Bo~Wen, and Yunfeng Liu.
+\newblock {RoFormer: Enhanced Transformer with Rotary Position Embedding}.
+\newblock \emph{arXiv preprint arXiv:2104.09864}, 2021.
+
+\bibitem[Su et~al.(2022)Su, Lan, Wang, Yogatama, Kong, and
+  Collier]{su2022contrastive}
+Yixuan Su, Tian Lan, Yan Wang, Dani Yogatama, Lingpeng Kong, and Nigel Collier.
+\newblock {A Contrastive Framework for Neural Text Generation}.
+\newblock \emph{arXiv preprint arXiv:2202.06417}, 2022.
+
+\bibitem[Tay et~al.(2021)Tay, Tran, Ruder, Gupta, Chung, Bahri, Qin, and
+  Metzler]{tay2021charformer}
+Yi~Tay, Vinh~Q. Tran, Sebastian Ruder, Jai Gupta, Hyung~Won Chung, Dara Bahri,
+  Zhen Qin, and Donald Metzler.
+\newblock {Charformer}: Fast character transformers via gradient-based subword
+  tokenization.
+\newblock \emph{arXiv preprint arXiv:2106.12672}, 2021.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser, and Polosukhin]{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N. Gomez, Lukasz Kaiser, and Illia Polosukhin.
+\newblock {Attention Is All You Need}.
+\newblock \emph{arXiv preprint arXiv:1706.03762}, 2017.
+
+\bibitem[Vinyals et~al.(2015)Vinyals, Fortunato, and
+  Jaitly]{vinyals2015pointer}
+Oriol Vinyals, Meire Fortunato, and Navdeep Jaitly.
+\newblock {Pointer Networks}.
+\newblock \emph{arXiv preprint arXiv:1506.03134}, 2015.
+
+\bibitem[Vodilka et~al.(2026)Vodilka, T{\"o}r{\"o}kov{\'a},
+  Ko{\v{c}}i{\v{s}}ko, Gab{\v{s}}tur, and Ka{\v{s}}{\v{c}}ak]{vodilka2026jev}
+Adri{\'a}n Vodilka, Monika T{\"o}r{\"o}kov{\'a}, Marek Ko{\v{c}}i{\v{s}}ko,
+  Peter Gab{\v{s}}tur, and Jakub Ka{\v{s}}{\v{c}}ak.
+\newblock {Integrating the Jev AI Decision Model with Projection Guidance in
+  Manufacturing: A Human-Supervised Proof of Concept for Bin Preparation}.
+\newblock \emph{Applied Sciences}, 16\penalty0 (20):\penalty0 10049, 2026.
+\newblock \doi{10.3390/app162010049}.
+
+\bibitem[Wei et~al.(2022)Wei, Wang, Schuurmans, Bosma, Ichter, Xia, Chi, Le,
+  et~al.]{wei2022cot}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia,
+  Ed~Chi, Quoc Le, et~al.
+\newblock {Chain-of-Thought Prompting Elicits Reasoning in Large Language
+  Models}.
+\newblock \emph{arXiv preprint arXiv:2201.11903}, 2022.
+
+\bibitem[Wei et~al.(2023)Wei, Wei, Tay, Tran, Webson, Lu, Chen, Liu,
+  et~al.]{wei2023larger}
+Jerry Wei, Jason Wei, Yi~Tay, Dustin Tran, Albert Webson, Yifeng Lu, Xinyun
+  Chen, Hanxiao Liu, et~al.
+\newblock {Larger language models do in-context learning differently}.
+\newblock \emph{arXiv preprint arXiv:2303.03846}, 2023.
+
+\bibitem[Wilson(1927)]{wilson1927}
+Edwin~B. Wilson.
+\newblock {Probable Inference, the Law of Succession, and Statistical
+  Inference}.
+\newblock \emph{Journal of the American Statistical Association}, 22\penalty0
+  (158):\penalty0 209--212, 1927.
+\newblock \doi{10.1080/01621459.1927.10502953}.
+
+\bibitem[Xiao et~al.(2023)Xiao, Tian, Chen, Han, and Lewis]{xiao2023streaming}
+Guangxuan Xiao, Yuandong Tian, Beidi Chen, Song Han, and Mike Lewis.
+\newblock {Efficient Streaming Language Models with Attention Sinks}.
+\newblock \emph{arXiv preprint arXiv:2309.17453}, 2023.
+
+\bibitem[Xie et~al.(2021)Xie, Raghunathan, Liang, and Ma]{xie2022explanation}
+Sang~Michael Xie, Aditi Raghunathan, Percy Liang, and Tengyu Ma.
+\newblock {An Explanation of In-context Learning as Implicit Bayesian
+  Inference}.
+\newblock \emph{arXiv preprint arXiv:2111.02080}, 2021.
+
+\bibitem[Xue et~al.(2022)Xue, Barua, Constant, Al-Rfou, Narang, Kale, Roberts,
+  and Raffel]{xue2022byt5}
+Linting Xue, Aditya Barua, Noah Constant, Rami Al-Rfou, Sharan Narang, Mihir
+  Kale, Adam Roberts, and Colin Raffel.
+\newblock {ByT5}: Towards a token-free future with pre-trained byte-to-byte
+  models.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  10:\penalty0 291--306, 2022.
+
+\bibitem[Yu et~al.(2023)Yu, Simig, Flaherty, Aghajanyan, Zettlemoyer, and
+  Lewis]{yu2023megabyte}
+Lili Yu, Dániel Simig, Colin Flaherty, Armen Aghajanyan, Luke Zettlemoyer, and
+  Mike Lewis.
+\newblock {MEGABYTE: Predicting Million-byte Sequences with Multiscale
+  Transformers}.
+\newblock \emph{arXiv preprint arXiv:2305.07185}, 2023.
+
+\bibitem[Zaheer et~al.(2017)Zaheer, Kottur, Ravanbakhsh, Poczos, Salakhutdinov,
+  and Smola]{zaheer2017deep}
+Manzil Zaheer, Satwik Kottur, Siamak Ravanbakhsh, Barnabas Poczos, Ruslan
+  Salakhutdinov, and Alexander Smola.
+\newblock {Deep Sets}.
+\newblock \emph{arXiv preprint arXiv:1703.06114}, 2017.
+
+\bibitem[Zhang et~al.(2017)Zhang, Bengio, Hardt, Recht, and
+  Vinyals]{zhang2017rethinking}
+Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals.
+\newblock Understanding deep learning requires rethinking generalization.
+\newblock \emph{International Conference on Learning Representations}, 2017.
+
+\bibitem[Zhou et~al.(2024)Zhou, Yu, Babu, Tirumala, Yasunaga, Shamis, Kahn, Ma,
+  et~al.]{zhou2024transfusion}
+Chunting Zhou, Lili Yu, Arun Babu, Kushal Tirumala, Michihiro Yasunaga, Leonid
+  Shamis, Jacob Kahn, Xuezhe Ma, et~al.
+\newblock {Transfusion: Predict the Next Token and Diffuse Images with One
+  Multi-Modal Model}.
+\newblock \emph{arXiv preprint arXiv:2408.11039}, 2024.
+
+\end{thebibliography}

@@ -1,0 +1,28 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Decode versus score with everything else fixed: same encoder, same
+initialisation, same rows in the same order, same steps, batch, learning rate
+and seed. \emph{Score} evaluates every candidate in one pass and cannot emit an
+out-of-bank label; \emph{decode} fills the label's byte slots iteratively and is
+matched against the bank, so it can. Latency is batch-1 wall clock on CPU over
+the same test rows, and therefore a lower bound on what an autoregressive
+decoder of the same label length would cost. GPU seconds per 1,000 decisions
+come from $1000\times p_{50}$ and are CPU seconds here, so they overstate an
+accelerator. The last column is the GPU rate at which 1,000 local decisions
+cost what Jev charges for that task's billed payload at \$0.042/MTok; it is rate-free
+because no price for this machine is recorded anywhere in the repository. Read
+from \texttt{results/decode\_vs\_score/*.json}.}
+\label{tab:comparator}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Task & $K$ & Seats & Score acc. & Decode acc. & Invalid & $p_{50}$ score & $p_{50}$ decode & GPU s & break-even \\
+ & & & & & rate & (ms) & (ms) & per 1k & \$/GPU-h \\
+\midrule
+ag-news & 4 & 3 & 0.5011 & 0.1444 & 0.58 & 15.1 & 68.6 & 15.1 & 3.6 \\
+banking77 & 77 & 3 & 0.8430 & 0.0000 & 1.00 & 28.2 & 248.4 & 28.2 & 5.1 \\
+
+\bottomrule
+\end{tabular}
+\end{table}

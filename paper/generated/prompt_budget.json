@@ -1,0 +1,34 @@
+{
+  "protocol": "jev-prompt-budget-reconstruction-v1",
+  "n": 3080,
+  "labels": 77,
+  "examples_per_row": 24,
+  "definitions_bytes": 7801,
+  "question_bytes": 8187,
+  "prompt_bytes_median": 10683,
+  "prompt_bytes_min": 10009,
+  "prompt_bytes_max": 13524,
+  "prompt_bytes_mean": 10782.9,
+  "examples_bytes_median": 2367,
+  "azurite_long_budget": 5118,
+  "source": {
+    "descriptions.json": {
+      "sha256": "ea930901fa349f167ad392e432b68f34b15fef97cca3fbd9944a4119131aa3ed",
+      "bytes": 7727
+    },
+    "categories.json": {
+      "sha256": "e58114f0c41107b65df9821b4c928e9630278216ecb12f48ba2b6301c3f6d251",
+      "bytes": 2037
+    },
+    "source": {
+      "repository": "https://github.com/simonmesmith/jev-banking77-experiment",
+      "commit": "5cac4ff7783a4cfc0badba4124a309dd2a2b9862",
+      "files": [
+        "configs/descriptions.json",
+        "data/categories.json"
+      ],
+      "dataset": "Banking77 (Casanueva et al., 2020), CC-BY-4.0",
+      "note": "Public prompt inputs reproduced only to measure the comparator information budget. No model weights or predictions are copied."
+    }
+  }
+}

@@ -1,0 +1,2883 @@
+{
+  "schema_version": "1.0",
+  "registry_version": "0.3",
+  "generated": "2026-10-30",
+  "status": "draft",
+  "frozen": false,
+  "locked_manifest": {
+    "path": "research/suites/locked_suite.json",
+    "sha256": "1f2115ffab5ee0ca1959d534b424d99db1e3f286dce6d11e534b92fb058c87b2",
+    "items_sha256": "59abbd685c4de345344363a4442fb2ad04dc9786f76d765deb8c0c106c1b7ddb",
+    "tasks": 12,
+    "status": "sealed",
+    "opened": false,
+    "note": "Row-level suite is sealed and hash-verified. The full six-family registry is not frozen: three families and several dataset licences remain open."
+  },
+  "split_discipline": {
+    "train": "2,499-2,500 rows per dev task; used only to fit the model or head.",
+    "dev": "748-750 rows per dev task; used for architecture, hyper-parameter, and protocol decisions. Inspected by the 2026-10-30 context experiment, so it is legacy development evidence, not fresh confirmation.",
+    "calibration": {
+      "status": "not_materialised",
+      "rule": "Calibration must be a separate partition carved before fitting and disjoint from train, dev, and locked. The v1 dev suite has no calibration partition, and no threshold was fitted for the argmax context experiment. A calibration run requires a new suite version."
+    },
+    "final": "The locked suite is sealed and opened once, after the method is frozen. It never supplies calibration rows."
+  },
+  "family_weight_rule": "Families are equally weighted for a descriptive composite only; per-family results are primary. No dataset may exceed 0.25 of its family dev weight.",
+  "families": [
+    {
+      "id": "classification",
+      "name": "Multi-domain classification and routing",
+      "weight": 0.1667,
+      "decision": "Choose one label from a caller-supplied set across domains and label counts.",
+      "core_datasets": 4,
+      "datasets": [
+        {
+          "id": "banking77",
+          "name": "Banking77",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://huggingface.co/datasets/PolyAI/banking77",
+          "paper": "https://arxiv.org/abs/2003.04807",
+          "licence": {
+            "spdx": "CC-BY-4.0",
+            "status": "clear",
+            "notes": "Canonical card states CC BY 4.0."
+          },
+          "splits": {
+            "train": 10003,
+            "dev": 1500,
+            "locked": 3080,
+            "notes": "Canonical train/test. Dev is a 1,500-row stratified carve from train; locked is the official 3,080-row test."
+          },
+          "scoring": [
+            "accuracy",
+            "macro_f1",
+            "ece_15bin",
+            "brier",
+            "selective_accuracy_at_80_coverage",
+            "selective_accuracy_at_50_coverage",
+            "aurc"
+          ],
+          "comparator": {
+            "jev_public": true,
+            "paired": false,
+            "points": [
+              {
+                "value": 0.797,
+                "n": 3076,
+                "source": "Bonn 2026",
+                "version": "jev-1.13.0",
+                "note": "77-way; local mirror is 3,076 rows.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              },
+              {
+                "value": 0.788,
+                "n": 231,
+                "source": "AY Automate 2026",
+                "version": "jev-1.13.0",
+                "note": "77-way; small sample.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              },
+              {
+                "value": 0.87,
+                "n": 100,
+                "source": "AbdelStark BTZSC pilot",
+                "version": "jev-1.13.0",
+                "note": "72 labels, not 77; not like-for-like.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              },
+              {
+                "value": 0.924,
+                "n": 3080,
+                "source": "local reconstruction",
+                "version": "reconstructed prompt",
+                "note": "2,846/3,080; not a live Jev API run.",
+                "comparable": false,
+                "comparison_class": "local_reconstruction",
+                "reproduced": false
+              }
+            ]
+          },
+          "contamination": {
+            "status": "partial",
+            "notes": "Product path removed 25/9,993 support messages; 255 rows affected. Verbatim audit only."
+          },
+          "local": {
+            "status": "present",
+            "path": "data/raw/banking77",
+            "rows": "9,993 train / 3,076 test",
+            "issue": "Mirror is 14 rows short of canonical 10,003/3,080; product path uses 3,080 from another source."
+          },
+          "readiness": "ready",
+          "blockers": [
+            "Reconcile the 3,076-row mirror with the 3,080-row product path before freezing."
+          ]
+        },
+        {
+          "id": "clinc150_plus",
+          "name": "CLINC150 (plus)",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://huggingface.co/datasets/clinc/clinc_oos",
+          "paper": "https://arxiv.org/abs/1903.08097",
+          "licence": {
+            "spdx": "CC-BY-3.0",
+            "status": "clear",
+            "notes": "Dataset card states CC BY 3.0."
+          },
+          "splits": {
+            "train": 15250,
+            "dev": 3100,
+            "locked": 5500,
+            "notes": "Config plus. 151 labels including out-of-scope."
+          },
+          "scoring": [
+            "accuracy",
+            "macro_f1",
+            "oos_recall",
+            "oos_f1",
+            "ece_15bin",
+            "selective_accuracy_at_80_coverage"
+          ],
+          "comparator": {
+            "jev_public": true,
+            "paired": false,
+            "points": [
+              {
+                "value": 0.895,
+                "n": 5500,
+                "source": "Bonn 2026",
+                "version": "jev-1.13.0",
+                "note": "Full test split, as reported.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              }
+            ]
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Existing audit covered a 100-row probe; not a full scan."
+          },
+          "local": {
+            "status": "present",
+            "path": "data/raw/clinc_oos",
+            "rows": "15,250 / 3,100 / 5,500",
+            "issue": "None."
+          },
+          "readiness": "ready",
+          "blockers": []
+        },
+        {
+          "id": "massive_intent_en",
+          "name": "MASSIVE intent (en-US)",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://huggingface.co/datasets/AmazonScience/massive",
+          "paper": "https://arxiv.org/abs/2204.08582",
+          "licence": {
+            "spdx": "CC-BY-4.0",
+            "status": "clear",
+            "notes": "MASSIVE 1.1 card states CC BY 4.0."
+          },
+          "splits": {
+            "train": 11514,
+            "dev": 2033,
+            "locked": 2974,
+            "notes": "en-US config; 60 intents."
+          },
+          "scoring": [
+            "accuracy",
+            "macro_f1",
+            "ece_15bin"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point; Laya publishes 0.783 zero-shot."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Existing audit covered a 100-row probe."
+          },
+          "local": {
+            "status": "present",
+            "path": "data/raw/massive_intent",
+            "rows": "11,514 / 2,033 / 2,974",
+            "issue": "None."
+          },
+          "readiness": "ready",
+          "blockers": []
+        },
+        {
+          "id": "massive_scenario_en",
+          "name": "MASSIVE scenario (en-US)",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://huggingface.co/datasets/AmazonScience/massive",
+          "paper": "https://arxiv.org/abs/2204.08582",
+          "licence": {
+            "spdx": "CC-BY-4.0",
+            "status": "clear",
+            "notes": "Same corpus and card as intent."
+          },
+          "splits": {
+            "train": 11514,
+            "dev": 2033,
+            "locked": 2974,
+            "notes": "18 scenario labels; same rows as intent, different label space."
+          },
+          "scoring": [
+            "accuracy",
+            "macro_f1",
+            "ece_15bin"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Existing audit covered a 100-row probe."
+          },
+          "local": {
+            "status": "present",
+            "path": "data/raw/massive_scenario",
+            "rows": "11,514 / 2,033 / 2,974",
+            "issue": "Not independent of MASSIVE intent; do not treat as a second corpus."
+          },
+          "readiness": "ready",
+          "blockers": [
+            "Same corpus as MASSIVE intent; report as a label-space diagnostic, not an independent domain."
+          ]
+        },
+        {
+          "id": "ag_news",
+          "name": "AG News",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://huggingface.co/datasets/fancyzhx/ag_news",
+          "paper": "https://arxiv.org/abs/1509.01626",
+          "licence": {
+            "spdx": "UNRESOLVED",
+            "status": "unresolved",
+            "notes": "No licence stated in canonical card or mirror."
+          },
+          "splits": {
+            "train": 120000,
+            "dev": 5000,
+            "locked": 7600,
+            "notes": "Dev is a 5,000-row carve from train."
+          },
+          "scoring": [
+            "accuracy",
+            "macro_f1",
+            "ece_15bin"
+          ],
+          "comparator": {
+            "jev_public": true,
+            "paired": false,
+            "points": [
+              {
+                "value": 0.885,
+                "n": 7600,
+                "source": "Bonn 2026",
+                "version": "jev-1.13.0",
+                "note": "Full test split.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              },
+              {
+                "value": 0.91,
+                "n": 100,
+                "source": "AbdelStark BTZSC pilot",
+                "version": "jev-1.13.0",
+                "note": "Pilot sample.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              },
+              {
+                "value": 0.91,
+                "n": null,
+                "source": "AY Automate 2026",
+                "version": "jev-1.13.0",
+                "note": "Conflict with Bonn; split not established.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              }
+            ]
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Existing audit had 0/100 probe hits; not a full scan."
+          },
+          "local": {
+            "status": "present",
+            "path": "data/raw/ag_news",
+            "rows": "120,000 / 7,600",
+            "issue": "Licence unresolved; do not ship."
+          },
+          "readiness": "research_only",
+          "blockers": [
+            "Unresolved licence.",
+            "Comparator conflict (0.885 vs 0.910)."
+          ]
+        },
+        {
+          "id": "dair_emotion",
+          "name": "DAIR Emotion",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://huggingface.co/datasets/dair-ai/emotion",
+          "paper": "https://arxiv.org/abs/2011.01544",
+          "licence": {
+            "spdx": "UNRESOLVED",
+            "status": "unresolved",
+            "notes": "No licence stated."
+          },
+          "splits": {
+            "train": 16000,
+            "dev": 2000,
+            "locked": 2000,
+            "notes": "6-way."
+          },
+          "scoring": [
+            "accuracy",
+            "macro_f1",
+            "ece_15bin"
+          ],
+          "comparator": {
+            "jev_public": true,
+            "paired": false,
+            "points": [
+              {
+                "value": 0.48,
+                "n": 100,
+                "source": "AbdelStark BTZSC pilot",
+                "version": "jev-1.13.0",
+                "note": "Pilot sample.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              },
+              {
+                "value": 0.585,
+                "n": null,
+                "source": "DATA.md citation",
+                "version": "jev-1.13.0",
+                "note": "Conflict; split not established.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              }
+            ]
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Existing audit had 0/100 probe hits."
+          },
+          "local": {
+            "status": "present",
+            "path": "data/raw/emotion",
+            "rows": "16,000 / 2,000 / 2,000",
+            "issue": "Licence unresolved; old harness produced a chance-level run, now superseded."
+          },
+          "readiness": "research_only",
+          "blockers": [
+            "Unresolved licence.",
+            "Comparator conflict (0.480 vs 0.585)."
+          ]
+        },
+        {
+          "id": "xnli_en",
+          "name": "XNLI (en)",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://huggingface.co/datasets/facebook/xnli",
+          "paper": "https://arxiv.org/abs/1809.05053",
+          "licence": {
+            "spdx": "UNRESOLVED",
+            "status": "unresolved",
+            "notes": "DATA.md records non-commercial/unresolved terms."
+          },
+          "splits": {
+            "train": 392702,
+            "dev": 2490,
+            "locked": 5010,
+            "notes": "3-way NLI; pair input."
+          },
+          "scoring": [
+            "accuracy",
+            "macro_f1",
+            "ece_15bin"
+          ],
+          "comparator": {
+            "jev_public": true,
+            "paired": false,
+            "points": [
+              {
+                "value": 0.86,
+                "n": null,
+                "source": "AY Automate via suite_citations",
+                "version": "jev-1.13.0",
+                "note": "No clean split/source; do not use until reconciled.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              }
+            ]
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Existing audit had 1/100 probe hit."
+          },
+          "local": {
+            "status": "present",
+            "path": "data/raw/xnli",
+            "rows": "392,702 / 2,490 / 5,010",
+            "issue": "Licence unresolved; old 14.4M/33.7M harness results were invalid due to pair truncation/scoring path."
+          },
+          "readiness": "research_only",
+          "blockers": [
+            "Unresolved licence.",
+            "Comparator point has no clean provenance.",
+            "Pair packing must preserve hypothesis; old results are not capability."
+          ]
+        },
+        {
+          "id": "language_id",
+          "name": "Language ID (20-way)",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://huggingface.co/datasets/papluca/language-identification",
+          "paper": null,
+          "licence": {
+            "spdx": "UNRESOLVED",
+            "status": "unresolved",
+            "notes": "No licence stated."
+          },
+          "splits": {
+            "train": 70000,
+            "dev": 10000,
+            "locked": 10000,
+            "notes": "20-way."
+          },
+          "scoring": [
+            "accuracy",
+            "macro_f1"
+          ],
+          "comparator": {
+            "jev_public": true,
+            "paired": false,
+            "points": [
+              {
+                "value": 0.996,
+                "n": 10000,
+                "source": "Bonn 2026",
+                "version": "jev-1.13.0",
+                "note": "Full split.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              }
+            ]
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Existing audit had 0/100 probe hits."
+          },
+          "local": {
+            "status": "present",
+            "path": "data/raw/language_id",
+            "rows": "70,000 / 10,000 / 10,000",
+            "issue": "Licence unresolved."
+          },
+          "readiness": "research_only",
+          "blockers": [
+            "Unresolved licence."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "document_grounded",
+      "name": "Document-grounded decisions and evidence sufficiency",
+      "weight": 0.1667,
+      "decision": "Answer from supplied evidence, return supporting spans, and abstain when the evidence does not decide.",
+      "core_datasets": 4,
+      "datasets": [
+        {
+          "id": "squad2",
+          "name": "SQuAD 2.0",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://rajpurkar.github.io/SQuAD-explorer/",
+          "paper": "https://arxiv.org/abs/1806.03822",
+          "licence": {
+            "spdx": "CC-BY-SA-4.0",
+            "status": "clear",
+            "notes": "Share-alike obligations may apply to derivative datasets."
+          },
+          "splits": {
+            "train": 130319,
+            "dev": 2000,
+            "locked": 11873,
+            "notes": "Dev is a 2,000-row carve from train; locked is the official validation split. Official test labels are hidden."
+          },
+          "scoring": [
+            "exact_match",
+            "token_f1",
+            "answerability_f1",
+            "ece_15bin"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in the existing 20-task audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required."
+          },
+          "readiness": "ready",
+          "blockers": []
+        },
+        {
+          "id": "musique_full",
+          "name": "MuSiQue-Full v1.0",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://github.com/StonyBrookNLP/musique",
+          "paper": "https://arxiv.org/abs/2108.00573",
+          "licence": {
+            "spdx": "CC-BY-4.0",
+            "status": "clear",
+            "notes": "Repository states CC BY 4.0; seed-dataset leakage warning applies."
+          },
+          "splits": {
+            "train": 19938,
+            "dev": 2417,
+            "locked": 2459,
+            "notes": "Official Ans/Full splits. Full includes unanswerable."
+          },
+          "scoring": [
+            "answer_f1",
+            "support_f1",
+            "group_answer_sufficiency_f1",
+            "group_support_sufficiency_f1"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Seed single-hop datasets may overlap; repository publishes dev/test single-hop IDs for avoidance."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required."
+          },
+          "readiness": "ready",
+          "blockers": [
+            "Use the official evaluator; do not reimplement sufficiency F1."
+          ]
+        },
+        {
+          "id": "qasper",
+          "name": "QASPER",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://huggingface.co/datasets/allenai/qasper",
+          "paper": "https://arxiv.org/abs/2105.03011",
+          "licence": {
+            "spdx": "CC-BY-4.0",
+            "status": "clear",
+            "notes": "Dataset card states CC BY 4.0."
+          },
+          "splits": {
+            "train": 2593,
+            "dev": 500,
+            "locked": 1005,
+            "notes": "No official test labels. Dev carve from train; locked is the official dev split."
+          },
+          "scoring": [
+            "answer_f1",
+            "evidence_f1",
+            "answerability_f1"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in the existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required."
+          },
+          "readiness": "ready",
+          "blockers": [
+            "Do not invent a 1,451-row test split; there is no official labelled test."
+          ]
+        },
+        {
+          "id": "fever_v1",
+          "name": "FEVER v1.0",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://fever.ai/dataset/fever.html",
+          "paper": "https://arxiv.org/abs/1803.05355",
+          "licence": {
+            "spdx": "CC-BY-SA-3.0",
+            "status": "clear",
+            "notes": "Card also lists GPL-3.0 metadata; Wikipedia text terms apply."
+          },
+          "splits": {
+            "train": 311431,
+            "dev": 10000,
+            "locked": 18999,
+            "notes": "Locked is paper_dev. labelled_dev is 37,566; unlabelled_dev is 19,998. Do not mix."
+          },
+          "scoring": [
+            "label_accuracy",
+            "fever_score",
+            "evidence_f1"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Wikipedia pages overlap public corpora; full audit required."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required; split naming is ambiguous."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Pin v1.0 and paper_dev explicitly.",
+            "Resolve Wikipedia/GPL metadata obligations."
+          ]
+        },
+        {
+          "id": "scifact",
+          "name": "SciFact",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://github.com/allenai/scifact",
+          "paper": "https://arxiv.org/abs/2004.14974",
+          "licence": {
+            "spdx": "CC-BY-4.0",
+            "status": "clear",
+            "notes": "Claims CC BY 4.0; abstracts ODC-By 1.0; code Apache-2.0."
+          },
+          "splits": {
+            "train": 809,
+            "dev": 339,
+            "locked": 300,
+            "notes": "Test labels are withheld; not locally scorable."
+          },
+          "scoring": [
+            "label_accuracy",
+            "evidence_f1"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Test labels withheld; use dev as the reportable split or submit blind."
+          ]
+        },
+        {
+          "id": "hotpotqa",
+          "name": "HotpotQA",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://hotpotqa.github.io/",
+          "paper": "https://arxiv.org/abs/1809.09600",
+          "licence": {
+            "spdx": "CC-BY-SA-4.0",
+            "status": "clear",
+            "notes": "Share-alike."
+          },
+          "splits": {
+            "train": 90447,
+            "dev": 2000,
+            "locked": 7405,
+            "notes": "Dev carve from train; locked is official dev. Hidden test."
+          },
+          "scoring": [
+            "exact_match",
+            "f1",
+            "support_f1"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required."
+          },
+          "readiness": "ready",
+          "blockers": []
+        },
+        {
+          "id": "boolq",
+          "name": "BoolQ",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://huggingface.co/datasets/google/boolq",
+          "paper": "https://arxiv.org/abs/1905.10044",
+          "licence": {
+            "spdx": "CC-BY-SA-3.0",
+            "status": "clear",
+            "notes": "Card states CC BY-SA 3.0."
+          },
+          "splits": {
+            "train": 9427,
+            "dev": 1000,
+            "locked": 3270,
+            "notes": "Dev carve from train; locked is official dev. Hidden test."
+          },
+          "scoring": [
+            "accuracy",
+            "ece_15bin",
+            "selective_accuracy"
+          ],
+          "comparator": {
+            "jev_public": true,
+            "paired": false,
+            "points": [],
+            "note": "Bonn 37-dataset suite includes BoolQ but no per-task point is transcribed here."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required."
+          },
+          "readiness": "ready",
+          "blockers": []
+        }
+      ]
+    },
+    {
+      "id": "tool_action_abstention",
+      "name": "Tool/action selection and abstention",
+      "weight": 0.1667,
+      "decision": "Choose the next tool/action, fill arguments, and ask for missing information or refuse when no available tool fits.",
+      "core_datasets": 4,
+      "datasets": [
+        {
+          "id": "bfcl_v3_single_live",
+          "name": "BFCL V3 single-turn live",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+          "paper": "https://gorilla.cs.berkeley.edu/blogs/13_bfcl_v3_multi_turn.html",
+          "licence": {
+            "spdx": "Apache-2.0",
+            "status": "clear",
+            "notes": "Gorilla repository is Apache-2.0; verify per-artifact."
+          },
+          "splits": {
+            "train": null,
+            "dev": 500,
+            "locked": 2251,
+            "notes": "2,251 live single-turn. Dev carved from non-live; do not tune on live."
+          },
+          "scoring": [
+            "ast_accuracy",
+            "executable_accuracy",
+            "irrelevance_detection"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Live data changes; pin the V3 artifact."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required."
+          },
+          "readiness": "ready",
+          "blockers": [
+            "V3 and V4 are not comparable."
+          ]
+        },
+        {
+          "id": "bfcl_v3_multi_turn",
+          "name": "BFCL V3 multi-turn",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+          "paper": "https://gorilla.cs.berkeley.edu/blogs/13_bfcl_v3_multi_turn.html",
+          "licence": {
+            "spdx": "Apache-2.0",
+            "status": "clear",
+            "notes": "Gorilla repository is Apache-2.0."
+          },
+          "splits": {
+            "train": null,
+            "dev": 100,
+            "locked": 700,
+            "notes": "800 total (base 200 + augmented 600). Custom 100/700 split; not leaderboard-comparable."
+          },
+          "scoring": [
+            "state_based_success",
+            "missing_parameter_detection",
+            "missing_function_detection",
+            "long_context_success"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Custom split loses leaderboard comparability; pre-register it."
+          ]
+        },
+        {
+          "id": "tau2_text_v1_en",
+          "name": "tau2-bench text-v1 (English)",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://github.com/sierra-research/tau2-bench",
+          "paper": "https://arxiv.org/abs/2406.12045",
+          "licence": {
+            "spdx": "MIT",
+            "status": "clear",
+            "notes": "Repository MIT."
+          },
+          "splits": {
+            "train": null,
+            "dev": 100,
+            "locked": 50,
+            "notes": "150 English tasks (50 x airline/retail/telecom). Domain holdout: dev airline+retail, locked telecom. Not leaderboard-comparable."
+          },
+          "scoring": [
+            "pass_3",
+            "policy_compliance",
+            "action_accuracy"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "Bonn sequential suite is ALFWorld/TextWorld/BabyAI/Blackjack/FrozenLake, not tau2."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download and environment setup required."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "2.0 scores are not 1.x-comparable; pin text-v1.",
+            "Domain holdout is custom."
+          ]
+        },
+        {
+          "id": "api_bank",
+          "name": "API-Bank",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank",
+          "paper": "https://arxiv.org/abs/2304.08244",
+          "licence": {
+            "spdx": "Apache-2.0",
+            "status": "clear",
+            "notes": "api-bank LICENSE is Apache-2.0."
+          },
+          "splits": {
+            "train": null,
+            "dev": 100,
+            "locked": 214,
+            "notes": "314 dialogues, 753 API calls, 73 tools. Custom dialogue split."
+          },
+          "scoring": [
+            "api_call_accuracy",
+            "api_result_accuracy",
+            "rouge_l",
+            "planning_accuracy"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Custom split; no standard train/dev/test."
+          ]
+        },
+        {
+          "id": "bfcl_v3_irrelevance",
+          "name": "BFCL V3 irrelevance subset",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+          "paper": "https://gorilla.cs.berkeley.edu/blogs/13_bfcl_v3_multi_turn.html",
+          "licence": {
+            "spdx": "Apache-2.0",
+            "status": "clear",
+            "notes": "Subset of BFCL V3."
+          },
+          "splits": {
+            "train": null,
+            "dev": 0,
+            "locked": 1122,
+            "notes": "240 non-live + 882 live irrelevance; subset of the single-turn rows. Do not double-count."
+          },
+          "scoring": [
+            "irrelevance_detection",
+            "false_call_rate"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Subset of BFCL V3."
+          },
+          "readiness": "ready",
+          "blockers": []
+        },
+        {
+          "id": "bfcl_v4",
+          "name": "BFCL V4 (agentic)",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+          "paper": "https://gorilla.cs.berkeley.edu/blogs/13_bfcl_v3_multi_turn.html",
+          "licence": {
+            "spdx": "Apache-2.0",
+            "status": "clear",
+            "notes": "Gorilla repository is Apache-2.0."
+          },
+          "splits": {
+            "train": null,
+            "dev": null,
+            "locked": null,
+            "notes": "No fixed count recorded; V4 adds agentic web search, memory, format sensitivity."
+          },
+          "scoring": [
+            "agentic_success",
+            "format_sensitivity"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Live/agentic data changes."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Do not compare V4 to V3."
+          },
+          "readiness": "not_comparable",
+          "blockers": [
+            "Version not comparable to the V3 core."
+          ]
+        },
+        {
+          "id": "stable_toolbench",
+          "name": "StableToolBench",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://github.com/zhichengg/StableToolBench",
+          "paper": "https://arxiv.org/abs/2403.07714",
+          "licence": {
+            "spdx": "Apache-2.0",
+            "status": "conditional",
+            "notes": "Code/data Apache-2.0; underlying RapidAPI tool terms apply."
+          },
+          "splits": {
+            "train": null,
+            "dev": null,
+            "locked": null,
+            "notes": "Subset/count not verified; do not freeze until read."
+          },
+          "scoring": [
+            "solvable_pass_rate",
+            "tool_call_accuracy"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "API instability and caching require a pinned server."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download and server setup required."
+          },
+          "readiness": "blocked",
+          "blockers": [
+            "RapidAPI terms.",
+            "Unstable APIs; needs a frozen cache/server."
+          ]
+        },
+        {
+          "id": "tau2_banking_knowledge",
+          "name": "tau2 banking_knowledge",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://github.com/sierra-research/tau2-bench",
+          "paper": "https://arxiv.org/abs/2603.04370",
+          "licence": {
+            "spdx": "MIT",
+            "status": "clear",
+            "notes": "Repository MIT; retrieval data may have separate terms."
+          },
+          "splits": {
+            "train": null,
+            "dev": null,
+            "locked": null,
+            "notes": "Knowledge-retrieval domain; not the same as text-v1."
+          },
+          "scoring": [
+            "retrieval_recall",
+            "pass_3",
+            "policy_compliance"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Extra knowledge dependencies required."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Do not merge with text-v1."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "policy_rule",
+      "name": "Policy and rule-conditioned decisions",
+      "weight": 0.1667,
+      "decision": "Apply an explicit policy or rule set to a case and distinguish entailed, contradicted, and not-mentioned.",
+      "core_datasets": 4,
+      "datasets": [
+        {
+          "id": "contract_nli",
+          "name": "ContractNLI",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://stanfordnlp.github.io/contract-nli/",
+          "paper": "https://arxiv.org/abs/2110.01799",
+          "licence": {
+            "spdx": "CC-BY-4.0",
+            "status": "clear",
+            "notes": "Dataset page states CC BY 4.0."
+          },
+          "splits": {
+            "train": 7191,
+            "dev": 1037,
+            "locked": 2091,
+            "notes": "607 contracts x 17 hypotheses; official split."
+          },
+          "scoring": [
+            "macro_f1_3class",
+            "evidence_micro_map",
+            "evidence_macro_map",
+            "p_at_r80"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "Vals LegalBench includes contract_nli subtasks, but not this full document-level task."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required; HF may be gated."
+          },
+          "readiness": "ready",
+          "blockers": []
+        },
+        {
+          "id": "cuad_v1",
+          "name": "CUAD v1",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://www.atticusprojectai.org/cuad/",
+          "paper": "https://arxiv.org/abs/2103.06268",
+          "licence": {
+            "spdx": "CC-BY-4.0",
+            "status": "clear",
+            "notes": "Card states CC BY 4.0; commercial use allowed."
+          },
+          "splits": {
+            "train": 408,
+            "dev": null,
+            "locked": 102,
+            "notes": "510 contracts; official 408/102 split. 41 clause types."
+          },
+          "scoring": [
+            "clause_presence_f1",
+            "evidence_span_f1",
+            "per_category_recall"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No full-task Jev point."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required."
+          },
+          "readiness": "ready",
+          "blockers": [
+            "Frame as yes/no + evidence; do not treat as 41-way multi-label without a pre-registration."
+          ]
+        },
+        {
+          "id": "policyqa",
+          "name": "PolicyQA",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://github.com/wasiahmad/PolicyQA",
+          "paper": "https://aclanthology.org/2020.findings-emnlp.66/",
+          "licence": {
+            "spdx": "MIT",
+            "status": "research_only",
+            "notes": "Code MIT; underlying OPP-115 policy text has research terms; commercial use unresolved."
+          },
+          "splits": {
+            "train": null,
+            "dev": null,
+            "locked": null,
+            "notes": "25,017 examples, 714 questions, 115 policies. Split counts must be read from the release."
+          },
+          "scoring": [
+            "exact_match",
+            "token_f1",
+            "answerability"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point found."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required."
+          },
+          "readiness": "research_only",
+          "blockers": [
+            "OPP-115 terms.",
+            "Split counts not verified."
+          ]
+        },
+        {
+          "id": "legalbench_vals12",
+          "name": "LegalBench Vals-12 slice",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://github.com/HazyResearch/legalbench",
+          "paper": "https://arxiv.org/abs/2308.11462",
+          "licence": {
+            "spdx": "MIXED",
+            "status": "unresolved",
+            "notes": "LegalBench is mixed-licence; only tasks with clear licences may be admitted; the 12-task subset is not yet frozen."
+          },
+          "splits": {
+            "train": null,
+            "dev": null,
+            "locked": 396,
+            "notes": "12 tasks x 33 questions, as used by Vals. Freeze exact task IDs."
+          },
+          "scoring": [
+            "class_balanced_accuracy",
+            "raw_accuracy",
+            "ece_15bin"
+          ],
+          "comparator": {
+            "jev_public": true,
+            "paired": false,
+            "points": [
+              {
+                "value": 0.73,
+                "n": 396,
+                "source": "Vals 2026",
+                "version": "jev-1.13.0",
+                "note": "Class-balanced accuracy; Jev ranked last of 12.",
+                "comparable": false,
+                "comparison_class": "published_reference",
+                "reproduced": false
+              }
+            ]
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "LegalBench is public and likely in pretraining; Vals notes this."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required; task-level licences."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Mixed licences.",
+            "Only 33 items per task; do not over-interpret single-task differences."
+          ]
+        },
+        {
+          "id": "tau2_policy",
+          "name": "tau2 policy compliance (cross-family)",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://github.com/sierra-research/tau2-bench",
+          "paper": "https://arxiv.org/abs/2406.12045",
+          "licence": {
+            "spdx": "MIT",
+            "status": "clear",
+            "notes": "Repository MIT."
+          },
+          "splits": {
+            "train": null,
+            "dev": 100,
+            "locked": 50,
+            "notes": "Same rows as tau2_text_v1_en; do not treat as independent."
+          },
+          "scoring": [
+            "policy_compliance",
+            "pass_3"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Not in existing audit."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Cross-family duplicate."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Not independent of tau2_text_v1_en."
+          ]
+        },
+        {
+          "id": "ledgar",
+          "name": "LEDGAR",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://huggingface.co/datasets/coastalthumb/LEDGAR",
+          "paper": "https://arxiv.org/abs/2010.05212",
+          "licence": {
+            "spdx": "CC-BY-4.0",
+            "status": "conditional",
+            "notes": "Reported CC BY 4.0; verify canonical release before freezing."
+          },
+          "splits": {
+            "train": null,
+            "dev": null,
+            "locked": null,
+            "notes": "~60k clauses, 100 labels; exact split to verify."
+          },
+          "scoring": [
+            "accuracy",
+            "macro_f1"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "SEC contracts may overlap public corpora."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download required; counts/splits unverified."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Verify licence and split; do not use a random HF mirror without a pinned canonical source."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "relevance_preference_ordinal",
+      "name": "Relevance, preference, and ordinal judgments",
+      "weight": 0.1667,
+      "decision": "Rank alternatives, choose the preferred alternative, or place a case on an ordered scale.",
+      "subfamilies": [
+        {
+          "id": "relevance",
+          "weight_in_family": 0.333333,
+          "datasets": [
+            {
+              "id": "msmarco_passage",
+              "name": "MS MARCO passage",
+              "role": "core",
+              "weight_in_family": 0.1666665,
+              "source": "https://microsoft.github.io/msmarco/",
+              "paper": "https://arxiv.org/abs/1611.09268",
+              "licence": {
+                "spdx": "RESEARCH_ONLY",
+                "status": "research_only",
+                "notes": "Non-commercial research terms; shipping unresolved."
+              },
+              "splits": {
+                "train": null,
+                "dev": 3000,
+                "locked": 3980,
+                "notes": "~8.8M passages; 6,980 dev qrels; custom query-ID split."
+              },
+              "scoring": [
+                "mrr_at_10",
+                "recall_at_100",
+                "ndcg_at_10"
+              ],
+              "comparator": {
+                "jev_public": false,
+                "paired": false,
+                "points": [],
+                "note": "No Jev point found."
+              },
+              "contamination": {
+                "status": "not_checked",
+                "notes": "Not in existing audit."
+              },
+              "local": {
+                "status": "absent",
+                "path": null,
+                "rows": null,
+                "issue": "Download required; separate ranking collection/qrels, not the HF QA mirror."
+              },
+              "readiness": "research_only",
+              "blockers": [
+                "Non-commercial terms.",
+                "Do not use the HF QA config as the ranking split."
+              ]
+            },
+            {
+              "id": "trec_dl_2020",
+              "name": "TREC DL 2020 passage",
+              "role": "core",
+              "weight_in_family": 0.1666665,
+              "source": "https://trec.nist.gov/data/deep2020.html",
+              "paper": null,
+              "licence": {
+                "spdx": "RESEARCH_ONLY",
+                "status": "research_only",
+                "notes": "NIST qrels + MS MARCO corpus terms."
+              },
+              "splits": {
+                "train": null,
+                "dev": 100,
+                "locked": 100,
+                "notes": "200 queries, 11,386 qrels; custom 100/100 split."
+              },
+              "scoring": [
+                "ndcg_at_10",
+                "map"
+              ],
+              "comparator": {
+                "jev_public": false,
+                "paired": false,
+                "points": [],
+                "note": "No Jev point found."
+              },
+              "contamination": {
+                "status": "not_checked",
+                "notes": "Not in existing audit."
+              },
+              "local": {
+                "status": "absent",
+                "path": null,
+                "rows": null,
+                "issue": "Download required."
+              },
+              "readiness": "research_only",
+              "blockers": [
+                "Non-commercial terms.",
+                "Four-point graded qrels; do not threshold to binary without saying so."
+              ]
+            },
+            {
+              "id": "beir_selected",
+              "name": "BEIR selected components",
+              "role": "secondary",
+              "weight_in_family": 0.0,
+              "source": "https://github.com/beir-cellar/beir",
+              "paper": "https://arxiv.org/abs/2104.08663",
+              "licence": {
+                "spdx": "PER_DATASET",
+                "status": "conditional",
+                "notes": "No umbrella licence; each component must be cleared."
+              },
+              "splits": {
+                "train": null,
+                "dev": null,
+                "locked": null,
+                "notes": "Select 6 components; freeze names and licences."
+              },
+              "scoring": [
+                "ndcg_at_10"
+              ],
+              "comparator": {
+                "jev_public": false,
+                "paired": false,
+                "points": [],
+                "note": "No Jev point."
+              },
+              "contamination": {
+                "status": "not_checked",
+                "notes": "Component-dependent."
+              },
+              "local": {
+                "status": "absent",
+                "path": null,
+                "rows": null,
+                "issue": "Download required."
+              },
+              "readiness": "conditional",
+              "blockers": [
+                "Per-dataset licences.",
+                "No BEIR average without naming components."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "preference",
+          "weight_in_family": 0.333333,
+          "datasets": [
+            {
+              "id": "hh_rlhf",
+              "name": "HH-RLHF",
+              "role": "core",
+              "weight_in_family": 0.1666665,
+              "source": "https://huggingface.co/datasets/Anthropic/hh-rlhf",
+              "paper": "https://arxiv.org/abs/2204.05862",
+              "licence": {
+                "spdx": "MIT",
+                "status": "clear",
+                "notes": "Card states MIT; content warnings apply."
+              },
+              "splits": {
+                "train": 160800,
+                "dev": 5000,
+                "locked": 8552,
+                "notes": "Reported preference pairs; helpfulness and harmlessness subsets separate."
+              },
+              "scoring": [
+                "pairwise_accuracy",
+                "tie_calibration"
+              ],
+              "comparator": {
+                "jev_public": false,
+                "paired": false,
+                "points": [],
+                "note": "No Jev point found."
+              },
+              "contamination": {
+                "status": "not_checked",
+                "notes": "Not in existing audit."
+              },
+              "local": {
+                "status": "absent",
+                "path": null,
+                "rows": null,
+                "issue": "Download required."
+              },
+              "readiness": "ready",
+              "blockers": [
+                "Do not use red-team transcripts for preference training."
+              ]
+            },
+            {
+              "id": "ultrafeedback_binarized",
+              "name": "UltraFeedback (binarized)",
+              "role": "core",
+              "weight_in_family": 0.1666665,
+              "source": "https://huggingface.co/datasets/openbmb/UltraFeedback",
+              "paper": "https://arxiv.org/abs/2310.01377",
+              "licence": {
+                "spdx": "MIT",
+                "status": "clear",
+                "notes": "Card states MIT; upstream model-output terms apply."
+              },
+              "splits": {
+                "train": 64000,
+                "dev": 5000,
+                "locked": 5000,
+                "notes": "64k prompts, 256k responses; binarized pairs."
+              },
+              "scoring": [
+                "pairwise_accuracy",
+                "ece_15bin"
+              ],
+              "comparator": {
+                "jev_public": false,
+                "paired": false,
+                "points": [],
+                "note": "No Jev point found."
+              },
+              "contamination": {
+                "status": "not_checked",
+                "notes": "GPT-4 annotations; prompt sources may overlap public data."
+              },
+              "local": {
+                "status": "absent",
+                "path": null,
+                "rows": null,
+                "issue": "Download required."
+              },
+              "readiness": "ready",
+              "blockers": [
+                "Upstream model-output terms; do not redistribute responses blindly."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ordinal",
+          "weight_in_family": 0.333333,
+          "datasets": [
+            {
+              "id": "financial_phrasebank_allagree",
+              "name": "Financial PhraseBank (all-agree)",
+              "role": "core",
+              "weight_in_family": 0.1666665,
+              "source": "https://huggingface.co/datasets/takala/financial_phrasebank",
+              "paper": "https://www.researchgate.net/publication/251231364_FinancialPhraseBank-v10",
+              "licence": {
+                "spdx": "CC-BY-NC-SA-3.0",
+                "status": "research_only",
+                "notes": "Non-commercial; share-alike."
+              },
+              "splits": {
+                "train": 1264,
+                "dev": 500,
+                "locked": 1000,
+                "notes": "All-agree subset; 2,264 total. Dev carve from train."
+              },
+              "scoring": [
+                "accuracy_3level",
+                "mae",
+                "qwk",
+                "spearman"
+              ],
+              "comparator": {
+                "jev_public": true,
+                "paired": false,
+                "points": [
+                  {
+                    "value": 0.73,
+                    "n": 970,
+                    "source": "Bonn 2026",
+                    "version": "jev-1.13.0",
+                    "note": "Different split (970 vs 1,000).",
+                    "comparable": false,
+                    "comparison_class": "published_reference",
+                    "reproduced": false
+                  }
+                ]
+              },
+              "contamination": {
+                "status": "not_checked",
+                "notes": "Existing audit had 0/100 probe hits."
+              },
+              "local": {
+                "status": "present",
+                "path": "data/raw/financial_phrasebank",
+                "rows": "1,264 / 1,000",
+                "issue": "Non-commercial; split differs from Bonn."
+              },
+              "readiness": "research_only",
+              "blockers": [
+                "Non-commercial licence.",
+                "Split mismatch with the cited Jev point."
+              ]
+            },
+            {
+              "id": "sst5",
+              "name": "SST-5",
+              "role": "core",
+              "weight_in_family": 0.1666665,
+              "source": "https://nlp.stanford.edu/sentiment/",
+              "paper": "https://aclanthology.org/D13-1170/",
+              "licence": {
+                "spdx": "UNRESOLVED",
+                "status": "unresolved",
+                "notes": "No licence established from the sources reviewed."
+              },
+              "splits": {
+                "train": 8544,
+                "dev": 1101,
+                "locked": 2210,
+                "notes": "5-level sentence-level SST."
+              },
+              "scoring": [
+                "accuracy_5level",
+                "mae",
+                "qwk",
+                "spearman"
+              ],
+              "comparator": {
+                "jev_public": true,
+                "paired": false,
+                "points": [],
+                "note": "Bonn suite includes SST-5 but no per-task point is transcribed here."
+              },
+              "contamination": {
+                "status": "not_checked",
+                "notes": "Not in existing audit."
+              },
+              "local": {
+                "status": "absent",
+                "path": null,
+                "rows": null,
+                "issue": "Download required; licence unresolved."
+              },
+              "readiness": "conditional",
+              "blockers": [
+                "Unresolved licence; cannot freeze or ship."
+              ]
+            },
+            {
+              "id": "amazon_reviews_2023",
+              "name": "Amazon Reviews 2023 (5-core)",
+              "role": "secondary",
+              "weight_in_family": 0.0,
+              "source": "https://amazon-reviews-2023.github.io/",
+              "paper": "https://arxiv.org/abs/2403.03952",
+              "licence": {
+                "spdx": "UNRESOLVED",
+                "status": "unresolved",
+                "notes": "Terms not established."
+              },
+              "splits": {
+                "train": null,
+                "dev": null,
+                "locked": null,
+                "notes": "Large; select a fixed category and 5-core subset."
+              },
+              "scoring": [
+                "accuracy_5level",
+                "mae",
+                "qwk"
+              ],
+              "comparator": {
+                "jev_public": false,
+                "paired": false,
+                "points": [],
+                "note": "No Jev point."
+              },
+              "contamination": {
+                "status": "not_checked",
+                "notes": "Reviews may overlap pretraining."
+              },
+              "local": {
+                "status": "absent",
+                "path": null,
+                "rows": null,
+                "issue": "Download required; licence unresolved."
+              },
+              "readiness": "blocked",
+              "blockers": [
+                "Unresolved licence.",
+                "Large data; no fixed subset."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multimodal_visual",
+      "name": "Multimodal decisions requiring visual evidence",
+      "weight": 0.1667,
+      "decision": "Use the image, not only OCR text, to choose an answer or evidence region.",
+      "core_datasets": 4,
+      "datasets": [
+        {
+          "id": "visualevidence_docs",
+          "name": "VisualEvidence-Docs (planned)",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "project-generated",
+          "paper": null,
+          "licence": {
+            "spdx": "MIT",
+            "status": "clear",
+            "notes": "Project-generated from synthetic templates; not derived from restricted datasets."
+          },
+          "splits": {
+            "train": 1000,
+            "dev": 500,
+            "locked": 500,
+            "notes": "Planned 1,000 documents / 2,000 QA; train 1,000 QA, dev 500, locked 500. Visual-only subset required."
+          },
+          "scoring": [
+            "visual_only_accuracy",
+            "citation_iou",
+            "ece_15bin"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev visual point; Jev images are a danger-zone mode."
+          },
+          "contamination": {
+            "status": "planned",
+            "notes": "Synthetic; still requires template/OCR leakage checks."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Not built."
+          },
+          "readiness": "planned",
+          "blockers": [
+            "Build the generator and hash the rows before freezing."
+          ]
+        },
+        {
+          "id": "visualevidence_charts",
+          "name": "VisualEvidence-Charts (planned)",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "project-generated",
+          "paper": null,
+          "licence": {
+            "spdx": "MIT",
+            "status": "clear",
+            "notes": "Project-generated from synthetic chart templates."
+          },
+          "splits": {
+            "train": 1000,
+            "dev": 500,
+            "locked": 500,
+            "notes": "Planned 1,000 charts / 2,000 QA; train 1,000 QA, dev 500, locked 500. Visual-only subset required."
+          },
+          "scoring": [
+            "visual_only_accuracy",
+            "relaxed_accuracy",
+            "ece_15bin"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev visual point."
+          },
+          "contamination": {
+            "status": "planned",
+            "notes": "Synthetic; check template leakage."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Not built."
+          },
+          "readiness": "planned",
+          "blockers": [
+            "Build the generator and hash the rows before freezing."
+          ]
+        },
+        {
+          "id": "docvqa",
+          "name": "DocVQA",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://www.docvqa.org/datasets/docvqa",
+          "paper": "https://arxiv.org/abs/2007.00398",
+          "licence": {
+            "spdx": "UNRESOLVED",
+            "status": "unresolved",
+            "notes": "No licence established; images from UCSF Industry Documents Library."
+          },
+          "splits": {
+            "train": 39463,
+            "dev": 5349,
+            "locked": 5188,
+            "notes": "Reported; 50k questions / 12k images. Use val as locked until terms clear; test labels may be hidden."
+          },
+          "scoring": [
+            "anls",
+            "exact_match",
+            "evidence_iou"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Image-level near-duplicate audit required."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download and terms required."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Unresolved licence/image provenance."
+          ]
+        },
+        {
+          "id": "chartqa",
+          "name": "ChartQA",
+          "role": "core",
+          "weight_in_family": 0.25,
+          "source": "https://github.com/vis-nlp/ChartQA",
+          "paper": "https://aclanthology.org/2022.findings-acl.177/",
+          "licence": {
+            "spdx": "GPL-3.0",
+            "status": "unresolved",
+            "notes": "Repo metadata GPL-3.0; image provenance mixed; unresolved for redistribution."
+          },
+          "splits": {
+            "train": null,
+            "dev": null,
+            "locked": 2500,
+            "notes": "32,719 QA (9,608 human / 23,111 augmented); test 2,500."
+          },
+          "scoring": [
+            "relaxed_accuracy",
+            "exact_match",
+            "ece_15bin"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Chart images may overlap public sources; template leakage check required."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download and provenance review required."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "GPL/provenance ambiguity; do not redistribute images."
+          ]
+        },
+        {
+          "id": "visualmrc",
+          "name": "VisualMRC",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://huggingface.co/datasets/NTT-hil-insight/VisualMRC",
+          "paper": "https://arxiv.org/abs/2101.11272",
+          "licence": {
+            "spdx": "UNRESOLVED",
+            "status": "unresolved",
+            "notes": "No licence established."
+          },
+          "splits": {
+            "train": null,
+            "dev": null,
+            "locked": null,
+            "notes": "30,562 QA / 10,000+ images; split counts to verify."
+          },
+          "scoring": [
+            "anls",
+            "exact_match",
+            "rouge_l"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Image-level audit required."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download and terms required."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Unresolved licence."
+          ]
+        },
+        {
+          "id": "slidevqa",
+          "name": "SlideVQA",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://github.com/nttmdlab-nlp/SlideVQA",
+          "paper": "https://arxiv.org/abs/2301.04883",
+          "licence": {
+            "spdx": "EVALUATION_ONLY",
+            "status": "research_only",
+            "notes": "NTT evaluation terms; not a permissive dataset licence."
+          },
+          "splits": {
+            "train": null,
+            "dev": null,
+            "locked": null,
+            "notes": "14,484 QA / 2,619 decks; evidence-page retrieval."
+          },
+          "scoring": [
+            "anls",
+            "exact_match",
+            "evidence_page_recall"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Slide decks from SlideShare; image-level audit required."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download and terms required."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Evaluation-only terms."
+          ]
+        },
+        {
+          "id": "infographicsvqa",
+          "name": "InfographicsVQA",
+          "role": "secondary",
+          "weight_in_family": 0.0,
+          "source": "https://www.docvqa.org/datasets/infographicvqa",
+          "paper": "https://arxiv.org/abs/2104.12756",
+          "licence": {
+            "spdx": "UNRESOLVED",
+            "status": "unresolved",
+            "notes": "No licence established."
+          },
+          "splits": {
+            "train": null,
+            "dev": null,
+            "locked": null,
+            "notes": "30,035 questions / 5,485 images; split counts to verify."
+          },
+          "scoring": [
+            "anls",
+            "exact_match"
+          ],
+          "comparator": {
+            "jev_public": false,
+            "paired": false,
+            "points": [],
+            "note": "No Jev point."
+          },
+          "contamination": {
+            "status": "not_checked",
+            "notes": "Image-level audit required."
+          },
+          "local": {
+            "status": "absent",
+            "path": null,
+            "rows": null,
+            "issue": "Download and terms required."
+          },
+          "readiness": "conditional",
+          "blockers": [
+            "Unresolved licence."
+          ]
+        }
+      ]
+    }
+  ],
+  "comparator": {
+    "primary": "jev",
+    "models": {
+      "jev-1.13.0": {
+        "release": "earlier release",
+        "price_input_per_mtok": 0.042,
+        "price_output_per_mtok": 0.0,
+        "context_per_request": 65536,
+        "context_per_question": 32768,
+        "long_context_tokens": 262144,
+        "long_context_header": "TypeSafe-Danger-Zone-Long-Context: true",
+        "input": "text only",
+        "primitives": [
+          "noul",
+          "choice",
+          "score",
+          "box"
+        ],
+        "choice_max_options": 255,
+        "confidence": "Choice: (p_max - 1/n) / (1 - 1/n); Score: distance from most-likely level; Noul has none.",
+        "notes": "Pinned by AbdelStark, Bonn, Vals, and AY. Use for alignment with published studies."
+      },
+      "jev-1.14.0": {
+        "release": "2026-10-14",
+        "price_input_per_mtok": 0.042,
+        "price_output_per_mtok": 0.0,
+        "context_per_request": 65536,
+        "context_per_question": 32768,
+        "long_context_tokens": 262144,
+        "long_context_header": "TypeSafe-Danger-Zone-Long-Context: true",
+        "input": "text only",
+        "primitives": [
+          "noul",
+          "choice",
+          "score",
+          "box"
+        ],
+        "choice_max_options": 255,
+        "confidence": "Same formulas as 1.13; concentration, not correctness.",
+        "notes": "Current product. No independent published evaluation found in the sources reviewed here."
+      }
+    },
+    "aliases": {
+      "jev-latest": "jev-1.14.0",
+      "jev-preview": "jev-1.14.0"
+    },
+    "version_rule": "Never use an alias in a pre-registered run. Record the resolved model ID from every response.",
+    "scoring": {
+      "choice": "argmax option; accuracy/macro-F1, 15-bin ECE, Brier, selective accuracy at 80/50% coverage, AURC",
+      "noul": "threshold selected on dev (start 0.5; 0.7/0.3 conservative gate); accuracy/F1, AUPRC, ECE, Brier; 0.5 is not calibrated",
+      "score": "probability-weighted expected level; MAE, QWK, Spearman; threshold pre-registered; do not interpolate exact magnitudes"
+    },
+    "evidence": [
+      {
+        "id": "C1",
+        "source": "TypeSafe launch and vendor workflow evals",
+        "version": "1.13 era",
+        "scope": "vendor demos",
+        "public": "claims and selected scores; no raw rows",
+        "tier": "D",
+        "use": "context only"
+      },
+      {
+        "id": "C2",
+        "source": "AbdelStark/jev-benchmarks",
+        "url": "https://github.com/AbdelStark/jev-benchmarks",
+        "version": "jev-1.13.0",
+        "scope": "300 BTZSC examples, 100 per condition",
+        "public": "Apache-2.0 code; aggregate report; raw predictions withheld",
+        "tier": "B/C",
+        "use": "classification comparator with n caveats"
+      },
+      {
+        "id": "C3",
+        "source": "Bonn study",
+        "url": "https://arxiv.org/abs/2609.37647",
+        "code": "https://github.com/AppliedMachineLearning-Lab/jev-benchmarking",
+        "responses": "https://doi.org/10.5281/zenodo.23039006",
+        "version": "jev-1.13.0",
+        "scope": "37 datasets, 346,009 requests, under $10",
+        "public": "MIT code; raw responses under Jev Responses License 1.0",
+        "tier": "A/B",
+        "use": "strongest public comparator"
+      },
+      {
+        "id": "C4",
+        "source": "Vals independent evaluation",
+        "url": "https://www.vals.ai/blogs/independent-evaluation-of-jev",
+        "version": "jev-1.13.0",
+        "scope": "400 SEC claim items + 396 LegalBench items",
+        "public": "independent report with per-item labels, probabilities, time, cost",
+        "tier": "B",
+        "use": "document-grounded and legal comparator"
+      },
+      {
+        "id": "C5",
+        "source": "AY Automate",
+        "url": "https://www.ayautomate.com/blog/jev-vs-llm-benchmark",
+        "version": "jev-1.13.0",
+        "scope": "791 decisions",
+        "public": "aggregate post; harness not independently verified",
+        "tier": "C",
+        "use": "cited points only; conflicts recorded"
+      },
+      {
+        "id": "C6",
+        "source": "Ravvich",
+        "url": "https://github.com/ravvich/jev-benchmark",
+        "version": "jev-1.13.0",
+        "scope": "500 training + 500 test examples",
+        "public": "code public; third-party",
+        "tier": "C",
+        "use": "secondary; not used for a claim"
+      },
+      {
+        "id": "C7",
+        "source": "local Banking77 reconstruction",
+        "url": "results/jev_matched/",
+        "version": "reconstructed prompt",
+        "scope": "3,080 Banking77 rows",
+        "public": "per-example correctness vector; no Jev probabilities",
+        "tier": "B/C",
+        "use": "regression comparator only"
+      },
+      {
+        "id": "C8",
+        "source": "TypeSafe WorkflowEvals",
+        "url": "https://github.com/typesafe-ai/WorkflowEvals",
+        "version": "jev-1.13.0",
+        "scope": "four workflows: invoice 150, customer service 204, agent trace 111, security 240; 705 cases",
+        "public": "Apache-2.0 code; datasets separate; consensus references, not independent ground truth",
+        "tier": "D/B",
+        "use": "secondary diagnostic; not a benchmark row"
+      }
+    ],
+    "points": [
+      {
+        "task": "ag_news",
+        "value": 0.885,
+        "n": 7600,
+        "source": "C3",
+        "version": "jev-1.13.0",
+        "note": "Full test split, as reported."
+      },
+      {
+        "task": "ag_news",
+        "value": 0.91,
+        "n": 100,
+        "source": "C2",
+        "version": "jev-1.13.0",
+        "note": "Pilot sample."
+      },
+      {
+        "task": "ag_news",
+        "value": 0.91,
+        "n": null,
+        "source": "C5",
+        "version": "jev-1.13.0",
+        "note": "Conflict; split not established."
+      },
+      {
+        "task": "banking77",
+        "value": 0.797,
+        "n": 3076,
+        "source": "C3",
+        "version": "jev-1.13.0",
+        "note": "77-way; local mirror is 3,076 rows."
+      },
+      {
+        "task": "banking77",
+        "value": 0.788,
+        "n": 231,
+        "source": "C5",
+        "version": "jev-1.13.0",
+        "note": "77-way; small sample."
+      },
+      {
+        "task": "banking77",
+        "value": 0.87,
+        "n": 100,
+        "source": "C2",
+        "version": "jev-1.13.0",
+        "note": "72 labels, not 77."
+      },
+      {
+        "task": "banking77",
+        "value": 0.924,
+        "n": 3080,
+        "source": "C7",
+        "version": "reconstructed prompt",
+        "note": "2,846/3,080; not a live Jev API run."
+      },
+      {
+        "task": "clinc150",
+        "value": 0.895,
+        "n": 5500,
+        "source": "C3",
+        "version": "jev-1.13.0",
+        "note": "151-way including OOS."
+      },
+      {
+        "task": "dair_emotion",
+        "value": 0.48,
+        "n": 100,
+        "source": "C2",
+        "version": "jev-1.13.0",
+        "note": "Pilot sample."
+      },
+      {
+        "task": "dair_emotion",
+        "value": 0.585,
+        "n": null,
+        "source": "DATA.md citation",
+        "version": "jev-1.13.0",
+        "note": "Conflict; split not established."
+      },
+      {
+        "task": "financial_phrasebank",
+        "value": 0.73,
+        "n": 970,
+        "source": "C3",
+        "version": "jev-1.13.0",
+        "note": "Different split from local 1,000."
+      },
+      {
+        "task": "language_id",
+        "value": 0.996,
+        "n": 10000,
+        "source": "C3",
+        "version": "jev-1.13.0",
+        "note": "20-way."
+      },
+      {
+        "task": "xnli_en",
+        "value": 0.86,
+        "n": null,
+        "source": "C5 via suite_citations.json",
+        "version": "jev-1.13.0",
+        "note": "No clean split/source; do not use as a comparator until reconciled."
+      },
+      {
+        "task": "sec_claim_verification",
+        "value": 0.975,
+        "n": 400,
+        "source": "C4",
+        "version": "jev-1.13.0",
+        "note": "supported / contradicted / insufficient."
+      },
+      {
+        "task": "legalbench_vals12",
+        "value": 0.73,
+        "n": 396,
+        "source": "C4",
+        "version": "jev-1.13.0",
+        "note": "Class-balanced accuracy; last of 12."
+      },
+      {
+        "task": "alfworld_unseen",
+        "value": 0.35,
+        "n": 134,
+        "source": "C3",
+        "version": "jev-1.13.0",
+        "note": "Sequential track; not a single-call decision."
+      },
+      {
+        "task": "textworld",
+        "value": 0.42,
+        "n": 90,
+        "source": "C3",
+        "version": "jev-1.13.0",
+        "note": "Sequential track."
+      },
+      {
+        "task": "babyai_text",
+        "value": 0.21,
+        "n": 250,
+        "source": "C3",
+        "version": "jev-1.13.0",
+        "note": "Sequential track."
+      },
+      {
+        "task": "blackjack",
+        "value": 0.9,
+        "n": 5000,
+        "source": "C3",
+        "version": "jev-1.13.0",
+        "note": "Sequential track."
+      },
+      {
+        "task": "frozenlake",
+        "value": null,
+        "n": 500,
+        "source": "C3",
+        "version": "jev-1.13.0",
+        "note": "Near-goal avoidance failures; no single accuracy transcribed."
+      }
+    ],
+    "runbook": [
+      "Pin jev-1.13.0 for alignment with C2-C5; jev-1.14.0 for current-product comparison.",
+      "Freeze and hash the request JSON: state, instructions, criteria, option order, image header.",
+      "Respect primitives: Choice <=255 options; decompose larger label sets hierarchically.",
+      "Permute option order on a sample; 1.13 has documented first-option bias.",
+      "Calibrate Noul/Choice/Score thresholds on dev only; freeze before locked.",
+      "Log resolved model, tokens, latency, cost, raw probabilities, request/response hashes, retries.",
+      "Do not mix published points and local runs; a paired claim needs identical rows and request bytes.",
+      "Do not redistribute raw outputs unless the applicable terms allow it."
+    ],
+    "licence_warning": "Bonn responses are under the Jev Responses License 1.0: research/evaluation only; no distillation, no imitation training, no competing-product use, no redistribution. The TypeSafe site terms are not a substitute for the API/customer agreement."
+  },
+  "stress_axes": {
+    "context_bands": [
+      {
+        "band": "short",
+        "bytes": "<2000",
+        "datasets": [
+          "classification",
+          "preference",
+          "msmarco_passage",
+          "squad2"
+        ]
+      },
+      {
+        "band": "medium",
+        "bytes": "2000-8000",
+        "datasets": [
+          "squad2",
+          "musique_full",
+          "fever_v1",
+          "docvqa"
+        ]
+      },
+      {
+        "band": "long",
+        "bytes": "8000-32000",
+        "datasets": [
+          "qasper",
+          "contract_nli",
+          "policyqa"
+        ]
+      },
+      {
+        "band": "very_long",
+        "bytes": ">32000",
+        "datasets": [
+          "cuad_v1",
+          "slidevqa",
+          "multi_document"
+        ]
+      }
+    ],
+    "required_measurements": [
+      "Accuracy at 2k, 8k, 32k, and 64k bytes if claimed.",
+      "Evidence position early/middle/late; 0/4/8 distractors; distributed evidence.",
+      "Full-context vs retrieval-then-decide; retrieval recall and evidence coverage.",
+      "Latency p50/p95, peak memory, cost at each length.",
+      "Truncation audit: items that lost the answer or hypothesis.",
+      "No single long prompt counts as a capability result."
+    ],
+    "visual_controls": [
+      "ocr_only",
+      "text_only",
+      "blank_image",
+      "shuffled_image",
+      "image_plus_ocr",
+      "image_only",
+      "evidence_page_retrieval"
+    ],
+    "current_constraints": {
+      "azurite_native_bytes": 1024,
+      "azurite_5120_accuracy": 0.8711,
+      "azurite_native_accuracy": 0.8906,
+      "jev_per_question_tokens": 32768,
+      "jev_per_request_tokens": 65536,
+      "jev_long_context_tokens": 262144,
+      "visual_encoder": "absent",
+      "long_context_16k_32k": "projection, not result"
+    }
+  },
+  "contamination": {
+    "existing_20_tasks": {
+      "status": "partial",
+      "notes": "Exact-window + 13-gram; 17 hits in 2,000 probes; WikiText-103 24% overlap; verbatim only."
+    },
+    "banking77_product_path": {
+      "status": "checked",
+      "notes": "25/9,993 support messages removed; 255 rows affected; original 89.03 not clean."
+    },
+    "new_registry_datasets": {
+      "status": "not_checked",
+      "notes": "No scan against corpus v2 yet."
+    },
+    "jev_training_data": {
+      "status": "unknown",
+      "notes": "Vendor says customer requests are not training data; benchmark contamination is not disclosed."
+    },
+    "visual_datasets": {
+      "status": "not_checked",
+      "notes": "Image near-duplicate, chart template, and OCR leakage not audited."
+    },
+    "required_checks": [
+      "exact 24-64 char window",
+      "13-gram overlap",
+      "near-duplicate MinHash/SimHash",
+      "time split where dates exist",
+      "canary/private held-out rows",
+      "report raw and decontaminated",
+      "image-level near-duplicate and OCR leakage"
+    ]
+  },
+  "licence_gates": {
+    "clear_commercial": [
+      "banking77",
+      "clinc150_plus",
+      "massive_intent_en",
+      "massive_scenario_en",
+      "squad2",
+      "musique_full",
+      "qasper",
+      "fever_v1",
+      "contract_nli",
+      "cuad_v1",
+      "bfcl_v3_single_live",
+      "bfcl_v3_multi_turn",
+      "api_bank",
+      "tau2_text_v1_en",
+      "hh_rlhf",
+      "ultrafeedback_binarized"
+    ],
+    "research_only": [
+      "ag_news",
+      "dair_emotion",
+      "xnli_en",
+      "language_id",
+      "policyqa",
+      "financial_phrasebank_allagree",
+      "msmarco_passage",
+      "trec_dl_2020",
+      "slidevqa"
+    ],
+    "unresolved": [
+      "sst5",
+      "docvqa",
+      "chartqa",
+      "visualmrc",
+      "infographicsvqa",
+      "amazon_reviews_2023",
+      "legalbench_vals12"
+    ],
+    "restricted_outputs": [
+      "Jev Responses License 1.0 (C3 raw responses)"
+    ],
+    "gated": [
+      "ContractNLI HF",
+      "LLM-AggreFact"
+    ],
+    "notes": "Share-alike obligations apply to CC BY-SA datasets. A model trained on a dataset is not automatically a derivative, but the legal question is not decided here."
+  },
+  "blockers": [
+    {
+      "id": "K1",
+      "text": "No live Jev run: no API key or spend authorization in this checkout."
+    },
+    {
+      "id": "K2",
+      "text": "Comparator coverage is classification-heavy; most mission-critical families have no published Jev point."
+    },
+    {
+      "id": "K3",
+      "text": "No locked split manifest; O7 remains partial."
+    },
+    {
+      "id": "K4",
+      "text": "No document/tool/policy/visual implementation; registry entries do not create capability."
+    },
+    {
+      "id": "K5",
+      "text": "Licences unresolved for SST-5, DocVQA, ChartQA, VisualMRC, SlideVQA, InfographicsVQA, PolicyQA/OPP-115, and the LegalBench subset."
+    },
+    {
+      "id": "K6",
+      "text": "No long-context result beyond 5,120 bytes; 16k/32k are projections."
+    },
+    {
+      "id": "K7",
+      "text": "No visual encoder or image path; VisualEvidence anchors are planned."
+    },
+    {
+      "id": "K8",
+      "text": "No contamination audit for the new datasets; existing audit is verbatim-only."
+    },
+    {
+      "id": "K9",
+      "text": "Split ambiguity in FEVER, QASPER, BFCL, tau2, CUAD, PolicyQA, and LegalBench."
+    },
+    {
+      "id": "K10",
+      "text": "Comparator conflicts for AG News, DAIR Emotion, Banking77, and XNLI."
+    },
+    {
+      "id": "K11",
+      "text": "Jev 255-option limit requires decomposition for larger label sets."
+    },
+    {
+      "id": "K12",
+      "text": "Jev 1.13 vs 1.14: public evidence is 1.13; no independent 1.14 result found."
+    },
+    {
+      "id": "K13",
+      "text": "Image licence/storage cost for DocVQA, ChartQA, VisualMRC, SlideVQA."
+    },
+    {
+      "id": "K14",
+      "text": "Local Banking77 mirror is 14 rows short; do not merge the 3,076 and 3,080 counts."
+    }
+  ],
+  "next_experiments": [
+    {
+      "id": "B0",
+      "action": "Freeze split manifest: download pinned revisions, build dev/locked, hash item IDs and labels.",
+      "success": "Every core dataset has item IDs, hashes, byte lengths, labels, and licence status; locked not opened.",
+      "cost": "storage/download only"
+    },
+    {
+      "id": "B1",
+      "action": "Resolve or block SST-5, DocVQA, ChartQA, VisualMRC, SlideVQA, InfographicsVQA, PolicyQA/OPP-115, and LegalBench subset.",
+      "success": "Each is clear, research-only, or blocked; no assumed licence.",
+      "cost": "reading terms; owner contact if needed"
+    },
+    {
+      "id": "B2",
+      "action": "Run current checkpoint on 100 rows per family through the packing/evaluation path.",
+      "success": "Every family produces per-example records including abstention/failure; no family silently dropped.",
+      "cost": "inference only"
+    },
+    {
+      "id": "B3",
+      "action": "Paired Jev comparison on Banking77, SQuAD 2.0, and BFCL V3; 200 rows each; jev-1.13.0 and jev-1.14.0.",
+      "success": "Paired accuracy with intervals, resolved model ID, cost, raw probabilities; loss reported as loss.",
+      "cost": "likely under $10 at current pricing, plus access setup"
+    },
+    {
+      "id": "B4",
+      "action": "Contamination audit of core registry: exact, 13-gram, near-duplicate.",
+      "success": "Every core dataset has a hit count and keep/drop/stratify decision.",
+      "cost": "CPU/IO"
+    },
+    {
+      "id": "B5",
+      "action": "Long-context ladder on QASPER, MuSiQue, ContractNLI at 2k/8k/32k with positions and distractors.",
+      "success": "Length/position curve with truncation audit; no claim beyond measured range.",
+      "cost": "inference; training gated"
+    },
+    {
+      "id": "B6",
+      "action": "Build VisualEvidence-Docs/Charts and run OCR-only, text-only, blank/shuffled, image-only controls.",
+      "success": "Visual-only subset where answer changes with image; withdraw if OCR-only within 5 points.",
+      "cost": "data generation + small adaptation"
+    },
+    {
+      "id": "B7",
+      "action": "Fit calibration and abstention thresholds on dev; evaluate once on locked.",
+      "success": "ECE/Brier/AURC and selective accuracy at 80/50% coverage; target met or claim withdrawn.",
+      "cost": "inference + analysis"
+    }
+  ],
+  "completion_criteria": [
+    "All six families have at least two datasets; core families have four where the task supports it.",
+    "No dataset exceeds 0.25 of its family dev weight.",
+    "Every dataset has source, licence status, split counts, scoring, comparator status, contamination status, and local availability.",
+    "The locked split is materialised and hashed; the manifest is linked.",
+    "The comparator runbook is pinned to versioned model IDs.",
+    "Long-context and visual stress axes are represented in the split, not only in prose.",
+    "Every unresolved licence is resolved or marked blocked with the consequence.",
+    "The JSON validates against the same rules."
+  ],
+  "comparator_classes": {
+    "definitions": {
+      "published_reference": "A vendor or third-party published number. It names a source, version, split, and n; it is not a row produced by this study.",
+      "local_reconstruction": "A stored per-example comparator vector reconstructed locally. It is not a live model call and is not a reproduced run.",
+      "reproduced_live": "Same rows, same pinned model version, same frozen request, live call, with request and response hashes. None exists here."
+    },
+    "counts": {
+      "published_reference": 13,
+      "local_reconstruction": 1,
+      "reproduced_live": 0
+    },
+    "live_reproduction_claim": "Zero. No point in this registry is a live reproduced Jev run. The Banking77 0.924 cell is a local reconstruction, not a run.",
+    "points": {
+      "published_reference": [
+        {
+          "family": "classification",
+          "dataset": "banking77",
+          "value": 0.797,
+          "n": 3076,
+          "source": "Bonn 2026",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "classification",
+          "dataset": "banking77",
+          "value": 0.788,
+          "n": 231,
+          "source": "AY Automate 2026",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "classification",
+          "dataset": "banking77",
+          "value": 0.87,
+          "n": 100,
+          "source": "AbdelStark BTZSC pilot",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "classification",
+          "dataset": "clinc150_plus",
+          "value": 0.895,
+          "n": 5500,
+          "source": "Bonn 2026",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "classification",
+          "dataset": "ag_news",
+          "value": 0.885,
+          "n": 7600,
+          "source": "Bonn 2026",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "classification",
+          "dataset": "ag_news",
+          "value": 0.91,
+          "n": 100,
+          "source": "AbdelStark BTZSC pilot",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "classification",
+          "dataset": "ag_news",
+          "value": 0.91,
+          "n": null,
+          "source": "AY Automate 2026",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "classification",
+          "dataset": "dair_emotion",
+          "value": 0.48,
+          "n": 100,
+          "source": "AbdelStark BTZSC pilot",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "classification",
+          "dataset": "dair_emotion",
+          "value": 0.585,
+          "n": null,
+          "source": "DATA.md citation",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "classification",
+          "dataset": "xnli_en",
+          "value": 0.86,
+          "n": null,
+          "source": "AY Automate via suite_citations",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "classification",
+          "dataset": "language_id",
+          "value": 0.996,
+          "n": 10000,
+          "source": "Bonn 2026",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "policy_rule",
+          "dataset": "legalbench_vals12",
+          "value": 0.73,
+          "n": 396,
+          "source": "Vals 2026",
+          "version": "jev-1.13.0"
+        },
+        {
+          "family": "relevance_preference_ordinal",
+          "dataset": "financial_phrasebank_allagree",
+          "value": 0.73,
+          "n": 970,
+          "source": "Bonn 2026",
+          "version": "jev-1.13.0"
+        }
+      ],
+      "local_reconstruction": [
+        {
+          "family": "classification",
+          "dataset": "banking77",
+          "value": 0.924,
+          "n": 3080,
+          "source": "local reconstruction",
+          "version": "reconstructed prompt"
+        }
+      ],
+      "reproduced_live": []
+    }
+  }
+}

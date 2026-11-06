@@ -1,0 +1,14 @@
+amp off -> off
+task=ag_news path=cross K=4 init=random train=2000 test=500 steps=378 device=cuda
+/marimo/azurite_ws/scripts/transfer_eval.py:503: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  f"  step {step:>4}/{total_steps}  loss {float(loss):.4f}  "
+  step    0/378  loss 1.3838  test acc 0.2480  ece 0.076
+  step   63/378  loss 1.3865  test acc 0.2720  ece 0.021
+  step  126/378  loss 1.3854  test acc 0.3020  ece 0.049
+  step  189/378  loss 1.3806  test acc 0.3980  ece 0.143
+  step  252/378  loss 1.1630  test acc 0.4120  ece 0.055
+  step  315/378  loss 1.0659  test acc 0.4580  ece 0.031
+  step  377/378  loss 1.1155  test acc 0.4960  ece 0.090
+final test acc 0.4960  ece 0.0904  acc@50%cov 0.6480  7s
+wrote results/transfer/ag_news_shared_order/random_cross_s2/result.json

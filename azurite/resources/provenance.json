@@ -1,0 +1,45 @@
+{
+ "bundle": {
+  "bytes": 189630,
+  "labels": 77,
+  "path": "azurite/resources/banking77.json.gz",
+  "sha256": "cb0b7d6389b45b437fb662943ad9e87332531990df8ccb918f79babd07a70a43",
+  "support_rows": 9968,
+  "uncompressed_bytes": 1164270,
+  "uncompressed_sha256": "13e5639ae04700b459cebd14bbe123b68acfc355ae69afffe54bd5e0675539b1"
+ },
+ "documents": {
+  "MODEL_CARD.md": "b464306cddc24e021c58371d0d6df6014d905550d3684988ca0a7e8ced7a40db",
+  "THIRD_PARTY_NOTICES.md": "cd90d854df10337068e983c0eaa7324bd15c4a35b483a7b14da0ad3556137550"
+ },
+ "generated_by": "scripts/build_package_resources.py",
+ "licence": {
+  "attribution": "Banking77 (Casanueva et al., 2020), PolyAI. The bundled support messages are a decontaminated subset of the training split as pulled by this project: 25 evaluation texts removed from 9,993 source rows; see DATA.md and THIRD_PARTY_NOTICES.md.",
+  "banking77_support_text": "CC-BY-4.0",
+  "code_and_weights": "MIT"
+ },
+ "schema": 1,
+ "sources": {
+  "labels_and_eval_rows": {
+   "labels_sha256": "c6cb918fdf221a06624ed0855558612fdaeb8ea268b6de4bb1f99bbec5170ee7",
+   "path": "results/jev_matched/inputs.json",
+   "rows": 3080,
+   "sha256": "8dccd8c898865be08bd272ab88c2b4fcc829472a9252f96d966c0aab78c3c418"
+  },
+  "support": {
+   "normalisation": "NFKC, casefold, non-alphanumeric runs collapsed to spaces",
+   "original_path": "results/jev_query/support.jsonl",
+   "original_rows": 9993,
+   "original_sha256": "2e95269ca99cc6de51ef19c458c55f0a49c3aff30ca3c3d84871ccaa2df2f197",
+   "path": "results/product_path_clean/clean_support.jsonl.gz",
+   "removed_exact_text_matches": 6,
+   "removed_path": "results/product_path_clean/removed_support.json",
+   "removed_rows": 25,
+   "removed_sha256": "2cfcfacd54214518da52d316623c2a176d7c99f2ef8a2b599c797da5760f6671",
+   "residue_rows": 0,
+   "rows": 9968,
+   "sha256": "707f979f75c5c2e8734684030940d62609ee67e944880e0e1b29fbb00c7175ab",
+   "uncompressed_sha256": "a2825c795fee8540208920a73c09de7e10a620032aace5b4edfb9a663308de0f"
+  }
+ }
+}

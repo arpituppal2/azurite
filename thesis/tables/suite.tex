@@ -1,0 +1,52 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{9 public tasks at the pre-registered final recipe: LR $10^{-4}$,
+exactly 3{,}000 optimizer steps, batch 32, 4{,}000 stratified training rows and
+2{,}000 test rows where available (Financial PhraseBank has 1{,}264 train and
+1{,}000 test), seed 0, encoder unfrozen. The recipe is identical for every cell;
+there is no per-task learning rate, step count, row cap or prompt. Every Azurite
+cell is measured on the dual context-candidate path. Cited cells are published
+or third-party figures, not reproduced. 8 of the 18
+cells changed evaluation path in this pass: AG News, DAIR Emotion, XNLI and
+Financial PhraseBank at both rungs; their former candidate-only cross-encoder
+values are retired and are not capability measurements. The 14.4M controls
+Banking77, CLINC150 and MASSIVE intent reproduce their prior predictions
+exactly; the other already-dual cells move only by run-to-run
+variation. MASSIVE intent's cited point is Laya's card, not a Jev number; the
+other cited points are Jev. The larger rung is worse on 8 of
+9 cells. Single seed per cell;
+95\% Wilson intervals are in the text. These are cross-harness comparisons, not
+a head-to-head.}
+\label{tab:suite}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Task & Cited & \shortstack{14.4M\\accuracy} & \shortstack{$\Delta$ vs\\cited} &
+\shortstack{33.7M\\accuracy} & \shortstack{$\Delta$ vs\\cited} \\
+\midrule
+AG News ($K=4$) & 91.00 & 83.15 & $-7.85$ & 83.70 & $-7.30$ \\
+DAIR Emotion ($K=6$) & 48.00 & 82.25\textsuperscript{\(\ddagger\)} & \textbf{$+34.25$} & 74.15\textsuperscript{\(\ddagger\)} & \textbf{$+26.15$} \\
+Banking77 ($K=77$) & 78.80 & 88.05 & \textbf{$+9.25$} & 86.50 & \textbf{$+7.70$} \\
+CLINC150 ($K=151$) & 89.50 & 86.80 & $-2.70$ & 82.75 & $-6.75$ \\
+MASSIVE intent ($K=60$) & 78.30\textsuperscript{\(\ast\)} & 79.20\textsuperscript{\(\dagger\)} & $+0.90$ & 77.15\textsuperscript{\(\dagger\)} & $-1.15$ \\
+MASSIVE scenario ($K=18$) & --- & 84.15 & --- & 80.05 & --- \\
+XNLI ($K=3$) & 86.00 & 43.85\textsuperscript{\(\ddagger\)} & $-42.15$ & 35.00\textsuperscript{\(\ddagger\)} & $-51.00$ \\
+Language ID ($K=20$) & 99.60 & 96.30 & $-3.30$ & 95.60 & $-4.00$ \\
+Financial PhraseBank ($K=3$) & 73.00 & 88.10 & \textbf{$+15.10$} & 86.90 & \textbf{$+13.90$} \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\footnotesize
+\textsuperscript{\(\ddagger\)}Corrected dual-path cell; the text identifies
+its retired cross-path value.
+\quad
+\textsuperscript{\(\dagger\)}95\% Wilson interval includes the cited point;
+not a clear win or loss.
+\quad
+\textsuperscript{\(\ast\)}Laya card (78.30),
+not a Jev number.
+\quad
+Clear wins are bold; positive $\Delta$ alone is not a win. No interval is shown
+here.
+\end{table}

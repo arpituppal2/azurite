@@ -1,0 +1,75 @@
+{
+ "checkpoints": [
+  {
+   "context_budget": 1020,
+   "examples": 24,
+   "frozen": {
+    "accuracy": 0.8902597402597403,
+    "bank": "original",
+    "contamination": {
+     "affected_rows": 255,
+     "affected_share": 8.28,
+     "exact": 6,
+     "instances": 283,
+     "support_messages": 25,
+     "support_rows": 9993
+    },
+    "correct": 2742,
+    "n": 3080,
+    "support_rows": 9993,
+    "wilson95": [
+     0.8787311729962651,
+     0.900816035283153
+    ]
+   },
+   "head": "query",
+   "id": "query-native",
+   "max_seq": 1024,
+   "measured": {
+    "accuracy": 0.8905844155844156,
+    "bank": "decontaminated",
+    "correct": 2743,
+    "gap_vs_jev": -0.03344155844155838,
+    "jev_accuracy": 0.924025974025974,
+    "n": 3080,
+    "support_rows": 9968,
+    "support_source_rows": 9993,
+    "verdict": "P0 missed",
+    "wilson95": [
+     0.8790697348903546,
+     0.9011260151596786
+    ]
+   },
+   "sha256": "7992c97362b3c6b19ad39cf94792218ebb9c5508a8d3f3969f3526f8d15cb723",
+   "source_path": "results/jev_query/final.pt",
+   "task": "banking77"
+  },
+  {
+   "context_budget": 5118,
+   "examples": 24,
+   "head": "query",
+   "id": "query-joint-5120",
+   "max_seq": 5120,
+   "measured": {
+    "accuracy": 0.8711038961038962,
+    "bank": "frozen-examples",
+    "correct": 2683,
+    "gap_vs_jev": -0.052922077922077815,
+    "jev_accuracy": 0.924025974025974,
+    "mcnemar_p": 5.0116836365982835e-18,
+    "n": 3080,
+    "verdict": "P0 missed",
+    "wilson95": [
+     0.8588060714377721,
+     0.8824771723753517
+    ]
+   },
+   "sha256": "e7455fc462e9371e5529a79d81d2f98714f154a9b136a9cd114c2a8affb2046d",
+   "source_path": "results/jev_query_5120/final.pt",
+   "task": "banking77"
+  }
+ ],
+ "default": "query-native",
+ "schema": 1,
+ "task": "banking77"
+}

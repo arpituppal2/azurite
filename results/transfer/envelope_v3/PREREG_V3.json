@@ -1,0 +1,34 @@
+{
+ "budget": {
+  "note": "4 cells x ~5-13 s training compute each (measured v2 range); expected total < 120 s wall",
+  "per_cell_timeout_s": 180
+ },
+ "cells": [
+  {
+   "args": "--task emotion --arm byte --rung tiny --init pretrained --path cross --steps 378 --batch 16 --lr 5e-4 --seed 1 --split-seed 0 --stratify --cross-shuffle off --examples 2000 --test-examples 500 --device cuda",
+   "jev_recorded": 0.585,
+   "name": "emotion_cross_s1"
+  },
+  {
+   "args": "--task emotion --arm byte --rung tiny --init pretrained --path dual --steps 378 --batch 16 --lr 5e-4 --seed 1 --split-seed 0 --stratify --cross-shuffle off --examples 2000 --test-examples 500 --device cuda",
+   "jev_recorded": 0.585,
+   "name": "emotion_dual_s1"
+  },
+  {
+   "args": "--task emotion --arm byte --rung tiny --init pretrained --path cross --steps 378 --batch 16 --lr 5e-4 --seed 2 --split-seed 0 --stratify --cross-shuffle off --examples 2000 --test-examples 500 --device cuda",
+   "jev_recorded": 0.585,
+   "name": "emotion_cross_s2"
+  },
+  {
+   "args": "--task emotion --arm byte --rung tiny --init pretrained --path dual --steps 378 --batch 16 --lr 5e-4 --seed 2 --split-seed 0 --stratify --cross-shuffle off --examples 2000 --test-examples 500 --device cuda",
+   "jev_recorded": 0.585,
+   "name": "emotion_dual_s2"
+  }
+ ],
+ "created_utc": "2026-11-03T23:44:43Z",
+ "hypothesis": "Emotion collapse (NLL pinned at ln6) is seed-stable, not a seed-0 accident. Expect BELOW at s1/s2 both paths; any SUPERIOR would reopen the collapse diagnosis.",
+ "locked_rule": "Per cell, SUPERIOR iff fresh Azurite accuracy Wilson-95 LB strictly exceeds RECORDED Jev point 0.585. Same envelope-v0 unpaired rule. Wins and losses both reported; no re-seeding; no post-hoc changes.",
+ "purpose": "Envelope-v3: wider seeds (s1, s2) on an additional K<=16 task (emotion, K=6, fits cross K-cap 16) with a recorded Jev point (0.585). Collapse-stability probe of the recovery-v1 diagnosis.",
+ "recipe_base": "transfer_eval.py CLI, init pretrained from results/pretrain/l1_tiny_byte/ckpt.pt, cuda, fp32",
+ "timing": "Single launch only. Per-cell wall from CELL.log plus per-artifact seconds field; totals reported as measured sums."
+}

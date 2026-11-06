@@ -1,0 +1,17 @@
+{
+ "p1_m16": {
+  "e2e": 0.686,
+  "note": "misses halved (16) but head diluted (0.7087)"
+ },
+ "p2_x756": {
+  "e2e": 0.686,
+  "note": "head +0.006 only (0.7329)"
+ },
+ "p3_combined": {
+  "e2e": 0.724,
+  "retrieved_only": 0.7388,
+  "misses": 10,
+  "note": "tiny-rung funnel ceiling ~0.72-0.74; device is not the bottleneck"
+ },
+ "conclusion": "no honest tiny-rung pre-reg vs 0.797; rung scale-up (l1_small_byte anchor exists) is the next lever"
+}

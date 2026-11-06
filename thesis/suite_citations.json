@@ -1,0 +1,67 @@
+{
+  "note": "Cited comparator points. Azurite values are read from results/suite_final by thesis/gen_suite.py; these numbers are never transcribed into prose or tables by hand.",
+  "sources": {
+    "laya_card": "https://huggingface.co/convaiinnovations/laya",
+    "laya_benchmarks": "https://github.com/NandhaKishorM/laya/blob/main/BENCHMARKS.md",
+    "jev_ay": "https://www.ayautomate.com/blog/jev-vs-llm-benchmark",
+    "jev_bonn": "https://arxiv.org/html/2609.37647v1",
+    "jev_abdelstark": "https://github.com/abdelstark/jev-benchmarks",
+    "typesafe": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+  },
+  "rows": {
+    "ag_news": {
+      "label": "AG News",
+      "jev": 0.910,
+      "source": "ayautomate2026jev",
+      "note": "Jev cited point"
+    },
+    "emotion": {
+      "label": "DAIR Emotion",
+      "jev": 0.480,
+      "source": "ayautomate2026jev",
+      "note": "Jev cited point; 34.75% majority baseline on the proportional test draw"
+    },
+    "banking77": {
+      "label": "Banking77",
+      "jev": 0.788,
+      "source": "ayautomate2026jev",
+      "note": "Jev 77-way cited point"
+    },
+    "clinc_oos": {
+      "label": "CLINC150",
+      "jev": 0.895,
+      "source": "ayautomate2026jev",
+      "note": "Jev cited point"
+    },
+    "massive_intent": {
+      "label": "MASSIVE intent",
+      "jev": 0.783,
+      "source": "laya2026card",
+      "note": "Laya card, not a Jev number; retained because it is the only published 60-way point"
+    },
+    "massive_scenario": {
+      "label": "MASSIVE scenario",
+      "jev": null,
+      "source": null,
+      "note": "No published comparator point; internal 18-way diagnostic"
+    },
+    "xnli": {
+      "label": "XNLI",
+      "jev": 0.860,
+      "source": "ayautomate2026jev",
+      "note": "Jev cited point; both rungs are genuine failures on the dual path (43.85% and 35.00%), not truncation artifacts at 33.7M"
+    },
+    "language_id": {
+      "label": "Language ID",
+      "jev": 0.996,
+      "source": "abdelstark2026jev",
+      "note": "Jev cited point"
+    },
+    "financial_phrasebank": {
+      "label": "Financial PhraseBank",
+      "jev": 0.730,
+      "source": "bonn2026jev",
+      "note": "Jev cited point; different split"
+    }
+  }
+}

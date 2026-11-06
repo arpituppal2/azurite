@@ -1,0 +1,104 @@
+{
+ "pretrained": {
+  "per_seed": [
+   {
+    "seed": 0,
+    "acc_cross": 0.478,
+    "acc_dual": 0.462,
+    "diff_pp": 1.6,
+    "cross_only": 87,
+    "dual_only": 79
+   },
+   {
+    "seed": 1,
+    "acc_cross": 0.47,
+    "acc_dual": 0.316,
+    "diff_pp": 15.4,
+    "cross_only": 170,
+    "dual_only": 93
+   },
+   {
+    "seed": 2,
+    "acc_cross": 0.334,
+    "acc_dual": 0.46,
+    "diff_pp": -12.6,
+    "cross_only": 58,
+    "dual_only": 121
+   }
+  ],
+  "pooled": {
+   "cross": {
+    "correct": 641,
+    "n": 1500,
+    "acc": 0.4273
+   },
+   "dual": {
+    "correct": 619,
+    "n": 1500,
+    "acc": 0.4127
+   }
+  },
+  "difference_pp_cross_minus_dual": 1.47,
+  "difference_crossed_bootstrap_95_pp": [
+   -11.799999999999999,
+   14.799999999999997
+  ],
+  "verdict": "inconclusive",
+  "bootstrap": {
+   "replicates": 10000,
+   "rng_seed": 20261028,
+   "method": "paired crossed seed resampling and within-class item resampling"
+  }
+ },
+ "random": {
+  "per_seed": [
+   {
+    "seed": 0,
+    "acc_cross": 0.526,
+    "acc_dual": 0.248,
+    "diff_pp": 27.8,
+    "cross_only": 204,
+    "dual_only": 65
+   },
+   {
+    "seed": 1,
+    "acc_cross": 0.504,
+    "acc_dual": 0.25,
+    "diff_pp": 25.4,
+    "cross_only": 155,
+    "dual_only": 28
+   },
+   {
+    "seed": 2,
+    "acc_cross": 0.496,
+    "acc_dual": 0.25,
+    "diff_pp": 24.6,
+    "cross_only": 176,
+    "dual_only": 53
+   }
+  ],
+  "pooled": {
+   "cross": {
+    "correct": 763,
+    "n": 1500,
+    "acc": 0.5087
+   },
+   "dual": {
+    "correct": 374,
+    "n": 1500,
+    "acc": 0.2493
+   }
+  },
+  "difference_pp_cross_minus_dual": 25.93,
+  "difference_crossed_bootstrap_95_pp": [
+   21.866666666666664,
+   30.200000000000003
+  ],
+  "verdict": "cross-better",
+  "bootstrap": {
+   "replicates": 10000,
+   "rng_seed": 20261028,
+   "method": "paired crossed seed resampling and within-class item resampling"
+  }
+ }
+}

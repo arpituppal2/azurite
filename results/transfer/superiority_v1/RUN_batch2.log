@@ -1,0 +1,5 @@
+prompt_injections_cross: rc=0 wall=10.8 acc=0.8276 (jev recorded 0.741)
+prompt_injections_dual: rc=0 wall=17.0 acc=0.9052 (jev recorded 0.741)
+banking77_cross: rc=1 wall=3.2 acc=None (jev recorded 0.797)
+banking77_dual: rc=0 wall=12.7 acc=0.68 (jev recorded 0.797)
+DONE batch 2: 4 cells

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "azurite-encoder"
+version = "0.1.0"
+description = "A byte-level 77-way Banking77 intent classifier, packaged end to end"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Arpit Uppal" }]
+keywords = ["intent-classification", "banking77", "encoder", "research"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "numpy>=1.26",
+  "torch>=2.4",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+azurite = "azurite.cli:main"
+
+[tool.setuptools]
+packages = ["azurite"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+azurite = ["resources/*.json", "resources/*.json.gz", "resources/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

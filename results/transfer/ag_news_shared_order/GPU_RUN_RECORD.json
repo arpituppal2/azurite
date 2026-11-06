@@ -1,0 +1,82 @@
+{
+ "host": "sb-a549e09c059c2fa7",
+ "cap_per_cell_s": 900,
+ "cap_total_gpu_h": 3,
+ "measured_total_wall_s": 197.9,
+ "cells": {
+  "cross_s0": {
+   "wall_s": 13.6,
+   "peak_gpu_mib": 2345,
+   "acc": 0.478
+  },
+  "random_cross_s0": {
+   "wall_s": 13.6,
+   "peak_gpu_mib": 2345,
+   "acc": 0.526
+  },
+  "dual_pretrained_s0": {
+   "wall_s": 19.9,
+   "peak_gpu_mib": 3015,
+   "acc": 0.462
+  },
+  "dual_random_s0": {
+   "wall_s": 19.8,
+   "peak_gpu_mib": 3015,
+   "acc": 0.248
+  },
+  "cross_s1": {
+   "wall_s": 13.1,
+   "peak_gpu_mib": 2345,
+   "acc": 0.47
+  },
+  "random_cross_s1": {
+   "wall_s": 13.5,
+   "peak_gpu_mib": 2345,
+   "acc": 0.504
+  },
+  "dual_pretrained_s1": {
+   "wall_s": 19.7,
+   "peak_gpu_mib": 3015,
+   "acc": 0.316
+  },
+  "dual_random_s1": {
+   "wall_s": 19.7,
+   "peak_gpu_mib": 3015,
+   "acc": 0.25
+  },
+  "cross_s2": {
+   "wall_s": 13.2,
+   "peak_gpu_mib": 2345,
+   "acc": 0.334
+  },
+  "random_cross_s2": {
+   "wall_s": 13.0,
+   "peak_gpu_mib": 2345,
+   "acc": 0.496
+  },
+  "dual_pretrained_s2": {
+   "wall_s": 19.3,
+   "peak_gpu_mib": 3015,
+   "acc": 0.46
+  },
+  "dual_random_s2": {
+   "wall_s": 19.5,
+   "peak_gpu_mib": 3015,
+   "acc": 0.25
+  }
+ },
+ "env": {
+  "torch": "2.11.0+cu130",
+  "cuda_build": "13.0",
+  "cudnn": 91900,
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "driver": "595.71.05",
+  "amp": "off (default)",
+  "dtype_policy": "fp32 (no autocast)",
+  "device": "cuda",
+  "note": "same device, same precision, shared canonical ordering for all 12 cells"
+ },
+ "precision": {
+  "policy": "fp32 throughout; --amp default off, no autocast on CUDA (verified in source)"
+ }
+}

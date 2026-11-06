@@ -1,0 +1,74 @@
+{
+ "device": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+ "torch": "2.11.0+cu130",
+ "config": {
+  "rung": "tiny",
+  "arm": "byte",
+  "K": 4,
+  "max_seq": 1024,
+  "d_model": 192,
+  "dtype": "fp32",
+  "input": "real-packed-agnews-train-64-rows"
+ },
+ "arms": {
+  "dual": {
+   "batch1": {
+    "mean_ms": 3.9614466600687592,
+    "p50_ms": 3.9561974999742233,
+    "min_ms": 3.913511000064318,
+    "max_ms": 4.037106999021489,
+    "iters": 50,
+    "peak_mib": 32.4
+   },
+   "per_decision_ms_batch1": 3.9614466600687592,
+   "batch16": {
+    "mean_ms": 3.877573759855295,
+    "p50_ms": 3.8725135009372025,
+    "min_ms": 3.8268530006462242,
+    "max_ms": 3.9855619997979375,
+    "iters": 50,
+    "peak_mib": 103.7
+   },
+   "per_decision_ms_batch16": 0.24234835999095594,
+   "batch64": {
+    "mean_ms": 8.93925099993794,
+    "p50_ms": 8.933147500101768,
+    "min_ms": 8.898698999473709,
+    "max_ms": 9.015256000566296,
+    "iters": 50,
+    "peak_mib": 334.5
+   },
+   "per_decision_ms_batch64": 0.1396757968740303
+  },
+  "cross": {
+   "batch1": {
+    "mean_ms": 2.0808414799830643,
+    "p50_ms": 2.0730414989884594,
+    "min_ms": 2.0012799996038666,
+    "max_ms": 2.3054100001900224,
+    "iters": 50,
+    "peak_mib": 33.3
+   },
+   "per_decision_ms_batch1": 2.0808414799830643,
+   "batch16": {
+    "mean_ms": 3.2134839800346526,
+    "p50_ms": 3.210051999303687,
+    "min_ms": 3.183176000675303,
+    "max_ms": 3.310318999865558,
+    "iters": 50,
+    "peak_mib": 118.5
+   },
+   "per_decision_ms_batch16": 0.2008427487521658,
+   "batch64": {
+    "mean_ms": 10.506977939949138,
+    "p50_ms": 10.504628000489902,
+    "min_ms": 10.482208999746945,
+    "max_ms": 10.53851800133998,
+    "iters": 50,
+    "peak_mib": 391.4
+   },
+   "per_decision_ms_batch64": 0.16417153031170528
+  }
+ },
+ "wall_s": 5.7
+}

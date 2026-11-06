@@ -1,0 +1,236 @@
+{
+ "task": "emotion",
+ "split": "DEVELOPMENT ONLY (split 0)",
+ "confirmatory_splits_untouched": [
+  99,
+  123
+ ],
+ "method": "single temperature T fit by NLL on even-index dev rows; reported on fit half and held-out odd half",
+ "temperature": 4.1062,
+ "seconds_train": 67.4,
+ "funnel_recall_dev": 1.0,
+ "dev_misses": 0,
+ "fit_half": {
+  "n": 250,
+  "fit_raw": {
+   "n": 250,
+   "accuracy": 0.86,
+   "nll": 1.7674,
+   "ece": 0.1399,
+   "mean_confidence": 0.9999
+  },
+  "fit_scaled_T": {
+   "n": 250,
+   "accuracy": 0.86,
+   "nll": 0.5807,
+   "ece": 0.0172,
+   "mean_confidence": 0.861
+  }
+ },
+ "heldout_half": {
+  "n": 250,
+  "heldout_raw": {
+   "n": 250,
+   "accuracy": 0.868,
+   "nll": 1.4893,
+   "ece": 0.1319,
+   "mean_confidence": 0.9999
+  },
+  "heldout_scaled_T": {
+   "n": 250,
+   "accuracy": 0.868,
+   "nll": 0.5182,
+   "ece": 0.0243,
+   "mean_confidence": 0.8566
+  }
+ },
+ "reliability_heldout_raw": [
+  {
+   "bin": [
+    0.0,
+    0.1
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.1,
+    0.2
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.2,
+    0.3
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.3,
+    0.4
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.4,
+    0.5
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.5,
+    0.6
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.6,
+    0.7
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.7,
+    0.8
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.8,
+    0.9
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.9,
+    1.0
+   ],
+   "n": 250,
+   "mean_conf": 0.9999,
+   "acc": 0.868
+  }
+ ],
+ "reliability_heldout_scaled": [
+  {
+   "bin": [
+    0.0,
+    0.1
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.1,
+    0.2
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.2,
+    0.3
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.3,
+    0.4
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.4,
+    0.5
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.5,
+    0.6
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.6,
+    0.7
+   ],
+   "n": 0,
+   "mean_conf": null,
+   "acc": null
+  },
+  {
+   "bin": [
+    0.7,
+    0.8
+   ],
+   "n": 24,
+   "mean_conf": 0.7757,
+   "acc": 0.7083
+  },
+  {
+   "bin": [
+    0.8,
+    0.9
+   ],
+   "n": 214,
+   "mean_conf": 0.8631,
+   "acc": 0.8832
+  },
+  {
+   "bin": [
+    0.9,
+    1.0
+   ],
+   "n": 12,
+   "mean_conf": 0.9028,
+   "acc": 0.9167
+  }
+ ],
+ "dataset_fingerprints": {
+  "train": "bc8402a9d5f0620f",
+  "dev": "e51ac67c12746129"
+ },
+ "script_sha256": "4a7121d00cbed99e8fc2ee30e869482b7c3849d8b2dd473af31712d90b2b5ca8"
+}

@@ -1,0 +1,202 @@
+{
+ "task": "banking77",
+ "arm": "byte",
+ "rung": "tiny",
+ "path": "funnel",
+ "funnel_m": 8,
+ "init": "random",
+ "loaded_from": null,
+ "k": 77,
+ "train_examples": 385,
+ "test_examples": 154,
+ "dual_steps": 24,
+ "cross_steps": 24,
+ "batch": 32,
+ "lr": 0.0005,
+ "seed": 0,
+ "seconds_retriever": 14.2,
+ "seconds_reranker": 12.5,
+ "seconds": 26.6,
+ "funnel_recall_train": 0.3688,
+ "funnel_recall_test": 0.3117,
+ "funnel_miss_test": 106,
+ "retrieved_only": {
+  "n": 48,
+  "accuracy": 0.1458,
+  "nll": 2.0545,
+  "ece": 0.1804
+ },
+ "final": {
+  "n": 154,
+  "accuracy": 0.0455,
+  "nll": null,
+  "ece": null,
+  "note": "end-to-end over ALL test rows, misses as errors; NLL/ECE reported retrieved-only"
+ },
+ "history_retriever": [
+  {
+   "step": 0,
+   "n": 154,
+   "accuracy": 0.0195,
+   "nll": 4.5128,
+   "ece": 0.0362,
+   "acc_at_50pct_coverage": 0.026,
+   "acc_at_100pct_coverage": 0.0195,
+   "mean_confidence": 0.055
+  },
+  {
+   "step": 4,
+   "n": 154,
+   "accuracy": 0.0714,
+   "nll": 4.2299,
+   "ece": 0.0487,
+   "acc_at_50pct_coverage": 0.1169,
+   "acc_at_100pct_coverage": 0.0714,
+   "mean_confidence": 0.0227
+  },
+  {
+   "step": 8,
+   "n": 154,
+   "accuracy": 0.0195,
+   "nll": 4.3859,
+   "ece": 0.018,
+   "acc_at_50pct_coverage": 0.026,
+   "acc_at_100pct_coverage": 0.0195,
+   "mean_confidence": 0.0375
+  },
+  {
+   "step": 12,
+   "n": 154,
+   "accuracy": 0.026,
+   "nll": 4.236,
+   "ece": 0.004,
+   "acc_at_50pct_coverage": 0.026,
+   "acc_at_100pct_coverage": 0.026,
+   "mean_confidence": 0.022
+  },
+  {
+   "step": 16,
+   "n": 154,
+   "accuracy": 0.0584,
+   "nll": 4.4025,
+   "ece": 0.0101,
+   "acc_at_50pct_coverage": 0.0909,
+   "acc_at_100pct_coverage": 0.0584,
+   "mean_confidence": 0.0483
+  },
+  {
+   "step": 20,
+   "n": 154,
+   "accuracy": 0.0455,
+   "nll": 4.0845,
+   "ece": 0.0228,
+   "acc_at_50pct_coverage": 0.0909,
+   "acc_at_100pct_coverage": 0.0455,
+   "mean_confidence": 0.0227
+  },
+  {
+   "step": 23,
+   "n": 154,
+   "accuracy": 0.039,
+   "nll": 4.1769,
+   "ece": 0.0122,
+   "acc_at_50pct_coverage": 0.039,
+   "acc_at_100pct_coverage": 0.039,
+   "mean_confidence": 0.0268
+  }
+ ],
+ "history_reranker": [
+  {
+   "step": 0,
+   "n": 48,
+   "accuracy": 0.1458,
+   "nll": 2.0608,
+   "ece": 0.0061,
+   "acc_at_50pct_coverage": 0.1667,
+   "acc_at_100pct_coverage": 0.1458,
+   "mean_confidence": 0.1397,
+   "retrieved_only": true
+  },
+  {
+   "step": 4,
+   "n": 48,
+   "accuracy": 0.1042,
+   "nll": 2.0723,
+   "ece": 0.1496,
+   "acc_at_50pct_coverage": 0.125,
+   "acc_at_100pct_coverage": 0.1042,
+   "mean_confidence": 0.2537,
+   "retrieved_only": true
+  },
+  {
+   "step": 8,
+   "n": 48,
+   "accuracy": 0.25,
+   "nll": 1.9963,
+   "ece": 0.076,
+   "acc_at_50pct_coverage": 0.3333,
+   "acc_at_100pct_coverage": 0.25,
+   "mean_confidence": 0.174,
+   "retrieved_only": true
+  },
+  {
+   "step": 12,
+   "n": 48,
+   "accuracy": 0.2083,
+   "nll": 2.0087,
+   "ece": 0.0636,
+   "acc_at_50pct_coverage": 0.2917,
+   "acc_at_100pct_coverage": 0.2083,
+   "mean_confidence": 0.2286,
+   "retrieved_only": true
+  },
+  {
+   "step": 16,
+   "n": 48,
+   "accuracy": 0.2292,
+   "nll": 2.224,
+   "ece": 0.1389,
+   "acc_at_50pct_coverage": 0.2917,
+   "acc_at_100pct_coverage": 0.2292,
+   "mean_confidence": 0.3681,
+   "retrieved_only": true
+  },
+  {
+   "step": 20,
+   "n": 48,
+   "accuracy": 0.2292,
+   "nll": 2.0693,
+   "ece": 0.1364,
+   "acc_at_50pct_coverage": 0.2083,
+   "acc_at_100pct_coverage": 0.2292,
+   "mean_confidence": 0.2828,
+   "retrieved_only": true
+  },
+  {
+   "step": 23,
+   "n": 48,
+   "accuracy": 0.1458,
+   "nll": 2.0545,
+   "ece": 0.1804,
+   "acc_at_50pct_coverage": 0.2083,
+   "acc_at_100pct_coverage": 0.1458,
+   "mean_confidence": 0.307,
+   "retrieved_only": true
+  }
+ ],
+ "note": "learning rate is fixed across phases, not tuned; phase-B head seeded seed+1, documented",
+ "evidence": {
+  "final": {
+   "path": "results/transfer/funnel_cpu_probe/evidence_s0/final.pt",
+   "sha256": "82ab77d799c72fbb3f18f2f10719a20aac56a87829d16ba1a53a5675c53fc0a4"
+  },
+  "retriever": {
+   "path": "results/transfer/funnel_cpu_probe/evidence_s0/retriever.pt",
+   "sha256": "9f51a2ed8d7fa62aab81ad65f22888bfc1ab7890f0bf8ee3f72b25e5af7f9f74"
+  },
+  "provenance_sha256": "9d30f1cee1a313eeff1b3c7579fe750841290a12457a082ab9db259468bbfdb6"
+ },
+ "device": "cpu",
+ "stratified": true,
+ "split_seed": 0
+}

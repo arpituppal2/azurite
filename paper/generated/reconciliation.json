@@ -1,0 +1,273 @@
+{
+  "rows": [
+    {
+      "macro": "POldZeroAcc",
+      "value": "88.38",
+      "source": "summary",
+      "field": "old_a0.accuracy"
+    },
+    {
+      "macro": "POldZeroCorrect",
+      "value": "2{,}722",
+      "source": "summary",
+      "field": "old_a0.correct"
+    },
+    {
+      "macro": "POldZeroGap",
+      "value": "$-4.03$",
+      "source": "summary",
+      "field": "paired.old_a0.diff_vs_jev"
+    },
+    {
+      "macro": "POldZeroP",
+      "value": "$8.49\\times10^{-12}$",
+      "source": "summary",
+      "field": "paired.old_a0.mcnemar.p"
+    },
+    {
+      "macro": "POldTwoAcc",
+      "value": "59.12",
+      "source": "summary",
+      "field": "old_a2c.accuracy"
+    },
+    {
+      "macro": "POldTwoCorrect",
+      "value": "1{,}821",
+      "source": "summary",
+      "field": "old_a2c.correct"
+    },
+    {
+      "macro": "POldTwoGap",
+      "value": "$-33.28$",
+      "source": "summary",
+      "field": "paired.old_a2c.diff_vs_jev"
+    },
+    {
+      "macro": "POldTwoP",
+      "value": "$2.96\\times10^{-231}$",
+      "source": "summary",
+      "field": "paired.old_a2c.mcnemar.p"
+    },
+    {
+      "macro": "POldLenAcc",
+      "value": "22.44",
+      "source": "summary",
+      "field": "examples24_5120.accuracy"
+    },
+    {
+      "macro": "POldLenCorrect",
+      "value": "691",
+      "source": "summary",
+      "field": "examples24_5120.correct"
+    },
+    {
+      "macro": "POldLenGap",
+      "value": "$-69.97$",
+      "source": "summary",
+      "field": "paired.examples24_5120.diff_vs_jev"
+    },
+    {
+      "macro": "POldLenP",
+      "value": "$<10^{-300}$",
+      "source": "summary",
+      "field": "paired.examples24_5120.mcnemar.p"
+    },
+    {
+      "macro": "PQueryZeroAcc",
+      "value": "61.04",
+      "source": "summary",
+      "field": "query_a0.accuracy"
+    },
+    {
+      "macro": "PQueryZeroCorrect",
+      "value": "1{,}880",
+      "source": "summary",
+      "field": "query_a0.correct"
+    },
+    {
+      "macro": "PQueryZeroGap",
+      "value": "$-31.36$",
+      "source": "summary",
+      "field": "paired.query_a0.diff_vs_jev"
+    },
+    {
+      "macro": "PQueryZeroP",
+      "value": "$1.82\\times10^{-226}$",
+      "source": "summary",
+      "field": "paired.query_a0.mcnemar.p"
+    },
+    {
+      "macro": "PQueryTwoAcc",
+      "value": "89.03",
+      "source": "summary",
+      "field": "query_a2c.accuracy"
+    },
+    {
+      "macro": "PQueryTwoCorrect",
+      "value": "2{,}742",
+      "source": "summary",
+      "field": "query_a2c.correct"
+    },
+    {
+      "macro": "PQueryTwoGap",
+      "value": "$-3.38$",
+      "source": "summary",
+      "field": "paired.query_a2c.diff_vs_jev"
+    },
+    {
+      "macro": "PQueryTwoP",
+      "value": "$3.99\\times10^{-9}$",
+      "source": "summary",
+      "field": "paired.query_a2c.mcnemar.p"
+    },
+    {
+      "macro": "PLenZeroAcc",
+      "value": "61.75",
+      "source": "summary",
+      "field": "len_a0.accuracy"
+    },
+    {
+      "macro": "PLenZeroCorrect",
+      "value": "1{,}902",
+      "source": "summary",
+      "field": "len_a0.correct"
+    },
+    {
+      "macro": "PLenZeroGap",
+      "value": "$-30.65$",
+      "source": "summary",
+      "field": "paired.len_a0.diff_vs_jev"
+    },
+    {
+      "macro": "PLenZeroP",
+      "value": "$1.62\\times10^{-232}$",
+      "source": "summary",
+      "field": "paired.len_a0.mcnemar.p"
+    },
+    {
+      "macro": "PLenTwoAcc",
+      "value": "87.11",
+      "source": "summary",
+      "field": "len_a2c.accuracy"
+    },
+    {
+      "macro": "PLenTwoCorrect",
+      "value": "2{,}683",
+      "source": "summary",
+      "field": "len_a2c.correct"
+    },
+    {
+      "macro": "PLenTwoGap",
+      "value": "$-5.29$",
+      "source": "summary",
+      "field": "paired.len_a2c.diff_vs_jev"
+    },
+    {
+      "macro": "PLenTwoP",
+      "value": "$5.01\\times10^{-18}$",
+      "source": "summary",
+      "field": "paired.len_a2c.mcnemar.p"
+    },
+    {
+      "macro": "PJevDefsBytes",
+      "value": "7{,}801",
+      "source": "generated/prompt_budget.json",
+      "field": "definitions_bytes"
+    },
+    {
+      "macro": "PJevPromptMedian",
+      "value": "10{,}683",
+      "source": "generated/prompt_budget.json",
+      "field": "prompt_bytes_median"
+    },
+    {
+      "macro": "PJevPromptMin",
+      "value": "10{,}009",
+      "source": "generated/prompt_budget.json",
+      "field": "prompt_bytes_min"
+    },
+    {
+      "macro": "PJevPromptMax",
+      "value": "13{,}524",
+      "source": "generated/prompt_budget.json",
+      "field": "prompt_bytes_max"
+    },
+    {
+      "macro": "PJevPromptRatio",
+      "value": "2.09",
+      "source": "derived",
+      "field": "prompt_median / 5118"
+    },
+    {
+      "macro": "PContamSupportMatches",
+      "value": "25",
+      "source": "results/product_path_clean/summary.json",
+      "field": "support.removed_rows"
+    },
+    {
+      "macro": "PContamEvalRows",
+      "value": "255",
+      "source": "results/product_path_clean/summary.json",
+      "field": "frozen_examples.rows_with_any_evaluation_text"
+    },
+    {
+      "macro": "PCleanAcc",
+      "value": "89.06",
+      "source": "results/product_path_clean/summary.json",
+      "field": "clean.accuracy"
+    },
+    {
+      "macro": "PUnaffectedAcc",
+      "value": "88.88",
+      "source": "derived",
+      "field": "2,511 / 2,825"
+    },
+    {
+      "macro": "PTokens",
+      "value": "122{,}880{,}000",
+      "source": "results/jev_query_5120/train_meta.json",
+      "field": "steps * batch * 5120"
+    },
+    {
+      "macro": "PGPUHours",
+      "value": "1.69",
+      "source": "results/jev_query_5120/train_meta.json",
+      "field": "train_seconds / 3600"
+    }
+  ],
+  "thesis_shared": 25,
+  "prompt_budget": {
+    "protocol": "jev-prompt-budget-reconstruction-v1",
+    "n": 3080,
+    "labels": 77,
+    "examples_per_row": 24,
+    "definitions_bytes": 7801,
+    "question_bytes": 8187,
+    "prompt_bytes_median": 10683,
+    "prompt_bytes_min": 10009,
+    "prompt_bytes_max": 13524,
+    "prompt_bytes_mean": 10782.9,
+    "examples_bytes_median": 2367,
+    "azurite_long_budget": 5118,
+    "source": {
+      "descriptions.json": {
+        "sha256": "ea930901fa349f167ad392e432b68f34b15fef97cca3fbd9944a4119131aa3ed",
+        "bytes": 7727
+      },
+      "categories.json": {
+        "sha256": "e58114f0c41107b65df9821b4c928e9630278216ecb12f48ba2b6301c3f6d251",
+        "bytes": 2037
+      },
+      "source": {
+        "repository": "https://github.com/simonmesmith/jev-banking77-experiment",
+        "commit": "5cac4ff7783a4cfc0badba4124a309dd2a2b9862",
+        "files": [
+          "configs/descriptions.json",
+          "data/categories.json"
+        ],
+        "dataset": "Banking77 (Casanueva et al., 2020), CC-BY-4.0",
+        "note": "Public prompt inputs reproduced only to measure the comparator information budget. No model weights or predictions are copied."
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+\chapter{Introduction}
+
+\section{The claim being valued}
+
+A decider is a model that reads a context and selects one element from a supplied
+set of candidates. The architecture has an appealing property: the output space is
+finite and known, so the model cannot produce a syntactically invalid or
+out-of-distribution answer. For a system deployed against adversaries, or in a
+regulated setting, that property is worth a great deal.
+
+The commercial claim built on it goes further. If a model \emph{selects} rather
+than \emph{generates}, the argument runs, then its accuracy is a property of its
+judgement rather than of its fluency, and near-perfect accuracy becomes an
+engineering target rather than an aspiration. Enterprise valuations in this
+category are premised on that inference.
+
+This dissertation asks whether the inference holds. It is not a question about
+whether deciders are useful --- they plainly are --- but about what, precisely,
+has been demonstrated when a decider reports high accuracy.
+
+\section{Two claims, only one of which is free}
+
+Let $C$ be the candidate set and $y^\star \in C$ the correct element. A decider
+computes $\hat y = \arg\max_{c \in C} s_\theta(x, c)$ for context $x$ and scoring
+function $s_\theta$.
+
+\begin{description}
+  \item[Claim A (structural).] $\hat y \in C$ always. True by construction.
+  \item[Claim B (epistemic).] $\Pr[\hat y = y^\star]$ is high, and remains high as
+  $|C|$ grows, as $|x|$ grows, and under distribution shift.
+\end{description}
+
+Claim A is a theorem about the output interface. Claim B is an empirical statement
+about the learned function, and nothing about the interface implies it. A decider
+with $|C| = 2$ that is correct $97\%$ of the time is equally consistent with a
+model that has learned the task and with a model that has learned the surface
+statistics of the evaluation set. Separating those requires varying $|C|$ and
+$|x|$ --- the experiments this dissertation specifies --- and requires an
+evaluation whose error bars are smaller than the effect being claimed.
+
+\section{Why the record is narrower than the first report}
+
+The first build of this thesis reported a large fixed-data U-curve, an exhaustive
+protocol that reduced sampling error by two orders of magnitude, and an AG News
+transfer gain of several points. The first sandbox was reclaimed on 2026-10-28.
+The raw mid and large fixed-data runs and the exhaustive protocol replicates did
+not survive, and the AG News comparison was rerun under a stricter class-balanced
+protocol with a replacement checkpoint.
+
+The corrected record is therefore not a tidier version of the old one. It is a
+smaller one. Six sampled draws of one frozen checkpoint still span
+\ProtoOldSpread{} bits/byte, which is enough to establish that the sampled protocol
+has a noise floor larger than the effect the ladder was built to resolve. The
+exhaustive replicate is lost, so the reduction is not claimed. The fixed-data
+table has only the tiny and small cells, both sampled; the mid and large cells are
+visibly pending. The AG News rerun is +1.13 percentage points with an interval
+that crosses zero.
+
+This is reported first because a thesis that silently keeps the old numbers after
+losing the runs is not a measurement thesis. The holes are part of the evidence:
+a result that exists only in a reclaimed VM is a result the project does not have.
+
+\section{Contributions}
+
+\begin{enumerate}
+  \item A measured sampling-noise result: six sampled draws of one frozen
+  checkpoint span \ProtoOldSpread{} bits/byte, larger than the small-versus-mid
+  difference the ladder was designed to resolve. The exhaustive replication that
+  would establish the lower-noise protocol is lost and is left pending
+  (\S\ref{sec:protocol-result}).
+  \item A fixed-data size sweep that is deliberately incomplete: the surviving
+  tiny and small cells are reported with their evaluation source, while the mid
+  and large cells are named as reclaimed. No U-shape is claimed from two sampled
+  rows (\S\ref{sec:fixed-d}).
+  \item A matched transfer result at the 2.41M rung: Banking77 gains
+  \TransferBankGain{} percentage points over random initialisation on a
+  class-balanced 77-way draw; AG News gains \TransferAgGain{} percentage points
+  with a paired crossed-bootstrap 95\% interval of \TransferAgLo{} to
+  \TransferAgHi{}, which is \TransferAgVerdict. A separate 8,000-row Banking77 arm
+  reaches \ShipAcc\% (95\% Wilson \ShipLo--\ShipHi), overlapping the cited Jev
+  interval; it is not a win (\S\ref{sec:transfer}).
+  \item A nine-task public-task suite at three rungs (14.4M, 33.7M, 113.47M
+  parameters) under one pre-registered recipe, all measured on the corrected dual
+  path. Azurite is clearly above the cited point on \SuiteSmallClear,
+  \SuiteMidClear{} and \SuiteLargeClear{} of \SuiteComparatorCells{} comparator
+  cells, and not clearly below on \SuiteSmallAtOrAboveThree,
+  \SuiteMidAtOrAboveThree{} and \SuiteLargeAtOrAbove; a
+  \SuiteLargeParamsRatio$\times$ parameter increase over 14.4M wins
+  \SuiteLargeWins{} cells (\SuiteLargeWinCells) by \SuiteLargeWinMin{} to
+  \SuiteLargeWinMax{} points, loses XNLI by \SuiteLargeLossAbs{} points and
+  leaves \SuiteLargeUnmoved{} unmoved, so
+  scale does not close the four cells that matter. XNLI at 113.47M is a
+  degenerate uniform predictor, reported as such rather than as a weak score
+  (\S\ref{sec:suite}).
+  \item A measured scaling exponent in the proxy: at $D/N = 10$, held-out
+  bits/byte follows $N^{-\AlphaFit}$ over a \IsoRange-fold range of parameters, which
+  is the contrast the suite result is read against (\S\ref{sec:iso}).
+
+  \item \textsc{Azurite}: a byte-level decider, its architecture, and the measured
+  frontier that remains before its long-context and multimodal claims can be
+  stated as results rather than intentions (\S\ref{sec:future}).
+\end{enumerate}
+
+\section{Why the transfer probe is 2.41M, not 4B}
+
+The 4B figure is a permitted ceiling, not the instrument this thesis uses. The
+corpus contains \CorpusTokens{} tokens. At 2.41M parameters that is 677 tokens per
+parameter; at 4B it is \FourBDN{} tokens per parameter, about
+\FourBFactor$\times$ fewer than the 113M rung and far below the compute-optimal
+line. A 4B model at $D/N=20$ would require \FourBTokensB{}B unique tokens ---
+roughly 49 times the corpus --- and about \FourBGPUHours{} GPU-hours at the
+measured throughput before any data collection.
+
+That arithmetic is why the transfer claim is made at the tiny rung, where a
+matched random-initialisation control is affordable and where the model cannot
+store the fine-tuning set. It is also why a 4B run on this corpus would be a
+memorisation measurement wearing a scaling claim's clothes. The ceiling belongs in
+a future-work protocol with a larger corpus and multi-GPU budget, not in a
+substitute for the controlled experiment.
+
+\section{Evidence identity and the reclamation}
+
+The first sandbox was reclaimed on 2026-10-28. The AG News source checkpoint named
+by the original protocol, \texttt{3cf421\ldots bed8}, was lost and cannot be
+restored byte-for-byte. The corpus was rebuilt from the checked-in builder and
+reproduced its recorded SHA-256 exactly. The replacement checkpoint is
+\texttt{817e7f04\ldots0410}: same protocol, same step count, same token budget, but
+not bitwise-identical weights. The six AG News cells are a valid paired comparison
+on that replacement; they are not a continuation of the exact Banking77
+initialisation.
+
+The Banking77 84.3\% row uses the surviving pre-loss comparator
+\texttt{499fd68c\ldots ebdc}, not the amended checkpoint. That exception is stated
+wherever the row appears. Existing completed records were not overwritten; the
+recovered tree and its hash manifest are the evidence base. A second reclamation
+now costs wall-clock, not results.
+
+\section{What would refute this dissertation}
+
+If the candidate-set sweep shows accuracy holding to $|C| = 64$ and the context
+sweep shows accuracy flat to $32$k tokens, then constrained selection is a
+transferable mechanism, the commercial claim is well founded, and this work becomes
+a constructive account of \textsc{Azurite}'s efficiency. That outcome is written
+here, before the measurements, so that it cannot be reinterpreted afterwards.
+
+The criterion has since been tested where it can be posed. No suite task has a
+bank of 64: the widest are Banking77 ($K=77$), CLINC150 ($151$) and MASSIVE intent
+($60$), so the sweep compares a trained 32-way interface against each task's full
+bank, under a pre-registered five-point non-inferiority rule
+(\S\ref{sec:candidates}). The context half of the criterion remains unmeasured;
+the four-rung record has no long-context result.

@@ -1,0 +1,38 @@
+{
+ "n": 750,
+ "a": {
+  "meta": {},
+  "accuracy": 0.8707,
+  "correct": 653
+ },
+ "b": {
+  "meta": {
+   "task": "banking77_ctx",
+   "model": "perplexity-ai/pplx-decider-flash-v1.2",
+   "adaptation": "ZERO-SHOT (no fine-tuning on this task; competitors were fine-tuned on 2000 rows)",
+   "split_seed": 123,
+   "n": 750,
+   "k": 77,
+   "accuracy": 0.8787
+  },
+  "accuracy": 0.8787,
+  "correct": 659
+ },
+ "delta_a_minus_b": -0.008,
+ "discordant": {
+  "a_right_b_wrong": 40,
+  "a_wrong_b_right": 46
+ },
+ "mcnemar_exact_p_two_sided": 0.590036,
+ "bootstrap": {
+  "iters": 5000,
+  "seed": 0,
+  "ci95": [
+   -0.0333,
+   0.016
+  ],
+  "frac_gt_zero": 0.244
+ },
+ "sensitive": false,
+ "note": "paired on identical rows; discordant cells drive the test"
+}

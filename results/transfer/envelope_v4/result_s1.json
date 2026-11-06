@@ -1,0 +1,211 @@
+{
+ "task": "banking77",
+ "arm": "byte",
+ "rung": "tiny",
+ "path": "funnel",
+ "funnel_m": 8,
+ "init": "pretrained",
+ "loaded_from": {
+  "path": "results/pretrain/l1_tiny_byte/ckpt.pt",
+  "pretrain_step": 6104,
+  "pretrain_tokens": 100007936,
+  "max_seq": 1024,
+  "requested_max_seq": 1024,
+  "context_extension": false,
+  "missing": [],
+  "unexpected": []
+ },
+ "k": 77,
+ "train_examples": 2000,
+ "test_examples": 500,
+ "dual_steps": 378,
+ "cross_steps": 378,
+ "batch": 16,
+ "lr": 0.0005,
+ "seed": 1,
+ "seconds_retriever": 12.2,
+ "seconds_reranker": 12.5,
+ "seconds": 24.8,
+ "funnel_recall_train": 0.987,
+ "funnel_recall_test": 0.938,
+ "funnel_miss_test": 31,
+ "retrieved_only": {
+  "n": 469,
+  "accuracy": 0.7186,
+  "nll": 1.0944,
+  "ece": 0.082
+ },
+ "final": {
+  "n": 500,
+  "accuracy": 0.674,
+  "nll": null,
+  "ece": null,
+  "note": "end-to-end over ALL test rows, misses as errors; NLL/ECE reported retrieved-only"
+ },
+ "history_retriever": [
+  {
+   "step": 0,
+   "n": 500,
+   "accuracy": 0.032,
+   "nll": 5.4509,
+   "ece": 0.1509,
+   "acc_at_50pct_coverage": 0.056,
+   "acc_at_100pct_coverage": 0.032,
+   "mean_confidence": 0.1821
+  },
+  {
+   "step": 63,
+   "n": 500,
+   "accuracy": 0.382,
+   "nll": 2.4556,
+   "ece": 0.0791,
+   "acc_at_50pct_coverage": 0.552,
+   "acc_at_100pct_coverage": 0.382,
+   "mean_confidence": 0.3091
+  },
+  {
+   "step": 126,
+   "n": 500,
+   "accuracy": 0.512,
+   "nll": 1.9016,
+   "ece": 0.0583,
+   "acc_at_50pct_coverage": 0.76,
+   "acc_at_100pct_coverage": 0.512,
+   "mean_confidence": 0.4889
+  },
+  {
+   "step": 189,
+   "n": 500,
+   "accuracy": 0.548,
+   "nll": 1.6604,
+   "ece": 0.0558,
+   "acc_at_50pct_coverage": 0.728,
+   "acc_at_100pct_coverage": 0.548,
+   "mean_confidence": 0.5248
+  },
+  {
+   "step": 252,
+   "n": 500,
+   "accuracy": 0.606,
+   "nll": 1.5028,
+   "ece": 0.0787,
+   "acc_at_50pct_coverage": 0.856,
+   "acc_at_100pct_coverage": 0.606,
+   "mean_confidence": 0.5735
+  },
+  {
+   "step": 315,
+   "n": 500,
+   "accuracy": 0.594,
+   "nll": 1.5462,
+   "ece": 0.0409,
+   "acc_at_50pct_coverage": 0.836,
+   "acc_at_100pct_coverage": 0.594,
+   "mean_confidence": 0.6009
+  },
+  {
+   "step": 377,
+   "n": 500,
+   "accuracy": 0.674,
+   "nll": 1.2622,
+   "ece": 0.0649,
+   "acc_at_50pct_coverage": 0.92,
+   "acc_at_100pct_coverage": 0.674,
+   "mean_confidence": 0.6532
+  }
+ ],
+ "history_reranker": [
+  {
+   "step": 0,
+   "n": 469,
+   "accuracy": 0.2154,
+   "nll": 2.0163,
+   "ece": 0.0219,
+   "acc_at_50pct_coverage": 0.2137,
+   "acc_at_100pct_coverage": 0.2154,
+   "mean_confidence": 0.1946,
+   "retrieved_only": true
+  },
+  {
+   "step": 63,
+   "n": 469,
+   "accuracy": 0.7186,
+   "nll": 1.0847,
+   "ece": 0.0637,
+   "acc_at_50pct_coverage": 0.7564,
+   "acc_at_100pct_coverage": 0.7186,
+   "mean_confidence": 0.6744,
+   "retrieved_only": true
+  },
+  {
+   "step": 126,
+   "n": 469,
+   "accuracy": 0.7186,
+   "nll": 1.1901,
+   "ece": 0.1984,
+   "acc_at_50pct_coverage": 0.6752,
+   "acc_at_100pct_coverage": 0.7186,
+   "mean_confidence": 0.5272,
+   "retrieved_only": true
+  },
+  {
+   "step": 189,
+   "n": 469,
+   "accuracy": 0.7186,
+   "nll": 1.1554,
+   "ece": 0.1287,
+   "acc_at_50pct_coverage": 0.7436,
+   "acc_at_100pct_coverage": 0.7186,
+   "mean_confidence": 0.8405,
+   "retrieved_only": true
+  },
+  {
+   "step": 252,
+   "n": 469,
+   "accuracy": 0.7186,
+   "nll": 1.2155,
+   "ece": 0.1385,
+   "acc_at_50pct_coverage": 0.7607,
+   "acc_at_100pct_coverage": 0.7186,
+   "mean_confidence": 0.8546,
+   "retrieved_only": true
+  },
+  {
+   "step": 315,
+   "n": 469,
+   "accuracy": 0.7164,
+   "nll": 1.2317,
+   "ece": 0.1301,
+   "acc_at_50pct_coverage": 0.7607,
+   "acc_at_100pct_coverage": 0.7164,
+   "mean_confidence": 0.8339,
+   "retrieved_only": true
+  },
+  {
+   "step": 377,
+   "n": 469,
+   "accuracy": 0.7186,
+   "nll": 1.0944,
+   "ece": 0.082,
+   "acc_at_50pct_coverage": 0.7692,
+   "acc_at_100pct_coverage": 0.7186,
+   "mean_confidence": 0.7916,
+   "retrieved_only": true
+  }
+ ],
+ "note": "learning rate is fixed across phases, not tuned; phase-B head seeded seed+1, documented",
+ "evidence": {
+  "final": {
+   "path": "results/transfer/envelope_v4/evidence_s1/final.pt",
+   "sha256": "aab4eb971951bf27f7c3348d7d11be7605f9f71002a17e3ec1500daf27992250"
+  },
+  "retriever": {
+   "path": "results/transfer/envelope_v4/evidence_s1/retriever.pt",
+   "sha256": "31bdecb000ea81467308ab068b0bb3d5d79bfab297a588426d31c71e6f8f1eaa"
+  },
+  "provenance_sha256": "4ecf225dc10054fe3a8d84d959d07fff3fb6eaebc133c1b4abbb1b15ca43b25a"
+ },
+ "device": "cuda",
+ "stratified": true,
+ "split_seed": 0
+}

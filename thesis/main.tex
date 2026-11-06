@@ -1,0 +1,87 @@
+\documentclass[12pt,letterpaper,oneside]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{natbib}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=blue!50!black,
+  urlcolor=blue!50!black,
+  pdftitle={Constrained Selection and the Limits of the Decider Claim},
+  pdfauthor={Arpit Uppal}
+}
+
+\graphicspath{{figures/}}
+
+\newcommand{\bits}{\,\mathrm{bits/byte}}
+\newcommand{\DN}{D/N}
+
+% Every figure in the prose comes from thesis/tables/macros.tex, generated from
+% result files by thesis/gen_tables.py. Nothing here is typed in by hand.
+\input{tables/macros}
+\input{tables/macros_cmp}
+\input{tables/macros_scaling}
+\input{tables/macros_transfer}
+\input{tables/macros_suite}
+\input{tables/macros_suite3}
+\input{tables/macros_e4}
+\input{tables/macros_jev}
+\input{tables/macros_query}
+\input{tables/macros_len5120}
+\input{tables/macros_contam}
+\input{tables/macros_extra}
+\input{tables/macros_figures}
+
+% Text-mode overfull boxes: a long unbreakable \texttt{} is the usual
+% cause, and the document should stretch rather than overflow the margin.
+\setlength{\emergencystretch}{3em}
+
+\begin{document}
+
+\frontmatter
+\input{frontmatter/titlepage}
+\input{frontmatter/degree}
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{sections/00-abstract}
+
+\input{frontmatter/acknowledgments}
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+\mainmatter
+\input{sections/01-introduction}
+\input{sections/02-background}
+\input{sections/03-method}
+\input{sections/04-results}
+\input{sections/04b-comparator}
+\input{sections/05-discussion}
+\input{sections/06-conclusion}
+
+\appendix
+\input{sections/07-appendix-protocol}
+
+\backmatter
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}
