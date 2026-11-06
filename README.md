@@ -17,12 +17,22 @@ This repo is published as a postmortem with evidence, not a launch.
   invalidated weeks of pooling comparisons; it was caught, fixed, and the
   prior "attn wins" claim was withdrawn in writing.
 
-## Headline numbers (single-seed unless noted)
+## Headline numbers
 
-- **contract_nli, split 123, 2048 ctx, seed 0:** recall 0.886 / conditional
-  0.7088 / end-to-end **0.628** (`S123_MAXLEN2048_contract_nli_s0.json`,
-  sha-verified mirror). Seed 1 was lost to sandbox reclamation before mirroring —
-  the two-seed mean is therefore **unclaimed**. What isn't mirrored doesn't count.
+**Flagship benchmark — contract_nli, split 123, 2048 ctx, two seeds**
+(`S123_2SEED_MEAN_contract_nli.json`; both seeds sha-verified mirrors):
+
+| seed | recall | conditional | end-to-end | shuffled control |
+|------|--------|-------------|------------|------------------|
+| s0   | 0.886  | 0.7088      | 0.628      | 0.390            |
+| s1   | 0.900  | 0.6889      | 0.620      | 0.354            |
+| **mean** | **0.893** | **0.6989** | **0.624** | 0.372        |
+
+Pooled end-to-end: 0.624, 95% binomial CI [0.594, 0.654] (n=1000).
+Seed delta on e2e is 0.008 — the result is stable, not a lucky seed.
+Signal over shuffled contexts is +0.252: the context carries the decision.
+What isn't mirrored doesn't count — s1 (`...037bf488...`) was mirrored
+from the live host with a sha check on 2026-11-06.
 - **Truncation is the binding constraint:** 1024 → 2048 context gave **+0.100**
   end-to-end on the same split (`TRUNCATION_AB.md`).
 - **Pooling (mean/attn/last):** no difference once the control defect was fixed
