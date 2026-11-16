@@ -2,6 +2,8 @@
 
 Can a model trained from scratch challenge the frontier on decision tasks? Answer: not in this weight class.
 
+Note: Trained on NVIDIA RTX Pro 6000 Blackwell GPU. Pytorch and CUDA utilized among other technologies.
+
 
 ## Result
 
